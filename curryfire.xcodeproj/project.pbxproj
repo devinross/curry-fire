@@ -179,18 +179,34 @@
 				2069BB651AE095CA00F6D355 /* curryfire.h */,
 				2069BC251AE09DFA00F6D355 /* Header.h */,
 				2069BC5D1AE14C3E00F6D355 /* ShortHand.h */,
-				2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */,
-				2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */,
 				2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */,
 				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
+				2069BC6D1AE1634100F6D355 /* Categories */,
+			);
+			name = curryfire;
+			sourceTree = "<group>";
+		};
+		2069BC6D1AE1634100F6D355 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */,
+				2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */,
 				2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */,
 				2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */,
+				2069BC6E1AE1634800F6D355 /* Initializers */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		2069BC6E1AE1634800F6D355 /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
 				2069BC5F1AE14EC800F6D355 /* UILabel+Initializers.h */,
 				2069BC601AE14EC800F6D355 /* UILabel+Initializers.m */,
 				2069BC631AE14F6E00F6D355 /* UIView+Initializers.h */,
 				2069BC641AE14F6E00F6D355 /* UIView+Initializers.m */,
 			);
-			name = curryfire;
+			name = Initializers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

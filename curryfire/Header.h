@@ -34,8 +34,6 @@
 
 @import curry;
 @import pop;
-#define MCANIMATE_SHORTHAND
-#import "POP+MCAnimate.h"
 
 #import "ShortHand.h"
 

@@ -36,7 +36,6 @@
 - (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location))block{
     UITapGestureRecognizer *tap = [UITapGestureRecognizer recognizerWithHandler:block];
     [self addGestureRecognizer:tap];
-    
     return tap;
 }
 

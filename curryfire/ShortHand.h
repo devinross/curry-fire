@@ -37,11 +37,14 @@
 @import UIKit;
 @import Foundation;
 
-FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGFloat x, CGFloat y);
-FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGFloat x, CGFloat y){
+FOUNDATION_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
+FOUNDATION_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
     return [NSValue valueWithCGPoint:CGPointMake(x,y)];
 }
 
-
+FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
+FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
+    return [NSValue valueWithCGPoint:point];
+}
 
 #endif

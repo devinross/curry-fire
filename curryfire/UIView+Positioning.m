@@ -62,6 +62,7 @@
     frame.size = size;
     self.frame = frame;
 }
+
 - (CGPoint) origin{
     return self.frame.origin;
 }
