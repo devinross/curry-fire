@@ -29,15 +29,13 @@
  
  */
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 @import curryfire;
 @import curry;
 
 @interface ViewController : UIViewController
 
-
 @property (nonatomic,strong) UIView *peg;
-
 
 @end
 

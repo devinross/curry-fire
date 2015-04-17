@@ -34,7 +34,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -72,16 +72,6 @@
     [self.view addGestureRecognizer:gesture];
 
     
-    
-    
-
-    
-    
-}
-
-- (void) changed:(id)sender{
-    
-    //TKLog(@"%@",sender);
 }
 
 
