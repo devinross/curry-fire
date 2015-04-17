@@ -33,8 +33,52 @@
 
 @implementation UILabel (Initializers)
 
++ (instancetype) labelWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame attributedText:attributedText font:font textColor:textColor textAlignment:alignment];
+}
+- (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    self = [self initWithFrame:frame];
+    
+    self.textColor = textColor;
+    self.font = font;
+    self.attributedText = attributedText;
+    self.textAlignment = alignment;
+
+    return self;
+}
+
++ (instancetype) labelWithFrame:(CGRect)frame text:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame text:text font:font textColor:textColor textAlignment:alignment];
+}
+- (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    self = [self initWithFrame:frame];
+    
+    self.textColor = textColor;
+    self.textAlignment = alignment;
+    self.font = font;
+    self.text = text;
+    
+    return self;
+}
+
++ (instancetype) labelWithFrame:(CGRect)frame font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame font:font textColor:textColor textAlignment:alignment];
+}
+- (instancetype) initWithFrame:(CGRect)frame font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    self = [self initWithFrame:frame];
+    
+    self.textColor = textColor;
+    self.textAlignment = alignment;
+    self.font = font;
+    
+    return self;
+}
+
++ (instancetype) labelWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame textColor:textColor textAlignment:alignment];
+}
 - (instancetype) initWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
-    if(!(self=[super initWithFrame:frame])) return nil;
+    self = [self initWithFrame:frame];
     
     self.textColor = textColor;
     self.textAlignment = alignment;
@@ -42,8 +86,11 @@
     return self;
 }
 
++ (instancetype) labelWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame attributedText:attributedText textAlignment:alignment];
+}
 - (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment{
-    if(!(self=[super initWithFrame:frame])) return nil;
+    self = [self initWithFrame:frame];
     
     self.attributedText = attributedText;
     self.textAlignment = alignment;
@@ -51,8 +98,11 @@
     return self;
 }
 
++ (instancetype) labelWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    return [[[self class] alloc] initWithFrame:frame text:text textColor:textColor textAlignment:alignment];
+}
 - (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
-    if(!(self=[super initWithFrame:frame])) return nil;
+    self = [self initWithFrame:frame];
     
     self.textColor = textColor;
     self.textAlignment = alignment;

@@ -33,10 +33,36 @@
 
 @interface UILabel (Initializers)
 
+
++ (instancetype) labelWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+- (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+
++ (instancetype) labelWithFrame:(CGRect)frame text:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+- (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+
++ (instancetype) labelWithFrame:(CGRect)frame font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+- (instancetype) initWithFrame:(CGRect)frame font:(UIFont*)font textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+
++ (instancetype) labelWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
 - (instancetype) initWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+
++ (instancetype) labelWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment;
 
 - (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment;
 
+
++ (instancetype) labelWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
 - (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
+
+
 
 @end

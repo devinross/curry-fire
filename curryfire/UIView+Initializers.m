@@ -34,7 +34,7 @@
 @implementation UIView (Initializers)
 
 + (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor{
-    return [[UIView alloc] initWithFrame:frame backgroundColor:backgroundColor];
+    return [[[self class] alloc] initWithFrame:frame backgroundColor:backgroundColor];
 }
 
 - (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor{
@@ -43,8 +43,9 @@
     return self;
 }
 
+
 + (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius{
-    return [[UIView alloc] initWithFrame:frame backgroundColor:backgroundColor cornerRadius:cornerRadius];
+    return [[[self class] alloc] initWithFrame:frame backgroundColor:backgroundColor cornerRadius:cornerRadius];
 }
 
 - (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius{
@@ -53,5 +54,19 @@
     self.cornerRadius = cornerRadius;
     return self;
 }
+
+
++ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor borderWidth:(CGFloat)borderWidth{
+    return [[[self class] alloc] initWithFrame:frame backgroundColor:backgroundColor cornerRadius:cornerRadius borderColor:borderColor borderWidth:borderWidth];
+}
+
+- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor borderWidth:(CGFloat)borderWidth{
+    self = [self initWithFrame:frame];
+    self.backgroundColor = backgroundColor;
+    self.cornerRadius = cornerRadius;
+    [self setBorderWithColor:borderColor width:borderWidth];
+    return self;
+}
+
 
 @end
