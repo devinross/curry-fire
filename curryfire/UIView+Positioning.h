@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UIView+Postioning.h
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,23 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
+@import UIKit;
 
-@interface ViewController : UIViewController
+@interface UIView (Positioning)
 
+@property (nonatomic,assign) CGFloat width;
+@property (nonatomic,assign) CGFloat height;
 
-@property (nonatomic,strong) UIView *peg;
+@property (nonatomic,assign) CGSize size;
+@property (nonatomic,assign) CGPoint origin;
 
+@property (nonatomic,assign) CGFloat minX;
+@property (nonatomic,assign) CGFloat minY;
+
+@property (nonatomic,assign) CGFloat originX;
+@property (nonatomic,assign) CGFloat originY;
+
+@property (nonatomic,assign) CGFloat centerX;
+@property (nonatomic,assign) CGFloat centerY;
 
 @end
-

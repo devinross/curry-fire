@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TKMoveViewGestureRecognizer.h
 //  Created by Devin Ross on 4/16/15.
 //
 /*
@@ -29,15 +29,26 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
+@import UIKit;
+@import pop;
 @import curry;
 
-@interface ViewController : UIViewController
+@interface TKMoveGestureRecognizer : UIPanGestureRecognizer
 
++ (instancetype) gestureWithMovableView:(UIView*)movableView locations:(NSArray*)locations;
++ (instancetype) gestureWithMovableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
 
-@property (nonatomic,strong) UIView *peg;
+- (instancetype) initWithMovableView:(UIView*)movableView;
+- (instancetype) initWithMovableView:(UIView*)movableView locations:(NSArray*)locations;
+- (instancetype) initWithMovableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
 
+@property (nonatomic, copy, setter = setMoveHandler:) void (^moveHandler)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location);
+
+@property (nonatomic,readonly) BOOL moving;
+@property (nonatomic,strong) UIView *movableView;
+@property (nonatomic,strong) NSArray *locations;
+@property (nonatomic,strong) POPSpringAnimation *snapBackAnimation;
+
+@property (nonatomic,assign) CGFloat velocityDamping;
 
 @end
-

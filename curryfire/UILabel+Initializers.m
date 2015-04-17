@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UILabel+Initializers.m
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,37 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
+#import "UILabel+Initializers.h"
 
-@interface ViewController : UIViewController
+@implementation UILabel (Initializers)
 
+- (instancetype) initWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    if(!(self=[super initWithFrame:frame])) return nil;
+    
+    self.textColor = textColor;
+    self.textAlignment = alignment;
 
-@property (nonatomic,strong) UIView *peg;
+    return self;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment{
+    if(!(self=[super initWithFrame:frame])) return nil;
+    
+    self.attributedText = attributedText;
+    self.textAlignment = alignment;
+    
+    return self;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment{
+    if(!(self=[super initWithFrame:frame])) return nil;
+    
+    self.textColor = textColor;
+    self.textAlignment = alignment;
+    self.text = text;
+    
+    return self;
+}
 
 
 @end
-

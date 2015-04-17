@@ -10,6 +10,18 @@
 		2069BB661AE095CA00F6D355 /* curryfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BB651AE095CA00F6D355 /* curryfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2069BB9D1AE098B200F6D355 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BB871AE096C700F6D355 /* curry.framework */; };
 		2069BB9E1AE098B200F6D355 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BB981AE0989300F6D355 /* pop.framework */; };
+		2069BC261AE09DFA00F6D355 /* Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC251AE09DFA00F6D355 /* Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC2F1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */; };
+		2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */; };
+		2069BC5B1AE0CCDD00F6D355 /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */; };
+		2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC5D1AE14C3E00F6D355 /* ShortHand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC611AE14EC800F6D355 /* UILabel+Initializers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC5F1AE14EC800F6D355 /* UILabel+Initializers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC621AE14EC800F6D355 /* UILabel+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC601AE14EC800F6D355 /* UILabel+Initializers.m */; };
+		2069BC651AE14F6E00F6D355 /* UIView+Initializers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC631AE14F6E00F6D355 /* UIView+Initializers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2069BC661AE14F6E00F6D355 /* UIView+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC641AE14F6E00F6D355 /* UIView+Initializers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +82,18 @@
 		2069BB651AE095CA00F6D355 /* curryfire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = curryfire.h; sourceTree = "<group>"; };
 		2069BB811AE096C700F6D355 /* curry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curry.xcodeproj; path = Vendor/curry/curry.xcodeproj; sourceTree = SOURCE_ROOT; };
 		2069BB8B1AE0989200F6D355 /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = Vendor/pop/pop.xcodeproj; sourceTree = SOURCE_ROOT; };
+		2069BC251AE09DFA00F6D355 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMoveGestureRecognizer.h; sourceTree = "<group>"; };
+		2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMoveGestureRecognizer.m; sourceTree = "<group>"; };
+		2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureRecognizerBlock.h"; sourceTree = "<group>"; };
+		2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureRecognizerBlock.m"; sourceTree = "<group>"; };
+		2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
+		2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
+		2069BC5D1AE14C3E00F6D355 /* ShortHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortHand.h; sourceTree = "<group>"; };
+		2069BC5F1AE14EC800F6D355 /* UILabel+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Initializers.h"; sourceTree = "<group>"; };
+		2069BC601AE14EC800F6D355 /* UILabel+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Initializers.m"; sourceTree = "<group>"; };
+		2069BC631AE14F6E00F6D355 /* UIView+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Initializers.h"; sourceTree = "<group>"; };
+		2069BC641AE14F6E00F6D355 /* UIView+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Initializers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +128,7 @@
 		2069BB621AE095CA00F6D355 /* curryfire */ = {
 			isa = PBXGroup;
 			children = (
-				2069BB651AE095CA00F6D355 /* curryfire.h */,
+				2069BC271AE09E0700F6D355 /* curryfire */,
 				2069BB8A1AE0970200F6D355 /* Vendor */,
 				2069BB631AE095CA00F6D355 /* Supporting Files */,
 			);
@@ -149,6 +173,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2069BC271AE09E0700F6D355 /* curryfire */ = {
+			isa = PBXGroup;
+			children = (
+				2069BB651AE095CA00F6D355 /* curryfire.h */,
+				2069BC251AE09DFA00F6D355 /* Header.h */,
+				2069BC5D1AE14C3E00F6D355 /* ShortHand.h */,
+				2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */,
+				2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */,
+				2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */,
+				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
+				2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */,
+				2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */,
+				2069BC5F1AE14EC800F6D355 /* UILabel+Initializers.h */,
+				2069BC601AE14EC800F6D355 /* UILabel+Initializers.m */,
+				2069BC631AE14F6E00F6D355 /* UIView+Initializers.h */,
+				2069BC641AE14F6E00F6D355 /* UIView+Initializers.m */,
+			);
+			name = curryfire;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -157,6 +201,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2069BB661AE095CA00F6D355 /* curryfire.h in Headers */,
+				2069BC2F1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h in Headers */,
+				2069BC261AE09DFA00F6D355 /* Header.h in Headers */,
+				2069BC5B1AE0CCDD00F6D355 /* UIView+Positioning.h in Headers */,
+				2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */,
+				2069BC651AE14F6E00F6D355 /* UIView+Initializers.h in Headers */,
+				2069BC611AE14EC800F6D355 /* UILabel+Initializers.h in Headers */,
+				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */,
+				2069BC661AE14F6E00F6D355 /* UIView+Initializers.m in Sources */,
+				2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */,
+				2069BC621AE14EC800F6D355 /* UILabel+Initializers.m in Sources */,
+				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +446,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"Vendor/pop-mcanimate/POP+MCAnimate\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor/pop-mcanimate/POP+MCAnimate\"/**",
+				);
 				INFOPLIST_FILE = curryfire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -405,6 +466,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"Vendor/pop-mcanimate/POP+MCAnimate\"";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor/pop-mcanimate/POP+MCAnimate\"/**",
+				);
 				INFOPLIST_FILE = curryfire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

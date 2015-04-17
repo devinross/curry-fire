@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UILabel+Initializers.h
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,14 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
+@import UIKit;
 
-@interface ViewController : UIViewController
+@interface UILabel (Initializers)
 
+- (instancetype) initWithFrame:(CGRect)frame textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
 
-@property (nonatomic,strong) UIView *peg;
+- (instancetype) initWithFrame:(CGRect)frame attributedText:(NSAttributedString*)attributedText textAlignment:(NSTextAlignment)alignment;
 
+- (instancetype) initWithFrame:(CGRect)frame text:(NSString*)text textColor:(UIColor*)textColor textAlignment:(NSTextAlignment)alignment;
 
 @end
-

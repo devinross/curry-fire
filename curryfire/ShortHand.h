@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  ShortHand.h
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,19 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
-
-@interface ViewController : UIViewController
 
 
-@property (nonatomic,strong) UIView *peg;
+#ifndef curryfire_ShortHand_h
+#define curryfire_ShortHand_h
+
+@import UIKit;
+@import Foundation;
+
+FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGFloat x, CGFloat y);
+FOUNDATION_STATIC_INLINE NSValue* NSCGPoint(CGFloat x, CGFloat y){
+    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
+}
 
 
-@end
 
+#endif

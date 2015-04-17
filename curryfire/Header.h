@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Header.h
 //  Created by Devin Ross on 4/16/15.
 //
 /*
@@ -29,15 +29,23 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
+#ifndef curryfire_Header_h
+#define curryfire_Header_h
+
 @import curry;
+@import pop;
+#define MCANIMATE_SHORTHAND
+#import "POP+MCAnimate.h"
 
-@interface ViewController : UIViewController
+#import "ShortHand.h"
 
+#import "UIView+Positioning.h"
 
-@property (nonatomic,strong) UIView *peg;
+#import "UIView+Initializers.h"
+#import "UILabel+Initializers.h"
 
+#import "TKMoveGestureRecognizer.h"
 
-@end
+#import "UIView+GestureRecognizerBlock.h"
 
+#endif

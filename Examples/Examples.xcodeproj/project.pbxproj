@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2069BBAE1AE0996800F6D355 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBAD1AE0996800F6D355 /* main.m */; };
-		2069BBB11AE0996800F6D355 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB01AE0996800F6D355 /* AppDelegate.m */; };
 		2069BBB41AE0996800F6D355 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* ViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BBD91AE099C200F6D355 /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; };
+		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
+		2069BC3C1AE0B67400F6D355 /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; };
+		2069BC3D1AE0B67400F6D355 /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2069BC4B1AE0B6A700F6D355 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; };
+		2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2069BC4D1AE0B6A700F6D355 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC411AE0B68C00F6D355 /* curry.framework */; };
+		2069BC4E1AE0B6A700F6D355 /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC411AE0B68C00F6D355 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,18 +27,42 @@
 			remoteGlobalIDString = 2069BB601AE095CA00F6D355;
 			remoteInfo = curryfire;
 		};
+		2069BC3E1AE0B67400F6D355 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2069BB5F1AE095CA00F6D355;
+			remoteInfo = curryfire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2069BC401AE0B67400F6D355 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2069BC4E1AE0B6A700F6D355 /* curry.framework in Embed Frameworks */,
+				2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */,
+				2069BC3D1AE0B67400F6D355 /* curryfire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2069BBA81AE0996800F6D355 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2069BBAC1AE0996800F6D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2069BBAD1AE0996800F6D355 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2069BBAF1AE0996800F6D355 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2069BBB01AE0996800F6D355 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2069BBB21AE0996800F6D355 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2069BBB31AE0996800F6D355 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
+		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
+		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2069BC411AE0B68C00F6D355 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
+		2069BC441AE0B68C00F6D355 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2069BC4D1AE0B6A700F6D355 /* curry.framework in Frameworks */,
+				2069BC3C1AE0B67400F6D355 /* curryfire.framework in Frameworks */,
+				2069BC4B1AE0B6A700F6D355 /* pop.framework in Frameworks */,
 				2069BBD91AE099C200F6D355 /* curryfire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +85,7 @@
 			children = (
 				2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */,
 				2069BBAA1AE0996800F6D355 /* Examples */,
+				2069BC671AE15E3300F6D355 /* Frameworks */,
 				2069BBA91AE0996800F6D355 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,11 +101,9 @@
 		2069BBAA1AE0996800F6D355 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				2069BBAF1AE0996800F6D355 /* AppDelegate.h */,
-				2069BBB01AE0996800F6D355 /* AppDelegate.m */,
+				2069BC331AE0A2B000F6D355 /* AppDelegate.swift */,
 				2069BBB21AE0996800F6D355 /* ViewController.h */,
 				2069BBB31AE0996800F6D355 /* ViewController.m */,
-				2069BBB81AE0996800F6D355 /* Images.xcassets */,
 				2069BBAB1AE0996800F6D355 /* Supporting Files */,
 			);
 			path = Examples;
@@ -81,8 +112,9 @@
 		2069BBAB1AE0996800F6D355 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */,
+				2069BBB81AE0996800F6D355 /* Images.xcassets */,
 				2069BBAC1AE0996800F6D355 /* Info.plist */,
-				2069BBAD1AE0996800F6D355 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -95,6 +127,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2069BC671AE15E3300F6D355 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2069BC441AE0B68C00F6D355 /* pop.framework */,
+				2069BC411AE0B68C00F6D355 /* curry.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,10 +146,12 @@
 				2069BBA41AE0996800F6D355 /* Sources */,
 				2069BBA51AE0996800F6D355 /* Frameworks */,
 				2069BBA61AE0996800F6D355 /* Resources */,
+				2069BC401AE0B67400F6D355 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2069BC3F1AE0B67400F6D355 /* PBXTargetDependency */,
 			);
 			name = Examples;
 			productName = Examples;
@@ -179,13 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
 				2069BBB41AE0996800F6D355 /* ViewController.m in Sources */,
-				2069BBB11AE0996800F6D355 /* AppDelegate.m in Sources */,
-				2069BBAE1AE0996800F6D355 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2069BC3F1AE0B67400F6D355 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = curryfire;
+			targetProxy = 2069BC3E1AE0B67400F6D355 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2069BBC91AE0996900F6D355 /* Debug */ = {
@@ -272,10 +322,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Examples/Examples-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -283,10 +341,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Examples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Examples/Examples-Bridging-Header.h";
 			};
 			name = Release;
 		};

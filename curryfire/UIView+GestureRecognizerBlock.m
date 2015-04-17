@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UIView+GestureRecognizerBlock.m
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,15 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
+#import "UIView+GestureRecognizerBlock.h"
 
-@interface ViewController : UIViewController
+@implementation UIView (GestureRecognizerBlock)
 
-
-@property (nonatomic,strong) UIView *peg;
-
+- (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location))block{
+    UITapGestureRecognizer *tap = [UITapGestureRecognizer recognizerWithHandler:block];
+    [self addGestureRecognizer:tap];
+    
+    return tap;
+}
 
 @end
-

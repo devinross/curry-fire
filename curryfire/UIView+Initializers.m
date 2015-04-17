@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UIView+Initializers.m
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -29,15 +29,29 @@
  
  */
 
-#import <UIKit/UIKit.h>
-@import curryfire;
-@import curry;
+#import "UIView+Initializers.h"
 
-@interface ViewController : UIViewController
+@implementation UIView (Initializers)
 
++ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor{
+    return [[UIView alloc] initWithFrame:frame backgroundColor:backgroundColor];
+}
 
-@property (nonatomic,strong) UIView *peg;
+- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor{
+    self = [self initWithFrame:frame];
+    self.backgroundColor = backgroundColor;
+    return self;
+}
 
++ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius{
+    return [[UIView alloc] initWithFrame:frame backgroundColor:backgroundColor cornerRadius:cornerRadius];
+}
+
+- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius{
+    self = [self initWithFrame:frame];
+    self.backgroundColor = backgroundColor;
+    self.cornerRadius = cornerRadius;
+    return self;
+}
 
 @end
-

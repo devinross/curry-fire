@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  UIView+Initializers.h
+//  Created by Devin Ross on 4/17/15.
 //
 /*
  
@@ -30,14 +30,17 @@
  */
 
 #import <UIKit/UIKit.h>
-@import curryfire;
 @import curry;
 
-@interface ViewController : UIViewController
+@interface UIView (Initializers)
 
++ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
 
-@property (nonatomic,strong) UIView *peg;
+- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
+
++ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius;
+
+- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius;
 
 
 @end
-
