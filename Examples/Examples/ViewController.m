@@ -38,11 +38,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
     CGFloat cubeWidth = 90, inset = 70, dotWidth = 10;
     CGRect rect;
-    UIView *notch1,*notch2,*notch3;
-    
+    UIView *notch1, *notch2, *notch3;
 
     rect = CGRectCenteredXInRect(self.view.bounds, inset + cubeWidth/2, dotWidth, dotWidth);
     notch1 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
@@ -60,19 +58,16 @@
     self.peg = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithHex:0xf9b307] cornerRadius:8];
     [self.view addSubview:self.peg];
     
-    
 
-    NSArray *locs = @[@(notch1.center.y),@(notch2.center.y),@(notch3.center.y)];
-
+    NSArray *locs = @[@(notch1.center.y),@(notch2.center.y),@(notch3.center.y)]; //@[NSCGPoint(notch1.center),NSCGPoint(notch2.center),NSCGPoint(notch3.center)]; //
     TKMoveGestureRecognizer *gesture;
-    gesture = [TKMoveGestureRecognizer gestureWithMovableView:self.peg locations:locs moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
-        TKLog(@"%.02f,%.02f",position.y,location.y);
+    gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.peg locations:locs moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+        
+        TKLog(@"%@",NSCGPoint(position));
+        
     }];
-
     [self.view addGestureRecognizer:gesture];
 
-    
 }
-
 
 @end

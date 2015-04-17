@@ -31,6 +31,7 @@
 
 #import "TKMoveGestureRecognizer.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import "ShortHand.h"
 
 @interface TKMoveGestureRecognizer ()
 
@@ -42,41 +43,90 @@
 @implementation TKMoveGestureRecognizer
 
 #pragma mark Init & Friends
-+ (instancetype) gestureWithMovableView:(UIView*)movableView{
-    return [[TKMoveGestureRecognizer alloc] initWithMovableView:movableView];
++ (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView{
+    return [[TKMoveGestureRecognizer alloc] initWithDirection:direction movableView:movableView];
 }
-+ (instancetype) gestureWithMovableView:(UIView*)movableView locations:(NSArray*)locations{
-    return [[TKMoveGestureRecognizer alloc] initWithMovableView:movableView locations:locations];
++ (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView locations:(NSArray*)locations{
+    return [[TKMoveGestureRecognizer alloc] initWithDirection:direction movableView:movableView locations:locations];
 }
-+ (instancetype) gestureWithMovableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location ))block{
-    return [[TKMoveGestureRecognizer alloc] initWithMovableView:movableView locations:locations moveHandler:block];
++ (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location ))block{
+    return [[TKMoveGestureRecognizer alloc] initWithDirection:direction movableView:movableView locations:locations moveHandler:block];
 }
 
 
-- (instancetype) initWithMovableView:(UIView*)movableView{
-    self = [self initWithMovableView:movableView locations:nil moveHandler:nil];
+- (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView{
+    self = [self initWithDirection:direction movableView:movableView locations:nil moveHandler:nil];
     return self;
 }
-- (instancetype) initWithMovableView:(UIView *)movableView locations:(NSArray*)locations{
-    self = [self initWithMovableView:movableView locations:locations moveHandler:nil];
+- (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations{
+    self = [self initWithDirection:direction movableView:movableView locations:locations moveHandler:nil];
     return self;
 }
 - (instancetype) initWithTarget:(id)target action:(SEL)action{
     if(!(self=[super initWithTarget:target action:action])) return nil;
     
+    _direction = TKMoveGestureDirectionXY;
     [self addTarget:self action:@selector(pan:)];
     self.velocityDamping = 20;
     
     return self;
 }
-- (instancetype) initWithMovableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block{
+- (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block{
     self = [self initWithTarget:nil action:nil];
     
+    _direction = direction;
     self.locations = locations;
     self.moveHandler = block;
     self.movableView = movableView;
     
     return self;
+    
+}
+
+
+
+- (CGPoint) closestPointToLocation:(CGPoint)projectedPoint currentPoint:(CGPoint)currentPoint{
+    
+    CGFloat minDistance = 100000000;
+    CGPoint retPoint = CGPointZero;
+    
+    if(self.direction == TKMoveGestureDirectionXY){
+        for(NSValue *endValue in self.locations){
+            CGPoint locationPoint = [endValue CGPointValue];
+            CGFloat dis = CGPointGetDistance(projectedPoint, locationPoint);
+            if(dis < minDistance){
+                retPoint = locationPoint;
+                minDistance = dis;
+            }
+        }
+        return retPoint;
+    }
+
+    
+    if(self.direction == TKMoveGestureDirectionY){
+        for(NSNumber *number in self.locations){
+            CGPoint locationPoint = CGPointMake(currentPoint.x, number.doubleValue);
+            CGFloat dis = CGPointGetDistance(projectedPoint, locationPoint);
+            if(dis < minDistance){
+                retPoint = locationPoint;
+                minDistance = dis;
+            }
+        }
+        return retPoint;
+    }
+
+    
+
+    for(NSNumber *number in self.locations){
+        CGPoint locationPoint = CGPointMake(number.doubleValue,currentPoint.y);
+        CGFloat dis = CGPointGetDistance(projectedPoint, locationPoint);
+        if(dis < minDistance){
+            retPoint = locationPoint;
+            minDistance = dis;
+        }
+    }
+    return retPoint;
+    
     
 }
 
@@ -90,7 +140,12 @@
     }
     
     CGPoint p = self.startPoint;
-    p.y += [self translationInView:self.view].y;
+    
+    if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionX)
+        p.x += [self translationInView:self.view].x;
+    if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionY)
+        p.y += [self translationInView:self.view].y;
+
     
     CGPoint blockPoint = p;
     
@@ -101,39 +156,37 @@
         
     }else if(self.state == UIGestureRecognizerStateEnded || self.state == UIGestureRecognizerStateCancelled){
         
-        CGFloat minDistance = 100000000;
-        CGFloat endY = 0;
+
+
         CGFloat projectedX = p.x + velocity.x / self.velocityDamping;
         CGFloat projectedY = p.y + velocity.y / self.velocityDamping;
         CGPoint projectedPoint = CGPointMake(projectedX, projectedY);
-    
-        for(NSNumber *endValue in self.locations){
-            
-            CGPoint locationPoint = CGPointMake(p.x, endValue.doubleValue);
-            CGFloat dis = CGPointGetDistance(projectedPoint, locationPoint);
-            
-            if(dis < minDistance){
-                
-                endY = endValue.doubleValue;
-                minDistance = dis;
-                
-            }
-            
+        
+
+
+        
+        blockPoint = [self closestPointToLocation:projectedPoint currentPoint:p];
+        
+        
+        if(self.direction == TKMoveGestureDirectionX){
+            self.snapBackAnimation.fromValue = @(p.x);
+            self.snapBackAnimation.toValue = @(blockPoint.x);
+            self.snapBackAnimation.velocity = @(velocity.x);
+        }else if(self.direction == TKMoveGestureDirectionY){
+            self.snapBackAnimation.fromValue = @(p.y);
+            self.snapBackAnimation.toValue = @(blockPoint.y);
+            self.snapBackAnimation.velocity = @(velocity.y);
+        }else{
+            self.snapBackAnimation.fromValue = NSCGPoint(p);
+            self.snapBackAnimation.toValue = NSCGPoint(blockPoint);
+            self.snapBackAnimation.velocity = NSCGPoint(velocity);
         }
         
-        blockPoint = CGPointMake(p.x, endY);
-        
-        
-        self.snapBackAnimation.fromValue = @(p.y);
-        self.snapBackAnimation.toValue = @(endY);
-        self.snapBackAnimation.velocity = @(velocity.y);
+
         [panView.layer pop_addAnimation:self.snapBackAnimation forKey:@"pop"];
-        
-        
         
     }
     
-
     CGPoint minPoint = [self minimumLocation];
     CGPoint maxPoint = [self maximumLocation];
     CGPoint perc = CGPointMake((p.x - minPoint.x) / (maxPoint.x - minPoint.x), (p.y - minPoint.y) / (maxPoint.y - minPoint.y));
@@ -146,11 +199,56 @@
 
 - (CGPoint) minimumLocation{
     
+    if(self.direction == TKMoveGestureDirectionX){
+        
+        return CGPointMake([[self.locations valueForKeyPath:@"@min.self"] doubleValue], self.movableView.center.y);
+
+    }else if(self.direction == TKMoveGestureDirectionY){
+        
+        return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@min.self"] doubleValue]);
+
+
+    }
     
-    return CGPointMake(self.movableView.center.x, [[self.locations valueForKeyPath:@"@min.self"] doubleValue]);
+    
+    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
+        CGPoint p1 = [obj1 CGPointValue];
+        CGPoint p2 = [obj2 CGPointValue];
+        if (p1.x == p2.x) return p1.y < p2.y;
+        return p1.x < p2.x;
+    }];
+    
+    return [sortedArray.firstObject CGPointValue];
+        
+
+    
+    
 }
 - (CGPoint) maximumLocation{
-    return CGPointMake(self.movableView.center.x, [[self.locations valueForKeyPath:@"@max.self"] doubleValue]);
+    
+    
+    
+    if(self.direction == TKMoveGestureDirectionX){
+        
+        return CGPointMake([[self.locations valueForKeyPath:@"@max.self"] doubleValue], self.movableView.center.y);
+        
+    }else if(self.direction == TKMoveGestureDirectionY){
+        
+        return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@max.self"] doubleValue]);
+        
+        
+    }
+    
+    
+    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
+        CGPoint p1 = [obj1 CGPointValue];
+        CGPoint p2 = [obj2 CGPointValue];
+        if (p1.x == p2.x) return p1.y < p2.y;
+        return p1.x < p2.x;
+    }];
+    
+    return [sortedArray.lastObject CGPointValue];
+    
 }
 
 
@@ -178,9 +276,7 @@
 }
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
-
     [self setState:UIGestureRecognizerStateEnded];
-
 }
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesCancelled:touches withEvent:event];
@@ -189,14 +285,20 @@
 
 
 #pragma mark Properties
+- (NSString*) popAnimationPropertyName{
+    if(self.direction == TKMoveGestureDirectionX)
+        return kPOPLayerPositionX;
+    else if(self.direction == TKMoveGestureDirectionY)
+        return kPOPLayerPositionY;
+    return kPOPLayerPosition;
+}
 - (POPSpringAnimation*) snapBackAnimation{
     if(_snapBackAnimation) return _snapBackAnimation;
-    _snapBackAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    _snapBackAnimation = [POPSpringAnimation animationWithPropertyNamed:self.popAnimationPropertyName];
     _snapBackAnimation.springBounciness = 1.5;
     _snapBackAnimation.springSpeed = 2;
     _snapBackAnimation.removedOnCompletion = NO;
     return _snapBackAnimation;
 }
-
 
 @end
