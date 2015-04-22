@@ -53,7 +53,6 @@
     return [[TKMoveGestureRecognizer alloc] initWithDirection:direction movableView:movableView locations:locations moveHandler:block];
 }
 
-
 - (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView{
     self = [self initWithDirection:direction movableView:movableView locations:nil moveHandler:nil];
     return self;

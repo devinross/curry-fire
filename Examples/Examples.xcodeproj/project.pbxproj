@@ -374,6 +374,7 @@
 				2069BBCD1AE0996900F6D355 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

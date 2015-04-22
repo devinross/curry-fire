@@ -53,7 +53,6 @@
     self.frame = frame;
 }
 
-
 - (CGSize) size{
     return self.frame.size;
 }
@@ -76,14 +75,28 @@
     return CGFrameGetMinX(self);
 }
 - (void) setMinX:(CGFloat)minX{
-    self.center = CGPointMake(self.center.x-CGFrameGetWidth(self)/2, self.center.y);
+    self.center = CGPointMake(minX+CGFrameGetWidth(self)/2, self.center.y);
 }
 
 - (CGFloat) minY{
     return CGFrameGetMinY(self);
 }
 - (void) setMinY:(CGFloat)minY{
-    self.center = CGPointMake(self.center.x, self.center.y-CGFrameGetHeight(self)/2);
+    self.center = CGPointMake(self.center.x, minY+CGFrameGetHeight(self)/2);
+}
+
+- (CGFloat) maxX{
+    return CGFrameGetMaxX(self);
+}
+- (void) setMaxX:(CGFloat)maxX{
+    self.center = CGPointMake(maxX-CGFrameGetWidth(self)/2, self.center.y);
+}
+
+- (CGFloat) maxY{
+    return CGFrameGetMaxY(self);
+}
+- (void) setMaxY:(CGFloat)maxY{
+    self.center = CGPointMake(self.center.x, maxY-CGFrameGetHeight(self)/2);
 }
 
 - (CGFloat) originX{

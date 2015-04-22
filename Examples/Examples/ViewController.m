@@ -38,36 +38,84 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    self.toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.toggleButton.frame = CGRectMake(0, 0, 80, 50);
+    [self.toggleButton addTarget:self action:@selector(toggle:) forControlEvents:UIControlEventTouchUpInside];
+    self.toggleButton.tintColor = [UIColor blueColor];
+    [self.toggleButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.view addSubview:self.toggleButton];
+    
     CGFloat cubeWidth = 90, inset = 70, dotWidth = 10;
     CGRect rect;
-    UIView *notch1, *notch2, *notch3;
+    UIView *peg1, *peg2, *peg3;
 
     rect = CGRectCenteredXInRect(self.view.bounds, inset + cubeWidth/2, dotWidth, dotWidth);
-    notch1 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
-    [self.view addSubview:notch1];
+    peg1 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
+    [self.view addSubview:peg1];
 
     rect = CGRectCenteredInRect(self.view.bounds, dotWidth, dotWidth);
-    notch2 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
-    [self.view addSubview:notch2];
+    peg2 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
+    [self.view addSubview:peg2];
 
     rect = CGRectCenteredXInRect(self.view.bounds, self.view.height  - inset - cubeWidth/2 - dotWidth/2, dotWidth, dotWidth);
-    notch3 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
-    [self.view addSubview:notch3];
+    peg3 = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithWhite:0.9 alpha:1] cornerRadius:dotWidth / 2];
+    [self.view addSubview:peg3];
 
     rect = CGRectCenteredXInRect(self.view.bounds, inset, cubeWidth, cubeWidth);
-    self.peg = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithHex:0xf9b307] cornerRadius:8];
-    [self.view addSubview:self.peg];
+    self.block = [UIView viewWithFrame:rect backgroundColor:[UIColor colorWithHex:0xf9b307] cornerRadius:8];
+    [self.view addSubview:self.block];
     
+    self.pegs = @[peg1,peg2,peg3];
 
-    NSArray *locs = @[@(notch1.center.y),@(notch2.center.y),@(notch3.center.y)]; //@[NSCGPoint(notch1.center),NSCGPoint(notch2.center),NSCGPoint(notch3.center)]; //
+    NSArray *locs = @[@(peg1.center.y),@(peg2.center.y),@(peg3.center.y)];
     TKMoveGestureRecognizer *gesture;
-    gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.peg locations:locs moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+    gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locs moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
         
         TKLog(@"%@",NSCGPoint(position));
         
     }];
-    [self.view addGestureRecognizer:gesture];
+    [self.block addGestureRecognizer:gesture];
+    [self.toggleButton setTitle:NSLocalizedString(@"Y", @"") forState:UIControlStateNormal];
 
+}
+
+- (void) toggle:(UIButton*)sender{
+    
+    [self.block removeGestureRecognizer:self.block.gestureRecognizers.firstObject];
+    
+    if(sender.tag == 0){
+        
+        NSMutableArray *locations = [NSMutableArray arrayWithCapacity:self.pegs.count];
+        for(UIView *peg in self.pegs)
+            [locations addObject:NSCGPoint(peg.center)];
+        
+        TKMoveGestureRecognizer *gesture;
+        gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionXY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+            TKLog(@"%@",NSCGPoint(position));
+        }];
+        [self.block addGestureRecognizer:gesture];
+        
+        sender.tag = 1;
+        [self.toggleButton setTitle:NSLocalizedString(@"XY", @"") forState:UIControlStateNormal];
+
+    }else{
+        
+        NSMutableArray *locations = [NSMutableArray arrayWithCapacity:self.pegs.count];
+        for(UIView *peg in self.pegs)
+            [locations addObject:@(peg.center.y)];
+        
+        TKMoveGestureRecognizer *gesture;
+        gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+            TKLog(@"%@",NSCGPoint(position));
+        }];
+        [self.block addGestureRecognizer:gesture];
+        sender.tag = 0;
+        [self.toggleButton setTitle:NSLocalizedString(@"Y", @"") forState:UIControlStateNormal];
+
+    }
+    
+    
 }
 
 @end

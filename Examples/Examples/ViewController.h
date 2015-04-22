@@ -35,7 +35,9 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic,strong) UIView *peg;
+@property (nonatomic,strong) NSArray *pegs;
+@property (nonatomic,strong) UIView *block;
+@property (nonatomic,strong) UIButton *toggleButton;
 
 @end
 

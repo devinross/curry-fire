@@ -1,10 +1,10 @@
 //
-//  UIView+Postioning.h
-//  Created by Devin Ross on 4/17/15.
+//  UIView+Material.h
+//  Created by Devin Ross on 4/10/15.
 //
 /*
  
- curryfire || https://github.com/devinross/curry-fire
+ curry || https://github.com/devinross/curry
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -30,25 +30,15 @@
  */
 
 @import UIKit;
+@import QuartzCore;
 
-@interface UIView (Positioning)
+@interface UIView (Material)
 
-@property (nonatomic,assign) CGFloat width;
-@property (nonatomic,assign) CGFloat height;
+#pragma mark Material Like Animations
 
-@property (nonatomic,assign) CGSize size;
-@property (nonatomic,assign) CGPoint origin;
+- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
+- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
 
-@property (nonatomic,assign) CGFloat minX;
-@property (nonatomic,assign) CGFloat minY;
-
-@property (nonatomic,assign) CGFloat maxX;
-@property (nonatomic,assign) CGFloat maxY;
-
-@property (nonatomic,assign) CGFloat originX;
-@property (nonatomic,assign) CGFloat originY;
-
-@property (nonatomic,assign) CGFloat centerX;
-@property (nonatomic,assign) CGFloat centerY;
 
 @end

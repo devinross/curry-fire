@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20691B601AE7F8D30045627D /* UIView+Material.h in Headers */ = {isa = PBXBuildFile; fileRef = 20691B5E1AE7F8D30045627D /* UIView+Material.h */; };
+		20691B611AE7F8D30045627D /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B5F1AE7F8D30045627D /* UIView+Material.m */; };
 		2069BB661AE095CA00F6D355 /* curryfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BB651AE095CA00F6D355 /* curryfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2069BB9D1AE098B200F6D355 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BB871AE096C700F6D355 /* curry.framework */; };
 		2069BB9E1AE098B200F6D355 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BB981AE0989300F6D355 /* pop.framework */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20691B5E1AE7F8D30045627D /* UIView+Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Material.h"; sourceTree = "<group>"; };
+		20691B5F1AE7F8D30045627D /* UIView+Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Material.m"; sourceTree = "<group>"; };
 		2069BB601AE095CA00F6D355 /* curryfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = curryfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2069BB641AE095CA00F6D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2069BB651AE095CA00F6D355 /* curryfire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = curryfire.h; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				2069BC5D1AE14C3E00F6D355 /* ShortHand.h */,
 				2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */,
 				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
+				20691B5E1AE7F8D30045627D /* UIView+Material.h */,
+				20691B5F1AE7F8D30045627D /* UIView+Material.m */,
 				2069BC6D1AE1634100F6D355 /* Categories */,
 			);
 			name = curryfire;
@@ -221,6 +227,7 @@
 				2069BC261AE09DFA00F6D355 /* Header.h in Headers */,
 				2069BC5B1AE0CCDD00F6D355 /* UIView+Positioning.h in Headers */,
 				2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */,
+				20691B601AE7F8D30045627D /* UIView+Material.h in Headers */,
 				2069BC651AE14F6E00F6D355 /* UIView+Initializers.h in Headers */,
 				2069BC611AE14EC800F6D355 /* UILabel+Initializers.h in Headers */,
 				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,
@@ -360,6 +367,7 @@
 				2069BC661AE14F6E00F6D355 /* UIView+Initializers.m in Sources */,
 				2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */,
 				2069BC621AE14EC800F6D355 /* UILabel+Initializers.m in Sources */,
+				20691B611AE7F8D30045627D /* UIView+Material.m in Sources */,
 				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
