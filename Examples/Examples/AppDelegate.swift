@@ -35,16 +35,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var viewController: ViewController?
+    var navigationController: UINavigationController?
+    var viewController: RootViewController?
+    var dashViewController: DashboardViewController?
 
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        viewController = ViewController()
+        viewController = RootViewController()
+        dashViewController = DashboardViewController()
 
+        navigationController = UINavigationController(rootViewController: dashViewController!)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.windowLevel = UIWindowLevelNormal
@@ -54,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarHidden = true
 
         
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true

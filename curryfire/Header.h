@@ -38,12 +38,23 @@
 #import "ShortHand.h"
 
 #import "UIView+Positioning.h"
+#import "UIView+Material.h"
 
 #import "UIView+Initializers.h"
 #import "UILabel+Initializers.h"
 
+
+#import "UIView+TwelvePrinciples.h"
+
+#import "UIView+Confetti.h"
+
+
 #import "TKMoveGestureRecognizer.h"
 
+
 #import "UIView+GestureRecognizerBlock.h"
+#import "TKNavigationTransistionController.h"
+
+#import "CustomPresentationViewController.h"
 
 #endif

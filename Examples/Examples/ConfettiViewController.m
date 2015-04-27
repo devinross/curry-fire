@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  ConfettiViewController.m
+//  Created by Devin Ross on 4/22/15.
 //
 /*
  
@@ -29,16 +29,33 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
+#import "ConfettiViewController.h"
 
-@interface UIView (Material)
+@implementation ConfettiViewController
 
-#pragma mark Material Like Animations
+- (void) loadView{
+    [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    CGFloat width = CGFrameGetWidth(self.view) / 3;
+    CGFloat height = CGFrameGetHeight(self.view) / 6;
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+    
+    for(NSInteger i=0; i<18; i++){
+        
+        UIView *aView = [UIView viewWithFrame:CGRectMake((i % 3)*width, (i / 3)*height, width, height) backgroundColor:[UIColor randomColor]];
+        [self.view addSubview:aView];
+        
+        UIView *blockView = aView;
+        [aView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+            [self.view bringSubviewToFront:blockView];
+            [blockView rainConfetti];
+        }];
+    }
+    
 
+
+}
 
 @end

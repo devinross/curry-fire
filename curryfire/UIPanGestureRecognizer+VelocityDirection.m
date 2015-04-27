@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  UIPanGestureRecognizer+VelocityDirection.m
+//  Created by Devin Ross on 4/23/15.
 //
 /*
  
@@ -29,16 +29,38 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
+#import "UIPanGestureRecognizer+VelocityDirection.h"
 
-@interface UIView (Material)
+@implementation UIPanGestureRecognizer (VelocityDirection)
 
-#pragma mark Material Like Animations
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+- (BOOL) velocityIsVertical{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.y) > fabs(velocity.x);
+}
+- (BOOL) velocityIsHorizontal{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.x) > fabs(velocity.y);
+}
+
+- (BOOL) velocityIsUp{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.y) > fabs(velocity.x) && velocity.y < 0;
+}
+- (BOOL) velocityIsDown{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.y) > fabs(velocity.x) && velocity.y > 0;
+}
+- (BOOL) velocityIsLeft{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.x) > fabs(velocity.y) && velocity.x < 0;
+}
+- (BOOL) velocityIsRight{
+    CGPoint velocity = [self velocityInView:self.view];
+    return fabs(velocity.x) > fabs(velocity.y) && velocity.x > 0;
+}
+
+
 
 
 @end

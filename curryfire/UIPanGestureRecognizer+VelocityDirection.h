@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  UIPanGestureRecognizer+VelocityDirection.h
+//  Created by Devin Ross on 4/23/15.
 //
 /*
  
@@ -30,15 +30,17 @@
  */
 
 @import UIKit;
-@import QuartzCore;
 
-@interface UIView (Material)
+@interface UIPanGestureRecognizer (VelocityDirection)
 
-#pragma mark Material Like Animations
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+- (BOOL) velocityIsUp;
+- (BOOL) velocityIsDown;
+- (BOOL) velocityIsLeft;
+- (BOOL) velocityIsRight;
+
+- (BOOL) velocityIsVertical;
+- (BOOL) velocityIsHorizontal;
 
 
 @end

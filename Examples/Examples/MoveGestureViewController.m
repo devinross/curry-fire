@@ -29,10 +29,10 @@
  
  */
 
-#import "ViewController.h"
+#import "MoveGestureViewController.h"
 
 
-@implementation ViewController
+@implementation MoveGestureViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +40,7 @@
     
     
     self.toggleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.toggleButton.frame = CGRectMake(0, 0, 80, 50);
+    self.toggleButton.frame = CGRectMake(0, self.view.height-50, 80, 50);
     [self.toggleButton addTarget:self action:@selector(toggle:) forControlEvents:UIControlEventTouchUpInside];
     self.toggleButton.tintColor = [UIColor blueColor];
     [self.toggleButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -76,7 +76,7 @@
         
     }];
     [self.block addGestureRecognizer:gesture];
-    [self.toggleButton setTitle:NSLocalizedString(@"Y", @"") forState:UIControlStateNormal];
+    [self.toggleButton setTitle:NSLocalizedString(@"Axis: Y", @"") forState:UIControlStateNormal];
 
 }
 
@@ -97,7 +97,7 @@
         [self.block addGestureRecognizer:gesture];
         
         sender.tag = 1;
-        [self.toggleButton setTitle:NSLocalizedString(@"XY", @"") forState:UIControlStateNormal];
+        [self.toggleButton setTitle:NSLocalizedString(@"Axis: XY", @"") forState:UIControlStateNormal];
 
     }else{
         
@@ -111,7 +111,7 @@
         }];
         [self.block addGestureRecognizer:gesture];
         sender.tag = 0;
-        [self.toggleButton setTitle:NSLocalizedString(@"Y", @"") forState:UIControlStateNormal];
+        [self.toggleButton setTitle:NSLocalizedString(@"Axis: Y", @"") forState:UIControlStateNormal];
 
     }
     

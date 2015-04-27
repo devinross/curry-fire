@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  ViewController.h
+//  Created by Devin Ross on 4/16/15.
 //
 /*
  
@@ -30,15 +30,14 @@
  */
 
 @import UIKit;
-@import QuartzCore;
+@import curry;
+@import curryfire;
 
-@interface UIView (Material)
+@interface MoveGestureViewController : UIViewController
 
-#pragma mark Material Like Animations
-
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-
+@property (nonatomic,strong) NSArray *pegs;
+@property (nonatomic,strong) UIView *block;
+@property (nonatomic,strong) UIButton *toggleButton;
 
 @end
+

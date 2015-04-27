@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2069BBB41AE0996800F6D355 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* ViewController.m */; };
+		2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */; };
+		2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF971AE94E610097E3AE /* RunForrestViewController.m */; };
+		2067AF9C1AE954C70097E3AE /* HopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9B1AE954C70097E3AE /* HopViewController.m */; };
+		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
+		2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFB61AE997AE0097E3AE /* DashboardViewController.m */; };
+		2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFBA1AE998940097E3AE /* CartViewController.m */; };
+		20691B671AE7F9A50045627D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B661AE7F9A50045627D /* RootViewController.m */; };
+		20691B711AE7FC450045627D /* MaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B701AE7FC450045627D /* MaterialViewController.m */; };
+		20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */; };
+		20691B8B1AE8185C0045627D /* CustomTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */; };
+		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BBD91AE099C200F6D355 /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
@@ -17,6 +27,9 @@
 		2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2069BC4D1AE0B6A700F6D355 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC411AE0B68C00F6D355 /* curry.framework */; };
 		2069BC4E1AE0B6A700F6D355 /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC411AE0B68C00F6D355 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
+		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
+		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,16 +66,42 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimationViewController.h; sourceTree = "<group>"; };
+		2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimationViewController.m; sourceTree = "<group>"; };
+		2067AF961AE94E610097E3AE /* RunForrestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunForrestViewController.h; sourceTree = "<group>"; };
+		2067AF971AE94E610097E3AE /* RunForrestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunForrestViewController.m; sourceTree = "<group>"; };
+		2067AF9A1AE954C70097E3AE /* HopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HopViewController.h; sourceTree = "<group>"; };
+		2067AF9B1AE954C70097E3AE /* HopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HopViewController.m; sourceTree = "<group>"; };
+		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
+		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
+		2067AFB51AE997AE0097E3AE /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		2067AFB61AE997AE0097E3AE /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		2067AFB91AE998940097E3AE /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		2067AFBA1AE998940097E3AE /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		20691B651AE7F9A50045627D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		20691B661AE7F9A50045627D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		20691B6F1AE7FC450045627D /* MaterialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewController.h; sourceTree = "<group>"; };
+		20691B701AE7FC450045627D /* MaterialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewController.m; sourceTree = "<group>"; };
+		20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewSlideUpViewController.h; sourceTree = "<group>"; };
+		20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewSlideUpViewController.m; sourceTree = "<group>"; };
+		20691B891AE8185C0045627D /* CustomTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransitionViewController.h; sourceTree = "<group>"; };
+		20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionViewController.m; sourceTree = "<group>"; };
 		2069BBA81AE0996800F6D355 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2069BBAC1AE0996800F6D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2069BBB21AE0996800F6D355 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2069BBB31AE0996800F6D355 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoveGestureViewController.h; sourceTree = "<group>"; };
+		2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveGestureViewController.m; sourceTree = "<group>"; };
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
 		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2069BC411AE0B68C00F6D355 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
 		2069BC441AE0B68C00F6D355 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
+		208E8A391AE86B69004E63FB /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
+		208E8A3A1AE86B69004E63FB /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
+		208E8A431AE94210004E63FB /* WiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiggleViewController.h; sourceTree = "<group>"; };
+		208E8A441AE94210004E63FB /* WiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiggleViewController.m; sourceTree = "<group>"; };
+		20AF03361AE8534F0065E3FF /* ConfettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiViewController.h; sourceTree = "<group>"; };
+		20AF03371AE8534F0065E3FF /* ConfettiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +119,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2067AFB51AE997AE0097E3AE /* DashboardViewController.h */,
+				2067AFB61AE997AE0097E3AE /* DashboardViewController.m */,
+				2067AFB91AE998940097E3AE /* CartViewController.h */,
+				2067AFBA1AE998940097E3AE /* CartViewController.m */,
+			);
+			name = FullCustomizeNavigation;
+			sourceTree = "<group>";
+		};
 		2069BB9F1AE0996800F6D355 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +152,31 @@
 			isa = PBXGroup;
 			children = (
 				2069BC331AE0A2B000F6D355 /* AppDelegate.swift */,
-				2069BBB21AE0996800F6D355 /* ViewController.h */,
-				2069BBB31AE0996800F6D355 /* ViewController.m */,
+				20691B651AE7F9A50045627D /* RootViewController.h */,
+				20691B661AE7F9A50045627D /* RootViewController.m */,
+				2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */,
+				2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */,
+				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
+				20691B701AE7FC450045627D /* MaterialViewController.m */,
+				2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */,
+				2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */,
+				20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */,
+				20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */,
+				20691B891AE8185C0045627D /* CustomTransitionViewController.h */,
+				20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */,
+				20AF03361AE8534F0065E3FF /* ConfettiViewController.h */,
+				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
+				208E8A431AE94210004E63FB /* WiggleViewController.h */,
+				208E8A441AE94210004E63FB /* WiggleViewController.m */,
+				208E8A391AE86B69004E63FB /* ZoomViewController.h */,
+				208E8A3A1AE86B69004E63FB /* ZoomViewController.m */,
+				2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */,
+				2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */,
+				2067AF961AE94E610097E3AE /* RunForrestViewController.h */,
+				2067AF971AE94E610097E3AE /* RunForrestViewController.m */,
+				2067AF9A1AE954C70097E3AE /* HopViewController.h */,
+				2067AF9B1AE954C70097E3AE /* HopViewController.m */,
+				2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */,
 				2069BBAB1AE0996800F6D355 /* Supporting Files */,
 			);
 			path = Examples;
@@ -222,8 +295,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */,
+				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
+				20691B8B1AE8185C0045627D /* CustomTransitionViewController.m in Sources */,
+				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
+				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
+				208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */,
+				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
+				2067AF9C1AE954C70097E3AE /* HopViewController.m in Sources */,
+				20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */,
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
-				2069BBB41AE0996800F6D355 /* ViewController.m in Sources */,
+				208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */,
+				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
+				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
+				2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */,
+				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

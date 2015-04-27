@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  InteractiveTransitionViewController.h
+//  Created by Devin Ross on 4/23/15.
 //
 /*
  
@@ -30,15 +30,16 @@
  */
 
 @import UIKit;
-@import QuartzCore;
+@import curryfire;
 
-@interface UIView (Material)
+@interface NavigationPushPopTransitionViewController : UIViewController
 
-#pragma mark Material Like Animations
+@end
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
 
+@interface ZoomBlockAnimator : TKNavigationControllerTransitionAnimator
+
+@property (nonatomic,strong) UIView *selectedTile;
+@property (nonatomic,assign) CGRect originalTileFrame;
 
 @end

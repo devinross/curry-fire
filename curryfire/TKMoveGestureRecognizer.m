@@ -250,6 +250,36 @@
     
 }
 
+- (void) moveToPoint:(CGPoint)point{
+    
+    UIView *panView = self.movableView;
+    CGPoint blockPoint = panView.center;
+    
+    if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionX)
+        blockPoint.x = point.x;
+    if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionY)
+        blockPoint.y = point.y;
+    
+    if(self.direction == TKMoveGestureDirectionX){
+        self.snapBackAnimation.toValue = @(blockPoint.x);
+    }else if(self.direction == TKMoveGestureDirectionY){
+        self.snapBackAnimation.toValue = @(blockPoint.y);
+    }else{
+        self.snapBackAnimation.toValue = NSCGPoint(blockPoint);
+    }
+    
+    [panView.layer pop_addAnimation:self.snapBackAnimation forKey:@"pop"];
+    
+    
+    CGPoint minPoint = [self minimumLocation];
+    CGPoint maxPoint = [self maximumLocation];
+    CGPoint perc = CGPointMake((blockPoint.x - minPoint.x) / (maxPoint.x - minPoint.x), (blockPoint.y - minPoint.y) / (maxPoint.y - minPoint.y));
+    
+    if(self.moveHandler)
+        self.moveHandler(nil,perc,blockPoint);
+
+}
+
 
 #pragma mark UITouchMoved
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

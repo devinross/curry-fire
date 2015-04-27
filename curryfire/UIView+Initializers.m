@@ -33,6 +33,15 @@
 
 @implementation UIView (Initializers)
 
++ (instancetype) viewWithFrame:(CGRect)frame{
+    return [[[self class] alloc] initWithFrame:frame];
+}
+
+
+
+
+
+
 + (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor{
     return [[[self class] alloc] initWithFrame:frame backgroundColor:backgroundColor];
 }

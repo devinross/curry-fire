@@ -35,6 +35,10 @@
 @implementation UIView (Positioning)
 
 
+- (CGPoint) middle{
+    return CGPointMake(CGFrameGetWidth(self)/2, CGFrameGetHeight(self)/2);
+}
+
 - (CGFloat) width{
     return CGFrameGetWidth(self);
 }
@@ -83,6 +87,20 @@
 }
 - (void) setMinY:(CGFloat)minY{
     self.center = CGPointMake(self.center.x, minY+CGFrameGetHeight(self)/2);
+}
+
+- (CGFloat) midX{
+    return CGFrameGetMidX(self);
+}
+- (void) setMidX:(CGFloat)midX{
+    self.center = CGPointMake(midX, self.center.y);
+}
+
+- (CGFloat) midY{
+    return CGFrameGetMidY(self);
+}
+- (void) setMidY:(CGFloat)midY{
+    self.center = CGPointMake(self.center.x, midY);
 }
 
 - (CGFloat) maxX{

@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  WiggleViewController.m
+//  Created by Devin Ross on 4/23/15.
 //
 /*
  
@@ -29,16 +29,22 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
+#import "WiggleViewController.h"
 
-@interface UIView (Material)
+@implementation WiggleViewController
 
-#pragma mark Material Like Animations
+- (void) loadView{
+    [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.block = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+    self.block.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    [self.view addSubview:self.block];
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-
+}
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.block wiggle];
+}
 
 @end

@@ -33,6 +33,8 @@
 
 @interface UIView (Positioning)
 
+@property (nonatomic,readonly) CGPoint middle;
+
 @property (nonatomic,assign) CGFloat width;
 @property (nonatomic,assign) CGFloat height;
 

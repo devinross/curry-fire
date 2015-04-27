@@ -4,7 +4,7 @@
 //
 /*
  
- curry || https://github.com/devinross/curry
+ curryfire || https://github.com/devinross/curry-fire
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -62,7 +62,8 @@
     
     UIImageView *snapshotView = [[UIImageView alloc] initWithFrame:subview.frame];
     snapshotView.image = snapshotImage;
-    [self addSubview:snapshotView];
+    [self insertSubview:snapshotView aboveSubview:subview];
+    
     
     if(changes) changes();
     

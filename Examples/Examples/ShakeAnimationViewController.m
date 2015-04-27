@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  ShakeAnimationViewController.m
+//  Created by Devin Ross on 4/23/15.
 //
 /*
  
@@ -29,16 +29,30 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
+#import "ShakeAnimationViewController.h"
 
-@interface UIView (Material)
 
-#pragma mark Material Like Animations
+@implementation ShakeAnimationViewController
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+- (void) loadView{
+    [super loadView];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
+    UIView *cardView = [UIView viewWithFrame:CGRectInset(self.view.bounds, 30, 50) backgroundColor:[UIColor whiteColor] cornerRadius:10];
+    cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    cardView.layer.shouldRasterize = YES;
+    [self.view addSubview:cardView];
+    
+    UIView *move = cardView;
+    [cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+        
+        [move shakeAnimationWithCompletion:nil];
+        
+        
+
+    }];
+    
+}
 
 @end

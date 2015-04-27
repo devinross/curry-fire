@@ -34,6 +34,6 @@
 
 @interface UIView (GestureRecognizerBlock)
 
-- (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location))block;
+- (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender))block;
 
 @end

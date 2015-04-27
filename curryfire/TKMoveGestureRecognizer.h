@@ -60,4 +60,8 @@ typedef enum {
 @property (nonatomic, strong) POPSpringAnimation *snapBackAnimation;
 @property (nonatomic, assign) CGFloat velocityDamping;
 
+
+- (void) moveToPoint:(CGPoint)point;
+
+
 @end

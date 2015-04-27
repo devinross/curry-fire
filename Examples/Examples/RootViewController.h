@@ -1,6 +1,6 @@
 //
-//  ViewController.h
-//  Created by Devin Ross on 4/16/15.
+//  RootViewController.h
+//  Created by Devin Ross on 4/22/15.
 //
 /*
  
@@ -29,15 +29,11 @@
  
  */
 
-@import UIKit;
-@import curryfire;
 @import curry;
+@import curryfire;
 
-@interface ViewController : UIViewController
+@interface RootViewController : TKTableViewController
 
-@property (nonatomic,strong) NSArray *pegs;
-@property (nonatomic,strong) UIView *block;
-@property (nonatomic,strong) UIButton *toggleButton;
+@property (nonatomic,strong) NSArray *items;
 
 @end
-

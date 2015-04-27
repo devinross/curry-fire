@@ -1,6 +1,6 @@
 //
-//  UIView+Material.h
-//  Created by Devin Ross on 4/10/15.
+//  CustomTransitionViewController.h
+//  Created by Devin Ross on 4/22/15.
 //
 /*
  
@@ -30,15 +30,32 @@
  */
 
 @import UIKit;
-@import QuartzCore;
+@import curry;
+@import curryfire;
 
-@interface UIView (Material)
+@interface CustomTransitionViewController : UIViewController
 
-#pragma mark Material Like Animations
+@property (nonatomic,strong) UIViewController *cardViewController;
 
-- (void) fireMaterialTouchDiskAtPoint:(CGPoint)point;
-- (void) materialTransitionWithSubview:(UIView*)subview atPoint:(CGPoint)point changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
-- (void) materialTransitionWithSubview:(UIView*)subview expandCircle:(BOOL)expandCircle atPoint:(CGPoint)point duration:(CFTimeInterval)duration changes:(void (^)(void))changes completion:(void (^)(BOOL finished))completion;
+@end
+
+
+
+@interface TKCustomTransitionViewController : UIViewController <UIViewControllerAnimatedTransitioning,UIViewControllerInteractiveTransitioning,UIViewControllerTransitioningDelegate>
+
+@property (nonatomic,assign) BOOL shouldBeInteractive;
+@property (nonatomic,strong) id <UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic,strong) TKMoveGestureRecognizer *moveGesture;
+@property (nonatomic,strong) UIViewController *parent;
+
+
+@property (nonatomic,copy) void (^block)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location );
+
+- (void) show;
+- (void) hide;
+
+@property (nonatomic,assign) CGPoint startPoint;
+@property (nonatomic,assign) CGPoint endPoint;
 
 
 @end

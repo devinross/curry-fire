@@ -34,10 +34,11 @@
 
 @interface UIView (Initializers)
 
++ (instancetype) viewWithFrame:(CGRect)frame;
+
 + (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
 
 - (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
-
 
 + (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius;
 
