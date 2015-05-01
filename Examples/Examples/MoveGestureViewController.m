@@ -67,16 +67,8 @@
     [self.view addSubview:self.block];
     
     self.pegs = @[peg1,peg2,peg3];
-
-    NSArray *locs = @[@(peg1.center.y),@(peg2.center.y),@(peg3.center.y)];
-    TKMoveGestureRecognizer *gesture;
-    gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locs moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
-        
-        TKLog(@"%@",NSCGPoint(position));
-        
-    }];
-    [self.block addGestureRecognizer:gesture];
-    [self.toggleButton setTitle:NSLocalizedString(@"Axis: Y", @"") forState:UIControlStateNormal];
+    
+    [self toggle:nil];
 
 }
 
@@ -84,7 +76,7 @@
     
     [self.block removeGestureRecognizer:self.block.gestureRecognizers.firstObject];
     
-    if(sender.tag == 0){
+    if(sender.tag == 1){
         
         NSMutableArray *locations = [NSMutableArray arrayWithCapacity:self.pegs.count];
         for(UIView *peg in self.pegs)
@@ -92,11 +84,11 @@
         
         TKMoveGestureRecognizer *gesture;
         gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionXY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
-            TKLog(@"%@",NSCGPoint(position));
+            TKLog(@"%f",position.y);
         }];
         [self.block addGestureRecognizer:gesture];
         
-        sender.tag = 1;
+        sender.tag = 0;
         [self.toggleButton setTitle:NSLocalizedString(@"Axis: XY", @"") forState:UIControlStateNormal];
 
     }else{
@@ -107,10 +99,10 @@
         
         TKMoveGestureRecognizer *gesture;
         gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
-            TKLog(@"%@",NSCGPoint(position));
+            TKLog(@"%f",position.y);
         }];
         [self.block addGestureRecognizer:gesture];
-        sender.tag = 0;
+        sender.tag = 1;
         [self.toggleButton setTitle:NSLocalizedString(@"Axis: Y", @"") forState:UIControlStateNormal];
 
     }

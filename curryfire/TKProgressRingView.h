@@ -1,6 +1,6 @@
 //
-//  UIView+Initializers.h
-//  Created by Devin Ross on 4/17/15.
+//  TKProgressRingView.h
+//  Created by Devin Ross on 1/12/15.
 //
 /*
  
@@ -30,24 +30,25 @@
  */
 
 @import UIKit;
-@import curry;
 
-@interface UIView (Initializers)
+@interface TKProgressRingView : UIView
 
-+ (instancetype) viewWithFrame:(CGRect)frame;
+- (instancetype) initWithFrame:(CGRect)frame radius:(CGFloat)radius strokeWidth:(CGFloat)strokeWidth;
 
-+ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
+@property (nonatomic,assign) CGFloat progress;
+@property (nonatomic,assign) CGFloat radius;
+@property (nonatomic,assign) CGFloat strokeWidth;
 
-- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor;
+@property (nonatomic,strong) UIImage *progressImage;
+@property (nonatomic,strong) UIColor *progressColor;
 
-+ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius;
+- (void) setProgress:(CGFloat)progress animated:(BOOL)animated;
+- (void) setProgress:(CGFloat)progress duration:(CGFloat)duration;
 
-- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius;
 
-
-+ (instancetype) viewWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor borderWidth:(CGFloat)borderWidth;
-
-- (instancetype) initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor cornerRadius:(CGFloat)cornerRadius borderColor:(UIColor*)borderColor borderWidth:(CGFloat)borderWidth;
-
+@property (nonatomic,strong) CAShapeLayer *circleLayer;
+@property (nonatomic,strong) CAShapeLayer *fullCircleLayer;
+@property (nonatomic,strong) UIImageView *baseGradientView;
+@property (nonatomic,strong) UIImageView *progressGradientView;
 
 @end

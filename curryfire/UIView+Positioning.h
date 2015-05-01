@@ -33,6 +33,15 @@
 
 @interface UIView (Positioning)
 
+
+- (CGPoint) convertCenterToView:(UIView*)view;
+- (CGRect) convertFrameToView:(UIView*)view;
+
+- (void) moveToView:(UIView*)view;
+- (void) moveToBackOfView:(UIView*)view;
+
+
+
 @property (nonatomic,readonly) CGPoint middle;
 
 @property (nonatomic,assign) CGFloat width;

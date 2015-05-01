@@ -1,6 +1,6 @@
 //
-//  ShortHand.h
-//  Created by Devin Ross on 4/17/15.
+//  TKAnimatedCounterLabel.h
+//  Created by Devin Ross on 1/14/15.
 //
 /*
  
@@ -29,31 +29,27 @@
  
  */
 
-
-
-#ifndef curryfire_ShortHand_h
-#define curryfire_ShortHand_h
-
 @import UIKit;
-@import Foundation;
+
+@interface TKAnimatedCounterLabel : UIView
+
+@property (nonatomic,strong) NSNumberFormatter *numberFormatter;
+
+- (void) setNumber:(NSNumber *)number;
+- (void) setNumber:(NSNumber *)number animated:(BOOL)animated;
+- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration;
+- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration completion:(void (^)(BOOL finished))completion;
+
+@property (nonatomic,copy)   NSString *text;
+
+@property (nonatomic,retain) UIFont *font;
+@property (nonatomic,retain) UIColor *textColor;
+@property (nonatomic,assign) NSLineBreakMode lineBreakMode;
+@property (nonatomic,assign) CGFloat kerning;
+@property (nonatomic,assign) CGFloat characterPadding;
+@property (nonatomic,assign) NSTextAlignment textAlignment;
+
+@property (nonatomic,copy) NSString *modelCharacter;
 
 
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
-    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
-}
-
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
-    return [NSValue valueWithCGPoint:point];
-}
-
-
-
-
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){
-    return [NSValue valueWithCATransform3D:transform];
-}
-
-#endif
+@end

@@ -1,6 +1,6 @@
 //
-//  ShortHand.h
-//  Created by Devin Ross on 4/17/15.
+//  CounterViewController.m
+//  Created by Devin Ross on 4/30/15.
 //
 /*
  
@@ -29,31 +29,30 @@
  
  */
 
+#import "CounterViewController.h"
 
 
-#ifndef curryfire_ShortHand_h
-#define curryfire_ShortHand_h
 
-@import UIKit;
-@import Foundation;
+@implementation CounterViewController
 
-
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
-    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
+- (void) loadView{
+    [super loadView];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.counterLabel = [[TKAnimatedCounterLabel alloc] initWithFrame:self.view.bounds];
+    self.counterLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.counterLabel.font = [UIFont helveticaNeueUltraLightWithSize:100];
+    [self.view addSubview:self.counterLabel];
+    [self.counterLabel setNumber:@0];
+    
+    
 }
 
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
-    return [NSValue valueWithCGPoint:point];
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self.counterLabel setNumber:@99 animated:YES];
 }
 
-
-
-
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){
-    return [NSValue valueWithCATransform3D:transform];
-}
-
-#endif
+@end

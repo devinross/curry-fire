@@ -50,15 +50,15 @@ typedef enum {
 - (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView locations:(NSArray*)locations;
 - (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
 
-@property (nonatomic, copy, setter = setMoveHandler:) void (^moveHandler)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location);
+@property (nonatomic,copy,setter=setMoveHandler:) void (^moveHandler)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location);
 
 @property (nonatomic,readonly) TKMoveGestureDirection direction;
 
 @property (nonatomic,readonly) BOOL moving;
-@property (nonatomic, strong) UIView *movableView;
-@property (nonatomic, strong) NSArray *locations;
-@property (nonatomic, strong) POPSpringAnimation *snapBackAnimation;
-@property (nonatomic, assign) CGFloat velocityDamping;
+@property (nonatomic,strong) UIView *movableView;
+@property (nonatomic,strong) NSArray *locations;
+@property (nonatomic,strong) POPSpringAnimation *snapBackAnimation;
+@property (nonatomic,assign) CGFloat velocityDamping;
 
 
 - (void) moveToPoint:(CGPoint)point;

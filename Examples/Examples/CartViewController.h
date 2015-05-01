@@ -11,7 +11,7 @@
 @import curryfire;
 
 
-@interface CartViewController : CustomPresentationViewController
+@interface CartViewController : TKCustomPresentationViewController
 
 
 @property (nonatomic,strong) TKMoveGestureRecognizer *moveGesture;

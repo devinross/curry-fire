@@ -35,6 +35,24 @@
 @implementation UIView (Positioning)
 
 
+- (CGPoint) convertCenterToView:(UIView*)view{
+    return [self.superview convertPoint:self.center toView:view];
+}
+- (CGRect) convertFrameToView:(UIView*)view{
+    return [self.superview convertRect:self.frame toView:view];
+}
+
+- (void) moveToView:(UIView*)view{
+    self.center = [self convertCenterToView:view];
+    [self removeFromSuperview];
+    [self addSubview:view];
+}
+- (void) moveToBackOfView:(UIView*)view{
+    self.center = [self convertCenterToView:view];
+    [self removeFromSuperview];
+    [self addSubviewToBack:view];
+}
+
 - (CGPoint) middle{
     return CGPointMake(CGFrameGetWidth(self)/2, CGFrameGetHeight(self)/2);
 }

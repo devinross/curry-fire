@@ -1,6 +1,6 @@
 //
-//  ShortHand.h
-//  Created by Devin Ross on 4/17/15.
+//  CounterViewController.h
+//  Created by Devin Ross on 4/30/15.
 //
 /*
  
@@ -29,31 +29,11 @@
  
  */
 
-
-
-#ifndef curryfire_ShortHand_h
-#define curryfire_ShortHand_h
-
 @import UIKit;
-@import Foundation;
+@import curryfire;
 
+@interface CounterViewController : UIViewController
 
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
-    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
-}
+@property (nonatomic,strong) TKAnimatedCounterLabel *counterLabel;
 
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
-    return [NSValue valueWithCGPoint:point];
-}
-
-
-
-
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){
-    return [NSValue valueWithCATransform3D:transform];
-}
-
-#endif
+@end

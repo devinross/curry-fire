@@ -30,6 +30,8 @@
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
+		20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B288951AF2EB2100B4FEE7 /* CounterViewController.m */; };
+		20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,10 @@
 		208E8A441AE94210004E63FB /* WiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiggleViewController.m; sourceTree = "<group>"; };
 		20AF03361AE8534F0065E3FF /* ConfettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiViewController.h; sourceTree = "<group>"; };
 		20AF03371AE8534F0065E3FF /* ConfettiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiViewController.m; sourceTree = "<group>"; };
+		20B288941AF2EB2100B4FEE7 /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
+		20B288951AF2EB2100B4FEE7 /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
+		20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressRingViewController.h; sourceTree = "<group>"; };
+		20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressRingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,10 @@
 				2067AF971AE94E610097E3AE /* RunForrestViewController.m */,
 				2067AF9A1AE954C70097E3AE /* HopViewController.h */,
 				2067AF9B1AE954C70097E3AE /* HopViewController.m */,
+				20B288941AF2EB2100B4FEE7 /* CounterViewController.h */,
+				20B288951AF2EB2100B4FEE7 /* CounterViewController.m */,
+				20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */,
+				20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */,
 				2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */,
 				2069BBAB1AE0996800F6D355 /* Supporting Files */,
 			);
@@ -296,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */,
+				20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */,
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				20691B8B1AE8185C0045627D /* CustomTransitionViewController.m in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
@@ -307,6 +318,7 @@
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
 				208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */,
 				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
+				20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
@@ -410,6 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos",
@@ -429,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos",

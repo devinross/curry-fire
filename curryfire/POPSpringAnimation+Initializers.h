@@ -1,6 +1,6 @@
 //
-//  ShortHand.h
-//  Created by Devin Ross on 4/17/15.
+//  POPSpringAnimation+Initializers.h
+//  Created by Devin Ross on 5/1/15.
 //
 /*
  
@@ -29,31 +29,12 @@
  
  */
 
+@import pop;
 
+@interface POPSpringAnimation (Initializers)
 
-#ifndef curryfire_ShortHand_h
-#define curryfire_ShortHand_h
++ (POPSpringAnimation*) springAnimationWithPropertyNamed:(NSString*)aName toValue:(id)value velocity:(id)velocity bouciness:(CGFloat)bouciness speed:(CGFloat)speed removeOnCompletion:(BOOL)removeOnCompletion completion:(void (^)(POPAnimation *anim, BOOL finished))completion;
 
-@import UIKit;
-@import Foundation;
++ (POPSpringAnimation*) springAnimationToPoint:(CGPoint)point velocity:(CGPoint)velocity bouciness:(CGFloat)bouciness speed:(CGFloat)speed removeOnCompletion:(BOOL)removeOnCompletion completion:(void (^)(POPAnimation *anim, BOOL finished))completion;
 
-
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
-    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
-}
-
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
-    return [NSValue valueWithCGPoint:point];
-}
-
-
-
-
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){
-    return [NSValue valueWithCATransform3D:transform];
-}
-
-#endif
+@end

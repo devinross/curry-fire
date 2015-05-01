@@ -47,8 +47,7 @@
 }
 
 - (void) handleScreenEdgePanGesture:(UIScreenEdgePanGestureRecognizer *)sender{
-    CGFloat width = self.view.frame.size.width,
-    percent = MAX([sender translationInView:self.view].x, 0) / width;
+    CGFloat percent = sender.translationXPercentage;
     
     ZoomBlockAnimator *animator = [[TKNavigationTransistionController sharedInstance] animatorOfClass:[ZoomBlockAnimator class]];
 

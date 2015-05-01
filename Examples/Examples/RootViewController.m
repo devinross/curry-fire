@@ -40,6 +40,8 @@
 #import "ShakeAnimationViewController.h"
 #import "RunForrestViewController.h"
 #import "NavigationPushPopTransitionViewController.h"
+#import "CounterViewController.h"
+#import "ProgressRingViewController.h"
 
 
 @implementation RootViewController
@@ -49,15 +51,19 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Examples", @"");
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:IDENTIFIER];
-    self.items = @[NSLocalizedString(@"TKMoveGestureRecognizer", @""),
-                   NSLocalizedString(@"Material Transition", @""),
-                   NSLocalizedString(@"Card SlideUp", @""),
-                   NSLocalizedString(@"Custom Transition", @""),
-                   NSLocalizedString(@"Confetti", @""),
-                   NSLocalizedString(@"Zoom", @""),
-                   NSLocalizedString(@"Wiggle", @""),
-                   NSLocalizedString(@"Shake", @""),
-                   NSLocalizedString(@"Run Forrest Run", @"")];
+    
+    self.items = @[
+  @[NSLocalizedString(@"TKMoveGestureRecognizer", @""), NSStringFromClass([MoveGestureViewController class])],
+  @[NSLocalizedString(@"Material Transition", @""),     NSStringFromClass([MaterialViewController class])],
+  //@[NSLocalizedString(@"Custom Transition", @""),       NSStringFromClass([CustomTransitionViewController class])],
+  @[NSLocalizedString(@"Confetti", @""),                NSStringFromClass([ConfettiViewController class])],
+  @[NSLocalizedString(@"Card SlideUp", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
+  @[NSLocalizedString(@"Zoom", @""),                    NSStringFromClass([ZoomViewController class])],
+  @[NSLocalizedString(@"Wiggle", @""),                  NSStringFromClass([WiggleViewController class])],
+  @[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],
+  //@[NSLocalizedString(@"Run Forrest Run", @""),       NSStringFromClass([RunForrestViewController class])],
+  @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
+  @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])]];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
@@ -74,35 +80,14 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IDENTIFIER forIndexPath:indexPath];
-    cell.textLabel.text = self.items[indexPath.row];
+    cell.textLabel.text = self.items[indexPath.row][0];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIViewController *ctr;
-    
-    if(indexPath.row == 0)
-        ctr = MoveGestureViewController.new;
-    else if(indexPath.row == 1)
-        ctr = MaterialViewController.new;
-    else if(indexPath.row == 2)
-        ctr = CardViewSlideUpViewController.new;
-    else if(indexPath.row == 3)
-        ctr = NavigationPushPopTransitionViewController.new;
-    else if(indexPath.row == 4)
-        ctr = ConfettiViewController.new;
-    else if(indexPath.row == 5)
-        ctr = ZoomViewController.new;
-    else if(indexPath.row == 6)
-        ctr = WiggleViewController.new;
-    else if(indexPath.row == 7)
-        ctr = ShakeAnimationViewController.new;
-    else if(indexPath.row == 8)
-        ctr = RunForrestViewController.new;
-    
-    
-    
+    UIViewController *ctr = NSClassFromString(self.items[indexPath.row][1]).new;
+
     
     [self.navigationController pushViewController:ctr animated:YES];
     

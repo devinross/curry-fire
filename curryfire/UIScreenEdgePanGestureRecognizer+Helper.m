@@ -1,6 +1,6 @@
 //
-//  ShortHand.h
-//  Created by Devin Ross on 4/17/15.
+//  UIScreenEdgePanGestureRecognizer+Helper.m
+//  Created by Devin Ross on 5/1/15.
 //
 /*
  
@@ -29,31 +29,16 @@
  
  */
 
+#import "UIScreenEdgePanGestureRecognizer+Helper.h"
 
+@implementation UIScreenEdgePanGestureRecognizer (Helper)
 
-#ifndef curryfire_ShortHand_h
-#define curryfire_ShortHand_h
-
-@import UIKit;
-@import Foundation;
-
-
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
-UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
-    return [NSValue valueWithCGPoint:CGPointMake(x,y)];
+- (CGFloat) translationXPercentage{
+    return MAX([self translationInView:self.view].x, 0) / CGRectGetWidth(self.view.frame);
 }
-
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
-UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
-    return [NSValue valueWithCGPoint:point];
+- (CGFloat) translationYPercentage{
+    return MAX([self translationInView:self.view].y, 0) / CGRectGetHeight(self.view.frame);
 }
 
 
-
-
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
-UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){
-    return [NSValue valueWithCATransform3D:transform];
-}
-
-#endif
+@end

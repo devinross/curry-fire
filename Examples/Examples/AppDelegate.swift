@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewController = RootViewController()
         dashViewController = DashboardViewController()
 
-        navigationController = UINavigationController(rootViewController: dashViewController!)
+        navigationController = UINavigationController(rootViewController: viewController!)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.windowLevel = UIWindowLevelNormal
