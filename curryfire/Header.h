@@ -37,15 +37,22 @@
 
 #import "ShortHand.h"
 
+#import "TKMoveGestureRecognizer.h"
+#import "TKNavigationTransistionController.h"
+#import "TKAnimatedCounterLabel.h"
+#import "TKProgressRingView.h"
+#import "TKGlowButton.h"
+
+
+
 #import "UIView+Positioning.h"
 #import "UIView+Material.h"
 #import "UIView+TwelvePrinciples.h"
 #import "UIView+Confetti.h"
-#import "TKMoveGestureRecognizer.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
+#import "UIPanGestureRecognizer+VelocityDirection.h"
 #import "UIView+GestureRecognizerBlock.h"
-#import "TKNavigationTransistionController.h"
+#import "POPSpringAnimation+Initializers.h"
+#import "UIScreenEdgePanGestureRecognizer+Helper.h"
+
 
 #endif

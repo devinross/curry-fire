@@ -33,7 +33,6 @@
 #import "MoveGestureViewController.h"
 #import "MaterialViewController.h"
 #import "CardViewSlideUpViewController.h"
-#import "CustomTransitionViewController.h"
 #import "ConfettiViewController.h"
 #import "ZoomViewController.h"
 #import "WiggleViewController.h"

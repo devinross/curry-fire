@@ -34,10 +34,11 @@
     self.cartViewController.moveGesture.locations = @[@(self.cartViewController.view.centerY),@(self.view.middle.y)];
     
     
-    
+    UINavigationController *nav = self.navigationController;
+    DashboardViewController *myself = self;
     
     [self.cartViewController.view addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-        [self.navigationController presentViewController:self.cartViewController animated:YES completion:nil];
+        [nav presentViewController:myself.cartViewController animated:YES completion:nil];
     }];
     
 }

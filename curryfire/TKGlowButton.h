@@ -1,6 +1,6 @@
 //
-//  CustomTransitionViewController.h
-//  Created by Devin Ross on 4/22/15.
+//  TKGlowButton.h
+//  Created by Devin Ross on 8/24/13.
 //
 /*
  
@@ -30,32 +30,15 @@
  */
 
 @import UIKit;
-@import curry;
-@import curryfire;
 
-@interface CustomTransitionViewController : UIViewController
+/** `TKGlowButton` is a subclassed `UIButton` that allows the background of a button to glow on touch. */
+@interface TKGlowButton : UIButton
 
-@property (nonatomic,strong) UIViewController *cardViewController;
-
-@end
-
-
-
-@interface TKCustomTransitionViewController : UIViewController <UIViewControllerAnimatedTransitioning,UIViewControllerInteractiveTransitioning,UIViewControllerTransitioningDelegate>
-
-@property (nonatomic,assign) BOOL shouldBeInteractive;
-@property (nonatomic,strong) id <UIViewControllerContextTransitioning> transitionContext;
-@property (nonatomic,strong) TKMoveGestureRecognizer *moveGesture;
-@property (nonatomic,strong) UIViewController *parent;
-
-
-@property (nonatomic,copy) void (^block)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location );
-
-- (void) show;
-- (void) hide;
-
-@property (nonatomic,assign) CGPoint startPoint;
-@property (nonatomic,assign) CGPoint endPoint;
-
+/**
+ This method allows you to set the background color during a certain state.
+ @param color The background color of the button.
+ @param state The state to which the color will appear.
+ */
+- (void) setBackgroundColor:(UIColor*)color forState:(UIControlState)state;
 
 @end

@@ -25,20 +25,18 @@
     [super loadView];
     self.view.backgroundColor = [UIColor randomColor];
     
-
     
-    
-    
+    __weak CartViewController *myself = self;
     
     self.moveGesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.view locations:nil moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
         
         
         if(gesture.began){
-            
             [self.moveGesture.snapBackAnimation setCompletionBlock:nil];
         }
         
         if(gesture.ended){
+            
             
             
             NSLog(@"%@ %@",self.presentedViewController,self.presentingViewController);
@@ -48,9 +46,7 @@
                 
                 
                 [self.moveGesture.snapBackAnimation setCompletionBlock:^(POPAnimation *pop, BOOL complete) {
-                    
-                    [self transitionEnded];
-                    
+                    [myself transitionEnded];
                 }];
                 
                 [self.presenterViewController presentViewController:self animated:YES completion:nil];
@@ -58,7 +54,7 @@
                 
                 
                 [self.moveGesture.snapBackAnimation setCompletionBlock:^(POPAnimation *pop, BOOL complete) {
-                    [self transitionEnded];
+                    [myself transitionEnded];
                 }];
                 
                 [self dismissViewControllerAnimated:YES completion:nil];

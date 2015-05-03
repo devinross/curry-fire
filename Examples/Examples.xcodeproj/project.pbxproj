@@ -16,7 +16,6 @@
 		20691B671AE7F9A50045627D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B661AE7F9A50045627D /* RootViewController.m */; };
 		20691B711AE7FC450045627D /* MaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B701AE7FC450045627D /* MaterialViewController.m */; };
 		20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */; };
-		20691B8B1AE8185C0045627D /* CustomTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */; };
 		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BBD91AE099C200F6D355 /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; };
@@ -86,8 +85,6 @@
 		20691B701AE7FC450045627D /* MaterialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewController.m; sourceTree = "<group>"; };
 		20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewSlideUpViewController.h; sourceTree = "<group>"; };
 		20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewSlideUpViewController.m; sourceTree = "<group>"; };
-		20691B891AE8185C0045627D /* CustomTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransitionViewController.h; sourceTree = "<group>"; };
-		20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionViewController.m; sourceTree = "<group>"; };
 		2069BBA81AE0996800F6D355 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2069BBAC1AE0996800F6D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoveGestureViewController.h; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 				2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */,
 				20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */,
 				20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */,
-				20691B891AE8185C0045627D /* CustomTransitionViewController.h */,
-				20691B8A1AE8185C0045627D /* CustomTransitionViewController.m */,
 				20AF03361AE8534F0065E3FF /* ConfettiViewController.h */,
 				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
 				208E8A431AE94210004E63FB /* WiggleViewController.h */,
@@ -308,7 +303,6 @@
 				2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */,
 				20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */,
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
-				20691B8B1AE8185C0045627D /* CustomTransitionViewController.m in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
 				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
 				208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */,
