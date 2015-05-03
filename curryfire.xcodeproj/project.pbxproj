@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		202DBED11AF66B2D00B0CE67 /* TKGlowButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 202DBECF1AF66B2D00B0CE67 /* TKGlowButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		202DBED21AF66B2D00B0CE67 /* TKGlowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBED01AF66B2D00B0CE67 /* TKGlowButton.m */; };
+		202DBEE21AF6704700B0CE67 /* TKPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 202DBEDC1AF6704700B0CE67 /* TKPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		202DBEE31AF6704700B0CE67 /* TKPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBEDD1AF6704700B0CE67 /* TKPageControl.m */; };
+		202DBEE41AF6704700B0CE67 /* TKShimmerLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 202DBEDE1AF6704700B0CE67 /* TKShimmerLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		202DBEE51AF6704700B0CE67 /* TKShimmerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBEDF1AF6704700B0CE67 /* TKShimmerLabel.m */; };
+		202DBEE61AF6704700B0CE67 /* TKSlideToUnlockView.h in Headers */ = {isa = PBXBuildFile; fileRef = 202DBEE01AF6704700B0CE67 /* TKSlideToUnlockView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		202DBEE71AF6704700B0CE67 /* TKSlideToUnlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBEE11AF6704700B0CE67 /* TKSlideToUnlockView.m */; };
+		202DBEE91AF6713E00B0CE67 /* CurryFireImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */; };
 		2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2067AFA31AE957790097E3AE /* TKNavigationTransistionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */; };
 		20691B601AE7F8D30045627D /* UIView+Material.h in Headers */ = {isa = PBXBuildFile; fileRef = 20691B5E1AE7F8D30045627D /* UIView+Material.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +102,13 @@
 /* Begin PBXFileReference section */
 		202DBECF1AF66B2D00B0CE67 /* TKGlowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGlowButton.h; sourceTree = "<group>"; };
 		202DBED01AF66B2D00B0CE67 /* TKGlowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGlowButton.m; sourceTree = "<group>"; };
+		202DBEDC1AF6704700B0CE67 /* TKPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPageControl.h; sourceTree = "<group>"; };
+		202DBEDD1AF6704700B0CE67 /* TKPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPageControl.m; sourceTree = "<group>"; };
+		202DBEDE1AF6704700B0CE67 /* TKShimmerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShimmerLabel.h; sourceTree = "<group>"; };
+		202DBEDF1AF6704700B0CE67 /* TKShimmerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShimmerLabel.m; sourceTree = "<group>"; };
+		202DBEE01AF6704700B0CE67 /* TKSlideToUnlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSlideToUnlockView.h; sourceTree = "<group>"; };
+		202DBEE11AF6704700B0CE67 /* TKSlideToUnlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSlideToUnlockView.m; sourceTree = "<group>"; };
+		202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CurryFireImages.xcassets; sourceTree = "<group>"; };
 		2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationTransistionController.h; sourceTree = "<group>"; };
 		2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationTransistionController.m; sourceTree = "<group>"; };
 		20691B5E1AE7F8D30045627D /* UIView+Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Material.h"; sourceTree = "<group>"; };
@@ -171,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2069BB641AE095CA00F6D355 /* Info.plist */,
+				202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -221,6 +236,12 @@
 				20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */,
 				202DBECF1AF66B2D00B0CE67 /* TKGlowButton.h */,
 				202DBED01AF66B2D00B0CE67 /* TKGlowButton.m */,
+				202DBEDC1AF6704700B0CE67 /* TKPageControl.h */,
+				202DBEDD1AF6704700B0CE67 /* TKPageControl.m */,
+				202DBEDE1AF6704700B0CE67 /* TKShimmerLabel.h */,
+				202DBEDF1AF6704700B0CE67 /* TKShimmerLabel.m */,
+				202DBEE01AF6704700B0CE67 /* TKSlideToUnlockView.h */,
+				202DBEE11AF6704700B0CE67 /* TKSlideToUnlockView.m */,
 				2069BC6D1AE1634100F6D355 /* Categories */,
 			);
 			name = curryfire;
@@ -276,6 +297,9 @@
 				20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */,
 				20EBDF4F1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h in Headers */,
 				20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */,
+				202DBEE41AF6704700B0CE67 /* TKShimmerLabel.h in Headers */,
+				202DBEE21AF6704700B0CE67 /* TKPageControl.h in Headers */,
+				202DBEE61AF6704700B0CE67 /* TKSlideToUnlockView.h in Headers */,
 				202DBED11AF66B2D00B0CE67 /* TKGlowButton.h in Headers */,
 				20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
@@ -402,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202DBEE91AF6713E00B0CE67 /* CurryFireImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +446,11 @@
 				20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */,
 				202DBED21AF66B2D00B0CE67 /* TKGlowButton.m in Sources */,
 				20691B611AE7F8D30045627D /* UIView+Material.m in Sources */,
+				202DBEE31AF6704700B0CE67 /* TKPageControl.m in Sources */,
+				202DBEE71AF6704700B0CE67 /* TKSlideToUnlockView.m in Sources */,
 				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
 				2067AFA31AE957790097E3AE /* TKNavigationTransistionController.m in Sources */,
+				202DBEE51AF6704700B0CE67 /* TKShimmerLabel.m in Sources */,
 				20CB9CDE1AF3C036002E9F1C /* TKProgressRingView.m in Sources */,
 				20CB9CE91AF3C487002E9F1C /* POPSpringAnimation+Initializers.m in Sources */,
 			);

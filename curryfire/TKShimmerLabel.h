@@ -1,10 +1,10 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  TKShimmerLabel.h
+//  Created by Devin Ross on 7/20/13.
 //
 /*
  
- curryfire || https://github.com/devinross/curry-fire
+ tapku || http://github.com/devinross/tapkulibrary
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -29,34 +29,28 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+@import UIKit;
 
-@import curry;
-@import pop;
+/** The direction of the shimmering on the label. */
+typedef NS_ENUM(NSInteger, TKShimmerLabelDirection) {
+	TKShimmerLabelDirectionLeftToRight,
+	TKShimmerLabelDirectionRightToLeft
+} ;
 
-#import "ShortHand.h"
+/** `TKShimmerLabel` is a subclassed `UILabel` with a shimmer animation similiar to the unlock screen. */
+@interface TKShimmerLabel : UILabel
 
-#import "TKMoveGestureRecognizer.h"
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKGlowButton.h"
-#import "TKPageControl.h"
-#import "TKShimmerLabel.h"
-#import "TKSlideToUnlockView.h"
+///----------------------------
+/// @name Properties
+///----------------------------
+/** The gradient layer that masks the text label to create the shimmer effect. */
+@property (nonatomic,strong) CAGradientLayer *textHighlightLayer;
 
-
-#import "UIView+Positioning.h"
-#import "UIView+Material.h"
-#import "UIView+TwelvePrinciples.h"
-#import "UIView+Confetti.h"
-#import "UIPanGestureRecognizer+VelocityDirection.h"
-#import "UIView+GestureRecognizerBlock.h"
-#import "POPSpringAnimation+Initializers.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
+/** The direction the shimmer should move. */
+@property (nonatomic,assign) TKShimmerLabelDirection direction;
 
 
+/** The duration of the shimmer animation */
+@property (nonatomic,assign) NSTimeInterval shimmerDuration;
 
-
-#endif
+@end
