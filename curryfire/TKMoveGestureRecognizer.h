@@ -55,6 +55,8 @@ typedef enum {
 @property (nonatomic,readonly) TKMoveGestureDirection direction;
 
 @property (nonatomic,readonly) BOOL moving;
+@property (nonatomic,readonly) BOOL animating;
+
 @property (nonatomic,strong) UIView *movableView;
 @property (nonatomic,strong) NSArray *locations;
 @property (nonatomic,strong) POPSpringAnimation *snapBackAnimation;

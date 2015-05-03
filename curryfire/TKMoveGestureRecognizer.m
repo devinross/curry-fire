@@ -144,6 +144,11 @@
         p.x += [self translationInView:self.view].x;
     if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionY)
         p.y += [self translationInView:self.view].y;
+        
+    if(self.direction == TKMoveGestureDirectionX)
+        p.y = self.movableView.center.y;
+    if(self.direction == TKMoveGestureDirectionY)
+        p.x = self.movableView.center.x;
 
     
     CGPoint blockPoint = p;
@@ -152,7 +157,7 @@
         
         panView.center = p;
 
-        
+
     }else if(self.state == UIGestureRecognizerStateEnded || self.state == UIGestureRecognizerStateCancelled){
         
 
@@ -160,10 +165,6 @@
         CGFloat projectedX = p.x + velocity.x / self.velocityDamping;
         CGFloat projectedY = p.y + velocity.y / self.velocityDamping;
         CGPoint projectedPoint = CGPointMake(projectedX, projectedY);
-        
-
-
-        
         blockPoint = [self closestPointToLocation:projectedPoint currentPoint:p];
         
         
@@ -253,18 +254,24 @@
 - (void) moveToPoint:(CGPoint)point{
     
     UIView *panView = self.movableView;
-    CGPoint blockPoint = panView.center;
+    CGPoint center = panView.center;
+    CGPoint blockPoint = center;
     
     if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionX)
         blockPoint.x = point.x;
     if(self.direction == TKMoveGestureDirectionXY || self.direction == TKMoveGestureDirectionY)
         blockPoint.y = point.y;
     
+    
     if(self.direction == TKMoveGestureDirectionX){
+        self.snapBackAnimation.fromValue = @(center.x);
+
         self.snapBackAnimation.toValue = @(blockPoint.x);
     }else if(self.direction == TKMoveGestureDirectionY){
+        self.snapBackAnimation.fromValue = @(center.y);
         self.snapBackAnimation.toValue = @(blockPoint.y);
     }else{
+        self.snapBackAnimation.fromValue = NSCGPoint(center);
         self.snapBackAnimation.toValue = NSCGPoint(blockPoint);
     }
     
@@ -285,7 +292,7 @@
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     
-    if ([self state] == UIGestureRecognizerStatePossible) {
+    if (self.animating && [self state] == UIGestureRecognizerStatePossible) {
         [self setState:UIGestureRecognizerStateBegan];
         self.moving = NO;
     }
@@ -296,11 +303,14 @@
 
     if ([self state] == UIGestureRecognizerStatePossible) {
         [self setState:UIGestureRecognizerStateBegan];
+        self.moving = YES;
+
     } else {
         [self setState:UIGestureRecognizerStateChanged];
+        self.moving = YES;
+
     }
     
-    self.moving = YES;
     
 }
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -326,8 +336,12 @@
     _snapBackAnimation = [POPSpringAnimation animationWithPropertyNamed:self.popAnimationPropertyName];
     _snapBackAnimation.springBounciness = 1.5;
     _snapBackAnimation.springSpeed = 2;
-    _snapBackAnimation.removedOnCompletion = NO;
+    _snapBackAnimation.removedOnCompletion = YES;
     return _snapBackAnimation;
+}
+
+- (BOOL) animating{
+    return [self.movableView.layer pop_animationForKey:@"pop"] != nil;
 }
 
 @end

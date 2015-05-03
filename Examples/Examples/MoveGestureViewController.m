@@ -86,7 +86,7 @@
         gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionXY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
             TKLog(@"%f",position.y);
         }];
-        [self.block addGestureRecognizer:gesture];
+        [self.view addGestureRecognizer:gesture];
         
         sender.tag = 0;
         [self.toggleButton setTitle:NSLocalizedString(@"Axis: XY", @"") forState:UIControlStateNormal];
@@ -101,7 +101,7 @@
         gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
             TKLog(@"%f",position.y);
         }];
-        [self.block addGestureRecognizer:gesture];
+        [self.view addGestureRecognizer:gesture];
         sender.tag = 1;
         [self.toggleButton setTitle:NSLocalizedString(@"Axis: Y", @"") forState:UIControlStateNormal];
 

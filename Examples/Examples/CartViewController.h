@@ -10,7 +10,6 @@
 @import curry;
 @import curryfire;
 
-
 @interface CartViewController : TKCustomPresentationViewController
 
 
