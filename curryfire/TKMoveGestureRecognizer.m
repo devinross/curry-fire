@@ -36,6 +36,7 @@
 @interface TKMoveGestureRecognizer ()
 
 @property (nonatomic,assign) BOOL moving;
+
 @property (nonatomic,assign) CGPoint startPoint;
 
 @end
@@ -133,9 +134,10 @@
     
     CGPoint velocity = [self velocityInView:self.view];
     UIView *panView = self.movableView;
-    if(self.state == UIGestureRecognizerStateBegan){
+    if(self.began || (!self.moving && self.changed)){
         self.startPoint = panView.center;
         [panView.layer pop_removeAnimationForKey:@"pop"];
+        self.moving = YES;
     }
     
     CGPoint p = self.startPoint;
@@ -153,20 +155,16 @@
     
     CGPoint blockPoint = p;
     
-    if(self.state == UIGestureRecognizerStateBegan || self.state == UIGestureRecognizerStateChanged){
+    if(self.state == UIGestureRecognizerStateChanged){
         
         panView.center = p;
 
-
     }else if(self.state == UIGestureRecognizerStateEnded || self.state == UIGestureRecognizerStateCancelled){
         
-
-
         CGFloat projectedX = p.x + velocity.x / self.velocityDamping;
         CGFloat projectedY = p.y + velocity.y / self.velocityDamping;
         CGPoint projectedPoint = CGPointMake(projectedX, projectedY);
         blockPoint = [self closestPointToLocation:projectedPoint currentPoint:p];
-        
         
         if(self.direction == TKMoveGestureDirectionX){
             self.snapBackAnimation.fromValue = @(p.x);
@@ -184,7 +182,7 @@
         
 
         [panView.layer pop_addAnimation:self.snapBackAnimation forKey:@"pop"];
-        
+        self.moving = NO;
     }
     
     CGPoint minPoint = [self minimumLocation];
@@ -200,16 +198,11 @@
 - (CGPoint) minimumLocation{
     
     if(self.direction == TKMoveGestureDirectionX){
-        
         return CGPointMake([[self.locations valueForKeyPath:@"@min.self"] doubleValue], self.movableView.center.y);
 
     }else if(self.direction == TKMoveGestureDirectionY){
-        
         return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@min.self"] doubleValue]);
-
-
     }
-    
     
     NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
         CGPoint p1 = [obj1 CGPointValue];
@@ -217,28 +210,18 @@
         if (p1.x == p2.x) return p1.y < p2.y;
         return p1.x < p2.x;
     }];
-    
     return [sortedArray.firstObject CGPointValue];
-        
-
-    
     
 }
 - (CGPoint) maximumLocation{
     
-    
-    
     if(self.direction == TKMoveGestureDirectionX){
-        
         return CGPointMake([[self.locations valueForKeyPath:@"@max.self"] doubleValue], self.movableView.center.y);
         
     }else if(self.direction == TKMoveGestureDirectionY){
-        
         return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@max.self"] doubleValue]);
-        
-        
+ 
     }
-    
     
     NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
         CGPoint p1 = [obj1 CGPointValue];
@@ -246,9 +229,7 @@
         if (p1.x == p2.x) return p1.y < p2.y;
         return p1.x < p2.x;
     }];
-    
     return [sortedArray.lastObject CGPointValue];
-    
 }
 
 - (void) moveToPoint:(CGPoint)point{
@@ -294,7 +275,7 @@
     
     if (self.animating && [self state] == UIGestureRecognizerStatePossible) {
         [self setState:UIGestureRecognizerStateBegan];
-        self.moving = NO;
+//        self.moving = NO;
     }
     
 }
@@ -303,12 +284,9 @@
 
     if ([self state] == UIGestureRecognizerStatePossible) {
         [self setState:UIGestureRecognizerStateBegan];
-        self.moving = YES;
-
+        self.startPoint = self.movableView.center;
     } else {
         [self setState:UIGestureRecognizerStateChanged];
-        self.moving = YES;
-
     }
     
     
