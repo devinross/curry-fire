@@ -45,12 +45,12 @@
 - (void) moveToView:(UIView*)view{
     self.center = [self convertCenterToView:view];
     [self removeFromSuperview];
-    [self addSubview:view];
+    [view addSubview:self];
 }
 - (void) moveToBackOfView:(UIView*)view{
     self.center = [self convertCenterToView:view];
     [self removeFromSuperview];
-    [self addSubviewToBack:view];
+    [view addSubviewToBack:self];
 }
 
 - (CGPoint) middle{
