@@ -54,6 +54,7 @@
     [self.view addSubview:self.cardView];
     
     
+    
     TKMoveGestureRecognizer *move = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.cardView locations:@[@(START),@(END)] moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
         
         if(gesture.began || gesture.changed){
@@ -63,9 +64,7 @@
         }else if(gesture.cancelled || gesture.ended || !gesture){
             
             
-            BOOL moveCardDown = (gesture.moving && location.y == END) || (!gesture.moving && location.y != END);
-            if(!gesture)
-                moveCardDown = location.y == END;
+            BOOL moveCardDown = location.y == END;
             
             [UIView beginAnimations:nil context:nil];
             if(moveCardDown){
@@ -73,6 +72,7 @@
                 gesture.snapBackAnimation.toValue = @(END);
             }else{
                 self.cardView.layer.transform = [self transformAtPosition:0];
+
                 gesture.snapBackAnimation.toValue = @(START);
             }
             [UIView commitAnimations];
@@ -80,7 +80,7 @@
         
     }];
     
-    move.velocityDamping = 4;
+    move.velocityDamping = 2;
     [self.cardView addGestureRecognizer:move];
     
     
