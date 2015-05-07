@@ -56,6 +56,8 @@ typedef enum {
 
 @property (nonatomic,readonly) BOOL moving;
 @property (nonatomic,readonly) BOOL animating;
+@property (nonatomic,assign) BOOL canMoveOutsideLocationBounds;
+
 
 @property (nonatomic,strong) UIView *movableView;
 @property (nonatomic,strong) NSArray *locations;

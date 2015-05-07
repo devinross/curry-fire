@@ -68,6 +68,7 @@
     _direction = TKMoveGestureDirectionXY;
     [self addTarget:self action:@selector(pan:)];
     self.velocityDamping = 20;
+    self.canMoveOutsideLocationBounds = YES;
     
     return self;
 }
@@ -78,7 +79,8 @@
     self.locations = locations;
     self.moveHandler = block;
     self.movableView = movableView;
-    
+    self.canMoveOutsideLocationBounds = YES;
+
     return self;
     
 }
@@ -129,6 +131,43 @@
     
     
 }
+- (CGPoint) minimumLocation{
+    
+    if(self.direction == TKMoveGestureDirectionX){
+        return CGPointMake([[self.locations valueForKeyPath:@"@min.self"] doubleValue], self.movableView.center.y);
+        
+    }else if(self.direction == TKMoveGestureDirectionY){
+        return CGPointMake(self.movableView.center.x, [[self.locations valueForKeyPath:@"@min.self"] doubleValue]);
+    }
+    
+    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
+        CGPoint p1 = [obj1 CGPointValue];
+        CGPoint p2 = [obj2 CGPointValue];
+        if (p1.x == p2.x) return p1.y < p2.y;
+        return p1.x < p2.x;
+    }];
+    return [sortedArray.firstObject CGPointValue];
+    
+}
+- (CGPoint) maximumLocation{
+    
+    if(self.direction == TKMoveGestureDirectionX){
+        return CGPointMake([[self.locations valueForKeyPath:@"@max.self"] doubleValue], self.movableView.center.y);
+        
+    }else if(self.direction == TKMoveGestureDirectionY){
+        return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@max.self"] doubleValue]);
+        
+    }
+    
+    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
+        CGPoint p1 = [obj1 CGPointValue];
+        CGPoint p2 = [obj2 CGPointValue];
+        if (p1.x == p2.x) return p1.y < p2.y;
+        return p1.x < p2.x;
+    }];
+    return [sortedArray.lastObject CGPointValue];
+}
+
 
 - (void) pan:(UIPanGestureRecognizer*)gesture{
     
@@ -153,7 +192,18 @@
         p.x = self.movableView.center.x;
 
     
+    if(!self.canMoveOutsideLocationBounds){
+        
+        CGPoint minPoint = [self minimumLocation];
+        CGPoint maxPoint = [self maximumLocation];
+        p.x = MIN(maxPoint.x,MAX(minPoint.x,p.x));
+        p.y = MIN(maxPoint.y,MAX(minPoint.y,p.y));
+
+    }
+    
     CGPoint blockPoint = p;
+    
+
     
     if(self.state == UIGestureRecognizerStateChanged){
         
@@ -195,42 +245,6 @@
 
 }
 
-- (CGPoint) minimumLocation{
-    
-    if(self.direction == TKMoveGestureDirectionX){
-        return CGPointMake([[self.locations valueForKeyPath:@"@min.self"] doubleValue], self.movableView.center.y);
-
-    }else if(self.direction == TKMoveGestureDirectionY){
-        return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@min.self"] doubleValue]);
-    }
-    
-    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
-        CGPoint p1 = [obj1 CGPointValue];
-        CGPoint p2 = [obj2 CGPointValue];
-        if (p1.x == p2.x) return p1.y < p2.y;
-        return p1.x < p2.x;
-    }];
-    return [sortedArray.firstObject CGPointValue];
-    
-}
-- (CGPoint) maximumLocation{
-    
-    if(self.direction == TKMoveGestureDirectionX){
-        return CGPointMake([[self.locations valueForKeyPath:@"@max.self"] doubleValue], self.movableView.center.y);
-        
-    }else if(self.direction == TKMoveGestureDirectionY){
-        return CGPointMake(self.movableView.center.y, [[self.locations valueForKeyPath:@"@max.self"] doubleValue]);
- 
-    }
-    
-    NSArray *sortedArray = [self.locations sortedArrayUsingComparator:^NSComparisonResult(NSValue *obj1, NSValue *obj2) {
-        CGPoint p1 = [obj1 CGPointValue];
-        CGPoint p2 = [obj2 CGPointValue];
-        if (p1.x == p2.x) return p1.y < p2.y;
-        return p1.x < p2.x;
-    }];
-    return [sortedArray.lastObject CGPointValue];
-}
 
 - (void) moveToPoint:(CGPoint)point{
     
