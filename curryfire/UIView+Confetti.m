@@ -125,7 +125,7 @@ float randFloat(){
         moveAnim.fillMode = kCAFillModeForwards;
         moveAnim.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
 
-        NSTimeInterval speed = 2.35 * randFloat();
+        NSTimeInterval speed = 3.35 * randFloat();
         
         CAKeyframeAnimation *transformAnim = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
         
@@ -148,6 +148,7 @@ float randFloat(){
         opacityAnim.fromValue = [NSNumber numberWithFloat:1.0f];
         opacityAnim.toValue = [NSNumber numberWithFloat:0.f];
         opacityAnim.removedOnCompletion = NO;
+        opacityAnim.duration = speed;
         opacityAnim.fillMode = kCAFillModeForwards;
         
         
@@ -182,11 +183,12 @@ float randFloat(){
 
 - (UIBezierPath *) _pathForLayer:(CALayer *)layer parentRect:(CGRect)rect{
     UIBezierPath *particlePath = [UIBezierPath bezierPath];
-    [particlePath moveToPoint:layer.position];
+    CGPoint start = layer.position;
+    [particlePath moveToPoint:start];
     
-    float r = ((float)rand()/(float)RAND_MAX) + 0.3f;
-    float r2 = ((float)rand()/(float)RAND_MAX)+ 0.4f;
-    float r3 = r*r2;
+    float r = ((float)rand() / (float)RAND_MAX) + 0.3f;
+    float r2 = ((float)rand() / (float)RAND_MAX) + 0.4f;
+    float r3 = r * r2;
     
     int upOrDown = (r <= 0.5) ? 1 : -1;
     
@@ -195,17 +197,30 @@ float randFloat(){
     
     CGFloat maxLeftRightShift = 1.f * randFloat();
     
-    CGFloat layerYPosAndHeight = (self.superview.frame.size.height-((layer.position.y+layer.frame.size.height)))*randFloat();
-    CGFloat layerXPosAndHeight = (self.superview.frame.size.width-((layer.position.x+layer.frame.size.width)))*r3;
+    CGFloat layerYPosAndHeight = (self.superview.height - ((layer.position.y+layer.frame.size.height))) * randFloat();
+    CGFloat layerXPosAndHeight = (self.superview.width - ((layer.position.x+layer.frame.size.width))) * r3;
     CGFloat endY = self.superview.height - self.minY;
+    
+    
+    layerXPosAndHeight = layer.position.x + (randFloat() - 0.5) * 700;
+    
     
     if (layer.position.x <= rect.size.width*0.5){
         //going left
-        endPoint = CGPointMake(-layerXPosAndHeight, endY);
-        curvePoint= CGPointMake((((layer.position.x*0.5)*r3)*upOrDown)*maxLeftRightShift,-layerYPosAndHeight);
+        endPoint = CGPointMake(layerXPosAndHeight, endY);
+        //curvePoint = CGPointMake((((layer.position.x*0.5)*r3)*upOrDown)*maxLeftRightShift, -layerYPosAndHeight);
+        CGFloat midX =  MIN(endPoint.x, start.x) + fabs(endPoint.x-start.x) / 2;
+
+        curvePoint = CGPointMake(midX, -layerYPosAndHeight);
+
     }else{
         endPoint = CGPointMake(layerXPosAndHeight, endY);
-        curvePoint= CGPointMake((((layer.position.x*0.5)*r3)*upOrDown+rect.size.width)*maxLeftRightShift, -layerYPosAndHeight);
+        //curvePoint = CGPointMake((((layer.position.x*0.5)*r3) *upOrDown+rect.size.width)*maxLeftRightShift, -layerYPosAndHeight);
+        
+        CGFloat midX =  MIN(endPoint.x, start.x) + fabs(endPoint.x-start.x) / 2;
+        
+        curvePoint = CGPointMake(midX, -layerYPosAndHeight);
+
     }
     
     [particlePath addQuadCurveToPoint:endPoint controlPoint:curvePoint];
