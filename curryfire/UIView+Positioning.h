@@ -33,14 +33,11 @@
 
 @interface UIView (Positioning)
 
-
 - (CGPoint) convertCenterToView:(UIView*)view;
 - (CGRect) convertFrameToView:(UIView*)view;
 
 - (void) moveToView:(UIView*)view;
 - (void) moveToBackOfView:(UIView*)view;
-
-
 
 @property (nonatomic,readonly) CGPoint middle;
 
@@ -61,5 +58,16 @@
 
 @property (nonatomic,assign) CGFloat centerX;
 @property (nonatomic,assign) CGFloat centerY;
+
+@end
+
+
+
+@interface UIScrollView (Positioning)
+
+@property (nonatomic,assign) CGFloat contentWidth;
+@property (nonatomic,assign) CGFloat contentHeight;
+@property (nonatomic,assign) CGFloat contentXOffset;
+@property (nonatomic,assign) CGFloat contentYOffset;
 
 @end
