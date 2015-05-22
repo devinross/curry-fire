@@ -86,7 +86,6 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
         ctr++;
     }];
     
-    
 }
 
 - (UIImage*) currentImage{

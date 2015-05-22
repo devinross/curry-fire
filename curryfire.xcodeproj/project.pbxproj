@@ -33,7 +33,7 @@
 		2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC5D1AE14C3E00F6D355 /* ShortHand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		207CA69C1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 207CA69A1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CA69B1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m */; };
-		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; };
+		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2098BA2C1B0F7244000E0074 /* TKAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */; };
 		20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AF03281AE848480065E3FF /* UIView+Confetti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03291AE848480065E3FF /* UIView+Confetti.m */; };
@@ -302,12 +302,12 @@
 				207CA69C1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h in Headers */,
 				20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */,
 				20EBDF4F1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h in Headers */,
-				2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */,
 				20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */,
 				202DBEE41AF6704700B0CE67 /* TKShimmerLabel.h in Headers */,
 				202DBEE21AF6704700B0CE67 /* TKPageControl.h in Headers */,
 				202DBEE61AF6704700B0CE67 /* TKSlideToUnlockView.h in Headers */,
 				202DBED11AF66B2D00B0CE67 /* TKGlowButton.h in Headers */,
+				2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */,
 				20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
 				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,

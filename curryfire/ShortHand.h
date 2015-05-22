@@ -37,7 +37,6 @@
 @import UIKit;
 @import Foundation;
 
-
 UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y);
 UIKIT_STATIC_INLINE NSValue* NSCGPointMake(CGFloat x, CGFloat y){
     return [NSValue valueWithCGPoint:CGPointMake(x,y)];
@@ -47,9 +46,6 @@ UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point);
 UIKIT_STATIC_INLINE NSValue* NSCGPoint(CGPoint point){
     return [NSValue valueWithCGPoint:point];
 }
-
-
-
 
 UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform);
 UIKIT_STATIC_INLINE NSValue* NSCATransform3D(CATransform3D transform){

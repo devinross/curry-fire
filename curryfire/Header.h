@@ -45,7 +45,7 @@
 #import "TKPageControl.h"
 #import "TKShimmerLabel.h"
 #import "TKSlideToUnlockView.h"
-
+#import "TKAnimatedImageView.h"
 
 #import "UIView+Positioning.h"
 #import "UIView+Material.h"
@@ -55,8 +55,6 @@
 #import "UIView+GestureRecognizerBlock.h"
 #import "POPSpringAnimation+Initializers.h"
 #import "UIScreenEdgePanGestureRecognizer+Helper.h"
-
-
 
 
 #endif
