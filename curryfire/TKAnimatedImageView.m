@@ -75,6 +75,10 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
         frame = frame % images.count;
 
         if(repeatCount > 0 && ctr >= FRAME_RATE * duration * repeatCount){
+            
+            self.currentFrame = images.count-1;
+            self.image = images[frame];
+            
             [self.timer invalidate];
             self.timer = nil;
             if(finished) finished(YES);
