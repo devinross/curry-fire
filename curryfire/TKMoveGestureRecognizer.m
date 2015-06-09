@@ -191,19 +191,19 @@
     if(self.direction == TKMoveGestureDirectionY)
         p.x = self.movableView.center.x;
 
-    
     if(!self.canMoveOutsideLocationBounds){
         
         CGPoint minPoint = [self minimumLocation];
         CGPoint maxPoint = [self maximumLocation];
-        p.x = MIN(maxPoint.x,MAX(minPoint.x,p.x));
-        p.y = MIN(maxPoint.y,MAX(minPoint.y,p.y));
+        
+        if(self.direction == TKMoveGestureDirectionX || self.direction == TKMoveGestureDirectionXY)
+            p.x = MIN(maxPoint.x,MAX(minPoint.x,p.x));
+        if(self.direction == TKMoveGestureDirectionY || self.direction == TKMoveGestureDirectionXY)
+            p.y = MIN(maxPoint.y,MAX(minPoint.y,p.y));
 
     }
     
     CGPoint blockPoint = p;
-    
-
     
     if(self.state == UIGestureRecognizerStateChanged){
         
@@ -289,7 +289,6 @@
     
     if (self.animating && [self state] == UIGestureRecognizerStatePossible) {
         [self setState:UIGestureRecognizerStateBegan];
-//        self.moving = NO;
     }
     
 }
