@@ -55,6 +55,6 @@
 #import "UIView+GestureRecognizerBlock.h"
 #import "POPSpringAnimation+Initializers.h"
 #import "UIScreenEdgePanGestureRecognizer+Helper.h"
-
+#import "TKMoveScreenEdgeGestureRecognizer.h"
 
 #endif

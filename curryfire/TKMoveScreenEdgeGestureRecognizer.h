@@ -1,6 +1,6 @@
 //
-//  TKMoveViewGestureRecognizer.h
-//  Created by Devin Ross on 4/16/15.
+//  TKMoveScreenEdgeGestureRecognizer.h
+//  Created by Devin Ross on 6/12/15.
 //
 /*
  
@@ -30,27 +30,19 @@
  */
 
 @import UIKit;
-@import pop;
-@import curry;
+#import "TKMoveGestureRecognizer.h"
 
-typedef enum {
-    TKMoveGestureDirectionXY = 0,
-    TKMoveGestureDirectionX = 1,
-    TKMoveGestureDirectionY = 2,
-} TKMoveGestureDirection;
-
-
-@interface TKMoveGestureRecognizer : UIPanGestureRecognizer
+@interface TKMoveScreenEdgeGestureRecognizer : UIScreenEdgePanGestureRecognizer
 
 + (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView;
 + (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView locations:(NSArray*)locations;
-+ (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
++ (instancetype) gestureWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveScreenEdgeGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
 
 - (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView;
 - (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView*)movableView locations:(NSArray*)locations;
-- (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
+- (instancetype) initWithDirection:(TKMoveGestureDirection)direction movableView:(UIView *)movableView locations:(NSArray*)locations moveHandler:(void (^)(TKMoveScreenEdgeGestureRecognizer *gesture, CGPoint position, CGPoint location ))block;
 
-@property (nonatomic,copy,setter=setMoveHandler:) void (^moveHandler)(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location);
+@property (nonatomic,copy,setter=setMoveHandler:) void (^moveHandler)(TKMoveScreenEdgeGestureRecognizer *gesture, CGPoint position, CGPoint location);
 
 @property (nonatomic,readonly) TKMoveGestureDirection direction;
 
@@ -62,6 +54,7 @@ typedef enum {
 @property (nonatomic,strong) NSArray *locations;
 @property (nonatomic,strong) POPSpringAnimation *snapBackAnimation;
 @property (nonatomic,assign) CGFloat velocityDamping;
+
 
 - (void) moveToPoint:(CGPoint)point;
 

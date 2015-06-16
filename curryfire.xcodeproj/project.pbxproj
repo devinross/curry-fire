@@ -47,6 +47,8 @@
 		20CB9CE91AF3C487002E9F1C /* POPSpringAnimation+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */; };
 		20EBDF4F1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 20EBDF4D1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20EBDF501AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EBDF4E1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m */; };
+		20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "POPSpringAnimation+Initializers.m"; sourceTree = "<group>"; };
 		20EBDF4D1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPanGestureRecognizer+VelocityDirection.h"; sourceTree = "<group>"; };
 		20EBDF4E1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPanGestureRecognizer+VelocityDirection.m"; sourceTree = "<group>"; };
+		20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMoveScreenEdgeGestureRecognizer.h; sourceTree = "<group>"; };
+		20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMoveScreenEdgeGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,8 @@
 				2069BC5D1AE14C3E00F6D355 /* ShortHand.h */,
 				2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */,
 				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
+				20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */,
+				20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */,
 				2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */,
 				2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */,
 				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
@@ -309,6 +315,7 @@
 				202DBED11AF66B2D00B0CE67 /* TKGlowButton.h in Headers */,
 				2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */,
 				20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */,
+				20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
 				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,
 			);
@@ -444,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */,
 				207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */,
 				20AF03451AE862F60065E3FF /* UIView+TwelvePrinciples.m in Sources */,
 				2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */,
