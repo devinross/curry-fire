@@ -1,6 +1,6 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  PagedScrollViewViewController.h
+//  Created by Devin Ross on 6/18/15.
 //
 /*
  
@@ -29,34 +29,11 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
-
 @import curry;
-@import pop;
+@import curryfire;
 
-#import "ShortHand.h"
+@interface PagedScrollViewViewController : UIViewController <TKPagedScrollViewDelegate>
 
-#import "TKMoveGestureRecognizer.h"
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKGlowButton.h"
-#import "TKPageControl.h"
-#import "TKShimmerLabel.h"
-#import "TKSlideToUnlockView.h"
-#import "TKAnimatedImageView.h"
+@property (nonatomic,strong) TKPagedScrollView *scrollView;
 
-#import "TKPagedScrollView.h"
-
-#import "UIView+Positioning.h"
-#import "UIView+Material.h"
-#import "UIView+TwelvePrinciples.h"
-#import "UIView+Confetti.h"
-#import "UIPanGestureRecognizer+VelocityDirection.h"
-#import "UIView+GestureRecognizerBlock.h"
-#import "POPSpringAnimation+Initializers.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
-
-#endif
+@end
