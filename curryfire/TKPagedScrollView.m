@@ -1,16 +1,38 @@
 //
 //  TKPagedScrollView.m
-//  curryfire
-//
 //  Created by Devin Ross on 6/18/15.
-//  Copyright (c) 2015 Devin Ross. All rights reserved.
 //
+/*
+ 
+ curryfire || https://github.com/devinross/curry-fire
+ 
+ Permission is hereby granted, free of charge, to any person
+ obtaining a copy of this software and associated documentation
+ files (the "Software"), to deal in the Software without
+ restriction, including without limitation the rights to use,
+ copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following
+ conditions:
+ 
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ OTHER DEALINGS IN THE SOFTWARE.
+ 
+ */
 
 #import "TKPagedScrollView.h"
 #import "UIView+Positioning.h"
 
 @interface TKPagedScrollView () <UIScrollViewDelegate>
-
 @end
 
 @implementation TKPagedScrollView
@@ -19,11 +41,11 @@
     self = [self initWithFrame:frame direction:TKPageScrollDirectionVertical];
     return self;
 }
-
 - (id) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction{
     if(!(self=[super initWithFrame:frame])) return nil;
     
     self.clipsToBounds = YES;
+    _scrollDirection = direction;
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     self.scrollView.delegate = self;
@@ -35,17 +57,8 @@
     return self;
 }
 
-- (void) setPages:(NSArray *)pages{
-    [_pages makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    _pages = pages;
-    [self _setupPages];
-}
 
-- (void) setCurrentPage:(NSInteger)currentPage{
-    _currentPage = currentPage;
-    [self _setupPages];
-}
-
+#pragma mark Private Functions
 - (void) _setupPages{
     
     [self.scrollView setContentOffset:CGPointZero animated:NO];
@@ -93,7 +106,7 @@
     
 }
 
-#pragma mark UIScrollView
+#pragma mark Actions
 - (void) scrollToPreviousPage{
     
     NSInteger currentPage = self.currentPage;
@@ -279,5 +292,16 @@
         [self.delegate pagedScrollViewDidScrollToTop:self];
 }
 
+
+#pragma mark Properties
+- (void) setPages:(NSArray *)pages{
+    [_pages makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    _pages = pages;
+    [self _setupPages];
+}
+- (void) setCurrentPage:(NSInteger)currentPage{
+    _currentPage = currentPage;
+    [self _setupPages];
+}
 
 @end
