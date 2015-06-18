@@ -47,6 +47,8 @@
 #import "TKSlideToUnlockView.h"
 #import "TKAnimatedImageView.h"
 
+#import "TKPagedScrollView.h"
+
 #import "UIView+Positioning.h"
 #import "UIView+Material.h"
 #import "UIView+TwelvePrinciples.h"

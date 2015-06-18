@@ -178,7 +178,7 @@
     return self.contentSize.height;
 }
 - (void) setContentHeight:(CGFloat)contentHeight{
-    self.contentSize = CGSizeMake(self.contentSize.width, self.contentSize.height);
+    self.contentSize = CGSizeMake(self.contentSize.width, contentHeight);
 }
 
 - (CGFloat) contentXOffset{

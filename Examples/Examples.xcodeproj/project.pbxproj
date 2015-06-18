@@ -26,6 +26,7 @@
 		2069BC3D1AE0B67400F6D355 /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2069BC4B1AE0B6A700F6D355 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; };
 		2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		206E839B1B332B1A0010CFC6 /* PagedScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */; };
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
@@ -96,6 +97,8 @@
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2069BC411AE0B68C00F6D355 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
 		2069BC441AE0B68C00F6D355 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
+		206E83991B332B1A0010CFC6 /* PagedScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedScrollViewViewController.h; sourceTree = "<group>"; };
+		206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewViewController.m; sourceTree = "<group>"; };
 		208E8A391AE86B69004E63FB /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
 		208E8A3A1AE86B69004E63FB /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 		208E8A431AE94210004E63FB /* WiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiggleViewController.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				20691B661AE7F9A50045627D /* RootViewController.m */,
 				2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */,
 				2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */,
+				206E83991B332B1A0010CFC6 /* PagedScrollViewViewController.h */,
+				206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */,
 				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
 				20691B701AE7FC450045627D /* MaterialViewController.m */,
 				2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */,
@@ -249,6 +254,7 @@
 				TargetAttributes = {
 					2069BBA71AE0996800F6D355 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 3LM527MAF9;
 					};
 				};
 			};
@@ -309,6 +315,7 @@
 				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
 				208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
+				206E839B1B332B1A0010CFC6 /* PagedScrollViewViewController.m in Sources */,
 				2067AF9C1AE954C70097E3AE /* HopViewController.m in Sources */,
 				20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */,
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
@@ -440,6 +447,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos",
