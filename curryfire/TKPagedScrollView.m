@@ -241,6 +241,24 @@
     }];
     
 }
+- (void) scrollToPage:(NSInteger)page animated:(BOOL)animated{
+	if(page < 0 || page >= self.pages.count) return;
+	
+	CGFloat offset = 0;
+	for(NSInteger j=0;j<page;j++){
+		UIView *pageView = self.pages[j];
+		if(self.scrollDirection == TKPageScrollDirectionHorizontal)
+			offset += pageView.width;
+		else
+			offset += pageView.height;
+	}
+	
+	CGPoint offsetPoint = self.scrollDirection == TKPageScrollDirectionHorizontal ? CGPointMake(offset, 0) : CGPointMake(0, offset);
+	[self.scrollView setContentOffset:offsetPoint animated:animated];
+	
+	
+	
+}
 
 
 #pragma mark UIScrollViewDelegate

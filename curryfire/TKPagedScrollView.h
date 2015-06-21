@@ -77,4 +77,6 @@ typedef NS_ENUM(NSUInteger, TKPageScrollDirection) {
 - (void) scrollToPreviousPage;
 - (void) scrollToNextPage;
 
+- (void) scrollToPage:(NSInteger)page animated:(BOOL)animated;
+
 @end
