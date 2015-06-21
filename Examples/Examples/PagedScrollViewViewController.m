@@ -31,26 +31,19 @@
 
 #import "PagedScrollViewViewController.h"
 
-@interface PagedScrollViewViewController ()
-
-@end
 
 @implementation PagedScrollViewViewController
 
 - (void) loadView{
     [super loadView];
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
     
 
-    
     self.scrollView = [[TKPagedScrollView alloc] initWithFrame:self.view.bounds direction:TKPageScrollDirectionVertical];
     self.scrollView.delegate = self;
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.scrollView];
-    
-    
 
     
     UIView *viewOne = [UIView viewWithFrame:CGRectMake(0, 0, self.view.width, 1000) backgroundColor:[UIColor randomColor]];
@@ -69,15 +62,10 @@
 
     UIView *viewFour = [UIView viewWithFrame:CGRectMake(0, viewThree.maxY, self.view.width, 3000) backgroundColor:[UIColor randomColor]];
 
-    
     self.scrollView.pages = @[viewOne,viewTwo,viewThree,viewFour];
     
     
 
-
-    
-    
-    
 }
 
 
