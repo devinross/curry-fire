@@ -40,6 +40,7 @@
 
 - (void) pagedScrollViewDidScroll:(TKPagedScrollView *)scrollView;
 
+- (void) pagedScrollView:(TKPagedScrollView *)scrollView willMoveToPage:(NSInteger)page;
 - (void) pagedScrollView:(TKPagedScrollView *)scrollView didMoveToPage:(NSInteger)page;
 
 - (void) pagedScrollViewWillBeginDragging:(TKPagedScrollView *)scrollView;
@@ -67,6 +68,7 @@ typedef NS_ENUM(NSUInteger, TKPageScrollDirection) {
 - (id) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction;
 
 @property (nonatomic,readonly) TKPageScrollDirection scrollDirection;
+@property (nonatomic,readonly) BOOL animatingPages;
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) NSArray *pages;
@@ -76,7 +78,8 @@ typedef NS_ENUM(NSUInteger, TKPageScrollDirection) {
 
 - (void) scrollToPreviousPage;
 - (void) scrollToNextPage;
-
 - (void) scrollToPage:(NSInteger)page animated:(BOOL)animated;
+
+- (void) updatePagesLayout;
 
 @end

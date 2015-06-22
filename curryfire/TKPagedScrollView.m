@@ -63,18 +63,20 @@
     
     [self.scrollView setContentOffset:CGPointZero animated:NO];
     UIView *nextView = self.pages[self.currentPage];
-    
-    if(self.scrollDirection == TKPageScrollDirectionVertical)
-        self.scrollView.contentHeight = nextView.height;
-    else
-        self.scrollView.contentWidth = nextView.width;
+	BOOL vert = self.scrollDirection == TKPageScrollDirectionVertical;
+
+	if(vert){
+		self.scrollView.contentSize = CGSizeMake(self.scrollView.width, nextView.height);
+	}else{
+		self.scrollView.contentSize = CGSizeMake(nextView.width, self.scrollView.height);
+	}
 
 
     CGFloat min = 0;
     for(NSInteger i=self.currentPage;i<self.pages.count;i++){
         
         UIView *page = self.pages[i];
-        if(self.scrollDirection == TKPageScrollDirectionVertical){
+        if(vert){
             page.minY = min;
             min = page.maxY;
         }else{
@@ -88,7 +90,7 @@
     for(NSInteger i=self.currentPage-1;i>=0;i--){
         UIView *page = self.pages[i];
         
-        if(self.scrollDirection == TKPageScrollDirectionVertical){
+        if(vert){
             page.maxY = max;
             max = page.minY;
         }else{
@@ -101,9 +103,10 @@
 
         
     }
-    
-
-    
+	
+}
+- (BOOL) _scrollVertical{
+	return self.scrollDirection==TKPageScrollDirectionVertical;
 }
 
 #pragma mark Actions
@@ -112,34 +115,67 @@
     NSInteger currentPage = self.currentPage;
     NSInteger nextPage = currentPage - 1;
     if(nextPage < 0) return;
-    
+	
+	_animatingPages = YES;
+	
+	
+	
+	if([self.delegate respondsToSelector:@selector(pagedScrollView:willMoveToPage:)])
+		[self.delegate pagedScrollView:self willMoveToPage:nextPage];
+	
     BOOL showVert = self.scrollView.showsVerticalScrollIndicator;
+	BOOL showHorz = self.scrollView.showsHorizontalScrollIndicator;
+
     BOOL interactive = self.scrollView.userInteractionEnabled;
     self.scrollView.userInteractionEnabled = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = self.scrollView.showsHorizontalScrollIndicator = NO;
     UIView *nextView = self.pages[nextPage];
     
     
     for(UIView *subview in self.pages)
         [subview moveToView:self.scrollView.superview];
     [self.scrollView setContentOffset:CGPointZero animated:NO];
-    self.scrollView.contentHeight = nextView.height;
-    
+	
+	if(self._scrollVertical)
+		self.scrollView.contentHeight = nextView.height;
+    else
+		self.scrollView.contentWidth = nextView.width;
+	
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        nextView.maxY = self.scrollView.maxY;
-        
-        CGFloat minY = self.scrollView.maxY;
-        for(NSInteger i=currentPage;i<self.pages.count;i++){
+		
+		
+		if(self._scrollVertical)
+			nextView.maxY = self.scrollView.maxY;
+		else
+			nextView.maxX = self.scrollView.maxX;
+		
+		CGFloat min = self._scrollVertical ? self.scrollView.maxY : self.scrollView.maxX;
+		
+        for(NSInteger i=currentPage; i<self.pages.count;i++){
             UIView *page = self.pages[i];
-            page.minY = minY;
-            minY = page.maxY;
+			
+			if(self._scrollVertical){
+				page.minY = min;
+				min = page.maxY;
+			}else{
+				page.minX = min;
+				min = page.maxX;
+			}
+
         }
         
-        CGFloat maxY = nextView.minY;
+		CGFloat max = self._scrollVertical ? nextView.minY : nextView.minX;
         for(NSInteger i=nextPage-1;i>=0;i--){
             UIView *page = self.pages[i];
-            page.maxY = maxY;
-            maxY = page.minY;
+			
+			if(self._scrollVertical){
+				page.maxY = max;
+				max = page.minY;
+			}else{
+				page.maxX = max;
+				max = page.minX;
+			}
+
         }
         
         
@@ -147,20 +183,28 @@
         
         
         _currentPage = nextPage;
-        
-        if(self.scrollDirection == TKPageScrollDirectionVertical)
-            self.scrollView.contentHeight = nextView.height;
-        else
-            self.scrollView.contentWidth = nextView.width;
-        
-        [self.scrollView setContentOffset:CGPointMake(0, nextView.height-self.scrollView.height) animated:NO];
+		CGPoint offset = CGPointZero;
+		if(self.scrollDirection == TKPageScrollDirectionVertical){
+			self.scrollView.contentHeight = nextView.height;
+			offset = CGPointMake(0, nextView.height-self.scrollView.height);
+		}else{
+			self.scrollView.contentWidth = nextView.width;
+			offset = CGPointMake(nextView.width-self.scrollView.width, 0);
+		}
+		
+        [self.scrollView setContentOffset:offset animated:NO];
         
         for(UIView *subview in self.pages)
             [subview moveToView:self.scrollView];
         
         self.scrollView.userInteractionEnabled = interactive;
+		
         self.scrollView.showsVerticalScrollIndicator = showVert;
-        
+		self.scrollView.showsHorizontalScrollIndicator = showHorz;
+		
+		_animatingPages = NO;
+
+
         if([self.delegate respondsToSelector:@selector(pagedScrollView:didMoveToPage:)])
             [self.delegate pagedScrollView:self didMoveToPage:self.currentPage];
 
@@ -172,11 +216,19 @@
     NSInteger currentPage = self.currentPage;
     NSInteger nextPage = currentPage + 1;
     if(nextPage >= self.pages.count) return;
-    
+	
+	_animatingPages = YES;
+	
+	if([self.delegate respondsToSelector:@selector(pagedScrollView:willMoveToPage:)])
+		[self.delegate pagedScrollView:self willMoveToPage:nextPage];
+	
+	
+	
     BOOL showVert = self.scrollView.showsVerticalScrollIndicator;
+	BOOL showHorz = self.scrollView.showsHorizontalScrollIndicator;
     BOOL interactive = self.scrollView.userInteractionEnabled;
     self.scrollView.userInteractionEnabled = NO;
-    self.scrollView.showsVerticalScrollIndicator = NO;
+	self.scrollView.showsVerticalScrollIndicator = self.scrollView.showsHorizontalScrollIndicator = NO;
     UIView *nextView = self.pages[nextPage];
     
     for(UIView *subview in self.pages)
@@ -188,32 +240,25 @@
         CGFloat min = 0;
         for(NSInteger i=nextPage;i<self.pages.count;i++){
             UIView *page = self.pages[i];
-            
-            if(self.scrollDirection==TKPageScrollDirectionVertical){
+            if(self._scrollVertical){
                 page.minY = min;
                 min = page.maxY;
             }else{
                 page.minX = min;
                 min = page.maxX;
             }
-            
-            
         }
         
         CGFloat max = 0;
         for(NSInteger i=nextPage-1;i>=0;i--){
             UIView *page = self.pages[i];
-            
-            
-            if(self.scrollDirection==TKPageScrollDirectionVertical){
+            if(self._scrollVertical){
                 page.maxY = max;
                 max = page.minY;
             }else{
                 page.maxX = max;
                 max = page.minX;
             }
-            
-            
         }
         
         
@@ -232,12 +277,14 @@
             [subview moveToView:self.scrollView];
         self.scrollView.userInteractionEnabled = interactive;
         self.scrollView.showsVerticalScrollIndicator = showVert;
-        
-        
+		self.scrollView.showsHorizontalScrollIndicator = showHorz;
+		
+		_animatingPages = NO;
+
+
         if([self.delegate respondsToSelector:@selector(pagedScrollView:didMoveToPage:)])
             [self.delegate pagedScrollView:self didMoveToPage:self.currentPage];
 
-        
     }];
     
 }
@@ -246,27 +293,75 @@
 
 	_currentPage = page;
 	
+	
+	if(animated)
+		[UIView beginAnimations:nil context:nil];
+	
 	[self _setupPages];
 
+	if(animated)
+		[UIView commitAnimations];
 	
 	
 }
 
+- (void) updatePagesLayout{
+	
+	UIView *nextView = self.pages[self.currentPage];
+	BOOL vert = self.scrollDirection == TKPageScrollDirectionVertical;
+	
+	
+	if(vert){
+		self.scrollView.contentSize = CGSizeMake(self.scrollView.width, nextView.height);
+	}else{
+		self.scrollView.contentSize = CGSizeMake(nextView.width, self.scrollView.height);
+	}
+	
+	
+	CGFloat min = vert ? nextView.maxY : nextView.maxX;
+	for(NSInteger i=self.currentPage+1;i<self.pages.count;i++){
+		
+		UIView *page = self.pages[i];
+		if(vert){
+			page.minY = min;
+			min = page.maxY;
+		}else{
+			page.minX = min;
+			min = page.maxX;
+		}
+		[self.scrollView addSubview:page];
+		
+	}
+	CGFloat max = 0;
+	for(NSInteger i=self.currentPage-1;i>=0;i--){
+		UIView *page = self.pages[i];
+		if(vert){
+			page.maxY = max;
+			max = page.minY;
+		}else{
+			page.maxX = max;
+			max = page.minX;
+		}
+		[self.scrollView addSubview:page];
+	}
+}
 
 #pragma mark UIScrollViewDelegate
 - (void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
+	BOOL vert = self.scrollDirection == TKPageScrollDirectionVertical;
 
-    if(scrollView.contentOffset.y + scrollView.height > scrollView.contentHeight){
+
+    if(vert && scrollView.contentOffset.y + scrollView.height > scrollView.contentHeight){
         [self scrollToNextPage];
-        
-        
-    }
-    
-    if(scrollView.contentOffset.y < 0){
-        [self scrollToPreviousPage];
-    }
-    
+	}else if(vert && scrollView.contentOffset.y < 0){
+		[self scrollToPreviousPage];
+		
+    }else if(!vert && scrollView.contentOffset.x + scrollView.width > scrollView.contentWidth){
+		[self scrollToNextPage];
+	}else if(!vert && scrollView.contentOffset.x < 0){
+		[self scrollToPreviousPage];
+	}
+		
     if([self.delegate respondsToSelector:@selector(pagedScrollViewDidEndDragging:willDecelerate:)])
         [self.delegate pagedScrollViewDidEndDragging:self willDecelerate:decelerate];
     
