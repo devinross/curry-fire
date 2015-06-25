@@ -24,6 +24,9 @@
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
 		206E839B1B332B1A0010CFC6 /* PagedScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */; };
+		2077EF2E1B3C960E00A4928F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EB61B3C92FC0051CA1F /* pop.framework */; };
+		2077EF2F1B3C960E00A4928F /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EB61B3C92FC0051CA1F /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2077EF321B3C965500A4928F /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
@@ -55,6 +58,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2077EF321B3C965500A4928F /* curryfire.framework in Embed Frameworks */,
+				2077EF2F1B3C960E00A4928F /* pop.framework in Embed Frameworks */,
 				20556E981B3C8FFF0051CA1F /* curry.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2077EF2E1B3C960E00A4928F /* pop.framework in Frameworks */,
 				20556EB71B3C92FC0051CA1F /* pop.framework in Frameworks */,
 				20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */,
 				20556E971B3C8FFF0051CA1F /* curry.framework in Frameworks */,
