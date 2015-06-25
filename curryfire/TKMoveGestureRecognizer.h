@@ -30,8 +30,8 @@
  */
 
 @import UIKit;
-@import pop;
 @import curry;
+@import pop;
 
 typedef enum {
     TKMoveGestureDirectionXY = 0,

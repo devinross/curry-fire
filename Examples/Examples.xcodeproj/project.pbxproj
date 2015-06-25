@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		205AD6941AF6E21D006F8A54 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; };
-		205AD6951AF6E230006F8A54 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; };
-		205AD6961AF6E230006F8A54 /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20556E971B3C8FFF0051CA1F /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; };
+		20556E981B3C8FFF0051CA1F /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; };
+		20556EB71B3C92FC0051CA1F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EB61B3C92FC0051CA1F /* pop.framework */; };
 		2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */; };
 		2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF971AE94E610097E3AE /* RunForrestViewController.m */; };
 		2067AF9C1AE954C70097E3AE /* HopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9B1AE954C70097E3AE /* HopViewController.m */; };
@@ -22,10 +23,6 @@
 		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
-		2069BC3C1AE0B67400F6D355 /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; };
-		2069BC3D1AE0B67400F6D355 /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BBD81AE099A800F6D355 /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2069BC4B1AE0B6A700F6D355 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; };
-		2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2069BC441AE0B68C00F6D355 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		206E839B1B332B1A0010CFC6 /* PagedScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */; };
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
@@ -35,16 +32,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2069BBD71AE099A800F6D355 /* PBXContainerItemProxy */ = {
+		20556E9F1B3C906F0051CA1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */;
+			containerPortal = 20556E991B3C906F0051CA1F /* curryfire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2069BB601AE095CA00F6D355;
 			remoteInfo = curryfire;
 		};
-		2069BC3E1AE0B67400F6D355 /* PBXContainerItemProxy */ = {
+		20556EB01B3C90B60051CA1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */;
+			containerPortal = 20556E991B3C906F0051CA1F /* curryfire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2069BB5F1AE095CA00F6D355;
 			remoteInfo = curryfire;
@@ -58,9 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				205AD6961AF6E230006F8A54 /* curry.framework in Embed Frameworks */,
-				2069BC4C1AE0B6A700F6D355 /* pop.framework in Embed Frameworks */,
-				2069BC3D1AE0B67400F6D355 /* curryfire.framework in Embed Frameworks */,
+				20556E981B3C8FFF0051CA1F /* curry.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
+		20556EB61B3C92FC0051CA1F /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "../../../Library/Developer/Xcode/DerivedData/Examples-crdfpjzazzkwbndzijnrtnvmtbcr/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<group>"; };
 		205AD6931AF6E21D006F8A54 /* curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = curry.framework; path = "../../../Library/Developer/Xcode/DerivedData/Examples-crdfpjzazzkwbndzijnrtnvmtbcr/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<group>"; };
 		2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimationViewController.h; sourceTree = "<group>"; };
 		2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimationViewController.m; sourceTree = "<group>"; };
@@ -92,7 +89,6 @@
 		2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoveGestureViewController.h; sourceTree = "<group>"; };
 		2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveGestureViewController.m; sourceTree = "<group>"; };
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
 		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2069BC411AE0B68C00F6D355 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
@@ -116,16 +112,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205AD6951AF6E230006F8A54 /* curry.framework in Frameworks */,
-				205AD6941AF6E21D006F8A54 /* curry.framework in Frameworks */,
-				2069BC3C1AE0B67400F6D355 /* curryfire.framework in Frameworks */,
-				2069BC4B1AE0B6A700F6D355 /* pop.framework in Frameworks */,
+				20556EB71B3C92FC0051CA1F /* pop.framework in Frameworks */,
+				20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */,
+				20556E971B3C8FFF0051CA1F /* curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20556E9A1B3C906F0051CA1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20556EA01B3C906F0051CA1F /* curryfire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +143,7 @@
 		2069BB9F1AE0996800F6D355 = {
 			isa = PBXGroup;
 			children = (
-				2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */,
+				20556E991B3C906F0051CA1F /* curryfire.xcodeproj */,
 				2069BBAA1AE0996800F6D355 /* Examples */,
 				2069BC671AE15E3300F6D355 /* Frameworks */,
 				2069BBA91AE0996800F6D355 /* Products */,
@@ -203,17 +206,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2069BBD21AE099A800F6D355 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2069BBD81AE099A800F6D355 /* curryfire.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2069BC671AE15E3300F6D355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20556EB61B3C92FC0051CA1F /* pop.framework */,
 				205AD6931AF6E21D006F8A54 /* curry.framework */,
 				2069BC441AE0B68C00F6D355 /* pop.framework */,
 				2069BC411AE0B68C00F6D355 /* curry.framework */,
@@ -236,7 +232,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2069BC3F1AE0B67400F6D355 /* PBXTargetDependency */,
+				20556EB11B3C90B60051CA1F /* PBXTargetDependency */,
 			);
 			name = Examples;
 			productName = Examples;
@@ -270,8 +266,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2069BBD21AE099A800F6D355 /* Products */;
-					ProjectRef = 2069BBD11AE099A800F6D355 /* curryfire.xcodeproj */;
+					ProductGroup = 20556E9A1B3C906F0051CA1F /* Products */;
+					ProjectRef = 20556E991B3C906F0051CA1F /* curryfire.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -282,11 +278,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2069BBD81AE099A800F6D355 /* curryfire.framework */ = {
+		20556EA01B3C906F0051CA1F /* curryfire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = curryfire.framework;
-			remoteRef = 2069BBD71AE099A800F6D355 /* PBXContainerItemProxy */;
+			remoteRef = 20556E9F1B3C906F0051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -330,10 +326,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2069BC3F1AE0B67400F6D355 /* PBXTargetDependency */ = {
+		20556EB11B3C90B60051CA1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = curryfire;
-			targetProxy = 2069BC3E1AE0B67400F6D355 /* PBXContainerItemProxy */;
+			targetProxy = 20556EB01B3C90B60051CA1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
