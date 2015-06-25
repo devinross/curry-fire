@@ -186,24 +186,14 @@ float randFloat(){
     CGPoint start = layer.position;
     [particlePath moveToPoint:start];
     
-    float r = ((float)rand() / (float)RAND_MAX) + 0.3f;
-    float r2 = ((float)rand() / (float)RAND_MAX) + 0.4f;
-    float r3 = r * r2;
-    
-    int upOrDown = (r <= 0.5) ? 1 : -1;
-    
+
     CGPoint curvePoint = CGPointZero;
     CGPoint endPoint = CGPointZero;
-    
-    CGFloat maxLeftRightShift = 1.f * randFloat();
-    
     CGFloat layerYPosAndHeight = (self.superview.height - ((layer.position.y+layer.frame.size.height))) * randFloat();
-    CGFloat layerXPosAndHeight = (self.superview.width - ((layer.position.x+layer.frame.size.width))) * r3;
     CGFloat endY = self.superview.height - self.minY;
-    
-    
-    layerXPosAndHeight = layer.position.x + (randFloat() - 0.5) * 700;
-    
+	CGFloat layerXPosAndHeight = layer.position.x + (randFloat() - 0.5) * 700;
+
+	
     
     if (layer.position.x <= rect.size.width*0.5){
         //going left
