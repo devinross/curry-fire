@@ -36,4 +36,8 @@
 
 - (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender))block;
 
+
+- (UITapGestureRecognizer*) addTapGestureWithTarget:(id)target action:(SEL)action;
+
+
 @end

@@ -39,4 +39,10 @@
     return tap;
 }
 
+- (UITapGestureRecognizer*) addTapGestureWithTarget:(id)target action:(SEL)action{
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
+	[self addGestureRecognizer:tap];
+	return tap;
+}
+
 @end
