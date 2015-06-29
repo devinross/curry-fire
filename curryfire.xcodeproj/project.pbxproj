@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		203FB7FF1B4114BD000D3B43 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 203FB8071B4114BD000D3B43 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				203FB8081B4114C3000D3B43 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		202DBED11AF66B2D00B0CE67 /* TKGlowButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 202DBECF1AF66B2D00B0CE67 /* TKGlowButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		202DBED21AF66B2D00B0CE67 /* TKGlowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DBED01AF66B2D00B0CE67 /* TKGlowButton.m */; };
@@ -194,10 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				20556ECA1B3C93180051CA1F /* libpop.a */,
-				20556ECC1B3C93180051CA1F /* pop.framework */,
 				20556ECE1B3C93180051CA1F /* pop.framework */,
+				20556ECC1B3C93180051CA1F /* pop.framework */,
 				20556ED01B3C93180051CA1F /* pop-tests.xctest */,
-				20556ED21B3C93180051CA1F /* pop-tests.xctest */,
+				20556ED21B3C93180051CA1F /* pop-tests-osx.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,6 +388,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Devin Ross";
 				TargetAttributes = {
+					203FB7FF1B4114BD000D3B43 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					2069BB5F1AE095CA00F6D355 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -402,6 +419,7 @@
 			projectRoot = "";
 			targets = (
 				2069BB5F1AE095CA00F6D355 /* curryfire */,
+				203FB7FF1B4114BD000D3B43 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -449,10 +467,10 @@
 			remoteRef = 20556ECF1B3C93180051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		20556ED21B3C93180051CA1F /* pop-tests.xctest */ = {
+		20556ED21B3C93180051CA1F /* pop-tests-osx.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "pop-tests.xctest";
+			path = "pop-tests-osx.xctest";
 			remoteRef = 20556ED11B3C93180051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -468,6 +486,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		203FB8081B4114C3000D3B43 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"DevinRoss\";\ncompanyID=\"com.devinross\";\ncompanyURL=\"http://devinross.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/Docs\";\n\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n--output \"~/Docs\" \\\n\"${PROJECT_DIR}/curryfire\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2069BB5B1AE095CA00F6D355 /* Sources */ = {
@@ -512,6 +546,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		203FB8001B4114BD000D3B43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		203FB8011B4114BD000D3B43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2069BB741AE095CA00F6D355 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -641,6 +689,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		203FB8071B4114BD000D3B43 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				203FB8001B4114BD000D3B43 /* Debug */,
+				203FB8011B4114BD000D3B43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2069BB5A1AE095CA00F6D355 /* Build configuration list for PBXProject "curryfire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

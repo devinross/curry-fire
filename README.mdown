@@ -1,9 +1,9 @@
 CurryFire🔥
 ============
-Curry is an Cocoa Touch framework built to enhance and compliment Foundation and UIKit. CurryFire builds on top of curry with hot fire animations. If you're looking to see some of the framework in action see the example project or read the [documentation](http://devinross.com/curry-fire/documentation/). 
+Curry is an Cocoa Touch framework built to enhance and compliment Foundation and UIKit. CurryFire builds on top of curry with hot fire animations. If you're looking to see some of the framework in action see the example project or read the [documentation](http://devinross.com/curryfire/). 
 
 ## Documentation
-Browse the documentation at [devinross.com/curry-fire/documentation](http://devinross.com/curry-fire/documentation/). To add the documentation directly to XCode, [download the docset](http://devinross.com/curry-fire/documentation/docset.zip) and place the docset into the `~/Library/Developer/Shared/Documentation/DocSets/` folder.
+Browse the documentation at [devinross.com/curry-fire/documentation](http://devinross.com/curryfire). To add the documentation directly to XCode, [download the docset](http://devinross.com/curryfire/com.devinross.curryfire.docset.zip) and place the docset into the `~/Library/Developer/Shared/Documentation/DocSets/` folder.
 
 
 Follow me on twitter [@devin_ross](http://twitter.com/devin_ross).
