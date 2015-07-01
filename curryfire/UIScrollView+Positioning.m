@@ -1,6 +1,6 @@
 //
-//  UIView+Confetti.h
-//  Created by Devin Ross on 4/22/15.
+//  Positioning+UIScrollView.m
+//  Created by Devin Ross on 7/1/15.
 //
 /*
  
@@ -29,25 +29,37 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
-@import curry;
+#import "Positioning+UIScrollView.h"
 
-/** Play a special confetti animation. */
-@interface UIView (Confetti)
+@implementation UIScrollView (Positioning)
 
-/** Play a confetti animation */
-- (void) rainConfetti;
+- (CGFloat) contentWidth{
+	return self.contentSize.width;
+}
+- (void) setContentWidth:(CGFloat)contentWidth{
+	self.contentSize = CGSizeMake(contentWidth, self.contentSize.height);
+}
+- (CGFloat) contentHeight{
+	return self.contentSize.height;
+}
+- (void) setContentHeight:(CGFloat)contentHeight{
+	self.contentSize = CGSizeMake(self.contentSize.width, contentHeight);
+}
 
-/** Confetti animation with a completion block. 
- @param completion A completion block called upon the animation ending.
- */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion;
+- (CGFloat) contentXOffset{
+	return self.contentOffset.x;
+}
+- (CGFloat) contentYOffset{
+	return self.contentOffset.y;
+}
 
-/** Confetti animation with a completion block.
- @param completion A completion block called upon the animation ending.
- @param rowsAndColumns How the confetti is sliced.
- */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion numberOfRowsAndColumns:(NSInteger)rowsAndColumns;
+
+- (void) setContentXOffset:(CGFloat)contentXOffset{
+	self.contentOffset = CGPointMake(contentXOffset, self.contentOffset.y);
+}
+
+- (void) setContentYOffset:(CGFloat)contentYOffset{
+	self.contentOffset = CGPointMake(self.contentOffset.x, contentYOffset);
+}
 
 @end

@@ -166,35 +166,3 @@
 @end
 
 
-@implementation UIScrollView (Positioning)
-
-- (CGFloat) contentWidth{
-    return self.contentSize.width;
-}
-- (void) setContentWidth:(CGFloat)contentWidth{
-    self.contentSize = CGSizeMake(contentWidth, self.contentSize.height);
-}
-- (CGFloat) contentHeight{
-    return self.contentSize.height;
-}
-- (void) setContentHeight:(CGFloat)contentHeight{
-    self.contentSize = CGSizeMake(self.contentSize.width, contentHeight);
-}
-
-- (CGFloat) contentXOffset{
-    return self.contentOffset.x;
-}
-- (CGFloat) contentYOffset{
-    return self.contentOffset.y;
-}
-
-
-- (void) setContentXOffset:(CGFloat)contentXOffset{
-    self.contentOffset = CGPointMake(contentXOffset, self.contentOffset.y);
-}
-
-- (void) setContentYOffset:(CGFloat)contentYOffset{
-    self.contentOffset = CGPointMake(self.contentOffset.x, contentYOffset);
-}
-
-@end

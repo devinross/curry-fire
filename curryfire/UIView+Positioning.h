@@ -31,43 +31,68 @@
 
 @import UIKit;
 
+/** Additional functionality dealing with `UIView` positioning. */
 @interface UIView (Positioning)
 
+/** Converts the view's center coordinate to a view.
+ @param view The given view to translate to.
+ @return The point the correlates to the center of the view on the given view.
+ */
 - (CGPoint) convertCenterToView:(UIView*)view;
+
+/** Converts the view's frame to a view.
+ @param view The given view to translate to.
+ @return The `CGRect` the correlates to the center of the view on the given view.
+ */
 - (CGRect) convertFrameToView:(UIView*)view;
 
+/** Moves the view to a different superview while maintaining its overall position.
+ @param view The view that will hold the view.
+ */
 - (void) moveToView:(UIView*)view;
+
+/** Moves the view to the back of a different superview while maintaining its overall position.
+ @param view The view that will hold the view.
+ */
 - (void) moveToBackOfView:(UIView*)view;
 
+/** The coordinate at the middle of the view */
 @property (nonatomic,readonly) CGPoint middle;
 
+/** The width of the view's frame. */
 @property (nonatomic,assign) CGFloat width;
+
+/** The height of the view's frame. */
 @property (nonatomic,assign) CGFloat height;
 
+/** The size of the view's frame. */
 @property (nonatomic,assign) CGSize size;
+
+/** The origin of the view's frame. */
 @property (nonatomic,assign) CGPoint origin;
 
+/** The x origin of the view's frame. */
 @property (nonatomic,assign) CGFloat minX;
+
+/** The y origin of the view's frame. */
 @property (nonatomic,assign) CGFloat minY;
 
+/** The max x origin of the view's frame. */
 @property (nonatomic,assign) CGFloat maxX;
+
+/** The max y origin of the view's frame. */
 @property (nonatomic,assign) CGFloat maxY;
 
+/** The x origin of the view's frame. */
 @property (nonatomic,assign) CGFloat originX;
+
+/** The max y origin of the view's frame. */
 @property (nonatomic,assign) CGFloat originY;
 
+/** The views center x position. */
 @property (nonatomic,assign) CGFloat centerX;
+
+/** The views center y position. */
 @property (nonatomic,assign) CGFloat centerY;
-
-@end
-
-
-
-@interface UIScrollView (Positioning)
-
-@property (nonatomic,assign) CGFloat contentWidth;
-@property (nonatomic,assign) CGFloat contentHeight;
-@property (nonatomic,assign) CGFloat contentXOffset;
-@property (nonatomic,assign) CGFloat contentYOffset;
 
 @end

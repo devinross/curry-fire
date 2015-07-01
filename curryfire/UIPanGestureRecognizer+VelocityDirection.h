@@ -31,15 +31,25 @@
 
 @import UIKit;
 
+/** Additionality functionality for `UIPanGestureRecognizer` to determine the velocity. */
 @interface UIPanGestureRecognizer (VelocityDirection)
 
-
+/** The velocity direction is trending upward. */
 - (BOOL) velocityIsUp;
+
+/** The velocity is trending more downward. */
 - (BOOL) velocityIsDown;
+
+/** The velocity is trending more to the left. */
 - (BOOL) velocityIsLeft;
+
+/** The velocity is trending more to the right. */
 - (BOOL) velocityIsRight;
 
+/** The velocity is trending more up-and-down. */
 - (BOOL) velocityIsVertical;
+
+/** The velocity is trending more left-to-right. */
 - (BOOL) velocityIsHorizontal;
 
 

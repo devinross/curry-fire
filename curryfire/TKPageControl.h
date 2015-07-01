@@ -42,9 +42,9 @@
 - (void) setCurrentPage:(NSInteger)currentPage animated:(BOOL)animated;
 
 /**
- This method allows you to set the background color during a certain state.
- @param color The background color of the button.
- @param state The state to which the color will appear.
+ This method allows you to set page indicator as an image instead of a circle.
+ @param image The image that should replace the circle.
+ @param page The page that should be changed.
  */
 - (void) setImage:(UIImage*)image forPage:(NSInteger)page;
 

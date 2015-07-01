@@ -35,13 +35,30 @@
 /** `TKAnimatedImageView` is a reimplementation of UIImageView animated images with better access to the current frame in the animation sequence. */
 @interface TKAnimatedImageView : UIImageView
 
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))finished;
+/** Play an animation sequence with the given image frames. 
+ @param images A array of `UIImage` objects.
+ @param duration The duration of the animation.
+ @param completion The completion block called upon the animation completing.
+ */
+- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))completion;
 
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))finished;
+/** Play an animation sequence with the given image frames.
+ @param images A array of `UIImage` objects.
+ @param duration The duration of the animation.
+ @param repeatCount The number of times the animation sequence plays.
+ @param completion The completion block called upon the animation completing.
+ */
+- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))completion;
 
+
+/** Stop animating. */
 - (void) stopAnimating;
 
+
+/** Returns the image of the current frame being displayed */
 @property (nonatomic,readonly) UIImage *currentImage;
+
+/** The current frame index. */
 @property (nonatomic,readonly) NSInteger currentFrame;
 
 @end

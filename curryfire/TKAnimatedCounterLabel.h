@@ -31,24 +31,60 @@
 
 @import UIKit;
 
+
+/** `TKAnimatedCounterLabel` is a label used specifically to animate the counting up or down of a number.  */
 @interface TKAnimatedCounterLabel : UIView
 
+/** The number formatter used to generate the text string for a numer. If you want to count money, you should change this to a current style formatter. */
 @property (nonatomic,strong) NSNumberFormatter *numberFormatter;
 
+/* The current text to this number with animating.
+ @param number The number.
+ */
 - (void) setNumber:(NSNumber *)number;
+
+
+/* The current text to this number with animating.
+ @param number The number.
+ @param animated The duration of the animation.
+ */
 - (void) setNumber:(NSNumber *)number animated:(BOOL)animated;
+
+/* The current text to this number with animating.
+ @param number The number.
+ @param duration The duration of the animation.
+ */
 - (void) setNumber:(NSNumber *)number duration:(CGFloat)duration;
+
+/* The current text to this number with animating.
+ @param number The number.
+ @param duration The duration of the animation.
+ @param completion The completion callback.
+ */
 - (void) setNumber:(NSNumber *)number duration:(CGFloat)duration completion:(void (^)(BOOL finished))completion;
 
-@property (nonatomic,copy)   NSString *text;
+/* The text of the label. */
+@property (nonatomic,copy)  NSString *text;
 
+/* The font of the label. */
 @property (nonatomic,retain) UIFont *font;
+
+/* The text color of the label. */
 @property (nonatomic,retain) UIColor *textColor;
+
+/* The line break mode of the label. */
 @property (nonatomic,assign) NSLineBreakMode lineBreakMode;
+
+/* The kerning of the label. */
 @property (nonatomic,assign) CGFloat kerning;
+
+/* The space inbetween characters. */
 @property (nonatomic,assign) CGFloat characterPadding;
+
+/* The text alignment of the label. */
 @property (nonatomic,assign) NSTextAlignment textAlignment;
 
+/* Default is '9'. The character width of each character is uniform so it animates nicely. The model character is the character used to figure out the character width. */
 @property (nonatomic,copy) NSString *modelCharacter;
 
 

@@ -37,7 +37,7 @@
 
 @property (nonatomic,assign) CGFloat startProgress;
 @property (nonatomic,assign) CGFloat counter;
-@property (nonatomic,assign) CGFloat animationDuration;
+@property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (assign) BOOL timerIsLooping;
 
 @end
@@ -134,7 +134,7 @@
         [self _updateProgress];
     });
 }
-- (CGFloat) progressAtTime:(CGFloat)time duration:(CGFloat)duration startValue:(CGFloat)startValue change:(CGFloat)change{
+- (CGFloat) progressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(CGFloat)startValue change:(CGFloat)change{
 	return change * ( -pow(2, -10 * time/duration) + 1 ) + startValue;
 }
 
@@ -146,7 +146,7 @@
 - (void) setProgress:(CGFloat)progress animated:(BOOL)animated{
     [self setProgress:progress duration:animated ? 1.5 : 0];
 }
-- (void) setProgress:(CGFloat)progress duration:(CGFloat)duration{
+- (void) setProgress:(CGFloat)progress duration:(NSTimeInterval)duration{
     CGFloat x = self.progressGradientView.width / 2;
     CGFloat y = self.progressGradientView.height / 2;
 

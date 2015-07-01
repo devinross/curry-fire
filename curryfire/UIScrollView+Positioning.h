@@ -1,6 +1,6 @@
 //
-//  UIView+Confetti.h
-//  Created by Devin Ross on 4/22/15.
+//  Positioning+UIScrollView.h
+//  Created by Devin Ross on 7/1/15.
 //
 /*
  
@@ -29,25 +29,19 @@
  
  */
 
-@import UIKit;
-@import QuartzCore;
-@import curry;
+/** Additional functionality dealing with `UIScrollView` positioning. */
+@interface UIScrollView (Positioning)
 
-/** Play a special confetti animation. */
-@interface UIView (Confetti)
+/** Returns the content width of a scroll-view. */
+@property (nonatomic,assign) CGFloat contentWidth;
 
-/** Play a confetti animation */
-- (void) rainConfetti;
+/** Returns the content height of a scroll-view. */
+@property (nonatomic,assign) CGFloat contentHeight;
 
-/** Confetti animation with a completion block. 
- @param completion A completion block called upon the animation ending.
- */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion;
+/** Returns the content x offset of a scroll-view. */
+@property (nonatomic,assign) CGFloat contentXOffset;
 
-/** Confetti animation with a completion block.
- @param completion A completion block called upon the animation ending.
- @param rowsAndColumns How the confetti is sliced.
- */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion numberOfRowsAndColumns:(NSInteger)rowsAndColumns;
+/** Returns the content y offset of a scroll-view. */
+@property (nonatomic,assign) CGFloat contentYOffset;
 
 @end

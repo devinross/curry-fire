@@ -32,11 +32,18 @@
 @import UIKit;
 @import curry;
 
+/** Additional functionality to `UIView` to add gesture */
 @interface UIView (GestureRecognizerBlock)
 
+/** Add a `UITapGesture` with a callback handler.
+ @param block The callback handler.
+ */
 - (UITapGestureRecognizer*) addTapGestureWithHandler:(void (^)(UIGestureRecognizer *sender))block;
 
-
+/** Add a `UITapGesture` with a target and action.
+ @param target The target.
+ @param action The action.
+ */
 - (UITapGestureRecognizer*) addTapGestureWithTarget:(id)target action:(SEL)action;
 
 
