@@ -1,6 +1,6 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  TKPegSlider.h
+//  Created by Devin Ross on 6/30/14.
 //
 /*
  
@@ -29,38 +29,29 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
-
+@import UIKit;
 @import curry;
-@import pop;
 
-#import "ShortHand.h"
+/** `TKPegSlider` a slider control with set points. */
+@interface TKPegSlider : UIControl
 
-#import "TKMoveGestureRecognizer.h"
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKGlowButton.h"
-#import "TKPageControl.h"
-#import "TKShimmerLabel.h"
-#import "TKSlideToUnlockView.h"
-#import "TKAnimatedImageView.h"
+/** The index of the selected item. */
+@property (nonatomic,assign) NSInteger selectedPegIndex;
 
-#import "TKMultiSwitch.h"
-#import "TKPegSlider.h"
+/** The index of the selected item. */
+@property (nonatomic,assign) NSUInteger numberOfPegs;
 
-#import "TKPagedScrollView.h"
+/** The left side image. */
+@property (nonatomic,strong) UIImage *leftEndImage;
 
-#import "UIView+Positioning.h"
-#import "UIScrollView+Positioning.h"
-#import "UIView+Material.h"
-#import "UIView+TwelvePrinciples.h"
-#import "UIView+Confetti.h"
-#import "UIPanGestureRecognizer+VelocityDirection.h"
-#import "UIView+GestureRecognizerBlock.h"
-#import "POPSpringAnimation+Initializers.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
+/** The right side image. */
+@property (nonatomic,strong) UIImage *rightEndImage;
 
-#endif
+/**
+ Select an item manually.
+ @param index The index of the item.
+ @param animated Animate the selection of the item.
+ */
+- (void) selectPegAtIndex:(NSInteger)index animated:(BOOL)animated;
+
+@end

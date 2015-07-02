@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        viewController = RootViewController()
+        viewController = RootViewController(style: UITableViewStyle.Grouped)
         dashViewController = DashboardViewController()
 
         navigationController = UINavigationController(rootViewController: viewController!)

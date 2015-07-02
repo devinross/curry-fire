@@ -42,6 +42,7 @@
 #import "CounterViewController.h"
 #import "ProgressRingViewController.h"
 #import "PagedScrollViewViewController.h"
+#import "ControlsViewController.h"
 
 @implementation RootViewController
 #define IDENTIFIER @"cellIdentifier"
@@ -52,25 +53,20 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:IDENTIFIER];
     
     self.items = @[
-                   
-                   @[NSLocalizedString(@"Paged Scroll View", @""),           NSStringFromClass([PagedScrollViewViewController class])],
-
-                   
+  @[NSLocalizedString(@"Paged Scroll View", @""),       NSStringFromClass([PagedScrollViewViewController class])],
   @[NSLocalizedString(@"TKMoveGestureRecognizer", @""), NSStringFromClass([MoveGestureViewController class])],
   @[NSLocalizedString(@"Material Transition", @""),     NSStringFromClass([MaterialViewController class])],
-  //@[NSLocalizedString(@"Custom Transition", @""),       NSStringFromClass([CustomTransitionViewController class])],
   @[NSLocalizedString(@"Confetti", @""),                NSStringFromClass([ConfettiViewController class])],
   @[NSLocalizedString(@"Card SlideUp", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
   @[NSLocalizedString(@"Zoom", @""),                    NSStringFromClass([ZoomViewController class])],
   @[NSLocalizedString(@"Wiggle", @""),                  NSStringFromClass([WiggleViewController class])],
   @[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],
-  //@[NSLocalizedString(@"Run Forrest Run", @""),       NSStringFromClass([RunForrestViewController class])],
   @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
+  @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
+  @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])],
   
-
-  
-  @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])]];
-    
+  ];
+	
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     

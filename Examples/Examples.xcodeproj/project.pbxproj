@@ -31,6 +31,8 @@
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
 		20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B288951AF2EB2100B4FEE7 /* CounterViewController.m */; };
 		20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */; };
+		20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */; };
+		20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5871B45A542001C7751 /* ControlsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		20B288951AF2EB2100B4FEE7 /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
 		20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressRingViewController.h; sourceTree = "<group>"; };
 		20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressRingViewController.m; sourceTree = "<group>"; };
+		20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToUnlockViewController.h; sourceTree = "<group>"; };
+		20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToUnlockViewController.m; sourceTree = "<group>"; };
+		20DDB5861B45A542001C7751 /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsViewController.h; sourceTree = "<group>"; };
+		20DDB5871B45A542001C7751 /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,10 @@
 				20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */,
 				20AF03361AE8534F0065E3FF /* ConfettiViewController.h */,
 				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
+				20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */,
+				20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */,
+				20DDB5861B45A542001C7751 /* ControlsViewController.h */,
+				20DDB5871B45A542001C7751 /* ControlsViewController.m */,
 				208E8A431AE94210004E63FB /* WiggleViewController.h */,
 				208E8A441AE94210004E63FB /* WiggleViewController.m */,
 				208E8A391AE86B69004E63FB /* ZoomViewController.h */,
@@ -309,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */,
+				20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */,
 				20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */,
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
@@ -324,6 +335,7 @@
 				20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */,
+				20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
