@@ -83,7 +83,7 @@
             [locations addObject:NSCGPoint(peg.center)];
         
         TKMoveGestureRecognizer *gesture;
-        gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionXY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+        gesture = [TKMoveGestureRecognizer gestureWithAxis:TKMoveGestureAxisXY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
             TKLog(@"%f",position.y);
         }];
         [self.view addGestureRecognizer:gesture];
@@ -98,7 +98,7 @@
             [locations addObject:@(peg.center.y)];
         
         TKMoveGestureRecognizer *gesture;
-        gesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
+        gesture = [TKMoveGestureRecognizer gestureWithAxis:TKMoveGestureAxisY movableView:self.block locations:locations moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position,CGPoint location) {
             TKLog(@"%f",position.y);
         }];
         [self.view addGestureRecognizer:gesture];

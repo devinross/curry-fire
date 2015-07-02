@@ -50,6 +50,7 @@
 #import "TKPagedScrollView.h"
 
 #import "UIView+Positioning.h"
+#import "UIScrollView+Positioning.h"
 #import "UIView+Material.h"
 #import "UIView+TwelvePrinciples.h"
 #import "UIView+Confetti.h"

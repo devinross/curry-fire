@@ -29,7 +29,7 @@
  
  */
 
-#import "Positioning+UIScrollView.h"
+#import "UIScrollView+Positioning.h"
 
 @implementation UIScrollView (Positioning)
 

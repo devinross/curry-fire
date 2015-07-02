@@ -28,7 +28,7 @@
     
     __weak CartViewController *myself = self;
     
-    self.moveGesture = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.view locations:nil moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
+    self.moveGesture = [TKMoveGestureRecognizer gestureWithAxis:TKMoveGestureAxisY movableView:self.view locations:nil moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
         
         
         if(gesture.began){

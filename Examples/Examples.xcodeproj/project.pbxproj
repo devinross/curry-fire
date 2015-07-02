@@ -10,7 +10,6 @@
 		20556E971B3C8FFF0051CA1F /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; };
 		20556E981B3C8FFF0051CA1F /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205AD6931AF6E21D006F8A54 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; };
-		20556EB71B3C92FC0051CA1F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EB61B3C92FC0051CA1F /* pop.framework */; };
 		2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */; };
 		2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF971AE94E610097E3AE /* RunForrestViewController.m */; };
 		2067AF9C1AE954C70097E3AE /* HopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9B1AE954C70097E3AE /* HopViewController.m */; };
@@ -118,7 +117,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2077EF2E1B3C960E00A4928F /* pop.framework in Frameworks */,
-				20556EB71B3C92FC0051CA1F /* pop.framework in Frameworks */,
 				20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */,
 				20556E971B3C8FFF0051CA1F /* curry.framework in Frameworks */,
 			);
@@ -252,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Devin Ross";
 				TargetAttributes = {
 					2069BBA71AE0996800F6D355 = {

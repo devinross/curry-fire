@@ -55,7 +55,7 @@
     
     
     
-    TKMoveGestureRecognizer *move = [TKMoveGestureRecognizer gestureWithDirection:TKMoveGestureDirectionY movableView:self.cardView locations:@[@(START),@(END)] moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
+    TKMoveGestureRecognizer *move = [TKMoveGestureRecognizer gestureWithAxis:TKMoveGestureAxisY movableView:self.cardView locations:@[@(START),@(END)] moveHandler:^(TKMoveGestureRecognizer *gesture, CGPoint position, CGPoint location) {
         
         if(gesture.began || gesture.changed){
 

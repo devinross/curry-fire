@@ -29,6 +29,8 @@
  
  */
 
+@import UIKit;
+
 /** Additional functionality dealing with `UIScrollView` positioning. */
 @interface UIScrollView (Positioning)
 

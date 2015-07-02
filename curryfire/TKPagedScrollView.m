@@ -31,6 +31,7 @@
 
 #import "TKPagedScrollView.h"
 #import "UIView+Positioning.h"
+#import "UIScrollView+Positioning.h"
 
 @interface TKPagedScrollView () <UIScrollViewDelegate>
 @end
