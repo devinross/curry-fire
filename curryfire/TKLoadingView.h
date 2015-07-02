@@ -1,10 +1,10 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  PopoverEmptyView.h
+//  Created by Devin on 4/13/13.
 //
 /*
  
- curryfire || https://github.com/devinross/curry-fire
+ tapku || http://github.com/devinross/tapkulibrary
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -29,39 +29,15 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+@import UIKit;
 
-@import curry;
-@import pop;
 
-#import "ShortHand.h"
 
-#import "TKMoveGestureRecognizer.h"
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKGlowButton.h"
-#import "TKPageControl.h"
-#import "TKShimmerLabel.h"
-#import "TKSlideToUnlockView.h"
-#import "TKAnimatedImageView.h"
+@interface TKLoadingView : UIView
 
-#import "TKMultiSwitch.h"
-#import "TKPegSlider.h"
+@property (nonatomic,strong) UILabel *loadingLabel;
 
-#import "TKPagedScrollView.h"
-#import "TKLoadingView.h"
+- (void) startAnimating;
+- (void) stopAnimating;
 
-#import "UIView+Positioning.h"
-#import "UIScrollView+Positioning.h"
-#import "UIView+Material.h"
-#import "UIView+TwelvePrinciples.h"
-#import "UIView+Confetti.h"
-#import "UIPanGestureRecognizer+VelocityDirection.h"
-#import "UIView+GestureRecognizerBlock.h"
-#import "POPSpringAnimation+Initializers.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
-
-#endif
+@end
