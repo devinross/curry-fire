@@ -48,17 +48,13 @@
 	image.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[self.view addSubview:image];
 	
-	
 	if([self respondsToSelector:@selector(edgesForExtendedLayout)])
 		self.edgesForExtendedLayout = UIRectEdgeNone;
 
-	
 	CGFloat w = CGRectGetWidth(self.view.frame), width = 300;
 	
 	self.unlockView = [[TKSlideToUnlockView alloc] initWithFrame:CGRectMake((w-width)/2.0f, 330, width, 40)];
 	self.unlockView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-	
-	
 	[self.view addSubview:self.unlockView];
 	[self.unlockView addTarget:self action:@selector(didUnlockView:) forControlEvents:UIControlEventValueChanged];
 	
@@ -67,11 +63,9 @@
 	[super viewDidLoad];
 	self.title = NSLocalizedString(@"Slide to Unlock", @"");
 	
-	
 	if(NSStringFromClass([UIInterpolatingMotionEffect class])){
 		
 		UIInterpolatingMotionEffect *mx;
-		
 		mx = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
 		mx.maximumRelativeValue = @(10);
 		mx.minimumRelativeValue = @(-10);
@@ -82,19 +76,13 @@
 		mx.minimumRelativeValue = @(-10);
 		[self.unlockView addMotionEffect:mx];
 		
-		
 	}
 
-	
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Disable", @"Disable") style:UIBarButtonItemStylePlain target:self action:@selector(switchMode:)];
 	
-	
-
 }
 - (void) viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	
-
 	[self.unlockView setNeedsLayout];
 }
 
@@ -103,12 +91,9 @@
 }
 - (void) reset{
 	[self.unlockView resetSlider:NO];
-
 }
 
 - (void) switchMode:(id)sender{
-	
-	
 	self.unlockView.mode = self.unlockView.mode == TKSlideToUnlockViewModeDisabled ? TKSlideToUnlockViewModeNormal : TKSlideToUnlockViewModeDisabled;
 }
 

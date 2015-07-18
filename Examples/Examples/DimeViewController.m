@@ -1,6 +1,6 @@
 //
-//  ShakeAnimationViewController.m
-//  Created by Devin Ross on 4/23/15.
+//  DimeViewController.m
+//  Created by Devin Ross on 7/17/15.
 //
 /*
  
@@ -29,25 +29,32 @@
  
  */
 
-#import "ShakeAnimationViewController.h"
+#import "DimeViewController.h"
 
-
-@implementation ShakeAnimationViewController
+@implementation DimeViewController
 
 - (void) loadView{
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
-    UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-    cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-    [self.view addSubview:cardView];
-    
-    UIView *move = cardView;
-    [cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-        [move shakeAnimationWithCompletion:nil];
-    }];
-    
+	[super loadView];
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+	
+	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
+	cardView.centerX = self.view.width + 100;
+	[self.view addSubview:cardView];
+	
+	UIView *move = cardView;
+	CGFloat start = self.view.width + 100, end = -100;
+	[self.view addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+		
+		cardView.centerX = start;
+		[move turnOnADimeAtXPoint:self.view.width/2 duration:1 delay:0 completion:^(BOOL finished){
+			[move turnOnADimeAtXPoint:end duration:1 delay:0 completion:nil];
+		}];
+		
+	}];
+	
 }
+
 
 @end

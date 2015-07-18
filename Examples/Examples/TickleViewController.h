@@ -1,6 +1,6 @@
 //
-//  ShakeAnimationViewController.m
-//  Created by Devin Ross on 4/23/15.
+//  TickleViewController.h
+//  Created by Devin Ross on 7/17/15.
 //
 /*
  
@@ -29,25 +29,10 @@
  
  */
 
-#import "ShakeAnimationViewController.h"
+@import UIKit;
+@import curry;
+@import curryfire;
 
-
-@implementation ShakeAnimationViewController
-
-- (void) loadView{
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
-    UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-    cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-    [self.view addSubview:cardView];
-    
-    UIView *move = cardView;
-    [cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-        [move shakeAnimationWithCompletion:nil];
-    }];
-    
-}
+@interface TickleViewController : UIViewController
 
 @end

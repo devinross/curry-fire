@@ -54,6 +54,8 @@
 - (void) zoomToYPoint:(CGFloat)endYPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
 
 
+- (void) turnOnADimeAtXPoint:(CGFloat)endXPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
+
 /** Zoom view to point.
  @param endXPoint The place to zoom to.
  @param completion The completion callback handler.
@@ -74,7 +76,7 @@
  @param delay The delay before the animation is played.
  @param completion The completion callback handler.
  */
-- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
+- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay downScale:(CGFloat)downScale completion:(void (^)(BOOL finished))completion;
 
 #pragma mark Shake
 /** Shake the view.
@@ -89,6 +91,9 @@
  */
 - (void) shakeAnimationWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
 
+
+- (void) hop;
+- (void) hopWithToXPoint:(CGFloat)xPoint hopHeight:(CGFloat)hopHeight duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
 
 #pragma mark Wiggle
 /** Wiggle the view.

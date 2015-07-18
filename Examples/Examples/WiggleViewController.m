@@ -39,6 +39,8 @@
     
     self.block = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
     self.block.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	self.block.layer.shouldRasterize = YES;
+	self.block.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [self.view addSubview:self.block];
 
 }

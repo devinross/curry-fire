@@ -31,30 +31,37 @@
 
 #import "HopViewController.h"
 
-@interface HopViewController ()
-
-@end
 
 @implementation HopViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype) init{
+	if(!(self=[super init])) return nil;
+	self.title = NSLocalizedString(@"Run Forrest Run", @"");
+	return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) loadView{
+	[super loadView];
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+	
+	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	[self.view addSubview:cardView];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+	
+	cardView.backgroundColor = [UIColor colorWithHex:0xa0a3dd];
+	
+	UIView *move = cardView;
+	[cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+		[move hopWithToXPoint:self.view.width + 150 hopHeight:50 duration:0.9 delay:0 completion:^(BOOL finished) {
+			move.centerX = -self.view.width / 1.5;
+			move.centerX = - 50;
+			[move hopWithToXPoint:self.view.width / 2 hopHeight:30 duration:1 delay:1 completion:nil];
+		}];
+	}];
+	
 }
-*/
 
 @end

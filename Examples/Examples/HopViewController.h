@@ -29,7 +29,9 @@
  
  */
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import curry;
+@import curryfire;
 
 @interface HopViewController : UIViewController
 

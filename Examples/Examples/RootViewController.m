@@ -43,6 +43,9 @@
 #import "ProgressRingViewController.h"
 #import "PagedScrollViewViewController.h"
 #import "ControlsViewController.h"
+#import "TickleViewController.h"
+#import "HopViewController.h"
+#import "DimeViewController.h"
 
 @implementation RootViewController
 #define IDENTIFIER @"cellIdentifier"
@@ -51,21 +54,28 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Examples", @"");
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:IDENTIFIER];
-    
-    self.items = @[
+	
+	NSArray *section1 = @[
+  
   @[NSLocalizedString(@"Paged Scroll View", @""),       NSStringFromClass([PagedScrollViewViewController class])],
   @[NSLocalizedString(@"TKMoveGestureRecognizer", @""), NSStringFromClass([MoveGestureViewController class])],
   @[NSLocalizedString(@"Material Transition", @""),     NSStringFromClass([MaterialViewController class])],
   @[NSLocalizedString(@"Confetti", @""),                NSStringFromClass([ConfettiViewController class])],
   @[NSLocalizedString(@"Card SlideUp", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
-  @[NSLocalizedString(@"Zoom", @""),                    NSStringFromClass([ZoomViewController class])],
-  @[NSLocalizedString(@"Wiggle", @""),                  NSStringFromClass([WiggleViewController class])],
-  @[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],
   @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
   @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
-  @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])],
-  
-  ];
+  @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])] ];
+	
+	NSArray *section2 = @[@[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],
+						  @[NSLocalizedString(@"Zoom", @""),                    NSStringFromClass([ZoomViewController class])],
+						  @[NSLocalizedString(@"Wiggle", @""),                  NSStringFromClass([WiggleViewController class])],
+						  @[NSLocalizedString(@"Run Forest", @""),				NSStringFromClass([RunForrestViewController class])],
+						  @[NSLocalizedString(@"Tickle", @""),					NSStringFromClass([TickleViewController class])],
+						  @[NSLocalizedString(@"Hop", @""),						NSStringFromClass([HopViewController class])],
+						  @[NSLocalizedString(@"Dime", @""),					NSStringFromClass([DimeViewController class])]
+						  ];
+				   
+	self.items = @[@{@"title" : @"", @"cells" : section1 },  @{@"title":@"Animations", @"cells" : section2 }];
 	
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
@@ -75,24 +85,25 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.items.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.items.count;
+    return [self.items[section][@"cells"] count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IDENTIFIER forIndexPath:indexPath];
-    cell.textLabel.text = self.items[indexPath.row][0];
+    cell.textLabel.text = self.items[indexPath.section][@"cells"][indexPath.row][0];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIViewController *ctr = NSClassFromString(self.items[indexPath.row][1]).new;
-
-    
+    UIViewController *ctr = NSClassFromString(self.items[indexPath.section][@"cells"][indexPath.row][1]).new;
     [self.navigationController pushViewController:ctr animated:YES];
     
+}
+- (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+	return self.items[section][@"title"];
 }
 
 @end

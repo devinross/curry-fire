@@ -36,22 +36,24 @@
 - (void) loadView{
     [super loadView];
     self.view.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
-
-    self.cardView = [UIView viewWithFrame:CGRectInset(self.view.bounds, 30, 50) backgroundColor:[UIColor whiteColor] cornerRadius:10];
-    self.cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [self.view addSubview:self.cardView];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+	self.view.backgroundColor = [UIColor whiteColor];
+	
+	self.cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	self.cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	[self.view addSubview:self.cardView];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+	
     UIView *move = self.cardView;
     [self.cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
         [move zoomToYPoint:-1000 completion:^(BOOL finished) {
             
-            double delayInSeconds = 1.0;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                move.center = CGPointMake(self.view.width/2, self.view.height/2);
+				move.centerY = self.view.height + 100;
+				[UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+					move.centerY = self.view.height/2;
+				} completion:nil];
             });
-            
         }];
     }];
     

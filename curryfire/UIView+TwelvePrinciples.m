@@ -121,22 +121,139 @@
 }
 
 
+- (void) hop{
+	[self hopWithToXPoint:self.superview.width * 1.5 hopHeight:40 duration:0.7 delay:0 completion:nil];
+}
+- (void) hopWithToXPoint:(CGFloat)xPoint hopHeight:(CGFloat)hopHeight duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{
+	
+	CGFloat y = self.center.y;
+	CGAffineTransform baseTransform = self.transform;
+	
+	CGPoint midPoint = CGPointGetMidpoint(self.center, CGPointMake(xPoint, self.centerY));
+	
+	[UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+		
+		[UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.3 animations:^{
+			self.transform = CGConcat(CGScale(0.8, 1), CGRotate(-15 * M_PI / 180));
+		}];
+		[UIView addKeyframeWithRelativeStartTime:0.3 relativeDuration:0.3 animations:^{
+			self.center = CGPointMake(midPoint.x, y - hopHeight);
+			self.transform = CGConcat(CGScale(1.4, 1), CGRotate(0 * M_PI / 180));
+		}];
+		[UIView addKeyframeWithRelativeStartTime:0.6 relativeDuration:0.4 animations:^{
+			self.center = CGPointMake(xPoint, y);
+		}];
+		[UIView addKeyframeWithRelativeStartTime:0.6 relativeDuration:0.2 animations:^{
+			self.transform = CGConcat(CGScale(1.1, 1), CGRotate(15 * M_PI / 180));
+		}];
+		[UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.2 animations:^{
+			self.transform = baseTransform;
+		}];
+		
+	}completion:completion];
+	
+}
+
+
+
+- (void) turnOnADimeAtXPoint:(CGFloat)endXPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{
+	
+	BOOL movingRight = endXPoint > self.centerX;
+
+	CGFloat anchorX = movingRight ? self.maxX : self.minX;
+	CGFloat anchorY = self.maxY;
+	CGFloat mult = movingRight ? 1 : -1;
+	self.layer.anchorPoint = movingRight ? CGPointMake(1, 1) : CGPointMake(0, 1);
+	
+	CGFloat twist = movingRight ? 0.1 : -0.1;
+	CGAffineTransform twistTransform = CGAffineTransformIdentity;
+	twistTransform.c = twist;
+	
+	CGFloat x = self.superview.width/2 - self.width/2;
+	x = endXPoint + (movingRight ? 1 : -1) * self.width / 2;
+	self.center = CGPointMake(anchorX, anchorY);
+	
+	[UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+		
+		double s = 0.0, dur = 0.3;
+		
+		[UIView addKeyframeWithRelativeStartTime:s relativeDuration:dur/2 animations:^{
+			self.transform = twistTransform;
+		}];
+		
+		[UIView addKeyframeWithRelativeStartTime:s + dur/2 relativeDuration:dur/2 animations:^{
+			CGAffineTransform transform = CGAffineTransformIdentity;
+			transform.c = 0;
+			self.transform = transform;
+		}];
+		
+		
+		[UIView addKeyframeWithRelativeStartTime:s relativeDuration:dur animations:^{
+			self.center = CGPointMake(x + 20 * mult, anchorY);
+		}];
+		
+		s += dur;
+		dur = 0.2;
+		
+		[UIView addKeyframeWithRelativeStartTime:s relativeDuration:dur animations:^{
+			CGAffineTransform transform = CGAffineTransformIdentity;
+			transform.c = 0;
+			transform = CGConcat(transform, CGRotate(-2 * M_PI / 180.0f));
+			self.transform = transform;
+			self.center = CGPointMake(x + 30 * mult, anchorY-16);
+		}];
+		
+		s += dur;
+		dur = 0.2;
+		
+		[UIView addKeyframeWithRelativeStartTime:s relativeDuration:dur animations:^{
+			CGAffineTransform transform = CGAffineTransformIdentity;
+			transform.c = 0;
+			transform = CGConcat(transform, CGRotate(-1 * M_PI / 180.0f));
+			self.transform = transform;
+			self.center = CGPointMake(x + 15 * mult, anchorY-20);
+		}];
+		
+		s += dur;
+		dur = 0.2;
+		
+		[UIView addKeyframeWithRelativeStartTime:s relativeDuration:dur  animations:^{
+			CGAffineTransform transform = CGAffineTransformIdentity;
+			transform = CGConcat(transform, CGRotate(0 * M_PI / 180.0f));
+			self.transform = transform;
+			self.center = CGPointMake(x, anchorY);
+		}];
+		
+		
+	} completion:^(BOOL finished) {
+		
+		
+		CGFloat xx = CGRectGetMidX(self.frame), yy = CGRectGetMidY(self.frame);
+		
+		self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+		self.center = CGPointMake(xx,yy);
+		
+		if(completion)
+			completion(finished);
+		
+	}];
+
+	
+}
+
 
 - (void) tickle{
     [self tickleWithCompletion:nil];
 }
 - (void) tickleWithCompletion:(void (^)(BOOL finished))completion{
-    [self tickleWithDuration:1 delay:0 completion:completion];
+    [self tickleWithDuration:1 delay:0 downScale:1 completion:completion];
 }
-- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{
+- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay downScale:(CGFloat)downScale completion:(void (^)(BOOL finished))completion{
     
     CGAffineTransform baseTransform = self.transform;
-//    CGFloat xScale = self.transform.a, yScale = self.transform.d;
-    
-    CGFloat x = 1;
-    
-    
-    [UIView animateKeyframesWithDuration:1.0 delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+    CGFloat x = downScale;
+	
+    [UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
         
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.1 animations:^{
             self.transform = CGConcat(baseTransform, CGScale(x, x));
@@ -158,7 +275,7 @@
             self.transform = baseTransform;
         }];
         [UIView addKeyframeWithRelativeStartTime:0.9 relativeDuration:0.1 animations:^{
-            //self.transform = CGAffineTransformIdentity;
+            self.transform = baseTransform;
         }];
         
         
@@ -249,27 +366,26 @@
 }
 
 - (void) runForrestRunToPoint:(CGPoint)point withCompletion:(void (^)(BOOL finished))completion{
-    
     [self runForrestRunWithDuration:1 delay:0 toPoint:point completion:completion];
-    
 }
 - (void) runForrestRunWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay toPoint:(CGPoint)point completion:(void (^)(BOOL finished))completion{
-    
+	
+	
+	BOOL movingRight = point.x > self.centerX;
+	
     CGAffineTransform baseTransform = self.transform;
-    [UIView animateWithDuration:duration/1.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0.4 options:UIViewAnimationOptionAutoreverse animations:^{
+	CGAffineTransform transform = baseTransform;
+	transform.c = movingRight ? 0.5 : -0.5;
 
-        CGAffineTransform transform = baseTransform;
-        transform.c = 0.5;
-        self.transform = transform;
-    }completion:^(BOOL finished){
-        self.transform = baseTransform;
-    }];
+	CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+	animation.autoreverses = YES;
+	animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeAffineTransform(baseTransform)];
+	animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeAffineTransform(transform)];
+	animation.duration = duration / 4;
+	[self.layer addAnimation:animation forKey:@"forrest"];
     
-    
-    
-    
-    
-    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.4 options:0 animations:^{
+	
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0.4 options:0 animations:^{
         self.center = point;
     }completion:completion];
     

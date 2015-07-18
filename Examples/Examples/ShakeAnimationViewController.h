@@ -30,6 +30,7 @@
  */
 
 @import UIKit;
+@import curry;
 @import curryfire;
 
 @interface ShakeAnimationViewController : UIViewController

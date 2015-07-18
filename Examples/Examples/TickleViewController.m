@@ -1,6 +1,6 @@
 //
-//  ShakeAnimationViewController.m
-//  Created by Devin Ross on 4/23/15.
+//  TickleViewController.m
+//  Created by Devin Ross on 7/17/15.
 //
 /*
  
@@ -29,25 +29,26 @@
  
  */
 
-#import "ShakeAnimationViewController.h"
+#import "TickleViewController.h"
 
 
-@implementation ShakeAnimationViewController
+@implementation TickleViewController
 
 - (void) loadView{
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
-    UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-    cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-    [self.view addSubview:cardView];
-    
-    UIView *move = cardView;
-    [cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-        [move shakeAnimationWithCompletion:nil];
-    }];
-    
+	[super loadView];
+	
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+	
+	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	[self.view addSubview:cardView];
+	
+	UIView *move = cardView;
+	[cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+		[move tickleWithDuration:0.8 delay:0 downScale:0.97 completion:nil];
+	}];
+	
 }
 
 @end

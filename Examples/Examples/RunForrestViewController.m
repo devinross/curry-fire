@@ -31,10 +31,6 @@
 
 #import "RunForrestViewController.h"
 
-@interface RunForrestViewController ()
-
-@end
-
 @implementation RunForrestViewController
 
 - (instancetype) init{
@@ -46,21 +42,22 @@
 
 - (void) loadView{
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    UIView *cardView = [UIView viewWithFrame:CGRectInset(self.view.bounds, 80, 100) backgroundColor:[UIColor whiteColor] cornerRadius:10];
-    cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    [self.view addSubview:cardView];
+	
+	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	[self.view addSubview:cardView];
+	self.edgesForExtendedLayout = UIRectEdgeNone;
     
     UIView *move = cardView;
     [cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
         
-        [move runForrestRunToPoint:CGPointMake(CGFrameGetWidth(self.view) * 1, move.centerY) withCompletion:^(BOOL finished) {
-//            move.transform = CGAffineTransformIdentity;
-//            move.center = CGPointMake(CGFrameGetWidth(self.view) * -2, move.centerY);
-//
-//            [move runForrestRunToPoint:CGPointMake(self.view.centerX, move.centerY) withCompletion:nil];
+        [move runForrestRunToPoint:CGPointMake(CGFrameGetWidth(self.view) * 1.5, move.centerY) withCompletion:^(BOOL finished) {
+            move.transform = CGAffineTransformIdentity;
+            move.center = CGPointMake(CGFrameGetWidth(self.view) * -2, move.centerY);
+
+            [move runForrestRunToPoint:CGPointMake(self.view.centerX, move.centerY) withCompletion:nil];
         }];
 
     }];
