@@ -1,6 +1,6 @@
 //
-//  DimeViewController.m
-//  Created by Devin Ross on 7/17/15.
+//  BounceAnimator.h
+//  Created by Devin Ross on 7/23/15.
 //
 /*
  
@@ -29,30 +29,14 @@
  
  */
 
-#import "DimeViewController.h"
+@import UIKit;
+@import curry;
+@import curryfire;
 
-@implementation DimeViewController
+@interface BounceAnimatorViewController : UIViewController
 
-- (void) loadView{
-	[super loadView];
-	self.view.backgroundColor = [UIColor whiteColor];
-	self.edgesForExtendedLayout = UIRectEdgeNone;
-	
-	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-	cardView.centerX = self.view.width + 100;
-	[self.view addSubview:cardView];
-	
-	UIView *move = cardView;
-	CGFloat start = self.view.width + 100, end = -100;
-	[self.view addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-		cardView.centerX = start;
-		[move turnOnADimeAtXPoint:self.view.width/2 duration:1 delay:0 completion:^(BOOL finished){
-			[move turnOnADimeAtXPoint:end duration:1 delay:0 completion:nil];
-		}];
-	}];
-	
-}
-
+@property (nonatomic,strong) UIView *block;
+@property (nonatomic,strong) UIDynamicAnimator *animator;
+@property (nonatomic,strong) TKBounceBehavior *bounce;
 
 @end

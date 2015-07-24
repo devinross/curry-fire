@@ -1,6 +1,6 @@
 //
-//  DimeViewController.m
-//  Created by Devin Ross on 7/17/15.
+//  BounceAnimator.m
+//  Created by Devin Ross on 7/23/15.
 //
 /*
  
@@ -29,30 +29,32 @@
  
  */
 
-#import "DimeViewController.h"
+#import "BounceAnimatorViewController.h"
 
-@implementation DimeViewController
+@implementation BounceAnimatorViewController
+
 
 - (void) loadView{
 	[super loadView];
 	self.view.backgroundColor = [UIColor whiteColor];
-	self.edgesForExtendedLayout = UIRectEdgeNone;
 	
-	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-	cardView.centerX = self.view.width + 100;
-	[self.view addSubview:cardView];
+	self.block = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
+	self.block.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+	self.block.layer.shouldRasterize = YES;
+	self.block.layer.rasterizationScale = [UIScreen mainScreen].scale;
+	[self.view addSubview:self.block];
 	
-	UIView *move = cardView;
-	CGFloat start = self.view.width + 100, end = -100;
-	[self.view addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-		cardView.centerX = start;
-		[move turnOnADimeAtXPoint:self.view.width/2 duration:1 delay:0 completion:^(BOOL finished){
-			[move turnOnADimeAtXPoint:end duration:1 delay:0 completion:nil];
-		}];
+	
+	self.bounce = [[TKBounceBehavior alloc] initWithItems:@[self.block]];
+	self.bounce.bounceDirection = CGVectorMake(3, 0);
+	
+	self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+	[self.animator addBehavior:self.bounce];
+	
+	UIView *myView = self.view;
+	[myView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
+		[self.bounce bounce];
 	}];
-	
 }
-
 
 @end

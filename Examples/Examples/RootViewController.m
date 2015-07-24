@@ -46,6 +46,7 @@
 #import "TickleViewController.h"
 #import "HopViewController.h"
 #import "DimeViewController.h"
+#import "BounceAnimatorViewController.h"
 
 @implementation RootViewController
 #define IDENTIFIER @"cellIdentifier"
@@ -64,6 +65,7 @@
   @[NSLocalizedString(@"Card SlideUp", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
   @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
   @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
+  @[NSLocalizedString(@"Bounce Animator", @""),          NSStringFromClass([BounceAnimatorViewController class])],
   @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])] ];
 	
 	NSArray *section2 = @[@[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],

@@ -1,6 +1,6 @@
 //
-//  DimeViewController.m
-//  Created by Devin Ross on 7/17/15.
+//  TKBounceBehavior.h
+//  Created by Devin Ross on 7/23/15.
 //
 /*
  
@@ -29,30 +29,20 @@
  
  */
 
-#import "DimeViewController.h"
+@import Foundation;
+@import UIKit;
 
-@implementation DimeViewController
+@interface TKBounceBehavior : UIDynamicBehavior
 
-- (void) loadView{
-	[super loadView];
-	self.view.backgroundColor = [UIColor whiteColor];
-	self.edgesForExtendedLayout = UIRectEdgeNone;
-	
-	UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-	cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-	cardView.centerX = self.view.width + 100;
-	[self.view addSubview:cardView];
-	
-	UIView *move = cardView;
-	CGFloat start = self.view.width + 100, end = -100;
-	[self.view addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-		cardView.centerX = start;
-		[move turnOnADimeAtXPoint:self.view.width/2 duration:1 delay:0 completion:^(BOOL finished){
-			[move turnOnADimeAtXPoint:end duration:1 delay:0 completion:nil];
-		}];
-	}];
-	
-}
+- (id) initWithItems:(NSArray*)items;
 
+@property (nonatomic,strong) UIGravityBehavior *gravityBehavior;
+@property (nonatomic,strong) UIPushBehavior *pushBehavior;
+@property (nonatomic,strong) UIDynamicItemBehavior *itemBehavior;
+@property (nonatomic,strong) UICollisionBehavior *collisionBehavior;
+
+@property (nonatomic,assign) CGVector bounceDirection;
+
+- (void) bounce;
 
 @end

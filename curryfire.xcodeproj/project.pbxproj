@@ -55,6 +55,8 @@
 		2083E1391B44910100F9D0C1 /* UIScrollView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 2083E1371B44910100F9D0C1 /* UIScrollView+Positioning.m */; };
 		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2098BA2C1B0F7244000E0074 /* TKAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */; };
+		20A46DED1B61C55B004A4153 /* TKBounceBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A46DEB1B61C55B004A4153 /* TKBounceBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20A46DEE1B61C55B004A4153 /* TKBounceBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A46DEC1B61C55B004A4153 /* TKBounceBehavior.m */; };
 		20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AF03281AE848480065E3FF /* UIView+Confetti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03291AE848480065E3FF /* UIView+Confetti.m */; };
 		20AF03441AE862F60065E3FF /* UIView+TwelvePrinciples.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AF03421AE862F60065E3FF /* UIView+TwelvePrinciples.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -178,6 +180,8 @@
 		2083E1371B44910100F9D0C1 /* UIScrollView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Positioning.m"; sourceTree = "<group>"; };
 		2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAnimatedImageView.h; sourceTree = "<group>"; };
 		2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnimatedImageView.m; sourceTree = "<group>"; };
+		20A46DEB1B61C55B004A4153 /* TKBounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBounceBehavior.h; sourceTree = "<group>"; };
+		20A46DEC1B61C55B004A4153 /* TKBounceBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBounceBehavior.m; sourceTree = "<group>"; };
 		20AF03281AE848480065E3FF /* UIView+Confetti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Confetti.h"; sourceTree = "<group>"; };
 		20AF03291AE848480065E3FF /* UIView+Confetti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Confetti.m"; sourceTree = "<group>"; };
 		20AF03421AE862F60065E3FF /* UIView+TwelvePrinciples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TwelvePrinciples.h"; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 				20DDB5821B45A499001C7751 /* TKPegSlider.m */,
 				20DDB5771B45A486001C7751 /* TKMultiSwitch.h */,
 				20DDB5781B45A486001C7751 /* TKMultiSwitch.m */,
+				20A46DEB1B61C55B004A4153 /* TKBounceBehavior.h */,
+				20A46DEC1B61C55B004A4153 /* TKBounceBehavior.m */,
 				206E839C1B333A730010CFC6 /* TKPagedScrollView.h */,
 				206E839D1B333A730010CFC6 /* TKPagedScrollView.m */,
 				2069BC6D1AE1634100F6D355 /* Categories */,
@@ -379,6 +385,7 @@
 				2083E1381B44910100F9D0C1 /* UIScrollView+Positioning.h in Headers */,
 				20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */,
 				204922A31B45D64900C22245 /* TKLoadingView.h in Headers */,
+				20A46DED1B61C55B004A4153 /* TKBounceBehavior.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
 				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,
 			);
@@ -539,6 +546,7 @@
 				20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */,
 				207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */,
 				20AF03451AE862F60065E3FF /* UIView+TwelvePrinciples.m in Sources */,
+				20A46DEE1B61C55B004A4153 /* TKBounceBehavior.m in Sources */,
 				2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */,
 				204922A41B45D64900C22245 /* TKLoadingView.m in Sources */,
 				2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */,

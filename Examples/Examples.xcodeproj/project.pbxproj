@@ -27,6 +27,7 @@
 		2077EF321B3C965500A4928F /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
+		20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */; };
 		20AAC5EA1B594EFD00162378 /* HopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAC5E91B594EFD00162378 /* HopViewController.m */; };
 		20AAC5EE1B59502B00162378 /* TickleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAC5ED1B59502B00162378 /* TickleViewController.m */; };
 		20AAC5F61B59961800162378 /* DimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AAC5F51B59961800162378 /* DimeViewController.m */; };
@@ -105,6 +106,8 @@
 		208E8A3A1AE86B69004E63FB /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 		208E8A431AE94210004E63FB /* WiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiggleViewController.h; sourceTree = "<group>"; };
 		208E8A441AE94210004E63FB /* WiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiggleViewController.m; sourceTree = "<group>"; };
+		20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceAnimatorViewController.h; sourceTree = "<group>"; };
+		20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceAnimatorViewController.m; sourceTree = "<group>"; };
 		20AAC5E81B594EFD00162378 /* HopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HopViewController.h; sourceTree = "<group>"; };
 		20AAC5E91B594EFD00162378 /* HopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HopViewController.m; sourceTree = "<group>"; };
 		20AAC5EC1B59502B00162378 /* TickleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickleViewController.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
 				20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */,
 				20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */,
+				20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */,
+				20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */,
 				20DDB5861B45A542001C7751 /* ControlsViewController.h */,
 				20DDB5871B45A542001C7751 /* ControlsViewController.m */,
 				20AAC5EF1B59503900162378 /* 12Principles */,
@@ -354,6 +359,7 @@
 				20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */,
 				20AAC5EA1B594EFD00162378 /* HopViewController.m in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
+				20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */,
 				2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */,
 				20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,

@@ -45,13 +45,11 @@
     [self.view addSubview:self.counterLabel];
     [self.counterLabel setNumber:@0];
     
-    
 }
 
 
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
     [self.counterLabel setNumber:@99 animated:YES];
 }
 

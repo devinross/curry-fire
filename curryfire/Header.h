@@ -64,4 +64,7 @@
 #import "UIScreenEdgePanGestureRecognizer+Helper.h"
 #import "TKMoveScreenEdgeGestureRecognizer.h"
 
+
+#import "TKBounceBehavior.h"
+
 #endif
