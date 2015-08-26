@@ -8,6 +8,11 @@ Browse the documentation at [devinross.com/curry-fire/documentation](http://devi
 
 
 ##Samples
+
+![TKMoveGestureRecognizer](http://devinross.com/images/gifs/movegesture-400.gif)
+
+[TKMoveGestureRecognizer](https://github.com/devinross/curry-fire/blob/master/curryfire/TKMoveGestureRecognizer.h)
+
 ![Pegs](http://devinross.com/images/gifs/pegs-400.gif)
 
 [TKPegSlider](https://github.com/devinross/curry-fire/blob/master/curryfire/TKPegSlider.h)
@@ -23,9 +28,31 @@ Browse the documentation at [devinross.com/curry-fire/documentation](http://devi
 
 
 ##Animations
-![Hop](http://devinross.com/images/gifs/hop.gif)
+
+![Shake](http://devinross.com/images/gifs/shake-400.gif)
+
+Shake
+
+![Zoom](http://devinross.com/images/gifs/zoom-400.gif)
+
+Zoom
+
+![Wiggle](http://devinross.com/images/gifs/wiggle-400.gif)
+
+Wiggle
+
+![Run Forrest](http://devinross.com/images/gifs/runforrest-400.gif)
+
+Run Forrest
+
+![Tickle](http://devinross.com/images/gifs/tickle-400.gif)
+
+Tickle
+
+![Hop](http://devinross.com/images/gifs/hop-400.gif)
 
 Hop
+
 
 
 Follow me on twitter [@devin_ross](http://twitter.com/devin_ross).
