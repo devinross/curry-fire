@@ -7,6 +7,14 @@ Browse the documentation at [devinross.com/curry-fire/documentation](http://devi
 
 
 
+##Samples
+![Pegs](http://devinross.com/images/gifs/pegs-400.gif)
+[TKPegSlider](https://github.com/devinross/curry-fire/blob/master/curryfire/TKPegSlider.h)
+
+![Counter](http://devinross.com/images/gifs/counter-400.gif)
+[TKAnimatedCounterLabel](https://github.com/devinross/curry-fire/blob/master/curryfire/TKAnimatedCounterLabel.h)
+
+
 ##Animations
 ![Hop](http://devinross.com/images/gifs/hop.gif)
 

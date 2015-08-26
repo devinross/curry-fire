@@ -60,9 +60,9 @@
   
   @[NSLocalizedString(@"Paged Scroll View", @""),       NSStringFromClass([PagedScrollViewViewController class])],
   @[NSLocalizedString(@"TKMoveGestureRecognizer", @""), NSStringFromClass([MoveGestureViewController class])],
+  @[NSLocalizedString(@"TKMoveGestureRecognizer (Card Slide)", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
   @[NSLocalizedString(@"Material Transition", @""),     NSStringFromClass([MaterialViewController class])],
   @[NSLocalizedString(@"Confetti", @""),                NSStringFromClass([ConfettiViewController class])],
-  @[NSLocalizedString(@"Card SlideUp", @""),            NSStringFromClass([CardViewSlideUpViewController class])],
   @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
   @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
   @[NSLocalizedString(@"Bounce Animator", @""),          NSStringFromClass([BounceAnimatorViewController class])],
