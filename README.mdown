@@ -6,6 +6,11 @@ Curry is an Cocoa Touch framework built to enhance and compliment Foundation and
 Browse the documentation at [devinross.com/curry-fire/documentation](http://devinross.com/curryfire). To add the documentation directly to XCode, [download the docset](http://devinross.com/curryfire/com.devinross.curryfire.docset.zip) and place the docset into the `~/Library/Developer/Shared/Documentation/DocSets/` folder.
 
 
+
+##Animations
+![Hop](http://devinross.com/images/gifs/hop.gif =150x100)
+
+
 Follow me on twitter [@devin_ross](http://twitter.com/devin_ross).
 
 
