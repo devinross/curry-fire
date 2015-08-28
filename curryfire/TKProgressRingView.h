@@ -30,6 +30,16 @@
  */
 
 @import UIKit;
+@import pop;
+
+
+/** The axis that a move gesture could move in. */
+typedef enum {
+	TKProgressRingAnimationCurveLinear = 0,
+	TKProgressRingAnimationCurveQuadratic = 1,
+	TKProgressRingAnimationCurveSpring = 2,
+} TKProgressRingAnimationCurve;
+
 
 /** `TKProgressRingView` is a view designed to animate a progress similiar to that in that in the Activity app. */
 @interface TKProgressRingView : UIView
@@ -44,6 +54,9 @@
 
 /** The progress of the circle. */
 @property (nonatomic,assign) CGFloat progress;
+
+/** The progress of the circle. */
+@property (nonatomic,assign) TKProgressRingAnimationCurve curve;
 
 /** The radius of the circle. */
 @property (nonatomic,assign) CGFloat radius;
@@ -80,5 +93,9 @@
 
 /** The view that displays the image for a progress ring image. */
 @property (nonatomic,strong) UIImageView *progressGradientView;
+
+
+@property (nonatomic,strong) POPSpringAnimation *springAnimation;
+
 
 @end

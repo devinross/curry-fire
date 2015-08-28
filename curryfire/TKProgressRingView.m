@@ -32,6 +32,7 @@
 #import "TKProgressRingView.h"
 #import "UIView+Positioning.h"
 @import curry;
+@import pop;
 
 @interface TKProgressRingView ()
 
@@ -39,6 +40,8 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (assign) BOOL timerIsLooping;
+
+@property (nonatomic,strong) POPAnimatableProperty *pop;
 
 @end
 
@@ -58,6 +61,7 @@
 	self.userInteractionEnabled = NO;
 	_strokeWidth = strokeWidth;
 	_radius = radius;
+	_curve = TKProgressRingAnimationCurveLinear;
 	
 	CGFloat x = CGRectGetWidth(frame) / 2;
     CGFloat y = CGRectGetHeight(frame) / 2;
@@ -82,7 +86,7 @@
 
 	
 	UIBezierPath* aPath = [UIBezierPath bezierPath];
-	[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:START_ANGLE+0.01 clockwise:YES];
+	[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:START_ANGLE clockwise:YES];
 	self.circleLayer = [CAShapeLayer layer];
 	self.circleLayer.path = aPath.CGPath;
 	self.circleLayer.strokeColor = [UIColor redColor].CGColor;
@@ -119,9 +123,18 @@
         CGFloat y = self.progressGradientView.height / 2;
 
         UIBezierPath *aPath = [UIBezierPath bezierPath];
-        CGFloat p = [self progressAtTime:self.counter duration:duration startValue:self.startProgress change:self.progress-self.startProgress];
-        [aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * p + START_ANGLE clockwise:YES];
-        self.circleLayer.path = aPath.CGPath;
+		CGFloat p;
+		if(self.curve == TKProgressRingAnimationCurveQuadratic)
+			p = [self quadraticProgressAtTime:self.counter duration:duration startValue:self.startProgress change:self.progress-self.startProgress];
+		else
+			p = [self linearProgressAtTime:self.counter duration:duration startValue:self.startProgress change:self.progress-self.startProgress];
+		
+		[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * p + START_ANGLE clockwise:YES];
+		dispatch_async(dispatch_get_main_queue(), ^{
+
+			self.circleLayer.path = aPath.CGPath;
+		});
+		
     });
     
     
@@ -134,7 +147,14 @@
         [self _updateProgress];
     });
 }
-- (CGFloat) progressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(CGFloat)startValue change:(CGFloat)change{
+
+
+- (CGFloat) linearProgressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(CGFloat)startValue change:(CGFloat)change{
+	return change * time/duration + startValue;
+}
+
+
+- (CGFloat) quadraticProgressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(CGFloat)startValue change:(CGFloat)change{
 	return change * ( -pow(2, -10 * time/duration) + 1 ) + startValue;
 }
 
@@ -149,15 +169,51 @@
 - (void) setProgress:(CGFloat)progress duration:(NSTimeInterval)duration{
     CGFloat x = self.progressGradientView.width / 2;
     CGFloat y = self.progressGradientView.height / 2;
+	
+	if(duration == 0.0){
+		self.timerIsLooping = NO;
+		_startProgress = 0;
+		_progress = progress;
+		UIBezierPath *aPath = [UIBezierPath bezierPath];
+		[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * _progress + START_ANGLE clockwise:YES];
+		self.circleLayer.path = aPath.CGPath;
+		return;
+	}
+	
+	
+	if(self.curve == TKProgressRingAnimationCurveSpring){
+		
+		self.startProgress = _progress;
+		_progress = progress;
+		
+		self.pop = [POPAnimatableProperty propertyWithName:@"timeOffset" initializer:^(POPMutableAnimatableProperty *prop) {
+			// read value
+			prop.readBlock = ^(CAShapeLayer *obj, CGFloat values[]) {
+				values[0] = obj.timeOffset;
+			};
+			// write value
+			prop.writeBlock = ^(CAShapeLayer *obj, const CGFloat values[]) {
+				obj.timeOffset = values[0];
+				CGFloat progress = values[0];
+				UIBezierPath *aPath = [UIBezierPath bezierPath];
+				[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * progress + START_ANGLE clockwise:YES];
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					self.circleLayer.path = aPath.CGPath;
 
-    if(duration == 0){
-        self.timerIsLooping = NO;
-        _startProgress = 0;
-        _progress = progress;
-        UIBezierPath *aPath = [UIBezierPath bezierPath];
-        [aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * _progress + START_ANGLE clockwise:YES];
-        self.circleLayer.path = aPath.CGPath;
-    }else{
+				});
+				
+				
+			};
+			// dynamics threshold
+			prop.threshold = 0.1;
+		}];
+		
+		self.springAnimation.fromValue = @(self.startProgress);
+		self.springAnimation.toValue =  @(self.progress);
+		self.springAnimation.property = self.pop;
+		[self.layer pop_addAnimation:self.springAnimation forKey:nil];
+	}else{
         self.animationDuration = duration;
         CGFloat startProgress = _progress;
 
@@ -184,6 +240,17 @@
 }
 - (void) setProgressColor:(UIColor *)progressColor{
     self.baseGradientView.backgroundColor = self.progressGradientView.backgroundColor = progressColor;
+}
+
+
+- (POPSpringAnimation*) springAnimation{
+	if(_springAnimation) return _springAnimation;
+	_springAnimation = [POPSpringAnimation animation];
+	_springAnimation.springBounciness = 4;
+	_springAnimation.springSpeed = 1;
+//	_springAnimation.dynamicsMass = 1;
+//	_springAnimation.dynamicsFriction = 2;
+	return _springAnimation;
 }
 
 @end
