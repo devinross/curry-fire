@@ -33,7 +33,7 @@
 @import pop;
 
 
-/** The axis that a move gesture could move in. */
+/** The curve that the progress will animate at. */
 typedef enum {
 	TKProgressRingAnimationCurveLinear = 0,
 	TKProgressRingAnimationCurveQuadratic = 1,

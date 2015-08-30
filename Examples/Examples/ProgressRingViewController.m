@@ -22,7 +22,7 @@
     
     self.progreessRingOne = [[TKProgressRingView alloc] initWithFrame:rr radius:66+31+31 strokeWidth:30];
     self.progreessRingOne.progressColor = [UIColor colorWithHex:0xe40520];
-	self.progreessRingOne.curve = TKProgressRingAnimationCurveSpring;
+	self.progreessRingOne.curve = TKProgressRingAnimationCurveLinear;
     [self.view addSubview:self.progreessRingOne];
 	self.progreessRingOne.progress = 0.001;
     
@@ -35,9 +35,13 @@
     
     self.progreessRingThree = [[TKProgressRingView alloc] initWithFrame:rr radius:66 strokeWidth:30];
     self.progreessRingThree.progressColor = [UIColor colorWithHex:0x00c0df];
-    [self.view addSubview:self.progreessRingThree];
-	self.progreessRingThree.curve = TKProgressRingAnimationCurveLinear;
 	self.progreessRingThree.progress = 0.001;
+	self.progreessRingThree.curve = TKProgressRingAnimationCurveSpring;
+	[self.view addSubview:self.progreessRingThree];
+	self.progreessRingThree.springAnimation.springSpeed = 10;
+	self.progreessRingThree.springAnimation.springBounciness = 15;
+	self.progreessRingThree.springAnimation.dynamicsFriction = 14;
+	self.progreessRingThree.springAnimation.dynamicsMass = 1;
 
 }
 
@@ -48,7 +52,7 @@
 	
 
 		
-	[self.progreessRingThree setProgress:0.20 duration:0.3];
+	[self.progreessRingOne setProgress:0.65 duration:0.6];
 
 	double delayInSeconds = 0.5;
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -61,8 +65,8 @@
 		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
 		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 			
-			[self.progreessRingOne setProgress:0.65 duration:1];
-			
+			[self.progreessRingThree setProgress:0.3 duration:0.3];
+
 			
 		});
 		

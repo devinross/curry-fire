@@ -32,7 +32,7 @@
 #import "POPSpringAnimation+Initializers.h"
 #import "ShortHand.h"
 
-@implementation POPSpringAnimation (Initializers)
+@implementation POPSpringAnimation (TKInitializers)
 
 + (POPSpringAnimation*) springAnimationWithPropertyNamed:(NSString*)aName toValue:(id)value velocity:(id)velocity bouciness:(CGFloat)bouciness speed:(CGFloat)speed removeOnCompletion:(BOOL)removeOnCompletion completion:(void (^)(POPAnimation *anim, BOOL finished))completion {
     POPSpringAnimation *spring = [POPSpringAnimation animationWithPropertyNamed:aName];
