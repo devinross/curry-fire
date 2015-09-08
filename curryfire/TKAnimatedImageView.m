@@ -100,10 +100,7 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 		self.completionBlock = nil;
 	}
 	
-
     if(images.count < 1 || duration <= 0) return;
-	
-	
 	
 	self.animating = YES;
 	self.duration = duration;
@@ -113,42 +110,6 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
     self.completionBlock = finished;
 	self.startTime = -1;
 	[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-	
-	
-	return;
-	
-	
-//    __block NSInteger ctr = 0;
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f / FRAME_RATE repeats:YES block:^{
-//		
-//		dispatch_async(dispatch_get_main_queue(), ^{
-//			CGFloat perc = (ctr  / (FRAME_RATE * duration));
-//			NSInteger frame = round(perc * (images.count-1));
-//			frame = frame % images.count;
-//			
-//			if(repeatCount > 0 && ctr >= FRAME_RATE * duration * repeatCount){
-//				
-//				self.currentFrame = images.count-1;
-//				self.image = images[self.currentFrame];
-//				
-//				
-//				
-//				[self.timer invalidate];
-//				self.timer = nil;
-//				
-//				
-//				
-//				if(finished) finished(YES);
-//			}else{
-//				self.currentFrame = frame;
-//				self.image = images[frame];
-//			}
-//			
-//			ctr++;
-//		});
-//		
-//
-//    }];
 	
 }
 

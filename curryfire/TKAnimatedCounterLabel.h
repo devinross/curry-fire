@@ -30,6 +30,14 @@
  */
 
 @import UIKit;
+@import pop;
+
+/** The curve that the progress will animate at. */
+typedef enum {
+	TKAnimatedCounterLabelAnimationCurveLinear = 0,
+	TKAnimatedCounterLabelAnimationCurveQuadratic = 1,
+	TKAnimatedCounterLabelAnimationCurveSpring = 2,
+} TKAnimatedCounterLabelAnimationCurve;
 
 
 /** `TKAnimatedCounterLabel` is a label used specifically to animate the counting up or down of a number.  */
@@ -37,6 +45,10 @@
 
 /** The number formatter used to generate the text string for a numer. If you want to count money, you should change this to a current style formatter. */
 @property (nonatomic,strong) NSNumberFormatter *numberFormatter;
+
+/** The progress of the circle. */
+@property (nonatomic,assign) TKAnimatedCounterLabelAnimationCurve curve;
+
 
 /* The current text to this number with animating.
  @param number The number.
@@ -54,14 +66,14 @@
  @param number The number.
  @param duration The duration of the animation.
  */
-- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration;
+- (void) setNumber:(NSNumber *)number duration:(NSTimeInterval)duration;
 
 /* The current text to this number with animating.
  @param number The number.
  @param duration The duration of the animation.
  @param completion The completion callback.
  */
-- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration completion:(void (^)(BOOL finished))completion;
+- (void) setNumber:(NSNumber *)number duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
 
 /* The text of the label. */
 @property (nonatomic,copy)  NSString *text;
@@ -86,6 +98,9 @@
 
 /* Default is '9'. The character width of each character is uniform so it animates nicely. The model character is the character used to figure out the character width. */
 @property (nonatomic,copy) NSString *modelCharacter;
+
+@property (nonatomic,strong) POPSpringAnimation *springAnimation;
+
 
 
 @end

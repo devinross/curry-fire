@@ -41,15 +41,15 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (assign) BOOL timerIsLooping;
 
+@property (nonatomic,strong) POPAnimatableProperty *pop;
+
+
 @property (nonatomic,strong) NSMutableArray *labels;
 @property (nonatomic,strong) NSMutableArray *dequeuedLabels;
 @property (nonatomic,strong) UILabel *baseLabel;
 
 @property (nonatomic,assign) CGFloat duration;
-
 @property (nonatomic,copy) void (^completeBlock)(BOOL finished);
-
-
 
 @end
 
@@ -62,6 +62,7 @@
 	
 	self.numberFormatter = [[NSNumberFormatter alloc] init];
     self.textAlignment = NSTextAlignmentCenter;
+	self.curve = TKAnimatedCounterLabelAnimationCurveLinear;
     
     UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
     label.textAlignment = NSTextAlignmentCenter;
@@ -117,24 +118,38 @@
     
     
 }
-- (NSNumber*) numberAtProgressAtTime:(CGFloat)time duration:(CGFloat)duration startValue:(NSNumber*)startValue endValue:(NSNumber*)endValue{
+- (NSNumber*) linearNumberAtProgressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(NSNumber*)startValue endValue:(NSNumber*)endValue{
+	
+	if(time >= duration){
+		time = duration;
+	}
+	NSTimeInterval start = startValue.doubleValue;
+	NSTimeInterval end = endValue.doubleValue;
+	NSTimeInterval diff = end - start;
+	NSTimeInterval change = diff * time / duration;
+	return @(start + change);
+
+}
+- (NSNumber*) quadraticNumberAtProgressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(NSNumber*)startValue endValue:(NSNumber*)endValue{
 	
 	if(time >= duration){
 		time = duration;
 	}
 	
-	double start = startValue.doubleValue;
-	double end = endValue.doubleValue;
-	double diff = end - start;
-	double change = diff * ( -pow(2, -10 * time/duration) + 1 );
+	NSTimeInterval start = startValue.doubleValue;
+	NSTimeInterval end = endValue.doubleValue;
+	NSTimeInterval diff = end - start;
+	NSTimeInterval change = diff * ( -pow(2, -10 * time/duration) + 1 );
 	return @(start + change);
-
+	
 }
+
+
 - (void) _updateProgress{
     if(!self.timerIsLooping) return;
 	
 	self.counter++;
-	CGFloat duration = FRAME_RATE * self.duration;
+	NSTimeInterval duration = FRAME_RATE * self.duration;
 
 	if(self.counter >= duration){
 		self.counter = duration;
@@ -155,7 +170,12 @@
     
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSNumber *num = [self numberAtProgressAtTime:self.counter duration:duration startValue:self.startNumber endValue:self.endNumber];
+		NSNumber *num;
+		
+		if(self.curve == TKAnimatedCounterLabelAnimationCurveLinear)
+			num = [self linearNumberAtProgressAtTime:self.counter duration:duration startValue:self.startNumber endValue:self.endNumber];
+		else if(self.curve == TKAnimatedCounterLabelAnimationCurveQuadratic)
+			num = [self quadraticNumberAtProgressAtTime:self.counter duration:duration startValue:self.startNumber endValue:self.endNumber];
         [self _setupLabelsWithText:[self.numberFormatter stringFromNumber:num]];
     });
 	
@@ -177,35 +197,74 @@
 - (void) setNumber:(NSNumber *)number animated:(BOOL)animated{
     [self setNumber:number duration:animated ? 1.5 : 0];
 }
-- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration{
+- (void) setNumber:(NSNumber *)number duration:(NSTimeInterval)duration{
     [self setNumber:number duration:duration completion:nil];
 }
-- (void) setNumber:(NSNumber *)number duration:(CGFloat)duration completion:(void (^)(BOOL finished))completion{
+- (void) setNumber:(NSNumber *)number duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion{
     if(duration == 0){
         self.timerIsLooping = NO;
         self.text = [self.numberFormatter stringFromNumber:number];
         if(completion) completion(YES);
         return;
     }
-    
-    NSNumber *startNumber = [self.numberFormatter numberFromString:self.text];
-    if([startNumber isEqualToNumber:number]){
-        if(completion) completion(NO);
-        return;
-    }
-    
-    self.completeBlock = completion;
-    
-    self.duration = duration;
-    self.startNumber = startNumber;
-    self.endNumber = number;
-    self.counter = 0;
-    self.timerIsLooping = YES;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        [self _updateProgress];
-    });
-    
+	
+	
+	
+	NSNumber *startNumber = [self.numberFormatter numberFromString:self.text];
+	if([startNumber isEqualToNumber:number]){
+		if(completion) completion(NO);
+		return;
+	}
+	
+	self.startNumber = startNumber;
+
+	if(self.curve == TKAnimatedCounterLabelAnimationCurveSpring){
+		
+		self.endNumber = number;
+		
+		self.pop = [POPAnimatableProperty propertyWithName:@"timeOffset" initializer:^(POPMutableAnimatableProperty *prop) {
+			// read value
+			prop.readBlock = ^(CAShapeLayer *obj, CGFloat values[]) {
+				values[0] = obj.timeOffset;
+			};
+			// write value
+			prop.writeBlock = ^(CAShapeLayer *obj, const CGFloat values[]) {
+				obj.timeOffset = values[0];
+				CGFloat progress = values[0];
+				
+				
+				NSString *str = [self.numberFormatter stringFromNumber:@(progress)];
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self _setupLabelsWithText:str];
+				});
+
+			};
+			// dynamics threshold
+			prop.threshold = 0.1;
+		}];
+		
+		self.springAnimation.fromValue = self.startNumber;
+		self.springAnimation.toValue =  self.endNumber;
+		self.springAnimation.property = self.pop;
+		[self.layer pop_addAnimation:self.springAnimation forKey:nil];
+		
+		
+	}else{
+
+		self.completeBlock = completion;
+		
+		self.duration = duration;
+		self.startNumber = startNumber;
+		self.endNumber = number;
+		self.counter = 0;
+		self.timerIsLooping = YES;
+		
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+			[self _updateProgress];
+		});
+		
+	}
+	
 }
 - (void) setTextColor:(UIColor *)textColor{
     _textColor = textColor;
@@ -228,6 +287,16 @@
 - (void) setCharacterPadding:(CGFloat)characterPadding{
     _characterPadding = characterPadding;
     [self _setupLabelsWithText:self.text];
+}
+
+- (POPSpringAnimation*) springAnimation{
+	if(_springAnimation) return _springAnimation;
+	_springAnimation = [POPSpringAnimation animation];
+	_springAnimation.springBounciness = 4;
+	_springAnimation.springSpeed = 1;
+	//	_springAnimation.dynamicsMass = 1;
+	//	_springAnimation.dynamicsFriction = 2;
+	return _springAnimation;
 }
 
 @end
