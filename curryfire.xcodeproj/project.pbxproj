@@ -228,10 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				20556ECA1B3C93180051CA1F /* libpop.a */,
-				20556ECE1B3C93180051CA1F /* pop.framework */,
 				20556ECC1B3C93180051CA1F /* pop.framework */,
+				20556ECE1B3C93180051CA1F /* pop.framework */,
 				20556ED01B3C93180051CA1F /* pop-tests.xctest */,
-				20556ED21B3C93180051CA1F /* pop-tests-osx.xctest */,
+				20556ED21B3C93180051CA1F /* pop-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 		2069BB571AE095CA00F6D355 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Devin Ross";
 				TargetAttributes = {
 					203FB7FF1B4114BD000D3B43 = {
@@ -502,10 +502,10 @@
 			remoteRef = 20556ECF1B3C93180051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		20556ED21B3C93180051CA1F /* pop-tests-osx.xctest */ = {
+		20556ED21B3C93180051CA1F /* pop-tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "pop-tests-osx.xctest";
+			path = "pop-tests.xctest";
 			remoteRef = 20556ED11B3C93180051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -623,6 +623,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -703,6 +704,7 @@
 				INFOPLIST_FILE = curryfire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devinross.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -721,6 +723,7 @@
 				INFOPLIST_FILE = curryfire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devinross.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
