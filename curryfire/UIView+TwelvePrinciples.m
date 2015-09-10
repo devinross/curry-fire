@@ -30,7 +30,6 @@
  */
 
 #import "UIView+TwelvePrinciples.h"
-#import "UIView+Positioning.h"
 #import "ShortHand.h"
 
 @implementation UIView (TwelvePrinciples)

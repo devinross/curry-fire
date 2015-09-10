@@ -40,10 +40,6 @@
 		2069BC261AE09DFA00F6D355 /* Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC251AE09DFA00F6D355 /* Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2069BC2F1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */; };
-		2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */; };
-		2069BC5B1AE0CCDD00F6D355 /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */; };
 		2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BC5D1AE14C3E00F6D355 /* ShortHand.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		206E839E1B333A730010CFC6 /* TKPagedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 206E839C1B333A730010CFC6 /* TKPagedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		206E839F1B333A730010CFC6 /* TKPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839D1B333A730010CFC6 /* TKPagedScrollView.m */; };
@@ -51,8 +47,6 @@
 		2077EF291B3C94C500A4928F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556ECC1B3C93180051CA1F /* pop.framework */; };
 		207CA69C1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 207CA69A1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CA69B1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m */; };
-		2083E1381B44910100F9D0C1 /* UIScrollView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 2083E1361B44910100F9D0C1 /* UIScrollView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2083E1391B44910100F9D0C1 /* UIScrollView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 2083E1371B44910100F9D0C1 /* UIScrollView+Positioning.m */; };
 		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2098BA2C1B0F7244000E0074 /* TKAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */; };
 		20A46DED1B61C55B004A4153 /* TKBounceBehavior.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A46DEB1B61C55B004A4153 /* TKBounceBehavior.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,8 +65,6 @@
 		20DDB57A1B45A486001C7751 /* TKMultiSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5781B45A486001C7751 /* TKMultiSwitch.m */; };
 		20DDB5831B45A499001C7751 /* TKPegSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 20DDB5811B45A499001C7751 /* TKPegSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20DDB5841B45A499001C7751 /* TKPegSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5821B45A499001C7751 /* TKPegSlider.m */; };
-		20EBDF4F1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 20EBDF4D1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20EBDF501AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EBDF4E1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m */; };
 		20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */; };
 /* End PBXBuildFile section */
@@ -141,6 +133,13 @@
 			remoteGlobalIDString = 200B62541AD7FB450049E35C;
 			remoteInfo = curry;
 		};
+		20CEA4EA1BA151D10009D60C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556EB81B3C93130051CA1F /* curry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20CEA42B1BA1105D0009D60C;
+			remoteInfo = curryTV;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -167,17 +166,11 @@
 		2069BC251AE09DFA00F6D355 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMoveGestureRecognizer.h; sourceTree = "<group>"; };
 		2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMoveGestureRecognizer.m; sourceTree = "<group>"; };
-		2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GestureRecognizerBlock.h"; sourceTree = "<group>"; };
-		2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GestureRecognizerBlock.m"; sourceTree = "<group>"; };
-		2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
-		2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
 		2069BC5D1AE14C3E00F6D355 /* ShortHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortHand.h; sourceTree = "<group>"; };
 		206E839C1B333A730010CFC6 /* TKPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPagedScrollView.h; sourceTree = "<group>"; };
 		206E839D1B333A730010CFC6 /* TKPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPagedScrollView.m; sourceTree = "<group>"; };
 		207CA69A1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreenEdgePanGestureRecognizer+Helper.h"; sourceTree = "<group>"; };
 		207CA69B1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreenEdgePanGestureRecognizer+Helper.m"; sourceTree = "<group>"; };
-		2083E1361B44910100F9D0C1 /* UIScrollView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Positioning.h"; sourceTree = "<group>"; };
-		2083E1371B44910100F9D0C1 /* UIScrollView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Positioning.m"; sourceTree = "<group>"; };
 		2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAnimatedImageView.h; sourceTree = "<group>"; };
 		2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnimatedImageView.m; sourceTree = "<group>"; };
 		20A46DEB1B61C55B004A4153 /* TKBounceBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBounceBehavior.h; sourceTree = "<group>"; };
@@ -196,8 +189,6 @@
 		20DDB5781B45A486001C7751 /* TKMultiSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultiSwitch.m; sourceTree = "<group>"; };
 		20DDB5811B45A499001C7751 /* TKPegSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPegSlider.h; sourceTree = "<group>"; };
 		20DDB5821B45A499001C7751 /* TKPegSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPegSlider.m; sourceTree = "<group>"; };
-		20EBDF4D1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPanGestureRecognizer+VelocityDirection.h"; sourceTree = "<group>"; };
-		20EBDF4E1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPanGestureRecognizer+VelocityDirection.m"; sourceTree = "<group>"; };
 		20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMoveScreenEdgeGestureRecognizer.h; sourceTree = "<group>"; };
 		20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMoveScreenEdgeGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +211,7 @@
 			children = (
 				20556EBE1B3C93140051CA1F /* curry.framework */,
 				20556EC01B3C93140051CA1F /* curryTests.xctest */,
+				20CEA4EB1BA151D10009D60C /* curryTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,20 +316,12 @@
 		2069BC6D1AE1634100F6D355 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				2069BC591AE0CCDD00F6D355 /* UIView+Positioning.h */,
-				2069BC5A1AE0CCDD00F6D355 /* UIView+Positioning.m */,
-				2083E1361B44910100F9D0C1 /* UIScrollView+Positioning.h */,
-				2083E1371B44910100F9D0C1 /* UIScrollView+Positioning.m */,
 				20691B5E1AE7F8D30045627D /* UIView+Material.h */,
 				20691B5F1AE7F8D30045627D /* UIView+Material.m */,
 				20AF03421AE862F60065E3FF /* UIView+TwelvePrinciples.h */,
 				20AF03431AE862F60065E3FF /* UIView+TwelvePrinciples.m */,
 				20AF03281AE848480065E3FF /* UIView+Confetti.h */,
 				20AF03291AE848480065E3FF /* UIView+Confetti.m */,
-				20EBDF4D1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h */,
-				20EBDF4E1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m */,
-				2069BC4F1AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h */,
-				2069BC501AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m */,
 				2069BC6E1AE1634800F6D355 /* Initializers */,
 				207CA69A1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h */,
 				207CA69B1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m */,
@@ -364,14 +348,12 @@
 				2069BB661AE095CA00F6D355 /* curryfire.h in Headers */,
 				2069BC2F1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h in Headers */,
 				2069BC261AE09DFA00F6D355 /* Header.h in Headers */,
-				2069BC5B1AE0CCDD00F6D355 /* UIView+Positioning.h in Headers */,
 				2069BC5E1AE14C3E00F6D355 /* ShortHand.h in Headers */,
 				20691B601AE7F8D30045627D /* UIView+Material.h in Headers */,
 				20AF03441AE862F60065E3FF /* UIView+TwelvePrinciples.h in Headers */,
 				2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */,
 				207CA69C1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h in Headers */,
 				20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */,
-				20EBDF4F1AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.h in Headers */,
 				20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */,
 				202DBEE41AF6704700B0CE67 /* TKShimmerLabel.h in Headers */,
 				206E839E1B333A730010CFC6 /* TKPagedScrollView.h in Headers */,
@@ -382,12 +364,10 @@
 				20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */,
 				20DDB5791B45A486001C7751 /* TKMultiSwitch.h in Headers */,
 				20DDB5831B45A499001C7751 /* TKPegSlider.h in Headers */,
-				2083E1381B44910100F9D0C1 /* UIScrollView+Positioning.h in Headers */,
 				20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */,
 				204922A31B45D64900C22245 /* TKLoadingView.h in Headers */,
 				20A46DED1B61C55B004A4153 /* TKBounceBehavior.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
-				2069BC511AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +489,13 @@
 			remoteRef = 20556ED11B3C93180051CA1F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		20CEA4EB1BA151D10009D60C /* curryTV.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = curryTV.framework;
+			remoteRef = 20CEA4EA1BA151D10009D60C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -547,17 +534,13 @@
 				207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */,
 				20AF03451AE862F60065E3FF /* UIView+TwelvePrinciples.m in Sources */,
 				20A46DEE1B61C55B004A4153 /* TKBounceBehavior.m in Sources */,
-				2069BC521AE0C20A00F6D355 /* UIView+GestureRecognizerBlock.m in Sources */,
 				204922A41B45D64900C22245 /* TKLoadingView.m in Sources */,
-				2069BC5C1AE0CCDD00F6D355 /* UIView+Positioning.m in Sources */,
-				20EBDF501AE9ACBE007A57D1 /* UIPanGestureRecognizer+VelocityDirection.m in Sources */,
 				20B2888C1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m in Sources */,
 				20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */,
 				20DDB5841B45A499001C7751 /* TKPegSlider.m in Sources */,
 				202DBED21AF66B2D00B0CE67 /* TKGlowButton.m in Sources */,
 				20691B611AE7F8D30045627D /* UIView+Material.m in Sources */,
 				202DBEE31AF6704700B0CE67 /* TKPageControl.m in Sources */,
-				2083E1391B44910100F9D0C1 /* UIScrollView+Positioning.m in Sources */,
 				202DBEE71AF6704700B0CE67 /* TKSlideToUnlockView.m in Sources */,
 				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
 				206E839F1B333A730010CFC6 /* TKPagedScrollView.m in Sources */,

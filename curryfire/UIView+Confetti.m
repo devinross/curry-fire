@@ -30,8 +30,8 @@
  */
 
 #import "UIView+Confetti.h"
-#import "UIView+Positioning.h"
 #import "ShortHand.h"
+@import curry;
 
 @implementation UIView (Confetti)
 

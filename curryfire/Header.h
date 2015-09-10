@@ -53,13 +53,9 @@
 #import "TKPagedScrollView.h"
 #import "TKLoadingView.h"
 
-#import "UIView+Positioning.h"
-#import "UIScrollView+Positioning.h"
 #import "UIView+Material.h"
 #import "UIView+TwelvePrinciples.h"
 #import "UIView+Confetti.h"
-#import "UIPanGestureRecognizer+VelocityDirection.h"
-#import "UIView+GestureRecognizerBlock.h"
 #import "POPSpringAnimation+Initializers.h"
 #import "UIScreenEdgePanGestureRecognizer+Helper.h"
 #import "TKMoveScreenEdgeGestureRecognizer.h"

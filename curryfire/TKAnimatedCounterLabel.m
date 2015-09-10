@@ -30,7 +30,6 @@
  */
 
 #import "TKAnimatedCounterLabel.h"
-#import "UIView+Positioning.h"
 @import UIKit;
 @import curry;
 

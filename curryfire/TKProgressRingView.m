@@ -30,7 +30,6 @@
  */
 
 #import "TKProgressRingView.h"
-#import "UIView+Positioning.h"
 @import curry;
 @import pop;
 
