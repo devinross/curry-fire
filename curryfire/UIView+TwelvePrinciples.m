@@ -169,8 +169,7 @@
 	CGAffineTransform twistTransform = CGAffineTransformIdentity;
 	twistTransform.c = twist;
 	
-	CGFloat x = self.superview.width/2 - self.width/2;
-	x = endXPoint + (movingRight ? 1 : -1) * self.width / 2;
+	CGFloat x = endXPoint + (movingRight ? 1 : -1) * self.width / 2;
 	self.center = CGPointMake(anchorX, anchorY);
 	
 	[UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
