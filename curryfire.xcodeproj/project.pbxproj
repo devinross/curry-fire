@@ -44,7 +44,6 @@
 		206E839E1B333A730010CFC6 /* TKPagedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 206E839C1B333A730010CFC6 /* TKPagedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		206E839F1B333A730010CFC6 /* TKPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839D1B333A730010CFC6 /* TKPagedScrollView.m */; };
 		2077EF281B3C94C500A4928F /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EBE1B3C93140051CA1F /* curry.framework */; };
-		2077EF291B3C94C500A4928F /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556ECC1B3C93180051CA1F /* pop.framework */; };
 		207CA69C1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 207CA69A1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		207CA69D1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CA69B1AF33370008F30E8 /* UIScreenEdgePanGestureRecognizer+Helper.m */; };
 		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +60,7 @@
 		20CB9CDE1AF3C036002E9F1C /* TKProgressRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */; };
 		20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CB9CE61AF3C487002E9F1C /* POPSpringAnimation+Initializers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20CB9CE91AF3C487002E9F1C /* POPSpringAnimation+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */; };
+		20DBDA4E1BB4DC99008BB36D /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556ECC1B3C93180051CA1F /* pop.framework */; };
 		20DDB5791B45A486001C7751 /* TKMultiSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 20DDB5771B45A486001C7751 /* TKMultiSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20DDB57A1B45A486001C7751 /* TKMultiSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5781B45A486001C7751 /* TKMultiSwitch.m */; };
 		20DDB5831B45A499001C7751 /* TKPegSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 20DDB5811B45A499001C7751 /* TKPegSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -140,6 +140,20 @@
 			remoteGlobalIDString = 20CEA42B1BA1105D0009D60C;
 			remoteInfo = curryTV;
 		};
+		20DBDA461BB4DC95008BB36D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556EB81B3C93130051CA1F /* curry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2010DCB01BB0E40E00810A98;
+			remoteInfo = curryWatch;
+		};
+		20DBDA481BB4DC95008BB36D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556EB81B3C93130051CA1F /* curry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 20B5FE1F1BB3613F00C0F848;
+			remoteInfo = curryMac;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -198,8 +212,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20DBDA4E1BB4DC99008BB36D /* pop.framework in Frameworks */,
 				2077EF281B3C94C500A4928F /* curry.framework in Frameworks */,
-				2077EF291B3C94C500A4928F /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +226,8 @@
 				20556EBE1B3C93140051CA1F /* curry.framework */,
 				20556EC01B3C93140051CA1F /* curryTests.xctest */,
 				20CEA4EB1BA151D10009D60C /* curryTV.framework */,
+				20DBDA471BB4DC95008BB36D /* curryWatch.framework */,
+				20DBDA491BB4DC95008BB36D /* curryMac.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -494,6 +510,20 @@
 			fileType = wrapper.framework;
 			path = curryTV.framework;
 			remoteRef = 20CEA4EA1BA151D10009D60C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		20DBDA471BB4DC95008BB36D /* curryWatch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = curryWatch.framework;
+			remoteRef = 20DBDA461BB4DC95008BB36D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		20DBDA491BB4DC95008BB36D /* curryMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = curryMac.framework;
+			remoteRef = 20DBDA481BB4DC95008BB36D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
