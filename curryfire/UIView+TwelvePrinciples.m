@@ -32,49 +32,68 @@
 #import "UIView+TwelvePrinciples.h"
 #import "ShortHand.h"
 
+
 @implementation UIView (TwelvePrinciples)
 
 
 - (void) zoomToYPoint:(CGFloat)endYPoint completion:(void (^)(BOOL finished))completion{
     [self zoomToYPoint:endYPoint duration:0.7 delay:0 completion:completion];
 }
+
+
 - (void) zoomToYPoint:(CGFloat)endYPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{
-    
-    CGAffineTransform baseTransform = self.transform;
-    
-    if(endYPoint > self.centerY){
-        CGFloat yy = CGRectGetMinY(self.frame);
-        self.layer.anchorPoint = CGPointMake(0.5, 0);
-        self.center = CGPointMake(self.centerX, yy);
-    }else{
-        CGFloat yy = CGRectGetMaxY(self.frame);
-        self.layer.anchorPoint = CGPointMake(0.5, 1);
-        self.center = CGPointMake(self.centerX, yy);
-    }
-
-
-    CGFloat xScale = 1, yScale = 1;
-    
-    [UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
-        
-        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.2 animations:^{
-            self.transform = CGConcat(baseTransform, CGScale(xScale+0.1, yScale-0.3)) ;
-        }];
-        [UIView addKeyframeWithRelativeStartTime:0.3 relativeDuration:0.3 animations:^{
-            self.transform = CGScale(xScale-0.3, yScale+0.3);
-        }];
-        [UIView addKeyframeWithRelativeStartTime:0.4 relativeDuration:0.6 animations:^{
-            self.center = CGPointMake(self.centerX, endYPoint);
-        }];
-
-    } completion:^(BOOL finished){
-        self.transform = baseTransform;
-        CGFloat minY = self.minY + self.height / 2.0f;
-        self.layer.anchorPoint = CGPointMake(0.5, 0.5);
-        self.centerY = minY;
-        if(completion) completion(finished);
-    }];
+	[self zoomToYPoint:endYPoint anticipation:30 duration:duration delay:delay completion:completion];
 }
+
+- (void) zoomToYPoint:(CGFloat)endYPoint anticipation:(CGFloat)anticipation duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{
+	
+	CGAffineTransform baseTransform = self.transform;
+	
+	if(endYPoint > self.centerY){
+		CGFloat yy = CGRectGetMinY(self.frame);
+		self.layer.anchorPoint = CGPointMake(0.5, 0);
+		self.center = CGPointMake(self.centerX, yy);
+		anticipation *= -1;
+	}else{
+		CGFloat yy = CGRectGetMaxY(self.frame);
+		self.layer.anchorPoint = CGPointMake(0.5, 1);
+		self.center = CGPointMake(self.centerX, yy);
+	}
+	
+	
+	CGFloat xScale = 1, yScale = 1;
+	
+	[UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
+		
+		[UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.2 animations:^{
+			self.transform = CGConcat(baseTransform, CGScale(xScale+0.1, yScale-0.3));
+		}];
+		
+	
+		
+		[UIView addKeyframeWithRelativeStartTime:0.3 relativeDuration:0.3 animations:^{
+			self.transform = CGScale(xScale-0.3, yScale+0.3);
+		}];
+		
+		[UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.4 animations:^{
+			self.centerY += anticipation;
+		}];
+		
+		[UIView addKeyframeWithRelativeStartTime:0.4 relativeDuration:0.6 animations:^{
+			self.center = CGPointMake(self.centerX, endYPoint);
+		}];
+		
+	} completion:^(BOOL finished){
+		self.transform = baseTransform;
+		CGFloat minY = self.minY + self.height / 2.0f;
+		self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+		self.centerY = minY;
+		if(completion) completion(finished);
+	}];
+}
+
+
+
 - (void) zoomToXPoint:(CGFloat)endXPoint completion:(void (^)(BOOL finished))completion{
     [self zoomToXPoint:endXPoint completion:completion];
 }

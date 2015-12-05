@@ -53,6 +53,15 @@
  */
 - (void) zoomToYPoint:(CGFloat)endYPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
 
+/** Zoom view to point.
+ @param endYPoint The place to zoom to.
+ @param anticipation How much of a windup the view moves before zooming off.
+ @param duration The duration of the animation.
+ @param delay The delay before the animation is played.
+ @param completion The completion callback handler.
+ */
+- (void) zoomToYPoint:(CGFloat)endYPoint anticipation:(CGFloat)anticipation duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
+
 
 - (void) turnOnADimeAtXPoint:(CGFloat)endXPoint duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion;
 
@@ -73,6 +82,7 @@
 
 /** Tickle the view. 
  @param duration The duration of the animation.
+ @param downScale Downscale.
  @param delay The delay before the animation is played.
  @param completion The completion callback handler.
  */
