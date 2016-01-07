@@ -284,34 +284,34 @@
 
 
 #pragma mark UITouchMoved
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesBegan:touches withEvent:event];
-    
-    if (self.animating && [self state] == UIGestureRecognizerStatePossible) {
-        [self setState:UIGestureRecognizerStateBegan];
-    }
-    
-}
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesMoved:touches withEvent:event];
-
-    if ([self state] == UIGestureRecognizerStatePossible) {
-        [self setState:UIGestureRecognizerStateBegan];
-        self.startPoint = self.movableView.center;
-    } else {
-        [self setState:UIGestureRecognizerStateChanged];
-    }
-    
-    
-}
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesEnded:touches withEvent:event];
-    [self setState:UIGestureRecognizerStateEnded];
-}
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-    [super touchesCancelled:touches withEvent:event];
-    [self setState:UIGestureRecognizerStateCancelled];
-}
+//- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [super touchesBegan:touches withEvent:event];
+//    
+//    if (self.animating && [self state] == UIGestureRecognizerStatePossible) {
+//        [self setState:UIGestureRecognizerStateBegan];
+//    }
+//    
+//}
+//- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [super touchesMoved:touches withEvent:event];
+//
+//    if ([self state] == UIGestureRecognizerStatePossible) {
+//        [self setState:UIGestureRecognizerStateBegan];
+//        self.startPoint = self.movableView.center;
+//    } else {
+//        [self setState:UIGestureRecognizerStateChanged];
+//    }
+//    
+//    
+//}
+//- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [super touchesEnded:touches withEvent:event];
+//    [self setState:UIGestureRecognizerStateEnded];
+//}
+//- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
+//    [super touchesCancelled:touches withEvent:event];
+//    [self setState:UIGestureRecognizerStateCancelled];
+//}
 
 
 #pragma mark Properties
