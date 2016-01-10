@@ -70,6 +70,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2025B0B51C42FAA7000EFC0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556EC11B3C93180051CA1F /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE4F1BEA15950094AB41;
+			remoteInfo = "pop-tvos-framework";
+		};
+		2025B0B71C42FAA7000EFC0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556EC11B3C93180051CA1F /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE8C1BEA19580094AB41;
+			remoteInfo = "pop-tests-tvos";
+		};
 		20556EBD1B3C93140051CA1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20556EB81B3C93130051CA1F /* curry.xcodeproj */;
@@ -238,8 +252,10 @@
 				20556ECA1B3C93180051CA1F /* libpop.a */,
 				20556ECC1B3C93180051CA1F /* pop.framework */,
 				20556ECE1B3C93180051CA1F /* pop.framework */,
+				2025B0B61C42FAA7000EFC0D /* pop.framework */,
 				20556ED01B3C93180051CA1F /* pop-tests.xctest */,
 				20556ED21B3C93180051CA1F /* pop-tests.xctest */,
+				2025B0B81C42FAA7000EFC0D /* pop-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,6 +472,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2025B0B61C42FAA7000EFC0D /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = 2025B0B51C42FAA7000EFC0D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2025B0B81C42FAA7000EFC0D /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = 2025B0B71C42FAA7000EFC0D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		20556EBE1B3C93140051CA1F /* curry.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -727,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
