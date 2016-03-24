@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2006EC341CA470BA001BE4F0 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2006EC331CA470BA001BE4F0 /* curry.framework */; };
+		2006EC351CA470BA001BE4F0 /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2006EC331CA470BA001BE4F0 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2006EC371CA470C5001BE4F0 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2006EC361CA470C5001BE4F0 /* pop.framework */; };
+		2006EC381CA470C5001BE4F0 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2006EC361CA470C5001BE4F0 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; };
 		2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */; };
 		2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF971AE94E610097E3AE /* RunForrestViewController.m */; };
@@ -20,10 +24,6 @@
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
 		206E839B1B332B1A0010CFC6 /* PagedScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */; };
-		2070E3AB1C41B24B004D6142 /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2070E3A71C41B1F8004D6142 /* curry.framework */; };
-		2070E3AC1C41B24B004D6142 /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2070E3A71C41B1F8004D6142 /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2070E3AE1C41B257004D6142 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2070E3AD1C41B257004D6142 /* pop.framework */; };
-		2070E3AF1C41B257004D6142 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2070E3AD1C41B257004D6142 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2077EF321B3C965500A4928F /* curryfire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EA01B3C906F0051CA1F /* curryfire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
 		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
@@ -62,8 +62,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2070E3AC1C41B24B004D6142 /* curry.framework in Embed Frameworks */,
-				2070E3AF1C41B257004D6142 /* pop.framework in Embed Frameworks */,
+				2006EC351CA470BA001BE4F0 /* curry.framework in Embed Frameworks */,
+				2006EC381CA470C5001BE4F0 /* pop.framework in Embed Frameworks */,
 				2077EF321B3C965500A4928F /* curryfire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -72,9 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2006EC331CA470BA001BE4F0 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-eiqmwbawxrecqhgvdfnwikfrrqqb/Build/Products/Debug-iphonesimulator/curry.framework"; sourceTree = "<absolute>"; };
+		2006EC361CA470C5001BE4F0 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-eiqmwbawxrecqhgvdfnwikfrrqqb/Build/Products/Debug-iphonesimulator/pop.framework"; sourceTree = "<absolute>"; };
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
-		20556EB61B3C92FC0051CA1F /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "../../../Library/Developer/Xcode/DerivedData/Examples-crdfpjzazzkwbndzijnrtnvmtbcr/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<group>"; };
-		205AD6931AF6E21D006F8A54 /* curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = curry.framework; path = "../../../Library/Developer/Xcode/DerivedData/Examples-crdfpjzazzkwbndzijnrtnvmtbcr/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<group>"; };
 		2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimationViewController.h; sourceTree = "<group>"; };
 		2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimationViewController.m; sourceTree = "<group>"; };
 		2067AF961AE94E610097E3AE /* RunForrestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunForrestViewController.h; sourceTree = "<group>"; };
@@ -98,12 +98,8 @@
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2069BC411AE0B68C00F6D355 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
-		2069BC441AE0B68C00F6D355 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-bzxktyjkpyijutbaobkmiawdeozx/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
 		206E83991B332B1A0010CFC6 /* PagedScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedScrollViewViewController.h; sourceTree = "<group>"; };
 		206E839A1B332B1A0010CFC6 /* PagedScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewViewController.m; sourceTree = "<group>"; };
-		2070E3A71C41B1F8004D6142 /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = curry.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-eiqmwbawxrecqhgvdfnwikfrrqqb/Build/Products/Debug-iphoneos/curry.framework"; sourceTree = "<absolute>"; };
-		2070E3AD1C41B257004D6142 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = "/Users/devinross/Library/Developer/Xcode/DerivedData/Examples-eiqmwbawxrecqhgvdfnwikfrrqqb/Build/Products/Debug-iphoneos/pop.framework"; sourceTree = "<absolute>"; };
 		208E8A391AE86B69004E63FB /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
 		208E8A3A1AE86B69004E63FB /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 		208E8A431AE94210004E63FB /* WiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiggleViewController.h; sourceTree = "<group>"; };
@@ -133,8 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2070E3AB1C41B24B004D6142 /* curry.framework in Frameworks */,
-				2070E3AE1C41B257004D6142 /* pop.framework in Frameworks */,
+				2006EC341CA470BA001BE4F0 /* curry.framework in Frameworks */,
+				2006EC371CA470C5001BE4F0 /* pop.framework in Frameworks */,
 				20556EB51B3C92FC0051CA1F /* curryfire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,12 +223,8 @@
 		2069BC671AE15E3300F6D355 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2070E3AD1C41B257004D6142 /* pop.framework */,
-				2070E3A71C41B1F8004D6142 /* curry.framework */,
-				20556EB61B3C92FC0051CA1F /* pop.framework */,
-				205AD6931AF6E21D006F8A54 /* curry.framework */,
-				2069BC441AE0B68C00F6D355 /* pop.framework */,
-				2069BC411AE0B68C00F6D355 /* curry.framework */,
+				2006EC361CA470C5001BE4F0 /* pop.framework */,
+				2006EC331CA470BA001BE4F0 /* curry.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

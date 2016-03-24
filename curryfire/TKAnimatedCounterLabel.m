@@ -71,6 +71,9 @@
     
     self.modelCharacter = @"9";
 	
+	self.isAccessibilityElement = YES;
+	self.accessibilityTraits = UIAccessibilityTraitStaticText;
+	
 	return self;
 }
 
@@ -114,8 +117,8 @@
     }
     
     _text = text;
-    
-    
+
+	
 }
 - (NSNumber*) linearNumberAtProgressAtTime:(NSTimeInterval)time duration:(NSTimeInterval)duration startValue:(NSNumber*)startValue endValue:(NSNumber*)endValue{
 	
@@ -156,7 +159,8 @@
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self _setupLabelsWithText:[self.numberFormatter stringFromNumber:self.endNumber]];
+			NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
+            [self _setupLabelsWithText:txt];
 
             if(self.completeBlock){
                 self.completeBlock(YES);
@@ -221,6 +225,9 @@
 		
 		self.endNumber = number;
 		
+		NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
+		self.accessibilityLabel = txt;
+		
 		self.pop = [POPAnimatableProperty propertyWithName:@"timeOffset" initializer:^(POPMutableAnimatableProperty *prop) {
 			// read value
 			prop.readBlock = ^(CAShapeLayer *obj, CGFloat values[]) {
@@ -258,6 +265,10 @@
 		self.counter = 0;
 		self.timerIsLooping = YES;
 		
+		NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
+		[self _setupLabelsWithText:txt];
+		self.accessibilityLabel = txt;
+		
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
 			[self _updateProgress];
 		});
@@ -282,6 +293,7 @@
 - (void) setText:(NSString *)text{
     _text = text;
     [self _setupLabelsWithText:text];
+	self.accessibilityLabel = text;
 }
 - (void) setCharacterPadding:(CGFloat)characterPadding{
     _characterPadding = characterPadding;
@@ -293,8 +305,6 @@
 	_springAnimation = [POPSpringAnimation animation];
 	_springAnimation.springBounciness = 4;
 	_springAnimation.springSpeed = 1;
-	//	_springAnimation.dynamicsMass = 1;
-	//	_springAnimation.dynamicsFriction = 2;
 	return _springAnimation;
 }
 

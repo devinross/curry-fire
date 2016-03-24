@@ -39,7 +39,7 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.counterLabel = [[TKAnimatedCounterLabel alloc] initWithFrame:self.view.bounds];
+    self.counterLabel = [[TKAnimatedCounterLabel alloc] initWithFrame:CGRectInset(self.view.bounds, 10, 100) ];
 	self.counterLabel.curve = TKAnimatedCounterLabelAnimationCurveQuadratic;
     self.counterLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.counterLabel.font = [UIFont helveticaNeueUltraLightWithSize:100];
