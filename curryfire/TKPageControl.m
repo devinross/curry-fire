@@ -216,10 +216,10 @@
 }
 
 - (void) accessibilityIncrement{
-	[self incrementPage];
+	[self incrementCurrentPage];
 }
 - (void) accessibilityDecrement{
-	[self decrementPage];
+	[self decrementCurrentPage];
 }
 
 
