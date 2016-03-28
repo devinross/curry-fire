@@ -51,6 +51,12 @@
 	self.images = [NSMutableArray array];
 	_dotRadius = DEFAULT_DOT_RADIUS;
 	_spaceBetweenDots = DEFAULT_SPACE;
+	self.isAccessibilityElement = YES;
+	self.accessibilityTraits = UIAccessibilityTraitAdjustable;
+	
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+	[self addGestureRecognizer:tap];
+	
 	return self;
 }
 
@@ -92,6 +98,18 @@
 	
 }
 
+- (void) tapped:(UITapGestureRecognizer*)gesture{
+	
+	CGPoint p = [gesture locationInView:self];
+	
+	if(p.x > CGRectGetWidth(self.frame) / 2){
+		[self incrementCurrentPage];
+	}else{
+		[self decrementCurrentPage];
+	}
+	
+}
+
 - (void) setCurrentPage:(NSInteger)currentPage{
 	_currentPage = currentPage;
 	[self _configure];
@@ -120,14 +138,12 @@
 	
 	
 	if(oldPage+1 != _currentPage && oldPage-1 != _currentPage){
-		
 		[UIView beginAnimations:nil context:nil];
 		oldDot.backgroundColor = oldDot.image ? [UIColor clearColor] : self.pageIndicatorTintColor;
 		oldDot.tintColor = self.pageIndicatorTintColor;
 		selected.backgroundColor = selected.image ? [UIColor clearColor] : self.currentPageIndicatorTintColor;
 		selected.tintColor = self.currentPageIndicatorTintColor;
 		[UIView commitAnimations];
-		
 		return;
 	}
 	
@@ -188,6 +204,26 @@
 }
 
 
+- (void) incrementCurrentPage{
+	if(self.currentPage + 1 >= self.numberOfPages) return;
+	[self setCurrentPage:self.currentPage+1 animated:YES];
+	[self sendActionsForControlEvents:UIControlEventValueChanged];
+}
+- (void) decrementCurrentPage{
+	if(self.currentPage<1) return;
+	[self setCurrentPage:self.currentPage-1 animated:YES];
+	[self sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
+- (void) accessibilityIncrement{
+	[self incrementPage];
+}
+- (void) accessibilityDecrement{
+	[self decrementPage];
+}
+
+
+
 #pragma mark Visual Properties
 - (void) setDotRadius:(CGFloat)dotRadius{
 	_dotRadius = dotRadius;
@@ -205,5 +241,6 @@
 	_pageIndicatorTintColor = pageIndicatorTintColor;
 	[self _configure];
 }
+
 
 @end

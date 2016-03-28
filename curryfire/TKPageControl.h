@@ -49,6 +49,11 @@
 - (void) setImage:(UIImage*)image forPage:(NSInteger)page;
 
 
+- (void) incrementCurrentPage;
+
+- (void) decrementCurrentPage;
+
+
 ///----------------------------
 /// @name Properties
 ///----------------------------

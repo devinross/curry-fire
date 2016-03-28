@@ -47,6 +47,7 @@
 #import "HopViewController.h"
 #import "DimeViewController.h"
 #import "BounceAnimatorViewController.h"
+#import "PageControlViewController.h"
 
 @implementation RootViewController
 #define IDENTIFIER @"cellIdentifier"
@@ -66,6 +67,10 @@
   @[NSLocalizedString(@"Animated Counter", @""),        NSStringFromClass([CounterViewController class])],
   @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
   @[NSLocalizedString(@"Bounce Animator", @""),          NSStringFromClass([BounceAnimatorViewController class])],
+  @[NSLocalizedString(@"Page Control", @""),          NSStringFromClass([PageControlViewController class])],
+
+  
+  
   @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])] ];
 	
 	NSArray *section2 = @[@[NSLocalizedString(@"Shake", @""),                   NSStringFromClass([ShakeAnimationViewController class])],
