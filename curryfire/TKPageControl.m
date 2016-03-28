@@ -225,7 +225,11 @@
 - (void) accessibilityDecrement{
 	[self decrementCurrentPage];
 }
-
+- (BOOL) accessibilityActivate{
+	if(self.currentPage + 1 >= self.numberOfPages) return NO;
+	[self incrementCurrentPage];
+	return YES;
+}
 
 
 #pragma mark Visual Properties
