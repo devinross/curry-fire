@@ -74,6 +74,8 @@
 		}
 		i++;
 	}
+	
+	self.accessibilityLabel = [NSString localizedStringWithFormat:NSLocalizedString(@"Page %d of %f", @""),self.currentPage+1,self.numberOfPages];
 }
 - (void) _setup{
 	[self.dots makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -95,7 +97,8 @@
 	
 	
 	self.currentPage = self.currentPage;
-	
+	self.accessibilityLabel = [NSString localizedStringWithFormat:NSLocalizedString(@"Page %d of %f", @""),self.currentPage+1,self.numberOfPages];
+
 }
 
 - (void) tapped:(UITapGestureRecognizer*)gesture{
@@ -126,7 +129,8 @@
 	
 	NSInteger oldPage = _currentPage;
 	_currentPage = currentPage;
-	
+	self.accessibilityLabel = [NSString localizedStringWithFormat:NSLocalizedString(@"Page %d of %f", @""),self.currentPage+1,self.numberOfPages];
+
 	
 	UIImageView *oldDot = oldPage < self.dots.count ? self.dots[oldPage] : nil;
 	UIImageView *selected = self.dots[_currentPage];
