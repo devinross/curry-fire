@@ -56,14 +56,19 @@
 	[super setSelected:selected];
 	
 	UIColor *clr = [UIColor clearColor];
-	
-	if(selected && selectedBackgroundColor)
+	UIColor *txtColor = [UIColor clearColor];
+
+	if(selected && selectedBackgroundColor){
 		clr = selectedBackgroundColor;
-	else if(!selected && normalBackgroundColor)
+		txtColor = [self titleColorForState:UIControlStateSelected];
+	}else if(!selected && normalBackgroundColor){
 		clr = normalBackgroundColor;
+		txtColor = [self titleColorForState:UIControlStateNormal];
+	}
 	
 	[UIView beginAnimations:nil context:nil];
 	self.backgroundColor = clr;
+	self.imageView.tintColor = txtColor;
 	[UIView commitAnimations];
 	
 }
@@ -73,13 +78,19 @@
 	
 	UIColor *clr = [UIColor clearColor];
 	
-	if(highlighted && highlightedBackgroundColor)
+	UIColor *txtColor = [UIColor clearColor];
+	
+	if(highlighted && highlightedBackgroundColor){
 		clr = highlightedBackgroundColor;
-	else if(!highlighted && normalBackgroundColor)
+		txtColor = [self titleColorForState:UIControlStateHighlighted];
+	}else if(!highlighted && normalBackgroundColor){
 		clr = normalBackgroundColor;
+		txtColor = [self titleColorForState:UIControlStateNormal];
+	}
 	
 	[UIView beginAnimations:nil context:nil];
 	self.backgroundColor = clr;
+	self.imageView.tintColor = txtColor;
 	[UIView commitAnimations];
 	
 }
