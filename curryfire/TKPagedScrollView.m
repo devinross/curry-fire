@@ -65,9 +65,9 @@
 	BOOL vert = self.scrollDirection == TKPageScrollDirectionVertical;
 
 	if(vert){
-		self.scrollView.contentSize = CGSizeMake(self.scrollView.width, nextView.height);
+		self.scrollView.contentSize = CGSizeMake(0, nextView.height);
 	}else{
-		self.scrollView.contentSize = CGSizeMake(nextView.width, self.scrollView.height);
+		self.scrollView.contentSize = CGSizeMake(nextView.width, 0);
 	}
 
 
