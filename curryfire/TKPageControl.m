@@ -118,6 +118,7 @@
 	[self _configure];
 }
 - (void) setCurrentPage:(NSInteger)currentPage animated:(BOOL)animated{
+	if(_numberOfPages==0) return;
 	
 	currentPage = MIN(_numberOfPages-1,currentPage);
 	currentPage = MAX(0,currentPage);
