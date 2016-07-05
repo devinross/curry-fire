@@ -355,9 +355,9 @@
 	}else if(vert && scrollView.contentOffset.y < 0){
 		[self scrollToPreviousPage];
 		
-    }else if(!vert && scrollView.contentOffset.x + scrollView.width > scrollView.contentWidth){
+    }else if(!vert && scrollView.contentOffset.x + scrollView.width - 30 > scrollView.contentWidth){
 		[self scrollToNextPage];
-	}else if(!vert && scrollView.contentOffset.x < 0){
+	}else if(!vert && scrollView.contentOffset.x < -30){
 		[self scrollToPreviousPage];
 	}
 		
