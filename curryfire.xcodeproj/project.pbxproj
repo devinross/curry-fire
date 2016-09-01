@@ -440,6 +440,7 @@
 					};
 					2069BB5F1AE095CA00F6D355 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -750,6 +751,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devinross.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -770,6 +772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devinross.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
