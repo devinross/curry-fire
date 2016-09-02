@@ -61,7 +61,6 @@
 /** The current frame index. */
 @property (nonatomic,readonly) NSInteger currentFrame;
 
-/** The current frame index. */
-@property (nonatomic,readonly) BOOL animating;
+
 
 @end

@@ -92,6 +92,7 @@
 	[self _renderScreen];
 }
 - (void) awakeFromNib{
+	[super awakeFromNib];
 	[self _setupView];
 }
 
