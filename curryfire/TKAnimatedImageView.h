@@ -40,7 +40,7 @@
  @param duration The duration of the animation.
  @param completion The completion block called upon the animation completing.
  */
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))completion;
+- (void) playAnimationWithImages:(NSArray<UIImage *>*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))completion;
 
 /** Play an animation sequence with the given image frames.
  @param images A array of `UIImage` objects.
@@ -48,11 +48,13 @@
  @param repeatCount The number of times the animation sequence plays.
  @param completion The completion block called upon the animation completing.
  */
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))completion;
+- (void) playAnimationWithImages:(NSArray<UIImage *>*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))completion;
 
 
 /** Stop animating. */
 - (void) stopAnimating;
+
+@property (nonatomic,readonly) BOOL isPlayingAnimation;
 
 
 /** Returns the image of the current frame being displayed */

@@ -34,9 +34,9 @@
 typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 
 @interface TKAnimatedImageView ()
-@property (nonatomic,strong) CADisplayLink *displayLink;
-@property (nonatomic,strong) NSTimer *timer;
-@property (nonatomic,strong) NSArray *images;
+@property (nonatomic,strong) CADisplayLink *animationDisplayLink;
+
+@property (nonatomic,strong) NSArray<UIImage *> *theImages;
 @property (nonatomic,assign) NSInteger currentFrame;
 @property (nonatomic,copy) TKAnimationCompletionBlock completionBlock;
 
@@ -46,15 +46,18 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 
 @property (nonatomic,assign) BOOL playingAnimation;
 
+@property (nonatomic,strong) UIImageView *theImageView;
+
 @end
 
 @implementation TKAnimatedImageView
 
 #define FRAME_RATE 60.0f
 
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))finished{
+- (void) playAnimationWithImages:(NSArray<UIImage*>*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))finished{
 	[self playAnimationWithImages:images duration:duration repeatCount:1 withCompletionBlock:finished];
 }
+
 
 
 - (void) tick:(CADisplayLink*)sender{
@@ -68,8 +71,8 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	NSTimeInterval loops = floor(perc);
 	
 	if(self.loops > 0 && loops == self.loops){
-		self.image = self.images.lastObject;
-		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+		self.image = self.theImages.lastObject;
+		[self.animationDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 		self.playingAnimation = NO;
 		if(self.completionBlock)
 			self.completionBlock(YES);
@@ -77,24 +80,25 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	}
 	
 	CGFloat framePerc = perc - loops;
-	NSInteger ii = framePerc * self.images.count;
-	ii = MIN(self.images.count-1,ii);
+	NSInteger ii = framePerc * self.theImages.count;
+	ii = MIN(self.theImages.count-1,ii);
 	self.currentFrame = ii;
-	self.image = self.images[ii];
-	
+	self.image = self.theImages[ii];
 	
 }
 
-- (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))finished{
+
+
+
+- (void) playAnimationWithImages:(NSArray<UIImage*>*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))finished{
 	
 	
+
 	if(self.playingAnimation) {
-		[self.timer invalidate];
-		self.timer = nil;
-		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+		[self.animationDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 		self.playingAnimation = NO;
 		self.currentFrame = 0;
-		self.images = nil;
+		self.theImages = nil;
 		if(self.completionBlock)
 			self.completionBlock(NO);
 		self.completionBlock = nil;
@@ -105,42 +109,47 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	self.playingAnimation = YES;
 	self.duration = duration;
 	self.loops = repeatCount;
-	self.images = images;
+	self.theImages = images;
 	self.image = images.firstObject;
 	self.completionBlock = finished;
 	self.startTime = -1;
-	[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+	[self.animationDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 	
+
 }
 
 - (UIImage*) currentImage{
-	return self.images[self.currentFrame];
+	return self.theImages[self.currentFrame];
 }
 
 - (void) stopAnimating{
 	[super stopAnimating];
 	
 	if(self.playingAnimation){
-		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+		[self.animationDisplayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 		self.playingAnimation = NO;
 		if(self.completionBlock)
 			self.completionBlock(NO);
-		self.images = nil;
+		self.theImages = nil;
 	}
 	
 }
 
-- (CADisplayLink*) displayLink{
-	if(_displayLink) return _displayLink;
-	_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
-	_displayLink.frameInterval = 1;
-	return _displayLink;
+- (CADisplayLink*) animationDisplayLink{
+	if(_animationDisplayLink) return _animationDisplayLink;
+	_animationDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
+	_animationDisplayLink.frameInterval = 1;
+	return _animationDisplayLink;
 }
 
 
-- (BOOL) isAnimating{
-	return [super isAnimating] || self.playingAnimation;
+- (BOOL) isPlayingAnimation{
+	return self.playingAnimation;
 }
+
+//- (BOOL) isAnimating{
+//	return [super isAnimating] || self.playingAnimation;
+//}
 
 
 @end

@@ -38,24 +38,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
 	self.title = NSLocalizedString(@"Confetti", @"");
-    
-//    CGFloat width = CGFrameGetWidth(self.view) / 3;
-//    CGFloat height = CGFrameGetHeight(self.view) / 6;
 
-//    for(NSInteger i=0; i<18; i++){
-//        
-//        UIView *aView = [UIView viewWithFrame:CGRectMake((i % 3)*width, (i / 3)*height, width, height) backgroundColor:[UIColor randomColor]];
-//        [self.view addSubview:aView];
-//        
-//        UIView *blockView = aView;
-//        [aView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-//            [self.view bringSubviewToFront:blockView];
-//            [blockView rainConfetti];
-//        }];
-//    }
 	
-
-
 }
 - (void) viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];

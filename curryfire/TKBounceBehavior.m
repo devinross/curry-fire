@@ -33,7 +33,7 @@
 
 @implementation TKBounceBehavior
 
-- (id) initWithItems:(NSArray*)items{
+- (id) initWithItems:(NSArray<id <UIDynamicItem>>*)items{
 	if(!(self=[super init])) return nil;
 	
 	self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:items];

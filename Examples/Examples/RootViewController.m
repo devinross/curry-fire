@@ -49,6 +49,9 @@
 #import "BounceAnimatorViewController.h"
 #import "PageControlViewController.h"
 
+#import <Examples-Swift.h>
+
+
 @implementation RootViewController
 #define IDENTIFIER @"cellIdentifier"
 
@@ -68,6 +71,9 @@
   @[NSLocalizedString(@"Progress Ring", @""),           NSStringFromClass([ProgressRingViewController class])],
   @[NSLocalizedString(@"Bounce Animator", @""),          NSStringFromClass([BounceAnimatorViewController class])],
   @[NSLocalizedString(@"Page Control", @""),          NSStringFromClass([PageControlViewController class])],
+  
+  
+    @[NSLocalizedString(@"Smooth Animation", @""),          NSStringFromClass([SmoothAnimationViewController class])],
 
   
   

@@ -34,7 +34,7 @@
 
 @interface TKBounceBehavior : UIDynamicBehavior
 
-- (id) initWithItems:(NSArray*)items;
+- (id) initWithItems:(NSArray<id <UIDynamicItem>>*)items;
 
 @property (nonatomic,strong) UIGravityBehavior *gravityBehavior;
 @property (nonatomic,strong) UIPushBehavior *pushBehavior;

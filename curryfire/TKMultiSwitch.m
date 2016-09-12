@@ -56,11 +56,11 @@
 	self = [self initWithItems:@[@""]];
 	return self;
 }
-- (instancetype) initWithItems:(NSArray*)items{
+- (instancetype) initWithItems:(NSArray<NSString*>*)items{
 	self = [self initWithItems:items style:TKMultiSwitchStyleHollow];
 	return self;
 }
-- (instancetype) initWithItems:(NSArray*)items style:(TKMultiSwitchStyle)style{
+- (instancetype) initWithItems:(NSArray<NSString*>*)items style:(TKMultiSwitchStyle)style{
 	CGFloat height = 40;
 	if(!(self=[super initWithFrame:CGRectMake(10, 6, 320-20, height)])) return nil;
 	
