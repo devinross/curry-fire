@@ -44,7 +44,7 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 @property (nonatomic,assign) NSTimeInterval duration;
 @property (nonatomic,assign) NSInteger loops;
 
-@property (nonatomic,assign) BOOL animating;
+@property (nonatomic,assign) BOOL playingAnimation;
 
 @end
 
@@ -53,7 +53,7 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 #define FRAME_RATE 60.0f
 
 - (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration withCompletionBlock:(void (^)(BOOL finished))finished{
-    [self playAnimationWithImages:images duration:duration repeatCount:1 withCompletionBlock:finished];
+	[self playAnimationWithImages:images duration:duration repeatCount:1 withCompletionBlock:finished];
 }
 
 
@@ -70,7 +70,7 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	if(self.loops > 0 && loops == self.loops){
 		self.image = self.images.lastObject;
 		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-		self.animating = NO;
+		self.playingAnimation = NO;
 		if(self.completionBlock)
 			self.completionBlock(YES);
 		return;
@@ -82,17 +82,17 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	self.currentFrame = ii;
 	self.image = self.images[ii];
 	
-
+	
 }
 
 - (void) playAnimationWithImages:(NSArray*)images duration:(NSTimeInterval)duration repeatCount:(NSUInteger)repeatCount withCompletionBlock:(void (^)(BOOL finished))finished{
 	
 	
-	if(self.animating) {
+	if(self.playingAnimation) {
 		[self.timer invalidate];
 		self.timer = nil;
 		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-		self.animating = NO;
+		self.playingAnimation = NO;
 		self.currentFrame = 0;
 		self.images = nil;
 		if(self.completionBlock)
@@ -100,34 +100,34 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 		self.completionBlock = nil;
 	}
 	
-    if(images.count < 1 || duration <= 0) return;
+	if(images.count < 1 || duration <= 0) return;
 	
-	self.animating = YES;
+	self.playingAnimation = YES;
 	self.duration = duration;
 	self.loops = repeatCount;
-    self.images = images;
-    self.image = images.firstObject;
-    self.completionBlock = finished;
+	self.images = images;
+	self.image = images.firstObject;
+	self.completionBlock = finished;
 	self.startTime = -1;
 	[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 	
 }
 
 - (UIImage*) currentImage{
-    return self.images[self.currentFrame];
+	return self.images[self.currentFrame];
 }
 
 - (void) stopAnimating{
 	[super stopAnimating];
 	
-	if(self.animating){
+	if(self.playingAnimation){
 		[self.displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-		self.animating = NO;
+		self.playingAnimation = NO;
 		if(self.completionBlock)
 			self.completionBlock(NO);
 		self.images = nil;
 	}
-
+	
 }
 
 - (CADisplayLink*) displayLink{
