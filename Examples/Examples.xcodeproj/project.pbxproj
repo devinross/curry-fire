@@ -35,7 +35,7 @@
 		207E91691D87B49100EECF1D /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91681D87B49100EECF1D /* PageControlViewController.swift */; };
 		207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */; };
 		207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916C1D87B86700EECF1D /* ControlsViewController.swift */; };
-		20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */; };
+		207E916F1D87BEA500EECF1D /* BounceAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
 		20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */; };
 /* End PBXBuildFile section */
@@ -109,8 +109,7 @@
 		207E91681D87B49100EECF1D /* PageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		207E916C1D87B86700EECF1D /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
-		20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceAnimatorViewController.h; sourceTree = "<group>"; };
-		20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceAnimatorViewController.m; sourceTree = "<group>"; };
+		207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimatorViewController.swift; sourceTree = "<group>"; };
 		20AF03361AE8534F0065E3FF /* ConfettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiViewController.h; sourceTree = "<group>"; };
 		20AF03371AE8534F0065E3FF /* ConfettiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiViewController.m; sourceTree = "<group>"; };
 		20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToUnlockViewController.h; sourceTree = "<group>"; };
@@ -187,8 +186,7 @@
 				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
 				20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */,
 				20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */,
-				20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */,
-				20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */,
+				207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */,
 				207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */,
 				207E916C1D87B86700EECF1D /* ControlsViewController.swift */,
 				20AAC5EF1B59503900162378 /* 12Principles */,
@@ -334,6 +332,7 @@
 				207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */,
 				207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
+				207E916F1D87BEA500EECF1D /* BounceAnimatorViewController.swift in Sources */,
 				20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */,
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
 				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
@@ -341,7 +340,6 @@
 				207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */,
-				20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */,
 				207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */,
 				207E91691D87B49100EECF1D /* PageControlViewController.swift in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
