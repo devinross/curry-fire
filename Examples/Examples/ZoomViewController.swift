@@ -46,14 +46,12 @@ class ZoomViewController: UIViewController {
 			cardView.zoom(toYPoint: -1000, completion: { (complete) in
 				
 				let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-
 				DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
 					
 					cardView.centerY = self.view.height + 100
-					
 					UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
 						cardView.centerY = self.view.height / 2
-						}, completion: nil)
+					}, completion: nil)
 					
 				})
 				

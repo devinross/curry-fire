@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		204DB0491CA8CDB200DC86B6 /* PageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204DB0481CA8CDB200DC86B6 /* PageControlViewController.m */; };
 		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
 		2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFB61AE997AE0097E3AE /* DashboardViewController.m */; };
 		2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFBA1AE998940097E3AE /* CartViewController.m */; };
@@ -33,6 +32,7 @@
 		207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91621D87B07800EECF1D /* ShakeAnimationViewController.swift */; };
 		207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91641D87B14600EECF1D /* RunForrestViewController.swift */; };
 		207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91661D87B20600EECF1D /* ZoomViewController.swift */; };
+		207E91691D87B49100EECF1D /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91681D87B49100EECF1D /* PageControlViewController.swift */; };
 		20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
 		20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */; };
@@ -74,8 +74,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		204DB0471CA8CDB200DC86B6 /* PageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControlViewController.h; sourceTree = "<group>"; };
-		204DB0481CA8CDB200DC86B6 /* PageControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControlViewController.m; sourceTree = "<group>"; };
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
 		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
 		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
@@ -108,6 +106,7 @@
 		207E91621D87B07800EECF1D /* ShakeAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeAnimationViewController.swift; sourceTree = "<group>"; };
 		207E91641D87B14600EECF1D /* RunForrestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunForrestViewController.swift; sourceTree = "<group>"; };
 		207E91661D87B20600EECF1D /* ZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
+		207E91681D87B49100EECF1D /* PageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceAnimatorViewController.h; sourceTree = "<group>"; };
 		20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceAnimatorViewController.m; sourceTree = "<group>"; };
 		20AF03361AE8534F0065E3FF /* ConfettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiViewController.h; sourceTree = "<group>"; };
@@ -199,8 +198,7 @@
 				207E91601D87AEC600EECF1D /* CounterViewController.swift */,
 				20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */,
 				20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */,
-				204DB0471CA8CDB200DC86B6 /* PageControlViewController.h */,
-				204DB0481CA8CDB200DC86B6 /* PageControlViewController.m */,
+				207E91681D87B49100EECF1D /* PageControlViewController.swift */,
 				2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */,
 				2069BBAB1AE0996800F6D355 /* Supporting Files */,
 			);
@@ -333,7 +331,6 @@
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */,
 				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
-				204DB0491CA8CDB200DC86B6 /* PageControlViewController.m in Sources */,
 				207E913D1D8791A900EECF1D /* PagedScrollViewViewController.swift in Sources */,
 				207E915F1D87ACE100EECF1D /* WiggleViewController.swift in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
@@ -350,6 +347,7 @@
 				20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */,
 				207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */,
 				20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */,
+				207E91691D87B49100EECF1D /* PageControlViewController.swift in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
 				207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */,
 			);

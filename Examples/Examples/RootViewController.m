@@ -38,7 +38,6 @@
 #import "ProgressRingViewController.h"
 #import "ControlsViewController.h"
 #import "BounceAnimatorViewController.h"
-#import "PageControlViewController.h"
 
 #import <Examples-Swift.h>
 

@@ -48,10 +48,7 @@ class RunForrestViewController: UIViewController {
 			cardView.runForrestRun(to: CGPoint(x:self.view.width*1.5, y: cardView.centerY) , withCompletion: { (complete) in
 				cardView.transform = CGAffineTransform.identity
 				cardView.center = CGPoint(x: self.view.width * -2, y: cardView.centerY)
-				
-				
 				cardView.runForrestRun(to: CGPoint(x: self.view.centerX, y: cardView.centerY), withCompletion: nil)
-				
 			})
 			
 		}
@@ -64,20 +61,3 @@ class RunForrestViewController: UIViewController {
 
 }
 
-
-//UIView *cardView = [UIView viewWithFrame:CGRectCenteredInRect(self.view.bounds, 100, 100) backgroundColor:[UIColor randomColor] cornerRadius:10];
-//cardView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-//[self.view addSubview:cardView];
-//self.edgesForExtendedLayout = UIRectEdgeNone;
-//
-//UIView *move = cardView;
-//[cardView addTapGestureWithHandler:^(UIGestureRecognizer *sender) {
-//	
-//	[move runForrestRunToPoint:CGPointMake(CGFrameGetWidth(self.view) * 1.5, move.centerY) withCompletion:^(BOOL finished) {
-//	move.transform = CGAffineTransformIdentity;
-//	move.center = CGPointMake(CGFrameGetWidth(self.view) * -2, move.centerY);
-//	
-//	[move runForrestRunToPoint:CGPointMake(self.view.centerX, move.centerY) withCompletion:nil];
-//	}];
-//	
-//	}];
