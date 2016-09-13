@@ -43,9 +43,8 @@ class TickleViewController: UIViewController {
 		
 		cardView.addTapGesture { (sender) in
 			
-			cardView.tickle(withDuration: 0.8, delay: 0, downScale: 0.97, completion: { (completed) in
-				
-			})
+			cardView.tickle(duration: 0.8, delay: 0, downScale: 0.97, completion: nil)
+			
 			
 		}
 		

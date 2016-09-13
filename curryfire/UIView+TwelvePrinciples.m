@@ -259,46 +259,6 @@
 }
 
 
-- (void) tickle{
-    [self tickleWithCompletion:nil];
-}
-- (void) tickleWithCompletion:(void (^)(BOOL finished))completion{
-    [self tickleWithDuration:1 delay:0 downScale:1 completion:completion];
-}
-- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay downScale:(CGFloat)downScale completion:(void (^)(BOOL finished))completion{
-    
-    CGAffineTransform baseTransform = self.transform;
-    CGFloat x = downScale;
-	
-    [UIView animateKeyframesWithDuration:duration delay:delay options:UIViewKeyframeAnimationOptionCalculationModeCubic animations:^{
-        
-        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.1 animations:^{
-            self.transform = CGConcat(baseTransform, CGScale(x, x));
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.1 relativeDuration:0.2 animations:^{
-            self.transform = CGConcat(baseTransform, CGScale(x+0.05, x-0.05));
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.3 relativeDuration:0.2 animations:^{
-            self.transform = CGConcat(baseTransform, CGScale(x-0.05, x+0.05));
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:0.2 animations:^{
-            self.transform = CGConcat(baseTransform, CGScale(x+0.05, x-0.05));
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:0.7 relativeDuration:0.2 animations:^{
-            self.transform = baseTransform;
-        }];
-        [UIView addKeyframeWithRelativeStartTime:0.9 relativeDuration:0.1 animations:^{
-            self.transform = baseTransform;
-        }];
-        
-        
-    }completion:nil];
-    
-}
 
 
 - (void) shakeAnimationWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay completion:(void (^)(BOOL finished))completion{

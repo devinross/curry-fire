@@ -71,22 +71,6 @@
  */
 - (void) zoomToXPoint:(CGFloat)endXPoint completion:(void (^)(BOOL finished))completion;
 
-#pragma mark Tickle
-/** Tickle the view. */
-- (void) tickle;
-
-/** Tickle the view.
- @param completion The completion callback handler.
- */
-- (void) tickleWithCompletion:(void (^)(BOOL finished))completion;
-
-/** Tickle the view. 
- @param duration The duration of the animation.
- @param downScale Downscale.
- @param delay The delay before the animation is played.
- @param completion The completion callback handler.
- */
-- (void) tickleWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay downScale:(CGFloat)downScale completion:(void (^)(BOOL finished))completion;
 
 #pragma mark Shake
 /** Shake the view.
