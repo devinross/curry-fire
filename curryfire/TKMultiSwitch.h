@@ -40,14 +40,14 @@ typedef NS_ENUM(NSInteger, TKMultiSwitchStyle) {
 /** `TKMultiSwitch` a slide control with multiple options. Sort of like a `UISwitch` mixed with a `UISegmentControl`. */
 @interface TKMultiSwitch : UIControl
 
-- (instancetype) initWithItems:(NSArray<NSString*>*)items style:(TKMultiSwitchStyle)style;
+- (nonnull instancetype) initWithItems:(nonnull NSArray<NSString*>*)items style:(TKMultiSwitchStyle)style;
 
 /**
  Initialize a `TKMultiSwitch` instance.
  @param items The items in the switch view.
  @return A `TKMultiSwitch` object.
  */
-- (instancetype) initWithItems:(NSArray<NSString*>*)items;
+- (nonnull instancetype) initWithItems:(nonnull NSArray<NSString*>*)items;
 
 /** The index of the selected item. */
 @property (nonatomic,assign) NSInteger indexOfSelectedItem;
@@ -56,16 +56,16 @@ typedef NS_ENUM(NSInteger, TKMultiSwitchStyle) {
 @property (nonatomic,assign) CGFloat selectionInset;
 
 /** The font used. */
-@property (nonatomic,strong) UIFont *font;
+@property (nonatomic,strong) UIFont * _Nonnull  font;
 
 /** Choose between a hollow or filled selection indicator. */
 @property (nonatomic,assign) TKMultiSwitchStyle style;
 
 /** If the style is a filled selection, then this will be used for the current select label. */
-@property (nonatomic,strong) UIColor *selectedTextColor;
+@property (nonatomic,strong) UIColor * _Nonnull selectedTextColor;
 
 /** If the style is a filled selection, then this will be used for the current unselected labels. */
-@property (nonatomic,strong) UIColor *textColor;
+@property (nonatomic,strong) UIColor * _Nonnull textColor;
 
 
 /**
@@ -76,8 +76,8 @@ typedef NS_ENUM(NSInteger, TKMultiSwitchStyle) {
 - (void) selectItemAtIndex:(NSInteger)index animated:(BOOL)animated;
 
 
-@property (nonatomic,strong) UIPanGestureRecognizer *panGesture;
-@property (nonatomic,strong) UILongPressGestureRecognizer *longPressGesture;
-@property (nonatomic,strong) UITapGestureRecognizer *tapGesture;
+@property (nonatomic,strong) UIPanGestureRecognizer * _Nullable panGesture;
+@property (nonatomic,strong) UILongPressGestureRecognizer * _Nullable longPressGesture;
+@property (nonatomic,strong) UITapGestureRecognizer * _Nullable tapGesture;
 
 @end

@@ -35,8 +35,6 @@
 #import "CardViewSlideUpViewController.h"
 #import "ConfettiViewController.h"
 #import "NavigationPushPopTransitionViewController.h"
-#import "ProgressRingViewController.h"
-#import "ControlsViewController.h"
 #import "BounceAnimatorViewController.h"
 
 #import <Examples-Swift.h>
