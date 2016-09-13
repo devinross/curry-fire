@@ -11,7 +11,6 @@
 
 @interface ProgressRingViewController : UIViewController
 
-
 @property (nonatomic,strong) TKProgressRingView *progreessRingOne;
 @property (nonatomic,strong) TKProgressRingView *progreessRingTwo;
 @property (nonatomic,strong) TKProgressRingView *progreessRingThree;

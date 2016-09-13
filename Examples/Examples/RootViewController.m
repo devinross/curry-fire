@@ -42,9 +42,6 @@
 #import "CounterViewController.h"
 #import "ProgressRingViewController.h"
 #import "ControlsViewController.h"
-#import "TickleViewController.h"
-#import "HopViewController.h"
-#import "DimeViewController.h"
 #import "BounceAnimatorViewController.h"
 #import "PageControlViewController.h"
 
