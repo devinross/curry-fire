@@ -36,11 +36,11 @@
 
 @implementation TKPagedScrollView
 
-- (id) initWithFrame:(CGRect)frame{
+- (nonnull instancetype) initWithFrame:(CGRect)frame{
     self = [self initWithFrame:frame direction:TKPageScrollDirectionVertical];
     return self;
 }
-- (id) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction{
+- (nonnull instancetype) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction{
     if(!(self=[super initWithFrame:frame])) return nil;
     
     self.clipsToBounds = YES;

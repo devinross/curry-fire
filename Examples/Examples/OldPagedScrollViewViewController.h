@@ -32,7 +32,7 @@
 @import curry;
 @import curryfire;
 
-@interface PagedScrollViewViewController : UIViewController <TKPagedScrollViewDelegate>
+@interface OldPagedScrollViewViewController : UIViewController <TKPagedScrollViewDelegate>
 
 @property (nonatomic,strong) TKPagedScrollView *scrollView;
 

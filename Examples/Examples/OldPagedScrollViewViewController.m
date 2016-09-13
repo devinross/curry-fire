@@ -29,10 +29,10 @@
  
  */
 
-#import "PagedScrollViewViewController.h"
+#import "OldPagedScrollViewViewController.h"
 
 
-@implementation PagedScrollViewViewController
+@implementation OldPagedScrollViewViewController
 
 - (void) loadView{
     [super loadView];

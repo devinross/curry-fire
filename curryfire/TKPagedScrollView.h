@@ -42,56 +42,56 @@
 /** Tells the delegate when the user scrolls the content view within the receiver.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewDidScroll:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewDidScroll:( TKPagedScrollView * _Nullable )pagedScrollView;
 
 /** The event sent when a paged scroll view will animate to a different page.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  @param page The page that will become the active page.
  */
-- (void) pagedScrollView:(TKPagedScrollView *)pagedScrollView willMoveToPage:(NSInteger)page;
+- (void) pagedScrollView:(TKPagedScrollView * _Nullable)pagedScrollView willMoveToPage:(NSInteger)page;
 
 /** The event sent when a paged scroll view did animate to a different page.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  @param page The page that did become the active page.
  */
-- (void) pagedScrollView:(TKPagedScrollView *)pagedScrollView didMoveToPage:(NSInteger)page;
+- (void) pagedScrollView:(TKPagedScrollView * _Nullable)pagedScrollView didMoveToPage:(NSInteger)page;
 
 /** Tells the delegate when the scroll view is about to start scrolling the content.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewWillBeginDragging:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewWillBeginDragging:(TKPagedScrollView * _Nullable)pagedScrollView;
 
 /** Tells the delegate when dragging ended in the scroll view.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  @param decelerate YES if the scrolling movement will continue, but decelerate, after a touch-up gesture during a dragging operation. If the value is NO, scrolling stops immediately upon touch-up.
  */
-- (void) pagedScrollViewDidEndDragging:(TKPagedScrollView *)pagedScrollView willDecelerate:(BOOL)decelerate;
+- (void) pagedScrollViewDidEndDragging:(TKPagedScrollView * _Nullable)pagedScrollView willDecelerate:(BOOL)decelerate;
 
 /** Tells the delegate that the scroll view is starting to decelerate the scrolling movement.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewWillBeginDecelerating:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewWillBeginDecelerating:(TKPagedScrollView * _Nullable)pagedScrollView;
 
 /** Tells the delegate that the scroll view has ended decelerating the scrolling movement.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewDidEndDecelerating:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewDidEndDecelerating:(TKPagedScrollView * _Nullable)pagedScrollView;
 
 /** Tells the delegate when a scrolling animation in the scroll view concludes.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewDidEndScrollingAnimation:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewDidEndScrollingAnimation:(TKPagedScrollView *_Nullable)pagedScrollView;
 
 
 /** Asks the delegate if the scroll view should scroll to the top of the content.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (BOOL) pagedScrollViewShouldScrollToTop:(TKPagedScrollView *)pagedScrollView;
+- (BOOL) pagedScrollViewShouldScrollToTop:(TKPagedScrollView * _Nullable)pagedScrollView;
 
 /** Tells the delegate that the scroll view scrolled to the top of the content.
  @param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
  */
-- (void) pagedScrollViewDidScrollToTop:(TKPagedScrollView *)pagedScrollView;
+- (void) pagedScrollViewDidScrollToTop:(TKPagedScrollView * _Nullable)pagedScrollView;
 
 
 @end
@@ -110,7 +110,7 @@ typedef NS_ENUM(NSUInteger, TKPageScrollDirection) {
  @param direction The direction that scroll view will scroll.
  @return A newly created paged scroll view or nil.
  */
-- (id) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction;
+- (nonnull instancetype) initWithFrame:(CGRect)frame direction:(TKPageScrollDirection)direction;
 
 /** The direction a `TKPagedScrollView` would layout pages in. */
 @property (nonatomic,readonly) TKPageScrollDirection scrollDirection;
@@ -119,16 +119,16 @@ typedef NS_ENUM(NSUInteger, TKPageScrollDirection) {
 @property (nonatomic,readonly) BOOL animatingPages;
 
 /** Access to the underlying `UIScrollView`. Do not take the `UIScrollView`'s delegate. */
-@property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong)  UIScrollView * _Nullable scrollView;
 
 /** An array of views that are laid out to form the scroll view. The page size of each view is determined based on the size of the view. */
-@property (nonatomic,strong) NSArray *pages;
+@property (nonatomic,strong)  NSArray<UIView*> * _Nullable pages;
 
 /** The current page */
 @property (nonatomic,assign) NSInteger currentPage;
 
 /** The delegate of the paged-scroll-view object. */
-@property (nonatomic,weak) id <TKPagedScrollViewDelegate> delegate;
+@property (nonatomic,weak) _Nullable id <TKPagedScrollViewDelegate> delegate;
 
 /** Scroll to the previous page. */
 - (void) scrollToPreviousPage;

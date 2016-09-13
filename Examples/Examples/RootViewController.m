@@ -41,7 +41,6 @@
 #import "NavigationPushPopTransitionViewController.h"
 #import "CounterViewController.h"
 #import "ProgressRingViewController.h"
-#import "PagedScrollViewViewController.h"
 #import "ControlsViewController.h"
 #import "TickleViewController.h"
 #import "HopViewController.h"
