@@ -19,7 +19,6 @@
 		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
-		206E839B1B332B1A0010CFC6 /* OldPagedScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839A1B332B1A0010CFC6 /* OldPagedScrollViewViewController.m */; };
 		207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */; };
 		207E91251D87675600EECF1D /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; };
 		207E91261D87675600EECF1D /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,8 +100,6 @@
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		206E83991B332B1A0010CFC6 /* OldPagedScrollViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldPagedScrollViewViewController.h; sourceTree = "<group>"; };
-		206E839A1B332B1A0010CFC6 /* OldPagedScrollViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldPagedScrollViewViewController.m; sourceTree = "<group>"; };
 		207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothAnimationViewController.swift; sourceTree = "<group>"; };
 		207E91241D87675600EECF1D /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E912B1D87676A00EECF1D /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +188,6 @@
 				2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */,
 				2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */,
 				207E913C1D8791A900EECF1D /* PagedScrollViewViewController.swift */,
-				206E83991B332B1A0010CFC6 /* OldPagedScrollViewViewController.h */,
-				206E839A1B332B1A0010CFC6 /* OldPagedScrollViewViewController.m */,
 				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
 				20691B701AE7FC450045627D /* MaterialViewController.m */,
 				2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */,
@@ -360,7 +355,6 @@
 				208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
 				20AAC5EE1B59502B00162378 /* TickleViewController.m in Sources */,
-				206E839B1B332B1A0010CFC6 /* OldPagedScrollViewViewController.m in Sources */,
 				20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */,
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
 				208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */,
