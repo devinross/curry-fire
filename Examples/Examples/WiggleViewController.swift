@@ -1,5 +1,5 @@
 //
-//  TickleViewController.swift
+//  WiggleViewController.swift
 //  Created by Devin Ross on 9/12/16.
 //
 /*
@@ -31,29 +31,25 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
-class TickleViewController: UIViewController {
+class WiggleViewController: UIViewController {
+	
+	var block: UIView?
 
 	override func loadView() {
 		super.loadView()
 		self.view.backgroundColor = UIColor.white
 		
-		let cardView = UIView(frame: CGRectCenteredInRect(self.view.bounds, 100, 100), backgroundColor: UIColor.random(), cornerRadius: 10)
-		cardView.autoresizingMask = [.flexibleTopMargin,.flexibleBottomMargin]
-		self.view.addSubview(cardView)
-		
-		cardView.addTapGesture { (sender) in
-			
-			cardView.tickle(withDuration: 0.8, delay: 0, downScale: 0.97, completion: { (completed) in
-				
-			})
-			
-		}
-		
+		self.block = UIView(frame: CGRectCenteredInRect(self.view.bounds, 100, 100), backgroundColor: UIColor.random(), cornerRadius: 10)
+		self.block?.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin]
+		self.block?.layer.shouldRasterize = true
+		self.block?.layer.rasterizationScale = UIScreen.main.scale
+		self.view.addSubview(self.block!)
 		
 	}
-
+	
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		self.block?.wiggle()
+	}
 }
-
-
-
-

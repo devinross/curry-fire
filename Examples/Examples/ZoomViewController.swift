@@ -1,6 +1,6 @@
 //
-//  TickleViewController.swift
-//  Created by Devin Ross on 9/12/16.
+//  ZoomViewController.swift
+//  Created by Devin Ross on 9/13/16.
 //
 /*
 
@@ -31,7 +31,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
-class TickleViewController: UIViewController {
+class ZoomViewController: UIViewController {
 
 	override func loadView() {
 		super.loadView()
@@ -43,17 +43,30 @@ class TickleViewController: UIViewController {
 		
 		cardView.addTapGesture { (sender) in
 			
-			cardView.tickle(withDuration: 0.8, delay: 0, downScale: 0.97, completion: { (completed) in
+			cardView.zoom(toYPoint: -1000, completion: { (complete) in
+				
+				let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+
+				DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+					
+					cardView.centerY = self.view.height + 100
+					
+					UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+						cardView.centerY = self.view.height / 2
+						}, completion: nil)
+					
+				})
+				
 				
 			})
+			
 			
 		}
 		
 		
 	}
 
+
 }
-
-
 
 

@@ -1,5 +1,5 @@
 //
-//  TickleViewController.swift
+//  CounterViewController.swift
 //  Created by Devin Ross on 9/12/16.
 //
 /*
@@ -31,29 +31,28 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
-class TickleViewController: UIViewController {
+class CounterViewController: UIViewController {
+	
+	var counterLabel : TKAnimatedCounterLabel?
 
 	override func loadView() {
 		super.loadView()
 		self.view.backgroundColor = UIColor.white
 		
-		let cardView = UIView(frame: CGRectCenteredInRect(self.view.bounds, 100, 100), backgroundColor: UIColor.random(), cornerRadius: 10)
-		cardView.autoresizingMask = [.flexibleTopMargin,.flexibleBottomMargin]
-		self.view.addSubview(cardView)
+		self.counterLabel = TKAnimatedCounterLabel(frame: self.view.bounds.insetBy(dx: 10, dy: 100))
+		self.counterLabel?.curve = TKAnimatedCounterLabelAnimationCurveQuadratic
+		self.counterLabel?.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+		self.counterLabel?.font = UIFont.helveticaNeueUltraLight(withSize: 100)
+		self.view.addSubview(self.counterLabel!)
 		
-		cardView.addTapGesture { (sender) in
-			
-			cardView.tickle(withDuration: 0.8, delay: 0, downScale: 0.97, completion: { (completed) in
-				
-			})
-			
-		}
+		self.counterLabel?.setNumber(0)
 		
-		
+
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		self.counterLabel?.setNumber(99, animated: true)
 	}
 
 }
-
-
-
-

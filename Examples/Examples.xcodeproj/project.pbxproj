@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		204DB0491CA8CDB200DC86B6 /* PageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204DB0481CA8CDB200DC86B6 /* PageControlViewController.m */; };
-		2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */; };
-		2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF971AE94E610097E3AE /* RunForrestViewController.m */; };
 		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
 		2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFB61AE997AE0097E3AE /* DashboardViewController.m */; };
 		2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFBA1AE998940097E3AE /* CartViewController.m */; };
@@ -30,11 +28,13 @@
 		207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91581D87A89F00EECF1D /* DimeViewController.swift */; };
 		207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E915A1D87A9F200EECF1D /* HopViewController.swift */; };
 		207E915D1D87ABDF00EECF1D /* TickleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E915C1D87ABDF00EECF1D /* TickleViewController.swift */; };
-		208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A3A1AE86B69004E63FB /* ZoomViewController.m */; };
-		208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208E8A441AE94210004E63FB /* WiggleViewController.m */; };
+		207E915F1D87ACE100EECF1D /* WiggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E915E1D87ACE100EECF1D /* WiggleViewController.swift */; };
+		207E91611D87AEC600EECF1D /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91601D87AEC600EECF1D /* CounterViewController.swift */; };
+		207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91621D87B07800EECF1D /* ShakeAnimationViewController.swift */; };
+		207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91641D87B14600EECF1D /* RunForrestViewController.swift */; };
+		207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91661D87B20600EECF1D /* ZoomViewController.swift */; };
 		20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */; };
 		20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03371AE8534F0065E3FF /* ConfettiViewController.m */; };
-		20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B288951AF2EB2100B4FEE7 /* CounterViewController.m */; };
 		20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */; };
 		20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */; };
 		20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5871B45A542001C7751 /* ControlsViewController.m */; };
@@ -77,10 +77,6 @@
 		204DB0471CA8CDB200DC86B6 /* PageControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControlViewController.h; sourceTree = "<group>"; };
 		204DB0481CA8CDB200DC86B6 /* PageControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControlViewController.m; sourceTree = "<group>"; };
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
-		2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeAnimationViewController.h; sourceTree = "<group>"; };
-		2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeAnimationViewController.m; sourceTree = "<group>"; };
-		2067AF961AE94E610097E3AE /* RunForrestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunForrestViewController.h; sourceTree = "<group>"; };
-		2067AF971AE94E610097E3AE /* RunForrestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunForrestViewController.m; sourceTree = "<group>"; };
 		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
 		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
 		2067AFB51AE997AE0097E3AE /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
@@ -107,16 +103,15 @@
 		207E91581D87A89F00EECF1D /* DimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimeViewController.swift; sourceTree = "<group>"; };
 		207E915A1D87A9F200EECF1D /* HopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HopViewController.swift; sourceTree = "<group>"; };
 		207E915C1D87ABDF00EECF1D /* TickleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickleViewController.swift; sourceTree = "<group>"; };
-		208E8A391AE86B69004E63FB /* ZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
-		208E8A3A1AE86B69004E63FB /* ZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
-		208E8A431AE94210004E63FB /* WiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiggleViewController.h; sourceTree = "<group>"; };
-		208E8A441AE94210004E63FB /* WiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiggleViewController.m; sourceTree = "<group>"; };
+		207E915E1D87ACE100EECF1D /* WiggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiggleViewController.swift; sourceTree = "<group>"; };
+		207E91601D87AEC600EECF1D /* CounterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		207E91621D87B07800EECF1D /* ShakeAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeAnimationViewController.swift; sourceTree = "<group>"; };
+		207E91641D87B14600EECF1D /* RunForrestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunForrestViewController.swift; sourceTree = "<group>"; };
+		207E91661D87B20600EECF1D /* ZoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		20A46DF51B61C791004A4153 /* BounceAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BounceAnimatorViewController.h; sourceTree = "<group>"; };
 		20A46DF61B61C791004A4153 /* BounceAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BounceAnimatorViewController.m; sourceTree = "<group>"; };
 		20AF03361AE8534F0065E3FF /* ConfettiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfettiViewController.h; sourceTree = "<group>"; };
 		20AF03371AE8534F0065E3FF /* ConfettiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfettiViewController.m; sourceTree = "<group>"; };
-		20B288941AF2EB2100B4FEE7 /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
-		20B288951AF2EB2100B4FEE7 /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
 		20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressRingViewController.h; sourceTree = "<group>"; };
 		20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressRingViewController.m; sourceTree = "<group>"; };
 		20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToUnlockViewController.h; sourceTree = "<group>"; };
@@ -201,8 +196,7 @@
 				20DDB5861B45A542001C7751 /* ControlsViewController.h */,
 				20DDB5871B45A542001C7751 /* ControlsViewController.m */,
 				20AAC5EF1B59503900162378 /* 12Principles */,
-				20B288941AF2EB2100B4FEE7 /* CounterViewController.h */,
-				20B288951AF2EB2100B4FEE7 /* CounterViewController.m */,
+				207E91601D87AEC600EECF1D /* CounterViewController.swift */,
 				20CB9CEA1AF3D4FC002E9F1C /* ProgressRingViewController.h */,
 				20CB9CEB1AF3D4FC002E9F1C /* ProgressRingViewController.m */,
 				204DB0471CA8CDB200DC86B6 /* PageControlViewController.h */,
@@ -235,14 +229,10 @@
 		20AAC5EF1B59503900162378 /* 12Principles */ = {
 			isa = PBXGroup;
 			children = (
-				2067AF911AE949330097E3AE /* ShakeAnimationViewController.h */,
-				2067AF921AE949330097E3AE /* ShakeAnimationViewController.m */,
-				208E8A391AE86B69004E63FB /* ZoomViewController.h */,
-				208E8A3A1AE86B69004E63FB /* ZoomViewController.m */,
-				208E8A431AE94210004E63FB /* WiggleViewController.h */,
-				208E8A441AE94210004E63FB /* WiggleViewController.m */,
-				2067AF961AE94E610097E3AE /* RunForrestViewController.h */,
-				2067AF971AE94E610097E3AE /* RunForrestViewController.m */,
+				207E91621D87B07800EECF1D /* ShakeAnimationViewController.swift */,
+				207E91661D87B20600EECF1D /* ZoomViewController.swift */,
+				207E915E1D87ACE100EECF1D /* WiggleViewController.swift */,
+				207E91641D87B14600EECF1D /* RunForrestViewController.swift */,
 				207E915C1D87ABDF00EECF1D /* TickleViewController.swift */,
 				207E915A1D87A9F200EECF1D /* HopViewController.swift */,
 				207E91581D87A89F00EECF1D /* DimeViewController.swift */,
@@ -338,27 +328,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2067AF981AE94E610097E3AE /* RunForrestViewController.m in Sources */,
+				207E91611D87AEC600EECF1D /* CounterViewController.swift in Sources */,
 				20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */,
-				20B288961AF2EB2100B4FEE7 /* CounterViewController.m in Sources */,
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */,
+				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
 				204DB0491CA8CDB200DC86B6 /* PageControlViewController.m in Sources */,
 				207E913D1D8791A900EECF1D /* PagedScrollViewViewController.swift in Sources */,
+				207E915F1D87ACE100EECF1D /* WiggleViewController.swift in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
 				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
 				207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */,
-				208E8A451AE94210004E63FB /* WiggleViewController.m in Sources */,
+				207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
 				20AF03381AE8534F0065E3FF /* ConfettiViewController.m in Sources */,
 				2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */,
-				208E8A3B1AE86B69004E63FB /* ZoomViewController.m in Sources */,
 				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
 				207E915D1D87ABDF00EECF1D /* TickleViewController.swift in Sources */,
 				20CB9CEC1AF3D4FC002E9F1C /* ProgressRingViewController.m in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				20A46DF71B61C791004A4153 /* BounceAnimatorViewController.m in Sources */,
-				2067AF931AE949330097E3AE /* ShakeAnimationViewController.m in Sources */,
+				207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */,
 				20DDB5881B45A542001C7751 /* ControlsViewController.m in Sources */,
 				20691B671AE7F9A50045627D /* RootViewController.m in Sources */,
 				207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */,
