@@ -59,7 +59,7 @@ extension UIView {
 		let baseTransform = self.transform;
 		let x = downScale
 		
-		UIView.animateKeyframes(withDuration: duration, delay: delay, options: .calculationModeCubic , animations: {
+		UIView.animateKeyframes(withDuration: duration, delay: delay, options: [.calculationModeCubic,.allowUserInteraction] , animations: {
 			
 			UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.1, animations: {
 				self.transform = CGConcat(baseTransform, CGScale(x, x))
