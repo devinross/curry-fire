@@ -56,7 +56,6 @@
 #import "UIView+TwelvePrinciples.h"
 #import "UIView+Confetti.h"
 #import "POPSpringAnimation+Initializers.h"
-#import "UIScreenEdgePanGestureRecognizer+Helper.h"
 #import "TKMoveScreenEdgeGestureRecognizer.h"
 
 
