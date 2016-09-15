@@ -37,13 +37,10 @@ public class TKBounceBehavior: UIDynamicBehavior {
 	public var pushBehavior: UIPushBehavior
 	public var itemBehavior: UIDynamicItemBehavior
 	public var collisionBehavior: UICollisionBehavior
-	private var _bounceDirection: CGVector
+	private var _bounceDirection: CGVector = CGVector(dx: 0, dy:2.0)
 
-	public init(items : [UIDynamicItem] ) {
+	public init(items: [UIDynamicItem] ) {
 	
-		
-		_bounceDirection = CGVector(dx: 0, dy:2.0)
-
 		gravityBehavior = UIGravityBehavior(items: items)
 		collisionBehavior = UICollisionBehavior(items: items)
 		collisionBehavior.translatesReferenceBoundsIntoBoundary = true
@@ -52,7 +49,6 @@ public class TKBounceBehavior: UIDynamicBehavior {
 		pushBehavior.active = false
 		itemBehavior = UIDynamicItemBehavior(items: items)
 		itemBehavior.elasticity = 0.45
-
 		
 		super.init()
 		

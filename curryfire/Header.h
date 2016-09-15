@@ -49,7 +49,6 @@
 #import "TKPegSlider.h"
 
 
-#import "UIView+Material.h"
 #import "UIView+Confetti.h"
 #import "TKMoveScreenEdgeGestureRecognizer.h"
 
