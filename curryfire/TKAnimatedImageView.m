@@ -147,9 +147,6 @@ typedef void (^TKAnimationCompletionBlock)(BOOL completed);
 	return self.playingAnimation;
 }
 
-//- (BOOL) isAnimating{
-//	return [super isAnimating] || self.playingAnimation;
-//}
 
 
 @end

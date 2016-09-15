@@ -198,17 +198,13 @@ float randFloat(){
     if (layer.position.x <= rect.size.width*0.5){
         //going left
         endPoint = CGPointMake(layerXPosAndHeight, endY);
-        //curvePoint = CGPointMake((((layer.position.x*0.5)*r3)*upOrDown)*maxLeftRightShift, -layerYPosAndHeight);
         CGFloat midX =  MIN(endPoint.x, start.x) + fabs(endPoint.x-start.x) / 2;
 
         curvePoint = CGPointMake(midX, -layerYPosAndHeight);
 
     }else{
         endPoint = CGPointMake(layerXPosAndHeight, endY);
-        //curvePoint = CGPointMake((((layer.position.x*0.5)*r3) *upOrDown+rect.size.width)*maxLeftRightShift, -layerYPosAndHeight);
-        
         CGFloat midX =  MIN(endPoint.x, start.x) + fabs(endPoint.x-start.x) / 2;
-        
         curvePoint = CGPointMake(midX, -layerYPosAndHeight);
 
     }

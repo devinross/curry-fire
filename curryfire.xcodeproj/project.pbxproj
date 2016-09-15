@@ -41,6 +41,7 @@
 		2069C1361D8B0EAE000BD656 /* UIScreenEdgePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1351D8B0EAE000BD656 /* UIScreenEdgePanGestureRecognizer.swift */; };
 		2069C1431D8B1374000BD656 /* TKBounceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1421D8B1374000BD656 /* TKBounceBehavior.swift */; };
 		2069C1531D8B27A1000BD656 /* TKGlowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1521D8B27A1000BD656 /* TKGlowButton.swift */; };
+		2069C1581D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1571D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift */; };
 		206E839E1B333A730010CFC6 /* TKPagedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 206E839C1B333A730010CFC6 /* TKPagedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		206E839F1B333A730010CFC6 /* TKPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206E839D1B333A730010CFC6 /* TKPagedScrollView.m */; };
 		2077EF281B3C94C500A4928F /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556EBE1B3C93140051CA1F /* curry.framework */; };
@@ -53,8 +54,6 @@
 		20B2888C1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2888A1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m */; };
 		20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20CB9CDE1AF3C036002E9F1C /* TKProgressRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */; };
-		20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CB9CE61AF3C487002E9F1C /* POPSpringAnimation+Initializers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20CB9CE91AF3C487002E9F1C /* POPSpringAnimation+Initializers.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */; };
 		20DBDA4E1BB4DC99008BB36D /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556ECC1B3C93180051CA1F /* pop.framework */; };
 		20DDB5791B45A486001C7751 /* TKMultiSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 20DDB5771B45A486001C7751 /* TKMultiSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20DDB57A1B45A486001C7751 /* TKMultiSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5781B45A486001C7751 /* TKMultiSwitch.m */; };
@@ -190,6 +189,7 @@
 		2069C1351D8B0EAE000BD656 /* UIScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
 		2069C1421D8B1374000BD656 /* TKBounceBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBounceBehavior.swift; sourceTree = "<group>"; };
 		2069C1521D8B27A1000BD656 /* TKGlowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKGlowButton.swift; sourceTree = "<group>"; };
+		2069C1571D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POPSpringAnimation+Initializer.swift"; sourceTree = "<group>"; };
 		206E839C1B333A730010CFC6 /* TKPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPagedScrollView.h; sourceTree = "<group>"; };
 		206E839D1B333A730010CFC6 /* TKPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPagedScrollView.m; sourceTree = "<group>"; };
 		207E91B71D884B0600EECF1D /* UIView+TwelvePrinciples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+TwelvePrinciples.swift"; sourceTree = "<group>"; };
@@ -201,8 +201,6 @@
 		20B2888A1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnimatedCounterLabel.m; sourceTree = "<group>"; };
 		20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProgressRingView.h; sourceTree = "<group>"; };
 		20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProgressRingView.m; sourceTree = "<group>"; };
-		20CB9CE61AF3C487002E9F1C /* POPSpringAnimation+Initializers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "POPSpringAnimation+Initializers.h"; sourceTree = "<group>"; };
-		20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "POPSpringAnimation+Initializers.m"; sourceTree = "<group>"; };
 		20DDB5771B45A486001C7751 /* TKMultiSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMultiSwitch.h; sourceTree = "<group>"; };
 		20DDB5781B45A486001C7751 /* TKMultiSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMultiSwitch.m; sourceTree = "<group>"; };
 		20DDB5811B45A499001C7751 /* TKPegSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPegSlider.h; sourceTree = "<group>"; };
@@ -340,19 +338,10 @@
 				207E91B71D884B0600EECF1D /* UIView+TwelvePrinciples.swift */,
 				20AF03281AE848480065E3FF /* UIView+Confetti.h */,
 				20AF03291AE848480065E3FF /* UIView+Confetti.m */,
-				2069BC6E1AE1634800F6D355 /* Initializers */,
+				2069C1571D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift */,
 				2069C1351D8B0EAE000BD656 /* UIScreenEdgePanGestureRecognizer.swift */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		2069BC6E1AE1634800F6D355 /* Initializers */ = {
-			isa = PBXGroup;
-			children = (
-				20CB9CE61AF3C487002E9F1C /* POPSpringAnimation+Initializers.h */,
-				20CB9CE71AF3C487002E9F1C /* POPSpringAnimation+Initializers.m */,
-			);
-			name = Initializers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +358,6 @@
 				20691B601AE7F8D30045627D /* UIView+Material.h in Headers */,
 				2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */,
 				20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */,
-				20CB9CE81AF3C487002E9F1C /* POPSpringAnimation+Initializers.h in Headers */,
 				202DBEE41AF6704700B0CE67 /* TKShimmerLabel.h in Headers */,
 				206E839E1B333A730010CFC6 /* TKPagedScrollView.h in Headers */,
 				202DBEE21AF6704700B0CE67 /* TKPageControl.h in Headers */,
@@ -578,6 +566,7 @@
 				20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */,
 				20DDB5841B45A499001C7751 /* TKPegSlider.m in Sources */,
 				20691B611AE7F8D30045627D /* UIView+Material.m in Sources */,
+				2069C1581D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift in Sources */,
 				202DBEE31AF6704700B0CE67 /* TKPageControl.m in Sources */,
 				202DBEE71AF6704700B0CE67 /* TKSlideToUnlockView.m in Sources */,
 				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
@@ -590,7 +579,6 @@
 				2098BA2C1B0F7244000E0074 /* TKAnimatedImageView.m in Sources */,
 				20CB9CDE1AF3C036002E9F1C /* TKProgressRingView.m in Sources */,
 				20DDB57A1B45A486001C7751 /* TKMultiSwitch.m in Sources */,
-				20CB9CE91AF3C487002E9F1C /* POPSpringAnimation+Initializers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

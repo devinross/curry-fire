@@ -53,7 +53,6 @@
 
 #import "UIView+Material.h"
 #import "UIView+Confetti.h"
-#import "POPSpringAnimation+Initializers.h"
 #import "TKMoveScreenEdgeGestureRecognizer.h"
 
 

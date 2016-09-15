@@ -90,9 +90,7 @@
 
 #pragma mark Methods That Trigger The Animation To Start
 - (void) applicationDidBecomeActive:(id)sender{
-	
 	[self _startShimmerAnimation];
-	
 }
 - (void) willMoveToWindow:(UIWindow *)newWindow{
 	[self _startShimmerAnimation];
