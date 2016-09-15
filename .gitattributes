@@ -1,1 +1,2 @@
 *.swift linguist-language=Swift
+Examples/Examples/Images.xcassets/* linguist-vendored

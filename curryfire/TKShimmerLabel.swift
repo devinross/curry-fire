@@ -85,7 +85,7 @@ public class TKShimmerLabel: UILabel {
 
 	// MARK: Private Animation Methods
 	
-	func _animationStartPoint() -> CGFloat {
+	private func _animationStartPoint() -> CGFloat {
 		let x: CGFloat = self.textHighlightLayer.frame.width / 2.0
 		if self.direction == TKShimmerLabelDirection.leftToRight {
 			return -x + self.frame.width
@@ -93,7 +93,7 @@ public class TKShimmerLabel: UILabel {
 		return x
 	}
 	
-	func _animationEndPoint() -> CGFloat {
+	private func _animationEndPoint() -> CGFloat {
 		let x: CGFloat = self.textHighlightLayer.frame.width / 2.0
 		if self.direction == TKShimmerLabelDirection.leftToRight {
 			return x
@@ -101,7 +101,7 @@ public class TKShimmerLabel: UILabel {
 		return -x + self.frame.width
 	}
 	
-	func _startShimmerAnimation() {
+	private func _startShimmerAnimation() {
 		if self.superview == nil {
 			return
 		}
@@ -117,7 +117,7 @@ public class TKShimmerLabel: UILabel {
 	// MARK: Methods That Trigger The Animation To Start
 	
 	func applicationDidBecomeActive(sender: AnyObject) {
-		self._startShimmerAnimation()
+		_startShimmerAnimation()
 	}
 	
 	override public func willMove(toWindow: UIWindow?) {
