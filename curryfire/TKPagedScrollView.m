@@ -209,7 +209,7 @@
 
         
     }];
-}
+ }
 - (void) scrollToNextPage{
     
     NSInteger currentPage = self.currentPage;
