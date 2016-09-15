@@ -49,7 +49,6 @@
 #import "TKMultiSwitch.h"
 #import "TKPegSlider.h"
 
-#import "TKPagedScrollView.h"
 
 #import "UIView+Material.h"
 #import "UIView+Confetti.h"

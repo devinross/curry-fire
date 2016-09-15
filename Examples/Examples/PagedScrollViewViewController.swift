@@ -78,5 +78,7 @@ class PagedScrollViewViewController: UIViewController, TKPagedScrollViewDelegate
 
 		
 	}
+	
+	
 
 }
