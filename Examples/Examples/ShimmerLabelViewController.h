@@ -34,7 +34,6 @@
 
 @interface ShimmerLabelViewController : UIViewController
 
-
 @property (nonatomic,strong) TKShimmerLabel *shimmerLabel;
 
 @end
