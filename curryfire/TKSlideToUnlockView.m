@@ -30,8 +30,9 @@
  */
 
 #import "TKSlideToUnlockView.h"
-#import "TKShimmerLabel.h"
 @import curry;
+
+#import <curryfire/curryfire-Swift.h>
 
 @interface CustomScrollView : UIScrollView
 

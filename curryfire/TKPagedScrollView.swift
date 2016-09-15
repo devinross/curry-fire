@@ -1,10 +1,33 @@
 //
 //  TKPagedScrollView.swift
-//  curryfire
-//
 //  Created by Devin Ross on 9/15/16.
-//  Copyright © 2016 Devin Ross. All rights reserved.
 //
+/*
+
+curryfire || https://github.com/devinross/curry-fire
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+*/
 
 import UIKit
 
@@ -102,45 +125,7 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	}
 	
 	
-	func _setupPages() {
-		self.scrollView.setContentOffset(CGPoint.zero, animated: false)
-		let nextView = self.pages[self.currentPage]
-		let vert = self.scrollDirection == .vertical
-		if vert {
-			self.scrollView.contentSize = CGSize(width: 0,height: nextView.height)
-		}
-		else {
-			self.scrollView.contentSize = CGSize(width: nextView.width, height: 0)
-		}
-		var min: CGFloat = 0
-		for i in self.currentPage..<self.pages.count {
-			let page = self.pages[i]
-			if vert {
-				page.minY = min
-				min = page.maxY
-			}
-			else {
-				page.minX = min
-				min = page.maxX
-			}
-			self.scrollView.addSubview(page)
-		}
-		var max: CGFloat = 0
-		var i = self.currentPage - 1
-		while i >= 0 {
-			let page = self.pages[i]
-			if vert {
-				page.maxY = max
-				max = page.minY
-			}
-			else {
-				page.maxX = max
-				max = page.minX
-			}
-			self.scrollView.addSubview(page)
-			i -= 1
-		}
-	}
+	
 	
 	
 
@@ -233,7 +218,6 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		})
 	}
 	
-	
 	public func scrollToNextPage() {
 		let currentPage = self.currentPage
 		let nextPage = currentPage + 1
@@ -302,7 +286,6 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		})
 	}
 	
-	
 	public func scrollToPage(page: Int, animated: Bool) {
 		if page < 0 || page >= self.pages.count {
 			return
@@ -318,7 +301,11 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	}
 	
 	
-	
+	// MARK: Private
+	private var _pages : [UIView]
+	private var _scrollVertical : Bool {
+		return self.scrollDirection == .vertical
+	}
 	private func updatePagesLayout() {
 		let nextView = self.pages[self.currentPage]
 		let vert = self.scrollDirection == .vertical
@@ -358,7 +345,45 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		}
 	}
 	
-	
+	private func _setupPages() {
+		self.scrollView.setContentOffset(CGPoint.zero, animated: false)
+		let nextView = self.pages[self.currentPage]
+		let vert = self.scrollDirection == .vertical
+		if vert {
+			self.scrollView.contentSize = CGSize(width: 0,height: nextView.height)
+		}
+		else {
+			self.scrollView.contentSize = CGSize(width: nextView.width, height: 0)
+		}
+		var min: CGFloat = 0
+		for i in self.currentPage..<self.pages.count {
+			let page = self.pages[i]
+			if vert {
+				page.minY = min
+				min = page.maxY
+			}
+			else {
+				page.minX = min
+				min = page.maxX
+			}
+			self.scrollView.addSubview(page)
+		}
+		var max: CGFloat = 0
+		var i = self.currentPage - 1
+		while i >= 0 {
+			let page = self.pages[i]
+			if vert {
+				page.maxY = max
+				max = page.minY
+			}
+			else {
+				page.maxX = max
+				max = page.minX
+			}
+			self.scrollView.addSubview(page)
+			i -= 1
+		}
+	}
 	
 	
 	// MARK: UIScrollViewDelegate
@@ -415,11 +440,6 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	
 	
 	// MARK: PROPERTIES
-	private var _pages : [UIView]
-	private var _scrollVertical : Bool {
-		return self.scrollDirection == .vertical
-	}
-
 	
 	public var pages : [UIView] {
 		
@@ -433,14 +453,12 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		}
 		
 	}
-	
 	public var currentPage : Int {
 
 		didSet{
 			_setupPages()
 		}
 	}
-	
 	
 	private(set) public var scrollDirection : TKPageScrollDirection
 	public var scrollView : UIScrollView

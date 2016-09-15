@@ -1,6 +1,6 @@
 //
-//  TKShimmerLabel.h
-//  Created by Devin Ross on 7/20/13.
+//  ShimmerLabelViewController.h
+//  Created by Devin Ross on 9/15/16.
 //
 /*
  
@@ -30,27 +30,11 @@
  */
 
 @import UIKit;
+@import curryfire;
 
-/** The direction of the shimmering on the label. */
-typedef NS_ENUM(NSInteger, TKShimmerLabelDirection) {
-	TKShimmerLabelDirectionLeftToRight,
-	TKShimmerLabelDirectionRightToLeft
-} ;
-
-/** `TKShimmerLabel` is a subclassed `UILabel` with a shimmer animation similiar to the unlock screen. */
-@interface TKShimmerLabel : UILabel
-
-///----------------------------
-/// @name Properties
-///----------------------------
-/** The gradient layer that masks the text label to create the shimmer effect. */
-@property (nonatomic,strong) CAGradientLayer *textHighlightLayer;
-
-/** The direction the shimmer should move. */
-@property (nonatomic,assign) TKShimmerLabelDirection direction;
+@interface ShimmerLabelViewController : UIViewController
 
 
-/** The duration of the shimmer animation */
-@property (nonatomic,assign) NSTimeInterval shimmerDuration;
+@property (nonatomic,strong) TKShimmerLabel *shimmerLabel;
 
 @end

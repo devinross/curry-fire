@@ -35,7 +35,7 @@
 #import "CardViewSlideUpViewController.h"
 #import "ConfettiViewController.h"
 #import "NavigationPushPopTransitionViewController.h"
-
+#import "ShimmerLabelViewController.h"
 #import <Examples-Swift.h>
 
 
@@ -62,7 +62,8 @@
   
     @[NSLocalizedString(@"Smooth Animation", @""),          NSStringFromClass([SmoothAnimationViewController class])],
 
-  
+  @[NSLocalizedString(@"Shimmer Label", @""),          NSStringFromClass([ShimmerLabelViewController class])],
+
   @[NSLocalizedString(@"Loading", @""),          NSStringFromClass([LoadingViewController class])],
   @[NSLocalizedString(@"Glow", @""),          NSStringFromClass([GlowButtonViewController class])],
 

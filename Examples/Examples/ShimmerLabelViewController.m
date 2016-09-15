@@ -1,6 +1,6 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  ShimmerLabelViewController.m
+//  Created by Devin Ross on 9/15/16.
 //
 /*
  
@@ -29,29 +29,34 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+#import "ShimmerLabelViewController.h"
 
-@import curry;
-@import pop;
+@implementation ShimmerLabelViewController
 
-#import "ShortHand.h"
+- (void) loadView{
+	[super loadView];
+	self.view.backgroundColor = [UIColor whiteColor];
+	
+	
+	self.shimmerLabel = [[TKShimmerLabel alloc] initWithFrame:CGRectMake(0, 100, self.view.width, 60)];
+	
+	self.shimmerLabel.text = @"SLIDE TO UNLOCK";
+	
+	self.shimmerLabel.textColor = [UIColor blueColor];
+	
+	self.shimmerLabel.textHighlightLayer.locations = @[@0,@0.45,@0.5,@0.55,@1];
+	self.shimmerLabel.shimmerDuration = 2.5;
+	
+	id dark;
+	dark = (id)[UIColor colorWithWhite:1 alpha:0.3].CGColor;
+	id light;
+	light = (id)[UIColor colorWithWhite:1 alpha:1.0f].CGColor;
+	
 
-#import "TKMoveGestureRecognizer.h"
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKPageControl.h"
-#import "TKSlideToUnlockView.h"
-#import "TKAnimatedImageView.h"
+	self.shimmerLabel.textHighlightLayer.colors = @[dark,dark,light,dark,dark];
+	
+	
+	[self.view addSubview:self.shimmerLabel];
+}
 
-#import "TKMultiSwitch.h"
-#import "TKPegSlider.h"
-
-
-#import "UIView+Material.h"
-#import "UIView+Confetti.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
-
-
-#endif
+@end
