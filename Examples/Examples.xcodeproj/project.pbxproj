@@ -16,6 +16,7 @@
 		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
 		2069BBB91AE0996800F6D355 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2069BBB81AE0996800F6D355 /* Images.xcassets */; };
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
+		2069C1211D8AEAD0000BD656 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */; };
 		207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */; };
 		207E91251D87675600EECF1D /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; };
 		207E91261D87675600EECF1D /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -94,6 +95,7 @@
 		2069BBB81AE0996800F6D355 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2069BC321AE0A2AF00F6D355 /* Examples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Examples-Bridging-Header.h"; sourceTree = "<group>"; };
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothAnimationViewController.swift; sourceTree = "<group>"; };
 		207E91241D87675600EECF1D /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E912B1D87676A00EECF1D /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */,
 				20AF03361AE8534F0065E3FF /* ConfettiViewController.h */,
 				20AF03371AE8534F0065E3FF /* ConfettiViewController.m */,
+				2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */,
 				20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */,
 				20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */,
 				207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */,
@@ -327,6 +330,7 @@
 				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
 				207E913D1D8791A900EECF1D /* PagedScrollViewViewController.swift in Sources */,
 				207E915F1D87ACE100EECF1D /* WiggleViewController.swift in Sources */,
+				2069C1211D8AEAD0000BD656 /* LoadingViewController.swift in Sources */,
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
 				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
 				207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */,

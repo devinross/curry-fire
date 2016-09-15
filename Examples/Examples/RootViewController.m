@@ -63,6 +63,10 @@
     @[NSLocalizedString(@"Smooth Animation", @""),          NSStringFromClass([SmoothAnimationViewController class])],
 
   
+  @[NSLocalizedString(@"Loading", @""),          NSStringFromClass([LoadingViewController class])],
+
+  
+  
   
   @[NSLocalizedString(@"Custom Controls", @""),         NSStringFromClass([ControlsViewController class])] ];
 	

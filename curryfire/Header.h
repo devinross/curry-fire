@@ -51,7 +51,6 @@
 #import "TKPegSlider.h"
 
 #import "TKPagedScrollView.h"
-#import "TKLoadingView.h"
 
 #import "UIView+Material.h"
 #import "UIView+TwelvePrinciples.h"
