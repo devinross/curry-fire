@@ -45,10 +45,10 @@ class RunForrestViewController: UIViewController {
 		
 		cardView.addTapGesture { (sender) in
 			
-			cardView.runForrestRun(to: CGPoint(x:self.view.width*1.5, y: cardView.centerY) , withCompletion: { (complete) in
+			cardView.runForrestRun(toPoint: CGPoint(x:self.view.width*1.5, y: cardView.centerY) , withCompletion: { (complete) in
 				cardView.transform = CGAffineTransform.identity
 				cardView.center = CGPoint(x: self.view.width * -2, y: cardView.centerY)
-				cardView.runForrestRun(to: CGPoint(x: self.view.centerX, y: cardView.centerY), withCompletion: nil)
+				cardView.runForrestRun(toPoint: CGPoint(x: self.view.centerX, y: cardView.centerY), withCompletion: nil)
 			})
 			
 		}

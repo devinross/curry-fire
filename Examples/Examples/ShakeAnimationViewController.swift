@@ -44,7 +44,7 @@ class ShakeAnimationViewController: UIViewController {
 		
 		
 		cardView.addTapGesture { (sender) in
-			cardView.shakeAnimation(completion: nil)
+			cardView.shake(withCompletion: nil)
 		}
 
 

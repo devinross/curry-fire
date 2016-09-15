@@ -43,7 +43,7 @@ class ZoomViewController: UIViewController {
 		
 		cardView.addTapGesture { (sender) in
 			
-			cardView.zoom(toYPoint: -1000, completion: { (complete) in
+			cardView.zoomToYPoint(toYPoint: -1000, completion: { (complete) in
 				
 				let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(1.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 				DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
