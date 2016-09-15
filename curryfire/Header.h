@@ -46,7 +46,6 @@
 #import "TKAnimatedImageView.h"
 
 #import "TKMultiSwitch.h"
-#import "TKPegSlider.h"
 
 
 #import "UIView+Confetti.h"

@@ -51,7 +51,7 @@ class ControlsViewController: UIViewController {
 		
 		let pegSlider = TKPegSlider(frame: CGRect(x:10, y: 64 + 200, width:40, height:40))
 		pegSlider.frame = CGRectMakeWithSize(10, 80, (pegSlider.frame.size))
-		pegSlider.numberOfPegs = 8
+		//pegSlider.numberOfPegs = 8
 		pegSlider.leftEndImage = UIImage(named: "sad")
 		pegSlider.rightEndImage = UIImage(named: "happy")
 		pegSlider.addTarget(self, action: #selector(changedPegValue), for: .valueChanged)
