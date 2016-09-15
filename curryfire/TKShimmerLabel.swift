@@ -43,7 +43,6 @@ public class TKShimmerLabel: UILabel {
 	/// The gradient layer that masks the text label to create the shimmer effect.
 	public var textHighlightLayer : CAGradientLayer
 	
-	
 	/// The direction the shimmer should move.
 	public var direction : TKShimmerLabelDirection {
 		didSet{
@@ -51,7 +50,6 @@ public class TKShimmerLabel: UILabel {
 		}
 	}
 
-	
 	
 	/// The duration of the shimmer animation
 	public var shimmerDuration : TimeInterval = 4.0

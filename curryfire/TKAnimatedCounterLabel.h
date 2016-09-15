@@ -101,6 +101,4 @@ typedef enum {
 
 @property (nonatomic,strong) POPSpringAnimation *springAnimation;
 
-
-
 @end

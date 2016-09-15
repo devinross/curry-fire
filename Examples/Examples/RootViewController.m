@@ -33,7 +33,6 @@
 #import "MoveGestureViewController.h"
 #import "MaterialViewController.h"
 #import "CardViewSlideUpViewController.h"
-#import "ConfettiViewController.h"
 #import "NavigationPushPopTransitionViewController.h"
 #import "ShimmerLabelViewController.h"
 #import <Examples-Swift.h>
