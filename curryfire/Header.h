@@ -41,7 +41,6 @@
 #import "TKNavigationTransistionController.h"
 #import "TKAnimatedCounterLabel.h"
 #import "TKProgressRingView.h"
-#import "TKGlowButton.h"
 #import "TKPageControl.h"
 #import "TKShimmerLabel.h"
 #import "TKSlideToUnlockView.h"

@@ -159,7 +159,7 @@ extension UIView {
 			})
 			}, completion: {(finished: Bool) -> Void in
 				self.transform = baseTransform
-				var minX: CGFloat = self.minX + self.width / 2.0
+				let minX: CGFloat = self.minX + self.width / 2.0
 				self.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 				self.centerX = minX
 				if (completion != nil) {

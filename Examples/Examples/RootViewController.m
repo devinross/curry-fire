@@ -64,6 +64,7 @@
 
   
   @[NSLocalizedString(@"Loading", @""),          NSStringFromClass([LoadingViewController class])],
+  @[NSLocalizedString(@"Glow", @""),          NSStringFromClass([GlowButtonViewController class])],
 
   
   
