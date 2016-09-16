@@ -86,35 +86,37 @@ import UIKit
 	@objc optional func pagedScrollViewDidScrollToTop(pagedScrollView: TKPagedScrollView?)
 }
 
-public enum TKPageScrollDirection : Int {
+@objc public enum TKPageScrollDirection : Int {
 	case vertical
 	case horizontal
 }
 
 
-public class TKPagedScrollView: UIView, UIScrollViewDelegate {
+open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	
-
+	
 	
 	
 	
 	// MARK: INIT
-
-	override convenience init(frame: CGRect) {
-		self.init(frame: frame, direction: .vertical)
+	
+	override init(frame: CGRect) {
+		scrollDirection = .vertical
+		scrollView = UIScrollView(frame: CGRect(x:0,y:0,width:frame.size.width,height:frame.size.height))
+		currentPage = 0
+		animatingPages = false
+		
+		_pages = []
+		super.init(frame: frame)
 	}
 	
-	required public init(coder aDecoder: NSCoder) {
-		fatalError("This class does not support NSCoding")
-	}
-	
-	public init(frame: CGRect, direction: TKPageScrollDirection) {
+	@objc public init(frame: CGRect, direction: TKPageScrollDirection) {
 		
 		scrollDirection = direction
 		scrollView = UIScrollView(frame: CGRect(x:0,y:0,width:frame.size.width,height:frame.size.height))
 		currentPage = 0
 		animatingPages = false
-
+		
 		_pages = []
 		super.init(frame: frame)
 		
@@ -124,11 +126,19 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		self.addSubview(self.scrollView)
 	}
 	
+	required public init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	
 	
 	
-
+	
+	
+	
+	
+	
+	
 	
 	
 	// MARK: Actions
@@ -140,11 +150,11 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		}
 		self.animatingPages = true
 		self.delegate?.pagedScrollView?(pagedScrollView: self, willMoveToPage: nextPage)
-
 		
 		
 		
-
+		
+		
 		let showVert = self.scrollView.showsVerticalScrollIndicator
 		let showHorz = self.scrollView.showsHorizontalScrollIndicator
 		let interactive = self.scrollView.isUserInteractionEnabled
@@ -280,7 +290,7 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 				self.scrollView.showsVerticalScrollIndicator = showVert
 				self.scrollView.showsHorizontalScrollIndicator = showHorz
 				self.animatingPages = false
-
+				
 				
 				self.delegate?.pagedScrollView?(pagedScrollView: self, didMoveToPage: self.currentPage)
 		})
@@ -402,9 +412,9 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		else if !vert && scrollView.contentOffset.x < -30 {
 			self.scrollToPreviousPage()
 		}
-
+		
 		self.delegate?.pagedScrollViewDidEndDragging?(pagedScrollView: self, willDecelerate: decelerate)
-
+		
 	}
 	
 	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -454,7 +464,7 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		
 	}
 	public var currentPage : Int {
-
+		
 		didSet{
 			_setupPages()
 		}
@@ -466,6 +476,6 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	public var delegate : TKPagedScrollViewDelegate?
 	
 	
-
-
+	
+	
 }
