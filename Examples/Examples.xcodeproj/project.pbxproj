@@ -20,6 +20,7 @@
 		2069C15F1D8B4367000BD656 /* ShimmerLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069C15E1D8B4367000BD656 /* ShimmerLabelViewController.m */; };
 		2069C16F1D8B604A000BD656 /* ConfettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C16E1D8B604A000BD656 /* ConfettiViewController.swift */; };
 		2069C1711D8B63D0000BD656 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1701D8B63D0000BD656 /* RootViewController.swift */; };
+		2069C1751D8B8CB1000BD656 /* SlideToUnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1741D8B8CB1000BD656 /* SlideToUnlockViewController.swift */; };
 		207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */; };
 		207E91251D87675600EECF1D /* curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; };
 		207E91261D87675600EECF1D /* curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207E91241D87675600EECF1D /* curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -40,7 +41,6 @@
 		207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */; };
 		207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916C1D87B86700EECF1D /* ControlsViewController.swift */; };
 		207E916F1D87BEA500EECF1D /* BounceAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */; };
-		20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +101,7 @@
 		2069C15E1D8B4367000BD656 /* ShimmerLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmerLabelViewController.m; sourceTree = "<group>"; };
 		2069C16E1D8B604A000BD656 /* ConfettiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiViewController.swift; sourceTree = "<group>"; };
 		2069C1701D8B63D0000BD656 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		2069C1741D8B8CB1000BD656 /* SlideToUnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideToUnlockViewController.swift; sourceTree = "<group>"; };
 		207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothAnimationViewController.swift; sourceTree = "<group>"; };
 		207E91241D87675600EECF1D /* curry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = curry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E912B1D87676A00EECF1D /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +118,6 @@
 		207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		207E916C1D87B86700EECF1D /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimatorViewController.swift; sourceTree = "<group>"; };
-		20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToUnlockViewController.h; sourceTree = "<group>"; };
-		20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToUnlockViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +189,7 @@
 				20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */,
 				2069C16E1D8B604A000BD656 /* ConfettiViewController.swift */,
 				2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */,
-				20DDB5721B4599AF001C7751 /* SlideToUnlockViewController.h */,
-				20DDB5731B4599AF001C7751 /* SlideToUnlockViewController.m */,
+				2069C1741D8B8CB1000BD656 /* SlideToUnlockViewController.swift */,
 				207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */,
 				207E91141D875CFB00EECF1D /* SmoothAnimationViewController.swift */,
 				207E916C1D87B86700EECF1D /* ControlsViewController.swift */,
@@ -329,7 +327,6 @@
 			files = (
 				207E91611D87AEC600EECF1D /* CounterViewController.swift in Sources */,
 				2069C1551D8B2C1B000BD656 /* GlowButtonViewController.swift in Sources */,
-				20DDB5741B4599AF001C7751 /* SlideToUnlockViewController.m in Sources */,
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */,
 				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
@@ -348,6 +345,7 @@
 				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
 				207E915D1D87ABDF00EECF1D /* TickleViewController.swift in Sources */,
 				207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */,
+				2069C1751D8B8CB1000BD656 /* SlideToUnlockViewController.swift in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */,
 				207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */,

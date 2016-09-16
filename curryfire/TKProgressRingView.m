@@ -247,8 +247,6 @@
 	_springAnimation = [POPSpringAnimation animation];
 	_springAnimation.springBounciness = 4;
 	_springAnimation.springSpeed = 1;
-//	_springAnimation.dynamicsMass = 1;
-//	_springAnimation.dynamicsFriction = 2;
 	return _springAnimation;
 }
 

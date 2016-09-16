@@ -58,7 +58,8 @@ class RootViewController: UITableViewController {
 			["Shimmer Label", ShimmerLabelViewController.self],
 			["Loading", LoadingViewController.self],
 			["Glow", GlowButtonViewController.self],
-			["Custom Controls", ControlsViewController.self]
+			["Custom Controls", ControlsViewController.self],
+			["Slide To Unlock",SlideToUnlockViewController.self]
 		]
 		let section2 = [
 			["Shake", ShakeAnimationViewController.self],
