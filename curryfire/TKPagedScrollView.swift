@@ -35,55 +35,55 @@ import UIKit
 	/** Tells the delegate when the user scrolls the content view within the receiver.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
-	@objc optional func pagedScrollViewDidScroll(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewDidScroll(_ pagedScrollView: TKPagedScrollView?)
 	/** The event sent when a paged scroll view will animate to a different page.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	@param page The page that will become the active page.
 	*/
 	
-	@objc optional func pagedScrollView(pagedScrollView: TKPagedScrollView?, willMoveToPage page: Int)
+	@objc optional func pagedScrollView(_ pagedScrollView: TKPagedScrollView?, willMoveToPage page: Int)
 	/** The event sent when a paged scroll view did animate to a different page.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	@param page The page that did become the active page.
 	*/
 	
-	@objc optional func pagedScrollView(pagedScrollView: TKPagedScrollView?, didMoveToPage page: Int)
+	@objc optional func pagedScrollView(_ pagedScrollView: TKPagedScrollView?, didMoveToPage page: Int)
 	/** Tells the delegate when the scroll view is about to start scrolling the content.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewWillBeginDragging(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewWillBeginDragging(_ pagedScrollView: TKPagedScrollView?)
 	/** Tells the delegate when dragging ended in the scroll view.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	@param decelerate YES if the scrolling movement will continue, but decelerate, after a touch-up gesture during a dragging operation. If the value is NO, scrolling stops immediately upon touch-up.
 	*/
 	
-	@objc optional func pagedScrollViewDidEndDragging(pagedScrollView: TKPagedScrollView?, willDecelerate decelerate: Bool)
+	@objc optional func pagedScrollViewDidEndDragging(_ pagedScrollView: TKPagedScrollView?, willDecelerate decelerate: Bool)
 	/** Tells the delegate that the scroll view is starting to decelerate the scrolling movement.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewWillBeginDecelerating(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewWillBeginDecelerating(_ pagedScrollView: TKPagedScrollView?)
 	/** Tells the delegate that the scroll view has ended decelerating the scrolling movement.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewDidEndDecelerating(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewDidEndDecelerating(_ pagedScrollView: TKPagedScrollView?)
 	/** Tells the delegate when a scrolling animation in the scroll view concludes.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewDidEndScrollingAnimation(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewDidEndScrollingAnimation(_ pagedScrollView: TKPagedScrollView?)
 	/** Asks the delegate if the scroll view should scroll to the top of the content.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewShouldScrollToTop(pagedScrollView: TKPagedScrollView?) -> Bool
+	@objc optional func pagedScrollViewShouldScrollToTop(_ pagedScrollView: TKPagedScrollView?) -> Bool
 	/** Tells the delegate that the scroll view scrolled to the top of the content.
 	@param pagedScrollView The paged-scroll-view object in which the scrolling occurred.
 	*/
 	
-	@objc optional func pagedScrollViewDidScrollToTop(pagedScrollView: TKPagedScrollView?)
+	@objc optional func pagedScrollViewDidScrollToTop(_ pagedScrollView: TKPagedScrollView?)
 }
 
 @objc public enum TKPageScrollDirection : Int {
@@ -149,7 +149,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 			return
 		}
 		self.animatingPages = true
-		self.delegate?.pagedScrollView?(pagedScrollView: self, willMoveToPage: nextPage)
+		self.delegate?.pagedScrollView?(self, willMoveToPage: nextPage)
 		
 		
 		
@@ -223,7 +223,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 				self.scrollView.showsVerticalScrollIndicator = showVert
 				self.scrollView.showsHorizontalScrollIndicator = showHorz
 				self.animatingPages = false
-				self.delegate?.pagedScrollView?(pagedScrollView: self, didMoveToPage: self.currentPage)
+				self.delegate?.pagedScrollView?( self, didMoveToPage: self.currentPage)
 				
 		})
 	}
@@ -235,7 +235,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 			return
 		}
 		self.animatingPages = true
-		self.delegate?.pagedScrollView?(pagedScrollView: self, willMoveToPage: nextPage)
+		self.delegate?.pagedScrollView?( self, willMoveToPage: nextPage)
 		
 		let showVert = self.scrollView.showsVerticalScrollIndicator
 		let showHorz = self.scrollView.showsHorizontalScrollIndicator
@@ -292,7 +292,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 				self.animatingPages = false
 				
 				
-				self.delegate?.pagedScrollView?(pagedScrollView: self, didMoveToPage: self.currentPage)
+				self.delegate?.pagedScrollView?(self, didMoveToPage: self.currentPage)
 		})
 	}
 	
@@ -413,39 +413,39 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 			self.scrollToPreviousPage()
 		}
 		
-		self.delegate?.pagedScrollViewDidEndDragging?(pagedScrollView: self, willDecelerate: decelerate)
+		self.delegate?.pagedScrollViewDidEndDragging?( self, willDecelerate: decelerate)
 		
 	}
 	
 	public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewDidScroll?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewDidScroll?(self)
 	}
 	
 	public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewWillBeginDragging?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewWillBeginDragging?(self)
 	}
 	
 	public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewWillBeginDecelerating?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewWillBeginDecelerating?(self)
 	}
 	
 	public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewDidEndDecelerating?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewDidEndDecelerating?(self)
 	}
 	
 	public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewDidEndScrollingAnimation?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewDidEndScrollingAnimation?(self)
 	}
 	
 	public func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-		if let top = self.delegate?.pagedScrollViewShouldScrollToTop?(pagedScrollView: self){
+		if let top = self.delegate?.pagedScrollViewShouldScrollToTop?(self){
 			return top
 		}
 		return self.scrollDirection == .vertical
 	}
 	
 	public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-		self.delegate?.pagedScrollViewDidScrollToTop?(pagedScrollView: self)
+		self.delegate?.pagedScrollViewDidScrollToTop?(self)
 	}
 	
 	

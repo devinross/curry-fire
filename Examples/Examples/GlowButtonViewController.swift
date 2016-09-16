@@ -43,8 +43,8 @@ class GlowButtonViewController: UIViewController {
 		glowButton.cornerRadius = 10
 		glowButton.setBorderWith(UIColor.lightGray, width: 1)
 		
-		glowButton.setBackgroundColor(color: UIColor.white, forState: .normal)
-		glowButton.setBackgroundColor(color: UIColor.lightGray, forState: .highlighted)
+		glowButton.setBackgroundColor(UIColor.white, for: .normal)
+		glowButton.setBackgroundColor(UIColor.lightGray, for: .highlighted)
 
 		glowButton.setTitle("Press Me", for: .normal)
 		glowButton.setTitleColor(UIColor.black, for: .normal)
