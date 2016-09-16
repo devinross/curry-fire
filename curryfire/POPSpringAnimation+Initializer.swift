@@ -33,11 +33,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 import Foundation
 import pop
 
-
 extension POPSpringAnimation {
 	
-	
-	public class func springAnimation(name: String, toValue value: AnyObject, velocity: AnyObject, bouciness: CGFloat, speed: CGFloat, removeOnCompletion: Bool, completion: @escaping ( POPAnimation?, Bool) -> Void) -> POPSpringAnimation {
+	public class func springAnimation(name: String, toValue value: AnyObject, velocity: AnyObject, bouciness: CGFloat, speed: CGFloat, removeOnCompletion: Bool, completion: ((POPAnimation?, Bool) -> Void)?) -> POPSpringAnimation {
 		let spring = POPSpringAnimation(propertyNamed: name)!
 		spring.toValue = value
 		spring.springBounciness = bouciness
@@ -48,9 +46,8 @@ extension POPSpringAnimation {
 		return spring
 	}
 	
-	public class func springAnimation(point: CGPoint, velocity: CGPoint, bouciness: CGFloat, speed: CGFloat, removeOnCompletion: Bool, completion: @escaping (POPAnimation?, Bool) -> Void) -> POPSpringAnimation {
+	public class func springAnimation(point: CGPoint, velocity: CGPoint, bouciness: CGFloat, speed: CGFloat, removeOnCompletion: Bool, completion: ((POPAnimation?, Bool) -> Void)?) -> POPSpringAnimation {
 		return springAnimation(name: kPOPLayerPosition, toValue: NSCGPoint(point), velocity: NSCGPoint(velocity), bouciness: bouciness, speed: speed, removeOnCompletion: removeOnCompletion, completion: completion)
 	}
-	
 	
 }
