@@ -306,7 +306,7 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	private var _scrollVertical : Bool {
 		return self.scrollDirection == .vertical
 	}
-	private func updatePagesLayout() {
+	public func updatePagesLayout() {
 		let nextView = self.pages[self.currentPage]
 		let vert = self.scrollDirection == .vertical
 		if vert {
