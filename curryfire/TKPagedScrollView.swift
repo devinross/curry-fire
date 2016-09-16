@@ -286,11 +286,11 @@ public class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		})
 	}
 	
-	public func scrollToPage(page: Int, animated: Bool) {
-		if page < 0 || page >= self.pages.count {
+	public func scroll(toPage: Int, animated: Bool) {
+		if toPage < 0 || toPage >= self.pages.count {
 			return
 		}
-		self.currentPage = page
+		self.currentPage = toPage
 		if animated {
 			UIView.beginAnimations(nil, context: nil)
 		}
