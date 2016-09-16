@@ -32,7 +32,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 import UIKit
 
 /// `TKGlowButton` is a subclassed `UIButton` that allows the background of a button to glow on touch.
-public class TKGlowButton: UIButton {
+@objc open class TKGlowButton: UIButton {
 	
 	private var normalBackgroundColor : UIColor?
 	private var selectedBackgroundColor : UIColor?
@@ -57,7 +57,7 @@ public class TKGlowButton: UIButton {
 		
 	}
 	
-	override public var isSelected: Bool {
+	override open var isSelected: Bool {
 		didSet {
 			var clr = UIColor.clear
 			var txtColor = UIColor.clear
@@ -77,7 +77,7 @@ public class TKGlowButton: UIButton {
 		}
 
 	}
-	override public var isHighlighted: Bool {
+	override open var isHighlighted: Bool {
 		didSet {
 			var clr = UIColor.clear
 			var txtColor = UIColor.clear
