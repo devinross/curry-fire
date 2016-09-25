@@ -36,7 +36,6 @@
 @interface TKMoveGestureRecognizer ()
 
 @property (nonatomic,assign) BOOL moving;
-
 @property (nonatomic,assign) CGPoint startPoint;
 
 @end
@@ -283,8 +282,6 @@
 }
 
 
-
-
 #pragma mark Properties
 - (NSString*) popAnimationPropertyName{
     if(self.axis == TKMoveGestureAxisX)
@@ -301,7 +298,6 @@
     _snapBackAnimation.removedOnCompletion = YES;
     return _snapBackAnimation;
 }
-
 - (BOOL) animating{
     return [self.movableView.layer pop_animationForKey:@"pop"] != nil;
 }

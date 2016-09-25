@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201AD6451D95D6A2009B5315 /* SlideDownTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */; };
 		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
 		2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFB61AE997AE0097E3AE /* DashboardViewController.m */; };
 		2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFBA1AE998940097E3AE /* CartViewController.m */; };
@@ -77,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		201AD6431D95D6A2009B5315 /* SlideDownTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideDownTransitionManager.h; sourceTree = "<group>"; };
+		201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideDownTransitionManager.m; sourceTree = "<group>"; };
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
 		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
 		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				2069C1701D8B63D0000BD656 /* RootViewController.swift */,
 				2069BBB21AE0996800F6D355 /* MoveGestureViewController.h */,
 				2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */,
+				201AD6431D95D6A2009B5315 /* SlideDownTransitionManager.h */,
+				201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */,
 				207E913C1D8791A900EECF1D /* PagedScrollViewViewController.swift */,
 				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
 				20691B701AE7FC450045627D /* MaterialViewController.m */,
@@ -330,6 +335,7 @@
 				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */,
 				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
+				201AD6451D95D6A2009B5315 /* SlideDownTransitionManager.m in Sources */,
 				207E913D1D8791A900EECF1D /* PagedScrollViewViewController.swift in Sources */,
 				207E915F1D87ACE100EECF1D /* WiggleViewController.swift in Sources */,
 				2069C1211D8AEAD0000BD656 /* LoadingViewController.swift in Sources */,

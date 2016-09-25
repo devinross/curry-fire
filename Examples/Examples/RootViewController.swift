@@ -48,6 +48,7 @@ class RootViewController: UITableViewController {
 			["Paged Scroll View", PagedScrollViewViewController.self],
 			["TKMoveGestureRecognizer", MoveGestureViewController.self],
 			["TKMoveGestureRecognizer (Card Slide)", CardViewSlideUpViewController.self],
+			["SlideDownTransitionViewController",SlideDownTransitionViewController.self],
 			["Material Transition", MaterialViewController.self],
 			["Confetti", ConfettiViewController.self],
 			["Animated Counter", CounterViewController.self],

@@ -37,7 +37,6 @@
 @property (nonatomic,strong) NSMutableArray *animators;
 @property (nonatomic,strong) TKNavigationControllerTransitionAnimator *currentAnimator;
 
-
 @end
 
 @implementation TKNavigationTransistionController

@@ -46,6 +46,8 @@
 		207E91B81D884B0600EECF1D /* UIView+TwelvePrinciples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E91B71D884B0600EECF1D /* UIView+TwelvePrinciples.swift */; };
 		2098BA2B1B0F7244000E0074 /* TKAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2098BA2C1B0F7244000E0074 /* TKAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */; };
+		20A545E91D95D27300DF2D0A /* TKInteractiveMoveTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 20A545E71D95D27300DF2D0A /* TKInteractiveMoveTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20A545EA1D95D27300DF2D0A /* TKInteractiveMoveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A545E81D95D27300DF2D0A /* TKInteractiveMoveTransition.m */; };
 		20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AF03281AE848480065E3FF /* UIView+Confetti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20AF032B1AE848480065E3FF /* UIView+Confetti.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AF03291AE848480065E3FF /* UIView+Confetti.m */; };
 		20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -189,6 +191,8 @@
 		207E91B71D884B0600EECF1D /* UIView+TwelvePrinciples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+TwelvePrinciples.swift"; sourceTree = "<group>"; };
 		2098BA291B0F7244000E0074 /* TKAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAnimatedImageView.h; sourceTree = "<group>"; };
 		2098BA2A1B0F7244000E0074 /* TKAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnimatedImageView.m; sourceTree = "<group>"; };
+		20A545E71D95D27300DF2D0A /* TKInteractiveMoveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKInteractiveMoveTransition.h; sourceTree = "<group>"; };
+		20A545E81D95D27300DF2D0A /* TKInteractiveMoveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKInteractiveMoveTransition.m; sourceTree = "<group>"; };
 		20AF03281AE848480065E3FF /* UIView+Confetti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Confetti.h"; sourceTree = "<group>"; };
 		20AF03291AE848480065E3FF /* UIView+Confetti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Confetti.m"; sourceTree = "<group>"; };
 		20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAnimatedCounterLabel.h; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
 				20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */,
 				20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */,
+				20A545E71D95D27300DF2D0A /* TKInteractiveMoveTransition.h */,
+				20A545E81D95D27300DF2D0A /* TKInteractiveMoveTransition.m */,
 				2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */,
 				2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */,
 				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
@@ -339,6 +345,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A545E91D95D27300DF2D0A /* TKInteractiveMoveTransition.h in Headers */,
 				2069BB661AE095CA00F6D355 /* curryfire.h in Headers */,
 				2069BC2F1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h in Headers */,
 				2069BC261AE09DFA00F6D355 /* Header.h in Headers */,
@@ -384,7 +391,7 @@
 		2069BB571AE095CA00F6D355 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Devin Ross";
 				TargetAttributes = {
 					203FB7FF1B4114BD000D3B43 = {
@@ -554,6 +561,7 @@
 				202DBEE31AF6704700B0CE67 /* TKPageControl.m in Sources */,
 				202DBEE71AF6704700B0CE67 /* TKSlideToUnlockView.m in Sources */,
 				2069BC301AE0A1C800F6D355 /* TKMoveGestureRecognizer.m in Sources */,
+				20A545EA1D95D27300DF2D0A /* TKInteractiveMoveTransition.m in Sources */,
 				2069C16D1D8B4EDF000BD656 /* TKPegSlider.swift in Sources */,
 				2069C1141D8AE5FF000BD656 /* TKLoadingView.swift in Sources */,
 				207E91B81D884B0600EECF1D /* UIView+TwelvePrinciples.swift in Sources */,
@@ -610,8 +618,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -659,8 +669,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -680,6 +692,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -692,6 +705,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -714,6 +728,7 @@
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

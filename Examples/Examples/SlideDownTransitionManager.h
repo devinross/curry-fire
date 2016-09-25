@@ -1,6 +1,6 @@
 //
-//  Header.h
-//  Created by Devin Ross on 4/16/15.
+//  MySettingsTransitionManager.h
+//  Created by Devin Ross on 9/23/16.
 //
 /*
  
@@ -29,29 +29,16 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+@import curryfire;
 
-@import curry;
-@import pop;
-
-#import "ShortHand.h"
-
-#import "TKMoveGestureRecognizer.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
-#import "TKInteractiveMoveTransition.h"
+@interface SlideDownTransitionManager : TKInteractiveMoveTransition
+@end
 
 
-#import "TKNavigationTransistionController.h"
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "TKPageControl.h"
-#import "TKSlideToUnlockView.h"
-#import "TKAnimatedImageView.h"
+@interface SlideDownTransitionViewController : UIViewController <TKInteractiveMoveTransitionDelegate>
+@property (nonatomic,strong) SlideDownTransitionManager *slidedownTransitionManager;
+@end
 
-#import "TKMultiSwitch.h"
+@interface UncoveredViewController : UIViewController
 
-#import "UIView+Confetti.h"
-
-
-#endif
+@end
