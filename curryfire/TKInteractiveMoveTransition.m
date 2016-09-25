@@ -134,9 +134,15 @@
 	UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
 	
 	if(toViewController == self.presentingViewController){
-		[self startPresentInteractiveTransition:self.transitionContext containerView:containerView fromViewController:fromViewController toViewController:toViewController];
+		[self startPresentInteractiveTransition:self.transitionContext
+								  containerView:containerView
+							 fromViewController:fromViewController
+							   toViewController:toViewController];
 	}else{
-		[self startDismissInteractiveTransition:self.transitionContext containerView:containerView fromViewController:fromViewController toViewController:toViewController];
+		[self startDismissInteractiveTransition:self.transitionContext
+								  containerView:containerView
+							 fromViewController:fromViewController
+							   toViewController:toViewController];
 	}
 	
 	
@@ -210,8 +216,8 @@
 							UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
 							[self completePresentInteractiveTransition:self.transitionContext
 														 containerView:[self.transitionContext containerView]
-													fromViewController:toViewController
-													  toViewController:fromViewController];
+													fromViewController:fromViewController
+													  toViewController:toViewController];
 						}
 						[self transitionEnded];
 					}else{
@@ -223,8 +229,8 @@
 							UIViewController *fromViewController = [self.transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
 							[self completeDismissInteractiveTransition:self.transitionContext
 														 containerView:[self.transitionContext containerView]
-													fromViewController:toViewController
-													  toViewController:fromViewController];
+													fromViewController:fromViewController
+													  toViewController:toViewController];
 						}
 						[self transitionEnded];
 					}
