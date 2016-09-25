@@ -52,6 +52,8 @@
 @property (nonatomic,weak, nullable) UIViewController *rootViewController;
 @property (nonatomic,strong,nullable) UIViewController *presentingViewController;
 @property (nonatomic,readonly,nonnull) TKMoveGestureRecognizer *moveGesture;
+@property (nonatomic,readonly,nonnull) id startLocation;
+@property (nonatomic,readonly,nonnull) id endLocation;
 @property (nonatomic,assign) BOOL isTransitioning;
 @property (nonatomic,assign) BOOL isPresenting;
 @property (nonatomic,strong,nullable) id<UIViewControllerContextTransitioning> transitionContext;
