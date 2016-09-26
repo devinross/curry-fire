@@ -41,11 +41,13 @@ class PageControlViewController: UIViewController {
 		self.view.backgroundColor = UIColor.white
 		
 		
-		self.pageControl = TKPageControl(frame: CGRect(x: 0, y: 180, width: self.view.width, height: 40))
-		self.pageControl?.numberOfPages = 5;
-		self.pageControl?.currentPageIndicatorTintColor = UIColor.blue
-		self.pageControl?.pageIndicatorTintColor = UIColor(white:0, alpha:0.3)
-		self.view.addSubview(self.pageControl!)
+		let aPageControl = TKPageControl(frame: CGRect(x: 0, y: 180, width: self.view.width, height: 40))
+		aPageControl.numberOfPages = 5
+		aPageControl.currentPageIndicatorTintColor = UIColor.blue
+		aPageControl.pageIndicatorTintColor = UIColor(white:0, alpha:0.3)
+		self.view.addSubview(aPageControl)
+		
+		self.pageControl = aPageControl
 		
 		
 	}

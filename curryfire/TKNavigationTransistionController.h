@@ -43,7 +43,7 @@
 @end
 
 
-@interface TKNavigationControllerTransitionAnimator : NSObject <UIViewControllerInteractiveTransitioning,UIViewControllerAnimatedTransitioning>
+@interface TKNavigationControllerTransitionAnimator : NSObject <UIViewControllerInteractiveTransitioning , UIViewControllerAnimatedTransitioning>
 
 
 @property (nonatomic,readonly) id <UIViewControllerContextTransitioning> transitionContext;

@@ -76,19 +76,42 @@
 
 
 #pragma mark UINavigationControllerDelegate
-- (id <UIViewControllerInteractiveTransitioning>) navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController{
-    
+- (id <UIViewControllerInteractiveTransitioning>) navigationController:(UINavigationController *)navigationController
+						   interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>)animationController{
+	
+	
+	
     if([animationController isKindOfClass:[TKNavigationControllerTransitionAnimator class]]){
-        
+		
+		
+		
+		
         TKNavigationControllerTransitionAnimator *animator = (TKNavigationControllerTransitionAnimator*)animationController;
-        if(animator.navigationOperation == UINavigationControllerOperationPop && animator.isInteractive)
-            return [(TKNavigationControllerTransitionAnimator*)animationController percentDrivenInteractiveTransition];
+		
+		NSLog(@"%@ %@ %@",animator,animator.isInteractive?@"INTER":@"NOTINTER",@(animator.navigationOperation));
+
+		
+		if(animator.navigationOperation == UINavigationControllerOperationPop && animator.isInteractive){
+			
+			NSLog(@"==>");
+			return [(TKNavigationControllerTransitionAnimator*)animationController percentDrivenInteractiveTransition];
+
+		}
     }
-    
+	
 
     return nil;
 
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+	return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+	return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
+}
+
 
 - (id <UIViewControllerAnimatedTransitioning>) navigationController:(UINavigationController *)navigationController
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
@@ -173,7 +196,7 @@
 - (NSTimeInterval) transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
     return [self transitionDuration];
 }
-- (void) animationEnded:(BOOL) transitionCompleted{
+- (void) animationEnded:(BOOL)transitionCompleted{
     
     
 }

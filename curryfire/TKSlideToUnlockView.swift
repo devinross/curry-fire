@@ -152,19 +152,19 @@ public class TKSlideToUnlockView: UIControl, UIScrollViewDelegate {
 		let light = (UIColor(white: 1, alpha: 1.0).cgColor as Any)
 		self.textLabel.textHighlightLayer.colors = [dark, dark, light, dark, dark]
 	}
-	// MARK: UIScrollViewDelegate
 	
+	// MARK: UIScrollViewDelegate
 	@objc(scrollViewDidEndDecelerating:) public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 		if scrollView.contentOffset.x == 0 {
 			self.isUnlocked = true
 			self.sendActions(for: .valueChanged)
 		}
-		self._resetShimmer()
+		_resetShimmer()
 	}
 	
 	@objc(scrollViewDidEndDragging:willDecelerate:) public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 		if !decelerate {
-			self._resetShimmer()
+			_resetShimmer()
 		}
 	}
 	

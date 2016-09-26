@@ -61,6 +61,9 @@ class RootViewController: UITableViewController {
 			["Glow", GlowButtonViewController.self],
 			["Custom Controls", ControlsViewController.self],
 			["Slide To Unlock",SlideToUnlockViewController.self],
+			
+			["Nav",NavigationPushPopTransitionViewController.self]
+			
 		]
 		let section2 = [
 			["Shake", ShakeAnimationViewController.self],

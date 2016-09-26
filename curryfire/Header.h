@@ -44,7 +44,6 @@
 #import "TKNavigationTransistionController.h"
 #import "TKAnimatedCounterLabel.h"
 #import "TKProgressRingView.h"
-#import "TKPageControl.h"
 #import "TKAnimatedImageView.h"
 #import "UIView+Confetti.h"
 
