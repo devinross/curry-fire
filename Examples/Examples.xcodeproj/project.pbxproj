@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		201AD6451D95D6A2009B5315 /* SlideDownTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */; };
 		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
-		2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFB61AE997AE0097E3AE /* DashboardViewController.m */; };
-		2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFBA1AE998940097E3AE /* CartViewController.m */; };
 		20691B711AE7FC450045627D /* MaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B701AE7FC450045627D /* MaterialViewController.m */; };
 		20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */; };
 		2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */; };
@@ -83,10 +81,6 @@
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
 		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
 		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
-		2067AFB51AE997AE0097E3AE /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
-		2067AFB61AE997AE0097E3AE /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
-		2067AFB91AE998940097E3AE /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
-		2067AFBA1AE998940097E3AE /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		20691B6F1AE7FC450045627D /* MaterialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewController.h; sourceTree = "<group>"; };
 		20691B701AE7FC450045627D /* MaterialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialViewController.m; sourceTree = "<group>"; };
 		20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewSlideUpViewController.h; sourceTree = "<group>"; };
@@ -145,17 +139,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				2067AFB51AE997AE0097E3AE /* DashboardViewController.h */,
-				2067AFB61AE997AE0097E3AE /* DashboardViewController.m */,
-				2067AFB91AE998940097E3AE /* CartViewController.h */,
-				2067AFBA1AE998940097E3AE /* CartViewController.m */,
-			);
-			name = FullCustomizeNavigation;
-			sourceTree = "<group>";
-		};
 		2069BB9F1AE0996800F6D355 = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +186,6 @@
 				207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */,
 				207E91681D87B49100EECF1D /* PageControlViewController.swift */,
 				2069C1541D8B2C1B000BD656 /* GlowButtonViewController.swift */,
-				2067AFB81AE997B90097E3AE /* FullCustomizeNavigation */,
 				2069BBAB1AE0996800F6D355 /* Supporting Files */,
 			);
 			path = Examples;
@@ -332,7 +314,6 @@
 			files = (
 				207E91611D87AEC600EECF1D /* CounterViewController.swift in Sources */,
 				2069C1551D8B2C1B000BD656 /* GlowButtonViewController.swift in Sources */,
-				2067AFBB1AE998940097E3AE /* CartViewController.m in Sources */,
 				207E91591D87A89F00EECF1D /* DimeViewController.swift in Sources */,
 				207E91651D87B14600EECF1D /* RunForrestViewController.swift in Sources */,
 				201AD6451D95D6A2009B5315 /* SlideDownTransitionManager.m in Sources */,
@@ -342,7 +323,6 @@
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
 				2069C1711D8B63D0000BD656 /* RootViewController.swift in Sources */,
 				2069C16F1D8B604A000BD656 /* ConfettiViewController.swift in Sources */,
-				2067AFB71AE997AE0097E3AE /* DashboardViewController.m in Sources */,
 				207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */,
 				207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,

@@ -37,15 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigationController: UINavigationController?
     var viewController: RootViewController?
-    var dashViewController: DashboardViewController?
 
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         viewController = RootViewController(style: UITableViewStyle.grouped)
-        dashViewController = DashboardViewController()
-
         navigationController = UINavigationController(rootViewController: viewController!)
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -55,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.isStatusBarHidden = true
 
-        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

@@ -60,7 +60,7 @@ class RootViewController: UITableViewController {
 			["Loading", LoadingViewController.self],
 			["Glow", GlowButtonViewController.self],
 			["Custom Controls", ControlsViewController.self],
-			["Slide To Unlock",SlideToUnlockViewController.self]
+			["Slide To Unlock",SlideToUnlockViewController.self],
 		]
 		let section2 = [
 			["Shake", ShakeAnimationViewController.self],
