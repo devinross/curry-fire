@@ -41,16 +41,11 @@
 #import "TKMoveScreenEdgeGestureRecognizer.h"
 #import "TKInteractiveMoveTransition.h"
 
-
 #import "TKNavigationTransistionController.h"
 #import "TKAnimatedCounterLabel.h"
 #import "TKProgressRingView.h"
 #import "TKPageControl.h"
-#import "TKSlideToUnlockView.h"
 #import "TKAnimatedImageView.h"
-
-#import "TKMultiSwitch.h"
-
 #import "UIView+Confetti.h"
 
 

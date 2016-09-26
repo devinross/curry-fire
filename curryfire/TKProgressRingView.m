@@ -39,7 +39,6 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (assign) BOOL timerIsLooping;
-
 @property (nonatomic,strong) POPAnimatableProperty *pop;
 
 @end
