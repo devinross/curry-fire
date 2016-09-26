@@ -38,7 +38,6 @@
 #import "ShortHand.h"
 
 #import "TKMoveGestureRecognizer.h"
-#import "TKMoveScreenEdgeGestureRecognizer.h"
 #import "TKInteractiveMoveTransition.h"
 
 #import "TKNavigationTransistionController.h"

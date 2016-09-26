@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		202DBEE91AF6713E00B0CE67 /* CurryFireImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */; };
+		20612D8F1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */; };
 		2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2067AFA31AE957790097E3AE /* TKNavigationTransistionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */; };
 		2069BB661AE095CA00F6D355 /* curryfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BB651AE095CA00F6D355 /* curryfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,8 +50,6 @@
 		20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20CB9CDE1AF3C036002E9F1C /* TKProgressRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */; };
 		20DBDA4E1BB4DC99008BB36D /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20556ECC1B3C93180051CA1F /* pop.framework */; };
-		20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */; };
 		20FEDF2D1D9993AE00DB52FE /* TKSlideToUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FEDF2C1D9993AE00DB52FE /* TKSlideToUnlockView.swift */; };
 		20FEDF3A1D99A0CE00DB52FE /* TKMultiSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FEDF391D99A0CE00DB52FE /* TKMultiSwitch.swift */; };
 		20FEDF3D1D99BD3C00DB52FE /* TKPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FEDF3C1D99BD3C00DB52FE /* TKPageControl.swift */; };
@@ -162,6 +161,7 @@
 		202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CurryFireImages.xcassets; sourceTree = "<group>"; };
 		20556EB81B3C93130051CA1F /* curry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curry.xcodeproj; path = Vendor/curry/curry.xcodeproj; sourceTree = SOURCE_ROOT; };
 		20556EC11B3C93180051CA1F /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = Vendor/pop/pop.xcodeproj; sourceTree = SOURCE_ROOT; };
+		20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKMoveScreenEdgeGestureRecognizer.swift; sourceTree = "<group>"; };
 		2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationTransistionController.h; sourceTree = "<group>"; };
 		2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationTransistionController.m; sourceTree = "<group>"; };
 		2069BB601AE095CA00F6D355 /* curryfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = curryfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,8 +189,6 @@
 		20B2888A1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnimatedCounterLabel.m; sourceTree = "<group>"; };
 		20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKProgressRingView.h; sourceTree = "<group>"; };
 		20CB9CDC1AF3C036002E9F1C /* TKProgressRingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKProgressRingView.m; sourceTree = "<group>"; };
-		20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMoveScreenEdgeGestureRecognizer.h; sourceTree = "<group>"; };
-		20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMoveScreenEdgeGestureRecognizer.m; sourceTree = "<group>"; };
 		20FEDF2C1D9993AE00DB52FE /* TKSlideToUnlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSlideToUnlockView.swift; sourceTree = "<group>"; };
 		20FEDF391D99A0CE00DB52FE /* TKMultiSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKMultiSwitch.swift; sourceTree = "<group>"; };
 		20FEDF3C1D99BD3C00DB52FE /* TKPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKPageControl.swift; sourceTree = "<group>"; };
@@ -288,13 +286,12 @@
 				2069BC5D1AE14C3E00F6D355 /* ShortHand.h */,
 				2069BC2D1AE0A1C800F6D355 /* TKMoveGestureRecognizer.h */,
 				2069BC2E1AE0A1C800F6D355 /* TKMoveGestureRecognizer.m */,
-				20F4B7311B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h */,
-				20F4B7321B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m */,
+				20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */,
 				20A545E71D95D27300DF2D0A /* TKInteractiveMoveTransition.h */,
 				20A545E81D95D27300DF2D0A /* TKInteractiveMoveTransition.m */,
+				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
 				2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */,
 				2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */,
-				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
 				20B2888A1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m */,
 				20FEDF3E1D99C90600DB52FE /* TKAnimatedImageView.swift */,
 				20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */,
@@ -341,7 +338,6 @@
 				2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */,
 				20B2888B1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h in Headers */,
 				20AF032A1AE848480065E3FF /* UIView+Confetti.h in Headers */,
-				20F4B7331B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.h in Headers */,
 				20CB9CDD1AF3C036002E9F1C /* TKProgressRingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,10 +530,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20612D8F1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift in Sources */,
 				20FEDF3F1D99C90600DB52FE /* TKAnimatedImageView.swift in Sources */,
 				2069C1431D8B1374000BD656 /* TKBounceBehavior.swift in Sources */,
 				2069C15C1D8B3FB7000BD656 /* TKShimmerLabel.swift in Sources */,
-				20F4B7341B2B7F5400C779EE /* TKMoveScreenEdgeGestureRecognizer.m in Sources */,
 				2069C1361D8B0EAE000BD656 /* UIScreenEdgePanGestureRecognizer.swift in Sources */,
 				20FEDF2D1D9993AE00DB52FE /* TKSlideToUnlockView.swift in Sources */,
 				20B2888C1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m in Sources */,

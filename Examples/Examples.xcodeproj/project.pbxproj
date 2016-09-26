@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		201AD6451D95D6A2009B5315 /* SlideDownTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */; };
+		20612DAA1D99DE3F0046BACD /* EdgeMovePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20612DA91D99DE3F0046BACD /* EdgeMovePanViewController.swift */; };
 		2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */; };
 		20691B711AE7FC450045627D /* MaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B701AE7FC450045627D /* MaterialViewController.m */; };
 		20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20691B7F1AE80DD80045627D /* CardViewSlideUpViewController.m */; };
@@ -79,6 +80,7 @@
 		201AD6431D95D6A2009B5315 /* SlideDownTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideDownTransitionManager.h; sourceTree = "<group>"; };
 		201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideDownTransitionManager.m; sourceTree = "<group>"; };
 		20556E991B3C906F0051CA1F /* curryfire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curryfire.xcodeproj; path = ../curryfire.xcodeproj; sourceTree = "<group>"; };
+		20612DA91D99DE3F0046BACD /* EdgeMovePanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeMovePanViewController.swift; sourceTree = "<group>"; };
 		2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPushPopTransitionViewController.h; sourceTree = "<group>"; };
 		2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPushPopTransitionViewController.m; sourceTree = "<group>"; };
 		20691B6F1AE7FC450045627D /* MaterialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialViewController.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				2069BBB31AE0996800F6D355 /* MoveGestureViewController.m */,
 				201AD6431D95D6A2009B5315 /* SlideDownTransitionManager.h */,
 				201AD6441D95D6A2009B5315 /* SlideDownTransitionManager.m */,
+				20612DA91D99DE3F0046BACD /* EdgeMovePanViewController.swift */,
 				207E913C1D8791A900EECF1D /* PagedScrollViewViewController.swift */,
 				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
 				20691B701AE7FC450045627D /* MaterialViewController.m */,
@@ -330,6 +333,7 @@
 				20691B711AE7FC450045627D /* MaterialViewController.m in Sources */,
 				207E915D1D87ABDF00EECF1D /* TickleViewController.swift in Sources */,
 				207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */,
+				20612DAA1D99DE3F0046BACD /* EdgeMovePanViewController.swift in Sources */,
 				2069C1751D8B8CB1000BD656 /* SlideToUnlockViewController.swift in Sources */,
 				2069BBB41AE0996800F6D355 /* MoveGestureViewController.m in Sources */,
 				207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */,

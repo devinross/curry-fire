@@ -44,6 +44,9 @@ class RootViewController: UITableViewController {
 		self.title = "Examples"
 		
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
+		
+		let edge = ["EdgeMovePanViewController",EdgeMovePanViewController.self] as [Any]
+		let nav = ["Nav",NavigationPushPopTransitionViewController.self] as [Any]
 		let section1 = [
 			["Paged Scroll View", PagedScrollViewViewController.self],
 			["TKMoveGestureRecognizer", MoveGestureViewController.self],
@@ -62,7 +65,9 @@ class RootViewController: UITableViewController {
 			["Custom Controls", ControlsViewController.self],
 			["Slide To Unlock",SlideToUnlockViewController.self],
 			
-			["Nav",NavigationPushPopTransitionViewController.self]
+			edge,
+			
+			nav
 			
 		]
 		let section2 = [
