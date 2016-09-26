@@ -53,9 +53,6 @@
 	self.endLocation = endLocation;
 	self.axis = axis;
 	
-
-	
-
 	return self;
 }
 
