@@ -79,18 +79,9 @@
 - (id <UIViewControllerInteractiveTransitioning>) navigationController:(UINavigationController *)navigationController
 						   interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>)animationController{
 	
-	
-	
     if([animationController isKindOfClass:[TKNavigationControllerTransitionAnimator class]]){
 		
-		
-		
-		
         TKNavigationControllerTransitionAnimator *animator = (TKNavigationControllerTransitionAnimator*)animationController;
-		
-		NSLog(@"%@ %@ %@",animator,animator.isInteractive?@"INTER":@"NOTINTER",@(animator.navigationOperation));
-
-		
 		if(animator.navigationOperation == UINavigationControllerOperationPop && animator.isInteractive){
 			
 			NSLog(@"==>");
@@ -98,17 +89,14 @@
 
 		}
     }
-	
-
     return nil;
-
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
 	return YES;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
 	return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
 }
 
@@ -202,12 +190,10 @@
 }
 
 
-
 - (UIPercentDrivenInteractiveTransition*) percentDrivenInteractiveTransition{
     if(_percentDrivenInteractiveTransition) return _percentDrivenInteractiveTransition;
     _percentDrivenInteractiveTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
     return _percentDrivenInteractiveTransition;
 }
-
 
 @end

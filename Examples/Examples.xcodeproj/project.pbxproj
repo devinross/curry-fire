@@ -16,7 +16,6 @@
 		2069BC341AE0A2B000F6D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069BC331AE0A2B000F6D355 /* AppDelegate.swift */; };
 		2069C1211D8AEAD0000BD656 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */; };
 		2069C1551D8B2C1B000BD656 /* GlowButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1541D8B2C1B000BD656 /* GlowButtonViewController.swift */; };
-		2069C15F1D8B4367000BD656 /* ShimmerLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2069C15E1D8B4367000BD656 /* ShimmerLabelViewController.m */; };
 		2069C16F1D8B604A000BD656 /* ConfettiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C16E1D8B604A000BD656 /* ConfettiViewController.swift */; };
 		2069C1711D8B63D0000BD656 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1701D8B63D0000BD656 /* RootViewController.swift */; };
 		2069C1751D8B8CB1000BD656 /* SlideToUnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069C1741D8B8CB1000BD656 /* SlideToUnlockViewController.swift */; };
@@ -40,6 +39,7 @@
 		207E916B1D87B5CF00EECF1D /* ProgressRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */; };
 		207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916C1D87B86700EECF1D /* ControlsViewController.swift */; };
 		207E916F1D87BEA500EECF1D /* BounceAnimatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */; };
+		20FEDF411D99D09200DB52FE /* ShimmerLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FEDF401D99D09200DB52FE /* ShimmerLabelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +94,6 @@
 		2069BC331AE0A2B000F6D355 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2069C1201D8AEAD0000BD656 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		2069C1541D8B2C1B000BD656 /* GlowButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowButtonViewController.swift; sourceTree = "<group>"; };
-		2069C15D1D8B4367000BD656 /* ShimmerLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShimmerLabelViewController.h; sourceTree = "<group>"; };
-		2069C15E1D8B4367000BD656 /* ShimmerLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShimmerLabelViewController.m; sourceTree = "<group>"; };
 		2069C16E1D8B604A000BD656 /* ConfettiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiViewController.swift; sourceTree = "<group>"; };
 		2069C1701D8B63D0000BD656 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2069C1741D8B8CB1000BD656 /* SlideToUnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideToUnlockViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +113,7 @@
 		207E916A1D87B5CF00EECF1D /* ProgressRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressRingViewController.swift; sourceTree = "<group>"; };
 		207E916C1D87B86700EECF1D /* ControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsViewController.swift; sourceTree = "<group>"; };
 		207E916E1D87BEA500EECF1D /* BounceAnimatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimatorViewController.swift; sourceTree = "<group>"; };
+		20FEDF401D99D09200DB52FE /* ShimmerLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerLabelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +168,7 @@
 				207E913C1D8791A900EECF1D /* PagedScrollViewViewController.swift */,
 				20691B6F1AE7FC450045627D /* MaterialViewController.h */,
 				20691B701AE7FC450045627D /* MaterialViewController.m */,
-				2069C15D1D8B4367000BD656 /* ShimmerLabelViewController.h */,
-				2069C15E1D8B4367000BD656 /* ShimmerLabelViewController.m */,
+				20FEDF401D99D09200DB52FE /* ShimmerLabelViewController.swift */,
 				2067AF9D1AE955210097E3AE /* NavigationPushPopTransitionViewController.h */,
 				2067AF9E1AE955210097E3AE /* NavigationPushPopTransitionViewController.m */,
 				20691B7E1AE80DD80045627D /* CardViewSlideUpViewController.h */,
@@ -323,6 +321,7 @@
 				20691B801AE80DD80045627D /* CardViewSlideUpViewController.m in Sources */,
 				2069C1711D8B63D0000BD656 /* RootViewController.swift in Sources */,
 				2069C16F1D8B604A000BD656 /* ConfettiViewController.swift in Sources */,
+				20FEDF411D99D09200DB52FE /* ShimmerLabelViewController.swift in Sources */,
 				207E915B1D87A9F200EECF1D /* HopViewController.swift in Sources */,
 				207E91631D87B07800EECF1D /* ShakeAnimationViewController.swift in Sources */,
 				2067AF9F1AE955210097E3AE /* NavigationPushPopTransitionViewController.m in Sources */,
@@ -336,7 +335,6 @@
 				207E916D1D87B86700EECF1D /* ControlsViewController.swift in Sources */,
 				207E91671D87B20600EECF1D /* ZoomViewController.swift in Sources */,
 				207E91691D87B49100EECF1D /* PageControlViewController.swift in Sources */,
-				2069C15F1D8B4367000BD656 /* ShimmerLabelViewController.m in Sources */,
 				207E91151D875CFB00EECF1D /* SmoothAnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

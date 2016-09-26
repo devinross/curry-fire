@@ -6,8 +6,5 @@
 #import "MaterialViewController.h"
 #import "CardViewSlideUpViewController.h"
 #import "MoveGestureViewController.h"
-#import "ShimmerLabelViewController.h"
 #import "SlideDownTransitionManager.h"
-
-
 #import "NavigationPushPopTransitionViewController.h"
