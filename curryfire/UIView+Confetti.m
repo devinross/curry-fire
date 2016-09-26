@@ -35,15 +35,6 @@
 
 @implementation UIView (Confetti)
 
-- (void) rainConfetti{
-    [self confettiAnimationWithCompletion:nil];
-}
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))block{
-    [self confettiAnimationWithCompletion:block numberOfRowsAndColumns:5];
-}
-
-
-
 
 
 float randFloat(){

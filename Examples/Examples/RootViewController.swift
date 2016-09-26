@@ -46,12 +46,10 @@ class RootViewController: UITableViewController {
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
 		
 		let edge = ["EdgeMovePanViewController",EdgeMovePanViewController.self] as [Any]
-		let nav = ["Nav",NavigationPushPopTransitionViewController.self] as [Any]
-		let section1 = [
+		let nav = ["Navigation Transition",NavigationPushPopTransitionViewController.self] as [Any]
+		
+		let section0 = [
 			["Paged Scroll View", PagedScrollViewViewController.self],
-			["TKMoveGestureRecognizer", MoveGestureViewController.self],
-			["TKMoveGestureRecognizer (Card Slide)", CardViewSlideUpViewController.self],
-			["SlideDownTransitionViewController",SlideDownTransitionViewController.self],
 			["Material Transition", MaterialViewController.self],
 			["Confetti", ConfettiViewController.self],
 			["Animated Counter", CounterViewController.self],
@@ -61,15 +59,19 @@ class RootViewController: UITableViewController {
 			["Smooth Animation", SmoothAnimationViewController.self],
 			["Shimmer Label", ShimmerLabelViewController.self],
 			["Loading", LoadingViewController.self],
-			["Glow", GlowButtonViewController.self],
+			["Glow Button", GlowButtonViewController.self],
 			["Custom Controls", ControlsViewController.self],
 			["Slide To Unlock",SlideToUnlockViewController.self],
-			
-			edge,
-			
-			nav
-			
 		]
+		
+		let section1 = [
+			["TKMoveGestureRecognizer", MoveGestureViewController.self],
+			["TKMoveGestureRecognizer (Card Slide)", CardViewSlideUpViewController.self],
+			["SlideDownTransitionViewController",SlideDownTransitionViewController.self],
+			edge,
+			nav
+		]
+
 		let section2 = [
 			["Shake", ShakeAnimationViewController.self],
 			["Zoom", ZoomViewController.self],
@@ -81,7 +83,8 @@ class RootViewController: UITableViewController {
 		]
 		
 		self.items = [
-			["title": " ",			"cells": section1],
+			["title": " ",			"cells": section0],
+			["title": "Gestures",	"cells": section1],
 			["title": "Animations", "cells": section2]
 		]
 		self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

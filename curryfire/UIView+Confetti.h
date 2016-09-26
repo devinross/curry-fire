@@ -36,18 +36,10 @@
 /** Play a special confetti animation. */
 @interface UIView (Confetti)
 
-/** Play a confetti animation */
-- (void) rainConfetti;
-
-/** Confetti animation with a completion block. 
- @param completion A completion block called upon the animation ending.
- */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion;
-
 /** Confetti animation with a completion block.
  @param completion A completion block called upon the animation ending.
  @param rowsAndColumns How the confetti is sliced.
  */
-- (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))completion numberOfRowsAndColumns:(NSInteger)rowsAndColumns;
+- (void) confettiAnimationWithCompletion:(void (^ _Nullable)(BOOL complete))completion numberOfRowsAndColumns:(NSInteger)rowsAndColumns;
 
 @end

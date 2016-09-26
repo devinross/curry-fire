@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		202DBEE91AF6713E00B0CE67 /* CurryFireImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202DBEE81AF6713E00B0CE67 /* CurryFireImages.xcassets */; };
 		20612D8F1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */; };
+		20612DAD1D99E5990046BACD /* UIView+Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20612DAC1D99E5990046BACD /* UIView+Confetti.swift */; };
 		2067AFA21AE957790097E3AE /* TKNavigationTransistionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2067AFA31AE957790097E3AE /* TKNavigationTransistionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */; };
 		2069BB661AE095CA00F6D355 /* curryfire.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069BB651AE095CA00F6D355 /* curryfire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -162,6 +163,7 @@
 		20556EB81B3C93130051CA1F /* curry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = curry.xcodeproj; path = Vendor/curry/curry.xcodeproj; sourceTree = SOURCE_ROOT; };
 		20556EC11B3C93180051CA1F /* pop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pop.xcodeproj; path = Vendor/pop/pop.xcodeproj; sourceTree = SOURCE_ROOT; };
 		20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKMoveScreenEdgeGestureRecognizer.swift; sourceTree = "<group>"; };
+		20612DAC1D99E5990046BACD /* UIView+Confetti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Confetti.swift"; sourceTree = "<group>"; };
 		2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationTransistionController.h; sourceTree = "<group>"; };
 		2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationTransistionController.m; sourceTree = "<group>"; };
 		2069BB601AE095CA00F6D355 /* curryfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = curryfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,9 +291,9 @@
 				20612D8E1D99D5590046BACD /* TKMoveScreenEdgeGestureRecognizer.swift */,
 				20A545E71D95D27300DF2D0A /* TKInteractiveMoveTransition.h */,
 				20A545E81D95D27300DF2D0A /* TKInteractiveMoveTransition.m */,
-				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
 				2067AFA01AE957790097E3AE /* TKNavigationTransistionController.h */,
 				2067AFA11AE957790097E3AE /* TKNavigationTransistionController.m */,
+				20B288891AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.h */,
 				20B2888A1AF2E8DE00B4FEE7 /* TKAnimatedCounterLabel.m */,
 				20FEDF3E1D99C90600DB52FE /* TKAnimatedImageView.swift */,
 				20CB9CDB1AF3C036002E9F1C /* TKProgressRingView.h */,
@@ -315,6 +317,7 @@
 			children = (
 				2069C16A1D8B4AC1000BD656 /* UIView+Material.swift */,
 				207E91B71D884B0600EECF1D /* UIView+TwelvePrinciples.swift */,
+				20612DAC1D99E5990046BACD /* UIView+Confetti.swift */,
 				20AF03281AE848480065E3FF /* UIView+Confetti.h */,
 				20AF03291AE848480065E3FF /* UIView+Confetti.m */,
 				2069C1571D8B2ED9000BD656 /* POPSpringAnimation+Initializer.swift */,
@@ -544,6 +547,7 @@
 				20A545EA1D95D27300DF2D0A /* TKInteractiveMoveTransition.m in Sources */,
 				2069C16D1D8B4EDF000BD656 /* TKPegSlider.swift in Sources */,
 				2069C1141D8AE5FF000BD656 /* TKLoadingView.swift in Sources */,
+				20612DAD1D99E5990046BACD /* UIView+Confetti.swift in Sources */,
 				20FEDF3A1D99A0CE00DB52FE /* TKMultiSwitch.swift in Sources */,
 				207E91B81D884B0600EECF1D /* UIView+TwelvePrinciples.swift in Sources */,
 				2067AFA31AE957790097E3AE /* TKNavigationTransistionController.m in Sources */,
