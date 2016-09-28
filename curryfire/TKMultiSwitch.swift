@@ -32,13 +32,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 import UIKit
 import curry
 
-public enum TKMultiSwitchStyle : Int {
+@objc public enum TKMultiSwitchStyle : Int {
 	case hollow
 	case filled
 }
 
 /** `TKMultiSwitch` a slide control with multiple options. Sort of like a `UISwitch` mixed with a `UISegmentControl`. */
-public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
+open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	
 	/**
 	Initialize a `TKMultiSwitch` instance.
@@ -46,7 +46,7 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	@param style The style of the switcher.
 	@return A `TKMultiSwitch` object.
 	*/
-	public init(items: [String], style: TKMultiSwitchStyle) {
+	@objc public init(items: [String], style: TKMultiSwitchStyle) {
 		
 		let height: CGFloat = 40
 		self.style = style
@@ -54,9 +54,9 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		offsetFromCenter = -1
 		
 		super.init(frame: CGRect(x: 10, y: 6, width: 320 - 20, height: height))
-
+		
 		font = UIFont.systemFont(ofSize: 12)
-
+		
 		self.backgroundColor = UIColor(white: 0.95, alpha: 1)
 		self.clipsToBounds = false
 		self.layer.cornerRadius = self.frame.height / 2
@@ -100,7 +100,7 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	@param items The items in the switch view.
 	@return A `TKMultiSwitch` object.
 	*/
-	convenience public init(items: [String]) {
+	@objc convenience public init(items: [String]) {
 		self.init(items: items, style: .hollow)
 	}
 	
@@ -109,11 +109,11 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	}
 	
 	convenience init() {
-		self.init(items: [""])
+		self.init(items: [""], style: .hollow)
 	}
 	
 	convenience override init(frame: CGRect) {
-		self.init(items: [""])
+		self.init(items: [""], style: .hollow)
 	}
 	
 	/** The index of the selected item. */
@@ -127,35 +127,35 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		}
 	}
 	/** The select padding. */
-	var selectionInset: CGFloat {
+	public var selectionInset: CGFloat {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** The font used. */
-	var font: UIFont? {
+	public var font: UIFont? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** Choose between a hollow or filled selection indicator. */
-	var style: TKMultiSwitchStyle {
+	public var style: TKMultiSwitchStyle {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** If the style is a filled selection, then this will be used for the current select label. */
-	var selectedTextColor: UIColor? {
+	public var selectedTextColor: UIColor? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** If the style is a filled selection, then this will be used for the current unselected labels. */
-	var textColor: UIColor? {
+	public var textColor: UIColor? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
@@ -201,27 +201,27 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			UIView.commitAnimations()
 		}
 		_indexOfSelectedItem = index
-
+		
 	}
 	public var panGesture: UIPanGestureRecognizer?
 	public var longPressGesture: UILongPressGestureRecognizer?
 	public var tapGesture: UITapGestureRecognizer?
-
-
 	
-	override public func layoutSubviews() {
+	
+	
+	override open func layoutSubviews() {
 		super.layoutSubviews()
 		self.readjustLayout()
 	}
 	
-	override public var frame: CGRect {
+	override open var frame: CGRect {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	
-	override public var bounds: CGRect {
+	override open var bounds: CGRect {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
@@ -267,7 +267,7 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		self.selectionView.center = CGPoint(x: x, y: CGFrameGetHeight(self) / 2)
 	}
 	
-	override public func tintColorDidChange() {
+	override open func tintColorDidChange() {
 		super.tintColorDidChange()
 		for label: UILabel in self.labels {
 			label.textColor = self.tintColor!
@@ -444,7 +444,7 @@ public class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		}
 		return true
 	}
-
+	
 	
 	private var selectionView: UIView!
 	private var labels = [UILabel]()
