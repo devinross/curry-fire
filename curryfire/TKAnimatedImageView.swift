@@ -121,7 +121,7 @@ public class TKAnimatedImageView: UIImageView {
 		var ii : CGFloat = framePerc * CGFloat(self.theImages.count)
 		ii = min(CGFloat(self.theImages.count - 1), ii)
 		self.currentFrame = Int(ii)
-		self.image! = self.theImages[self.currentFrame]
+		self.image = self.theImages[self.currentFrame]
 	}
 
 	
