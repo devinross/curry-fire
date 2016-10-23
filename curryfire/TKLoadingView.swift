@@ -34,7 +34,7 @@ import UIKit
 public class TKLoadingView: UIView {
 
 
-	var loadingLabel : UILabel
+	public var loadingLabel : UILabel
 	var animating : Bool
 	
 	override public init(frame : CGRect){

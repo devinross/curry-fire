@@ -68,7 +68,7 @@ public class TKAnimatedImageView: UIImageView {
 		self.duration = duration
 		self.loops = repeatCount
 		self.theImages = images
-		self.image! = images.first!
+		self.image = images.first
 		self.completionBlock = finished
 		self.startTime = -1
 		self.animationDisplayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
@@ -108,7 +108,7 @@ public class TKAnimatedImageView: UIImageView {
 		let perc : CGFloat = CGFloat(timeLapse) / CGFloat(self.duration)
 		let loops = Int(floor(perc))
 		if self.loops > 0 && loops == self.loops {
-			self.image! = self.theImages.last!
+			self.image = self.theImages.last
 			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
 			self.playingAnimation = false
 			
