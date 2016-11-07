@@ -178,6 +178,7 @@
 		return;
 	}
 	
+	if(progress == _progress) return;
 	
 	if(self.curve == TKProgressRingAnimationCurveSpring){
 		
