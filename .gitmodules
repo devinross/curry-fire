@@ -3,4 +3,4 @@
 	url = https://github.com/devinross/curry.git
 [submodule "Vendor/pop"]
 	path = Vendor/pop
-	url = https://github.com/facebook/pop.git
+	url = https://github.com/devinross/pop.git
