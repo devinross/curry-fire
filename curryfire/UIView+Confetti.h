@@ -31,7 +31,7 @@
 
 @import UIKit;
 @import QuartzCore;
-@import curry;
+
 
 /** Play a special confetti animation. */
 @interface UIView (Confetti)

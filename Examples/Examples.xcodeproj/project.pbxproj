@@ -44,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2038C41E1DF28D7D00F760F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20556E991B3C906F0051CA1F /* curryfire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2038C3FA1DF28B4700F760F9;
+			remoteInfo = curryfireTV;
+		};
 		20556E9F1B3C906F0051CA1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20556E991B3C906F0051CA1F /* curryfire.xcodeproj */;
@@ -136,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				20556EA01B3C906F0051CA1F /* curryfire.framework */,
+				2038C41F1DF28D7D00F760F9 /* curryfireTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 					2069BBA71AE0996800F6D355 = {
 						CreatedOnToolsVersion = 6.3;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -288,6 +297,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2038C41F1DF28D7D00F760F9 /* curryfireTV.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = curryfireTV.framework;
+			remoteRef = 2038C41E1DF28D7D00F760F9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		20556EA01B3C906F0051CA1F /* curryfire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

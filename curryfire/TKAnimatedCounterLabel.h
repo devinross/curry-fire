@@ -30,7 +30,9 @@
  */
 
 @import UIKit;
+#if TARGET_OS_IOS
 @import pop;
+#endif
 
 /** The curve that the progress will animate at. */
 typedef enum {
@@ -99,6 +101,8 @@ typedef enum {
 /* Default is '9'. The character width of each character is uniform so it animates nicely. The model character is the character used to figure out the character width. */
 @property (nonatomic,copy) NSString *modelCharacter;
 
+#if TARGET_OS_IOS
 @property (nonatomic,strong) POPSpringAnimation *springAnimation;
+#endif
 
 @end

@@ -32,18 +32,30 @@
 #ifndef curryfire_Header_h
 #define curryfire_Header_h
 
+#if TARGET_OS_IOS
 @import curry;
 @import pop;
+#endif
 
+#if TARGET_OS_TV
+@import curryTV;
+#endif
+
+#if TARGET_OS_IOS || TARGET_OS_TV
 #import "ShortHand.h"
+#endif
 
+#if TARGET_OS_IOS
 #import "TKMoveGestureRecognizer.h"
 #import "TKInteractiveMoveTransition.h"
-
 #import "TKNavigationTransistionController.h"
+#endif
+
+#if TARGET_OS_IOS || TARGET_OS_TV
 #import "TKAnimatedCounterLabel.h"
 #import "TKProgressRingView.h"
 #import "UIView+Confetti.h"
+#endif
 
 
 #endif

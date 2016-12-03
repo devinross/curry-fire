@@ -30,8 +30,9 @@
  */
 
 @import UIKit;
+#if TARGET_OS_IOS
 @import pop;
-
+#endif
 
 /** The curve that the progress will animate at. */
 typedef enum {
@@ -94,8 +95,8 @@ typedef enum {
 /** The view that displays the image for a progress ring image. */
 @property (nonatomic,strong) UIImageView *progressGradientView;
 
-
+#if TARGET_OS_IOS
 @property (nonatomic,strong) POPSpringAnimation *springAnimation;
-
+#endif
 
 @end

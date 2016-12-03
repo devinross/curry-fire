@@ -31,7 +31,13 @@
 
 #import "UIView+Confetti.h"
 #import "ShortHand.h"
+
+#if TARGET_OS_IOS
 @import curry;
+#endif
+#if TARGET_OS_TV
+@import curryTV;
+#endif
 
 @implementation UIView (Confetti)
 
@@ -42,10 +48,8 @@ float randFloat(){
 }
 
 - (void) confettiAnimationWithCompletion:(void (^)(BOOL complete))block numberOfRowsAndColumns:(NSInteger)rowsAndColumns{
-    
     self.userInteractionEnabled = NO;
     
-
     CGFloat size = self.width / rowsAndColumns;
     CGSize imageSize = CGSizeMake(size, size);
     CGFloat cols = self.width / imageSize.width, rows = self.height / imageSize.height;

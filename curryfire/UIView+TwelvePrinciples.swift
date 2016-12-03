@@ -38,8 +38,8 @@ extension UIView {
 	 @param toYPoint The place to zoom to.
 	 @param completion The completion callback handler.
 	 */
-	public func zoomToYPoint(toYPoint: CGFloat, completion: ((Bool) -> Void)? ) {
-		zoomToYPoint(toYPoint: toYPoint, duration: 0.7, delay: 0, completion: completion)
+	public func zoomToYPoint(_ toYPoint: CGFloat, completion: ((Bool) -> Void)? ) {
+		zoomToYPoint(toYPoint, duration: 0.7, delay: 0, completion: completion)
 	}
 	
 	/** Zoom view to point.
@@ -48,8 +48,8 @@ extension UIView {
 	 @param delay The delay before the animation is played.
 	 @param completion The completion callback handler.
 	 */
-	public func zoomToYPoint(toYPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
-		zoomToYPoint(toYPoint: toYPoint, anticipation: 30, duration: duration, delay: delay, completion: completion)
+	public func zoomToYPoint(_ toYPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
+		zoomToYPoint(toYPoint, anticipation: 30, duration: duration, delay: delay, completion: completion)
 	}
 	
 	/** Zoom view to point.
@@ -59,7 +59,7 @@ extension UIView {
 	 @param delay The delay before the animation is played.
 	 @param completion The completion callback handler.
 	 */
-	public func zoomToYPoint(toYPoint: CGFloat, anticipation: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
+	public func zoomToYPoint(_ toYPoint: CGFloat, anticipation: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
 		var antic = anticipation
 		let baseTransform = self.transform
 		if toYPoint > self.centerY {
@@ -103,8 +103,8 @@ extension UIView {
 	@param toXPoint The place to zoom to.
 	@param completion The completion callback handler.
 	*/
-	public func zoomToXPoint(toXPoint: CGFloat, completion: ((Bool) -> Void)? ) {
-		zoomToXPoint(toXPoint: toXPoint, duration: 0.7, delay: 0, completion: completion)
+	public func zoomToXPoint(_ toXPoint: CGFloat, completion: ((Bool) -> Void)? ) {
+		zoomToXPoint(toXPoint, duration: 0.7, delay: 0, completion: completion)
 	}
 	
 	/** Zoom view to point.
@@ -113,8 +113,8 @@ extension UIView {
 	@param delay The delay before the animation is played.
 	@param completion The completion callback handler.
 	*/
-	public func zoomToXPoint(toXPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
-		zoomToXPoint(toXPoint: toXPoint, anticipation: 30, duration: duration, delay: delay, completion: completion)
+	public func zoomToXPoint(_ toXPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
+		zoomToXPoint(toXPoint, anticipation: 30, duration: duration, delay: delay, completion: completion)
 	}
 	
 	/** Zoom view to point.
@@ -124,7 +124,7 @@ extension UIView {
 	@param delay The delay before the animation is played.
 	@param completion The completion callback handler.
 	*/
-	public func zoomToXPoint(toXPoint: CGFloat, anticipation: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
+	public func zoomToXPoint(_ toXPoint: CGFloat, anticipation: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
 		var antic = anticipation
 
 		let baseTransform = self.transform
@@ -171,14 +171,14 @@ extension UIView {
 	
 	/// Tickle the view.
 	public func tickle(){
-		tickle(duration: 1, delay: 0, downScale: 1, completion: nil)
+		tickle(1, delay: 0, downScale: 1, completion: nil)
 	}
 	
 	/** Tickle the view.
 		@param completion The completion callback handler.
 	*/
-	public func tickle(completion: ((Bool) -> ())? ){
-		tickle(duration: 1, delay: 0, downScale: 1, completion: completion)
+	public func tickle(_ completion: ((Bool) -> ())? ){
+		tickle(1, delay: 0, downScale: 1, completion: completion)
 	}
 	
 	
@@ -188,7 +188,7 @@ extension UIView {
 		@param delay The delay before the animation is played.
 		@param completion The completion callback handler.
 	 */
-	public func tickle(duration: TimeInterval, delay: TimeInterval, downScale: CGFloat, completion: ((Bool) -> ())? ){
+	public func tickle(_ duration: TimeInterval, delay: TimeInterval, downScale: CGFloat, completion: ((Bool) -> ())? ){
 		
 		let baseTransform = self.transform;
 		let x = downScale
@@ -236,14 +236,14 @@ extension UIView {
 	
 	/// Wiggle the view.
 	public func wiggle() {
-		self.wiggle(withRotationAngle: 0.06)
+		self.wiggle(0.06)
 	}
 	
 	/** Wiggle the view.
 	 @param withRotationAngle The range the view wiggle.
 	 */
-	public func wiggle(withRotationAngle: CGFloat) {
-		self.wiggle(withDuration: 0.5, delay: 0, rotation: withRotationAngle)
+	public func wiggle(_ withRotationAngle: CGFloat) {
+		self.wiggle(0.5, delay: 0, rotation: withRotationAngle)
 	}
 	
 	/** Wiggle the view.
@@ -251,8 +251,8 @@ extension UIView {
 	 @param delay The delay before the animation is played.
 	 @param angle The range the view wiggle.
 	 */
-	public func wiggle(withDuration: TimeInterval, delay: TimeInterval, rotation angle: CGFloat) {
-		self.wiggle(withDuration: withDuration, delay: delay, betweenAngleOne: angle, angleTwo: -angle)
+	public func wiggle(_ withDuration: TimeInterval, delay: TimeInterval, rotation angle: CGFloat) {
+		self.wiggle(withDuration, delay: delay, betweenAngleOne: angle, angleTwo: -angle)
 	}
 	
 	/** Wiggle the view.
@@ -261,7 +261,7 @@ extension UIView {
 	@param angleOne The range the view wiggle.
 	@param angleTwo The range the view wiggle.
 	*/
-	public func wiggle(withDuration: TimeInterval, delay: TimeInterval, betweenAngleOne angleOne: CGFloat, angleTwo: CGFloat) {
+	public func wiggle(_ withDuration: TimeInterval, delay: TimeInterval, betweenAngleOne angleOne: CGFloat, angleTwo: CGFloat) {
 		let transform = self.transform
 		let currentAngle: CGFloat = atan2(transform.b, transform.a)
 		var animation: CABasicAnimation?
@@ -304,7 +304,7 @@ extension UIView {
 	
 	/// Hop the view.
 	public func hop() {
-		self.hop(xPoint: self.superview!.width * 1.5, hopHeight: 40, duration: 0.7, delay: 0, completion: { _ in })
+		self.hop(self.superview!.width * 1.5, hopHeight: 40, duration: 0.7, delay: 0, completion: { _ in })
 	}
 	
 	/** Hop the view.
@@ -314,7 +314,7 @@ extension UIView {
 	@param delay The delay before the animation is played.
 	@param completion The completion callback handler.
 	*/
-	public func hop(xPoint: CGFloat, hopHeight: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: @escaping (Bool) -> Void) {
+	public func hop(_ xPoint: CGFloat, hopHeight: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: @escaping (Bool) -> Void) {
 		let y: CGFloat = self.center.y
 		let baseTransform = self.transform
 		let midPoint = CGPointGetMidpoint(self.center, CGPoint(x: xPoint,y: self.centerY))
@@ -346,7 +346,7 @@ extension UIView {
 	 @param delay The delay before the animation is played.
 	 @param completion The completion callback handler.
 	 */
-	public func shake(withDuration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
+	public func shake(_ withDuration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)? ) {
 		let centerY: CGFloat = self.centerY
 		let centerX: CGFloat = self.centerX
 		UIView.animateKeyframes(withDuration: 0.6, delay: 0, options: .calculationModeCubicPaced, animations: {() -> Void in
@@ -371,8 +371,8 @@ extension UIView {
 	/** Shake the view.
 	@param completion The completion callback handler.
 	*/
-	public  func shake(withCompletion: ((Bool) -> Void)? ) {
-		self.shake(withDuration: 0.6, delay: 0, completion: withCompletion)
+	public  func shake(_ withCompletion: ((Bool) -> Void)? ) {
+		self.shake(0.6, delay: 0, completion: withCompletion)
 	}
 	
 	
@@ -384,8 +384,8 @@ extension UIView {
 	 @param toPoint The place run to.
 	 @param withCompletion The completion callback handler.
 	 */
-	public func runForrestRun(toPoint: CGPoint, withCompletion completion: ((Bool) -> Void)?) {
-		self.runForrestRun(withDuration: 1, delay: 0, toPoint: toPoint, completion: completion)
+	public func runForrestRun(_ toPoint: CGPoint, withCompletion completion: ((Bool) -> Void)?) {
+		self.runForrestRun(1, delay: 0, toPoint: toPoint, completion: completion)
 	}
 	
 	
@@ -395,7 +395,7 @@ extension UIView {
 	 @param point The place run to.
 	 @param completion The completion callback handler.
 	 */
-	public func runForrestRun(withDuration: TimeInterval, delay: TimeInterval, toPoint point: CGPoint, completion: ((Bool) -> Void)?) {
+	public func runForrestRun(_ withDuration: TimeInterval, delay: TimeInterval, toPoint point: CGPoint, completion: ((Bool) -> Void)?) {
 		let movingRight = point.x > self.centerX
 		let baseTransform = self.transform
 		var transform = baseTransform
@@ -420,7 +420,7 @@ extension UIView {
 	@param delay The delay before the animation is played.
 	@param completion The completion callback handler.
 	*/
-	public func turnOnADime(endXPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)?) {
+	public func turnOnADime(_ endXPoint: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)?) {
 		let movingRight = endXPoint > self.centerX
 		let anchorX: CGFloat = movingRight ? self.maxX : self.minX
 		let anchorY: CGFloat = self.maxY

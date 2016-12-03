@@ -30,8 +30,13 @@
  */
 
 #import "TKProgressRingView.h"
+
+#if TARGET_OS_IOS
 @import curry;
-@import pop;
+#endif
+#if TARGET_OS_TV
+@import curryTV;
+#endif
 
 @interface TKProgressRingView ()
 
@@ -39,8 +44,10 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (assign) BOOL timerIsLooping;
-@property (nonatomic,strong) POPAnimatableProperty *pop;
 
+#if TARGET_OS_IOS
+@property (nonatomic,strong) POPAnimatableProperty *pop;
+#endif
 @end
 
 @implementation TKProgressRingView
@@ -180,6 +187,7 @@
 	
 	if(progress == _progress) return;
 	
+#if TARGET_OS_IOS
 	if(self.curve == TKProgressRingAnimationCurveSpring){
 		
 		self.startProgress = _progress;
@@ -213,6 +221,7 @@
 		self.springAnimation.property = self.pop;
 		[self.layer pop_addAnimation:self.springAnimation forKey:nil];
 	}else{
+#endif
         self.animationDuration = duration;
         CGFloat startProgress = _progress;
 
@@ -227,9 +236,9 @@
                 [self _updateProgress];
             });
         }
-        
-
+#if TARGET_OS_IOS
     }
+#endif
 }
 - (void) setStrokeWidth:(CGFloat)strokeWidth{
 	self.circleLayer.lineWidth = self.fullCircleLayer.lineWidth = _strokeWidth;
@@ -241,7 +250,7 @@
     self.baseGradientView.backgroundColor = self.progressGradientView.backgroundColor = progressColor;
 }
 
-
+#if TARGET_OS_IOS
 - (POPSpringAnimation*) springAnimation{
 	if(_springAnimation) return _springAnimation;
 	_springAnimation = [POPSpringAnimation animation];
@@ -249,5 +258,5 @@
 	_springAnimation.springSpeed = 1;
 	return _springAnimation;
 }
-
+#endif
 @end

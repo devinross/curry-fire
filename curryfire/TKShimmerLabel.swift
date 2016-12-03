@@ -37,14 +37,14 @@ public enum TKShimmerLabelDirection : Int {
 	case rightToLeft
 }
 
-public class TKShimmerLabel: UILabel {
+open class TKShimmerLabel: UILabel {
 
 
 	/// The gradient layer that masks the text label to create the shimmer effect.
-	public var textHighlightLayer : CAGradientLayer
+	open var textHighlightLayer : CAGradientLayer
 	
 	/// The direction the shimmer should move.
-	public var direction : TKShimmerLabelDirection {
+	open var direction : TKShimmerLabelDirection {
 		didSet{
 			_startShimmerAnimation()
 		}
@@ -52,7 +52,7 @@ public class TKShimmerLabel: UILabel {
 
 	
 	/// The duration of the shimmer animation
-	public var shimmerDuration : TimeInterval = 4.0
+	open var shimmerDuration : TimeInterval = 4.0
 
 	
 	override public init(frame: CGRect) {
@@ -118,7 +118,7 @@ public class TKShimmerLabel: UILabel {
 		_startShimmerAnimation()
 	}
 	
-	override public func willMove(toWindow: UIWindow?) {
+	override open func willMove(toWindow: UIWindow?) {
 		_startShimmerAnimation()
 	}
 	

@@ -31,7 +31,12 @@
 
 #import "TKAnimatedCounterLabel.h"
 @import UIKit;
+#if TARGET_OS_IOS
 @import curry;
+#endif
+#if TARGET_OS_TV
+@import curryTV;
+#endif
 
 @interface TKAnimatedCounterLabel ()
 
@@ -40,8 +45,9 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (assign) BOOL timerIsLooping;
 
+#if TARGET_OS_IOS
 @property (nonatomic,strong) POPAnimatableProperty *pop;
-
+#endif
 
 @property (nonatomic,strong) NSMutableArray *labels;
 @property (nonatomic,strong) NSMutableArray *dequeuedLabels;
@@ -220,7 +226,8 @@
 	}
 	
 	self.startNumber = startNumber;
-
+    
+#if TARGET_OS_IOS
 	if(self.curve == TKAnimatedCounterLabelAnimationCurveSpring){
 		
 		self.endNumber = number;
@@ -256,6 +263,7 @@
 		
 		
 	}else{
+#endif
 
 		self.completeBlock = completion;
 		
@@ -273,7 +281,9 @@
 			[self _updateProgress];
 		});
 		
+#if TARGET_OS_IOS
 	}
+#endif
 	
 }
 - (void) setTextColor:(UIColor *)textColor{
@@ -300,6 +310,7 @@
     [self _setupLabelsWithText:self.text];
 }
 
+#if TARGET_OS_IOS
 - (POPSpringAnimation*) springAnimation{
 	if(_springAnimation) return _springAnimation;
 	_springAnimation = [POPSpringAnimation animation];
@@ -307,5 +318,6 @@
 	_springAnimation.springSpeed = 1;
 	return _springAnimation;
 }
+#endif
 
 @end

@@ -30,17 +30,16 @@ OTHER DEALINGS IN THE SOFTWARE.
 */
 
 import UIKit
-import curry
 
 /** `TKAnimatedImageView` is a reimplementation of UIImageView animated images with better access to the current frame in the animation sequence. */
-public class TKAnimatedImageView: UIImageView {
+open class TKAnimatedImageView: UIImageView {
 	
 	/** Play an animation sequence with the given image frames.
 	@param images A array of `UIImage` objects.
 	@param duration The duration of the animation.
 	@param completion The completion block called upon the animation completing.
 	*/
-	public func playAnimation(with images: [UIImage], duration: TimeInterval, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
+	open func playAnimation(with images: [UIImage], duration: TimeInterval, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		self.playAnimation(with: images, duration: duration, repeatCount: 1, withCompletionBlock: finished)
 	}
 	
@@ -50,7 +49,7 @@ public class TKAnimatedImageView: UIImageView {
 	@param repeatCount The number of times the animation sequence plays.
 	@param completion The completion block called upon the animation completing.
 	*/
-	public func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
+	open func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		if self.playingAnimation {
 			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
 			self.playingAnimation = false
@@ -75,7 +74,7 @@ public class TKAnimatedImageView: UIImageView {
 	}
 	/** Stop animating. */
 	
-	override public func stopAnimating() {
+	override open func stopAnimating() {
 		super.stopAnimating()
 		if self.playingAnimation {
 			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
@@ -87,18 +86,18 @@ public class TKAnimatedImageView: UIImageView {
 		}
 	}
 	
-	public var isPlayingAnimation: Bool {
+	open var isPlayingAnimation: Bool {
 		return self.playingAnimation
 	}
 	/** Returns the image of the current frame being displayed */
-	public var currentImage: UIImage? {
+	open var currentImage: UIImage? {
 		return self.theImages[self.currentFrame]
 	}
 	
 	/** The current frame index. */
-	private(set) public var currentFrame : Int = 0
+	fileprivate(set) open var currentFrame : Int = 0
 	
-	private let FRAME_RATE = 60.0
+	fileprivate let FRAME_RATE = 60.0
 	
 	func tick(_ sender: CADisplayLink) {
 		if self.startTime < 0 {
@@ -128,12 +127,12 @@ public class TKAnimatedImageView: UIImageView {
 	
 	lazy var animationDisplayLink : CADisplayLink = {
 		var animationDisplayLink = CADisplayLink(target: self, selector: #selector( TKAnimatedImageView.tick(_:) ) )
-		animationDisplayLink.frameInterval = 1
+		animationDisplayLink.preferredFramesPerSecond = 1
 		return animationDisplayLink
 	}()
 
 	var theImages = [UIImage]()
-	private var completionBlock : TKAnimationCompletionBlock?
+	fileprivate var completionBlock : TKAnimationCompletionBlock?
 	var startTime : CFTimeInterval = -1
 	var duration : TimeInterval = 0
 	var loops : Int = 0
