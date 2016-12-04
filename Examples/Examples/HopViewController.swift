@@ -46,21 +46,14 @@ class HopViewController: UIViewController {
 		
 		cardView.addTapGesture { (sender) in
 			
-			
-			
-			
-			cardView.hop(xPoint: self.view.width + 150, hopHeight: 50, duration: 0.9, delay: 0, completion: { (finished) in
+			cardView.hop(self.view.width + 150, hopHeight: 50, duration: 0.9, delay: 0, completion: { (finished) in
 
 				cardView.centerX = -50;
-				cardView.hop(xPoint: self.view.width / 2, hopHeight: 30, duration: 1, delay: 1, completion: { (finished) in
-					
-				})
+				cardView.hop(self.view.width / 2, hopHeight: 30, duration: 1, delay: 1, completion: nil)
 				
 			})
-			
 		}
 		
-
 	}
 
 }

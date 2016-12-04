@@ -125,11 +125,21 @@ open class TKAnimatedImageView: UIImageView {
 
 	
 	
-	lazy var animationDisplayLink : CADisplayLink = {
-		var animationDisplayLink = CADisplayLink(target: self, selector: #selector( TKAnimatedImageView.tick(_:) ) )
-		animationDisplayLink.preferredFramesPerSecond = 1
-		return animationDisplayLink
-	}()
+    lazy var animationDisplayLink : CADisplayLink = {
+        var animationDisplayLink = CADisplayLink(target: self, selector: #selector( TKAnimatedImageView.tick(_:) ) )
+        #if TARGET_OS_TV
+            animationDisplayLink.preferredFramesPerSecond = 1
+        #endif
+        #if TARGET_OS_IOS
+            
+            if #available(iOS 10.0, *) {
+                animationDisplayLink.preferredFramesPerSecond = 1
+            }else{
+                animationDisplayLink.frameInterval = 1
+            }
+        #endif
+        return animationDisplayLink
+    }()
 
 	var theImages = [UIImage]()
 	fileprivate var completionBlock : TKAnimationCompletionBlock?

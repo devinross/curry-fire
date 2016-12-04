@@ -51,9 +51,9 @@ class DimeViewController: UIViewController {
 			cardView.centerX = start
 			
 			
-			cardView.turnOnADime(endXPoint: self.view.width/2, duration: 1, delay: 0, completion: { (finished) in
+			cardView.turnOnADime(self.view.width/2, duration: 1, delay: 0, completion: { (finished) in
 				
-				cardView.turnOnADime(endXPoint: end, duration: 1, delay: 0, completion: { (finished) in
+				cardView.turnOnADime(end, duration: 1, delay: 0, completion: { (finished) in
 					
 				})
 				

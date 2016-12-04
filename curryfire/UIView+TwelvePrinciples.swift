@@ -314,7 +314,7 @@ extension UIView {
 	@param delay The delay before the animation is played.
 	@param completion The completion callback handler.
 	*/
-	public func hop(_ xPoint: CGFloat, hopHeight: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: @escaping (Bool) -> Void) {
+	public func hop(_ xPoint: CGFloat, hopHeight: CGFloat, duration: TimeInterval, delay: TimeInterval, completion: ((Bool) -> Void)?) {
 		let y: CGFloat = self.center.y
 		let baseTransform = self.transform
 		let midPoint = CGPointGetMidpoint(self.center, CGPoint(x: xPoint,y: self.centerY))
