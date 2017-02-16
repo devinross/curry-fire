@@ -232,10 +232,12 @@ public class TKPageControl: UIControl {
 	
 	override public func accessibilityIncrement() {
 		self.incrementCurrentPage()
+		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
 	}
 	
 	override public func accessibilityDecrement() {
 		self.decrementCurrentPage()
+		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
 	}
 	
 	override public func accessibilityActivate() -> Bool {
