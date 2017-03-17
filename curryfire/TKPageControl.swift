@@ -230,12 +230,15 @@ public class TKPageControl: UIControl {
 		}
 	}
 	
+
 	override public func accessibilityIncrement() {
+		super.accessibilityIncrement()
 		self.incrementCurrentPage()
 		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
 	}
 	
 	override public func accessibilityDecrement() {
+		super.accessibilityDecrement()
 		self.decrementCurrentPage()
 		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
 	}
