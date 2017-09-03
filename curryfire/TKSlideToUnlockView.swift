@@ -41,9 +41,7 @@ public enum TKSlideToUnlockViewMode : Int {
 
 /** `TKSlideToUnlockView` is a control that allows users to slide to unlock like you would the lock screen. */
 public class TKSlideToUnlockView: UIControl, UIScrollViewDelegate {
-	///----------------------------
-	/// @name Properties
-	///----------------------------
+
 	/** The shimmering text label that directs the user to act. */
 	public var textLabel: TKShimmerLabel
 	/** The scroll view that the user slides */

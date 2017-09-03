@@ -371,7 +371,7 @@ extension UIView {
 	/** Shake the view.
 	@param completion The completion callback handler.
 	*/
-	public  func shake(_ withCompletion: ((Bool) -> Void)? ) {
+	public  func shake(_ completion: ((Bool) -> Void)? ) {
 		self.shake(0.6, delay: 0, completion: withCompletion)
 	}
 	
@@ -395,7 +395,7 @@ extension UIView {
 	 @param point The place run to.
 	 @param completion The completion callback handler.
 	 */
-	public func runForrestRun(_ withDuration: TimeInterval, delay: TimeInterval, toPoint point: CGPoint, completion: ((Bool) -> Void)?) {
+	public func runForrestRun(_ duration: TimeInterval, delay: TimeInterval, toPoint point: CGPoint, completion: ((Bool) -> Void)?) {
 		let movingRight = point.x > self.centerX
 		let baseTransform = self.transform
 		var transform = baseTransform

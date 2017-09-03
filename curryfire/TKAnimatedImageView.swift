@@ -37,7 +37,7 @@ open class TKAnimatedImageView: UIImageView {
 	/** Play an animation sequence with the given image frames.
 	@param images A array of `UIImage` objects.
 	@param duration The duration of the animation.
-	@param completion The completion block called upon the animation completing.
+	@param finished The completion block called upon the animation completing.
 	*/
 	open func playAnimation(with images: [UIImage], duration: TimeInterval, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		self.playAnimation(with: images, duration: duration, repeatCount: 1, withCompletionBlock: finished)
@@ -47,7 +47,7 @@ open class TKAnimatedImageView: UIImageView {
 	@param images A array of `UIImage` objects.
 	@param duration The duration of the animation.
 	@param repeatCount The number of times the animation sequence plays.
-	@param completion The completion block called upon the animation completing.
+	@param finished The completion block called upon the animation completing.
 	*/
 	open func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		if self.playingAnimation {

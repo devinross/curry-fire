@@ -883,6 +883,7 @@
 				2038C4001DF28B4700F760F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		203FB8071B4114BD000D3B43 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;

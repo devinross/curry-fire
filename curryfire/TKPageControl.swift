@@ -134,9 +134,8 @@ public class TKPageControl: UIControl {
 		self.setCurrentPage(self.currentPage - 1, animated: true)
 		self.sendActions(for: .valueChanged)
 	}
-	///----------------------------
-	/// @name Properties
-	///----------------------------
+
+	
 	/** The number of pages in the page control. */
 	public var numberOfPages: Int = 0 {
 		didSet {
