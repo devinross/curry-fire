@@ -372,7 +372,7 @@ extension UIView {
 	@param completion The completion callback handler.
 	*/
 	public  func shake(_ completion: ((Bool) -> Void)? ) {
-		self.shake(0.6, delay: 0, completion: withCompletion)
+		self.shake(0.6, delay: 0, completion: completion)
 	}
 	
 	
@@ -404,9 +404,9 @@ extension UIView {
 		animation.autoreverses = true
 		animation.fromValue = NSValue(caTransform3D: CATransform3DMakeAffineTransform(baseTransform))
 		animation.toValue = NSValue(caTransform3D: CATransform3DMakeAffineTransform(transform))
-		animation.duration = withDuration / 4
+		animation.duration = duration / 4
 		self.layer.add(animation, forKey: "forrest")
-		UIView.animate(withDuration: withDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [], animations: {() -> Void in
+		UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: [], animations: {() -> Void in
 			self.center = point
 			}, completion: completion)
 	}
