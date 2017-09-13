@@ -59,11 +59,11 @@ class ControlsViewController: UIViewController {
 		
 	}
 	
-	func changedSwitchValue(switcher: TKMultiSwitch){
+	@objc func changedSwitchValue(switcher: TKMultiSwitch){
 		print("\(switcher)")
 	}
 	
-	func changedPegValue(slider: TKPegSlider){
+	@objc func changedPegValue(slider: TKPegSlider){
 		print("\(slider)")
 	}
 

@@ -51,7 +51,7 @@ class SmoothAnimationViewController: UIViewController {
 		
 	}
 	
-	func buttonPressed(){
+	@objc func buttonPressed(){
 		
 		
 		if(!self.loader.isPlayingAnimation){

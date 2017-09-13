@@ -28,7 +28,7 @@ class SlideToUnlockViewController: UIViewController {
 	}
 	
 	
-	func didUnlockView(sender: TKSlideToUnlockView){
+	@objc func didUnlockView(sender: TKSlideToUnlockView){
 		
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -37,7 +37,7 @@ class SlideToUnlockViewController: UIViewController {
 		
 	}
 	
-	func switchMode(sender: Any){
+	@objc func switchMode(sender: Any){
 		self.unlockView.mode = self.unlockView.mode == .normal ? .disabled : .normal
 	}
 
