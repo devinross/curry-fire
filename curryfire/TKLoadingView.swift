@@ -64,7 +64,7 @@ public class TKLoadingView: UIView {
 		super.layoutSubviews()
 		
 		let str = "\(NSLocalizedString("Loading", comment: "Loading"))..." as NSString
-		let size = str.size(attributes: [NSFontAttributeName : self.loadingLabel.font])
+		let size = str.size(withAttributes: [NSAttributedStringKey.font : self.loadingLabel.font])
 		let width = self.frame.size.width, height = self.frame.size.height
 		let x = (width - size.width) / 2.0, y = (height - size.height) / 2.0
 		let frame = CGRect(x: x, y: y, width: size.width, height: size.height)
@@ -103,7 +103,7 @@ public class TKLoadingView: UIView {
 		NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(animateLabel), object: nil)
 	}
 	
-	func animateLabel(){
+	@objc func animateLabel(){
 		
 		
 		if(self.loadingLabel.superview == nil || !self.animating){

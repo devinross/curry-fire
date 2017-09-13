@@ -169,7 +169,7 @@ public class TKPegSlider: UIControl {
 		self.rightImageView.tintColor = self.tintColor
 	}
 	
-	func pan(gesture: UIPanGestureRecognizer) {
+	@objc func pan(gesture: UIPanGestureRecognizer) {
 		let p = gesture.location(in: self)
 		let index = self._indexOfSelectAtPoint(point: p.x)
 		UIView.beginAnimations(nil, context: nil)

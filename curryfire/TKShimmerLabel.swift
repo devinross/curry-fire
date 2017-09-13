@@ -114,7 +114,7 @@ open class TKShimmerLabel: UILabel {
 	
 	// MARK: Methods That Trigger The Animation To Start
 	
-	func applicationDidBecomeActive(sender: AnyObject) {
+	@objc func applicationDidBecomeActive(sender: AnyObject) {
 		_startShimmerAnimation()
 	}
 	

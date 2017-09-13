@@ -215,7 +215,7 @@ public class TKMoveScreenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer
 		return sortedArray.last!
 	}
 	
-	func pan(_ gesture: UIPanGestureRecognizer) {
+	@objc func pan(_ gesture: UIPanGestureRecognizer) {
 		let velocity = self.velocity(in: self.view!)
 		let panView = self.movableView
 		if self.began || (!self.moving && self.changed) {

@@ -278,7 +278,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	
 	
 	// MARK: UIGesture Actions
-	func longtap(_ press: UILongPressGestureRecognizer) {
+	@objc func longtap(_ press: UILongPressGestureRecognizer) {
 		let point = press.location(in: self)
 		let per: CGFloat = self.frame.width / CGFloat(self.labels.count)
 		let index : Int = Int(point.x / per)
@@ -336,7 +336,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		
 	}
 	
-	func pan(_ pan: UIPanGestureRecognizer) {
+	@objc func pan(_ pan: UIPanGestureRecognizer) {
 		let p = pan.location(in: self)
 		if pan.began {
 			if self.offsetFromCenter == -1 {
@@ -401,7 +401,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		}
 	}
 	
-	func tap(_ tap: UITapGestureRecognizer) {
+	@objc func tap(_ tap: UITapGestureRecognizer) {
 		let point = tap.location(in: self)
 		let per: CGFloat = self.frame.width / CGFloat(self.labels.count)
 		let index = Int(point.x / per)

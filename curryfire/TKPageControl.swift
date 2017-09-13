@@ -219,7 +219,7 @@ public class TKPageControl: UIControl {
 		self.accessibilityLabel = NSLocalizedString("Page \(self.currentPage + 1) of \(self.numberOfPages)", comment: "")
 	}
 	
-	func tapped(_ gesture: UITapGestureRecognizer) {
+	@objc func tapped(_ gesture: UITapGestureRecognizer) {
 		let p = gesture.location(in: self)
 		if p.x > self.frame.width / 2 {
 			self.incrementCurrentPage()

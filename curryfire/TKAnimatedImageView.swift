@@ -99,7 +99,7 @@ open class TKAnimatedImageView: UIImageView {
 	
 	fileprivate let FRAME_RATE = 60.0
 	
-	func tick(_ sender: CADisplayLink) {
+	@objc func tick(_ sender: CADisplayLink) {
 		if self.startTime < 0 {
 			self.startTime = sender.timestamp
 		}
