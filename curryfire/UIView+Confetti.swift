@@ -35,14 +35,14 @@ import Foundation
 extension UIView {
 	
 	/** Play a confetti animation */
-	public func rainConfetti() {
+	@objc public func rainConfetti() {
 		self.confettiAnimation(completion: nil)
 	}
 	
 	/** Confetti animation with a completion block.
 	 @param completion A completion block called upon the animation ending.
 	 */
-	public func confettiAnimation(completion: ((_ complete: Bool) -> Void)?) {
+	@objc public func confettiAnimation(completion: ((_ complete: Bool) -> Void)?) {
 		self.confettiAnimation(completion: completion, numberOfRowsAndColumns: 5)
 	}
 }

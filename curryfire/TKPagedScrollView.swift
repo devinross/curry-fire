@@ -142,7 +142,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	
 	
 	// MARK: Actions
-	public func scrollToPreviousPage() {
+	@objc public func scrollToPreviousPage() {
 		let currentPage = self.currentPage
 		let nextPage = currentPage - 1
 		if nextPage < 0 {
@@ -228,7 +228,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		})
 	}
 	
-	public func scrollToNextPage() {
+	@objc public func scrollToNextPage() {
 		let currentPage = self.currentPage
 		let nextPage = currentPage + 1
 		if nextPage >= self.pages.count {
@@ -296,7 +296,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		})
 	}
 	
-	public func scroll(toPage: Int, animated: Bool) {
+	@objc public func scroll(toPage: Int, animated: Bool) {
 		if toPage < 0 || toPage >= self.pages.count {
 			return
 		}
@@ -316,7 +316,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	private var _scrollVertical : Bool {
 		return self.scrollDirection == .vertical
 	}
-	public func updatePagesLayout() {
+	@objc public func updatePagesLayout() {
 		let nextView = self.pages[self.currentPage]
 		let vert = self.scrollDirection == .vertical
 		if vert {
@@ -451,7 +451,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	
 	// MARK: PROPERTIES
 	
-	public var pages : [UIView] {
+	@objc public var pages : [UIView] {
 		
 		set (thePages){
 			_pages.forEach { $0.removeFromSuperview() }
@@ -463,7 +463,7 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 		}
 		
 	}
-	public var currentPage : Int {
+	@objc public var currentPage : Int {
 		
 		didSet{
 			_setupPages()
@@ -471,9 +471,9 @@ open class TKPagedScrollView: UIView, UIScrollViewDelegate {
 	}
 	
 	private(set) public var scrollDirection : TKPageScrollDirection
-	public var scrollView : UIScrollView
-	public var animatingPages : Bool
-	public var delegate : TKPagedScrollViewDelegate?
+	@objc public var scrollView : UIScrollView
+	@objc public var animatingPages : Bool
+	@objc public var delegate : TKPagedScrollViewDelegate?
 	
 	
 	

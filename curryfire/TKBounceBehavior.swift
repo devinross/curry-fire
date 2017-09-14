@@ -33,10 +33,10 @@ import UIKit
 
 public class TKBounceBehavior: UIDynamicBehavior {
 	
-	public var gravityBehavior: UIGravityBehavior
-	public var pushBehavior: UIPushBehavior
-	public var itemBehavior: UIDynamicItemBehavior
-	public var collisionBehavior: UICollisionBehavior
+	@objc public var gravityBehavior: UIGravityBehavior
+	@objc public var pushBehavior: UIPushBehavior
+	@objc public var itemBehavior: UIDynamicItemBehavior
+	@objc public var collisionBehavior: UICollisionBehavior
 	private var _bounceDirection: CGVector = CGVector(dx: 0, dy:2.0)
 
 	public init(items: [UIDynamicItem] ) {
@@ -59,7 +59,7 @@ public class TKBounceBehavior: UIDynamicBehavior {
 
 	}
 	
-	public var bounceDirection : CGVector {
+	@objc public var bounceDirection : CGVector {
 		
 		get {
 			return _bounceDirection
@@ -90,7 +90,7 @@ public class TKBounceBehavior: UIDynamicBehavior {
 
 	}
 	
-	public func bounce() {
+	@objc public func bounce() {
 		self.pushBehavior.active = true
 	}
 	
