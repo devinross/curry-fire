@@ -37,7 +37,7 @@ extension UIView {
 	
 	// MARK: Material Like Animations
 	
-	public func fireMaterialTouchDisk(atPoint: CGPoint) {
+	@objc public func fireMaterialTouchDisk(atPoint: CGPoint) {
 		let disk = UIView(frame: CGRect(x: 0, y:0, width:30, height: 30))
 		disk.backgroundColor = UIColor(white: 1, alpha: 0.5)
 		disk.layer.cornerRadius = disk.frame.width / 2
@@ -51,12 +51,12 @@ extension UIView {
 		})
 	}
 	
-	public  func materialTransition(withSubview: UIView, atPoint point: CGPoint, changes: @escaping () -> Void, completion: ((Bool) -> Void)?) {
+	@objc public  func materialTransition(withSubview: UIView, atPoint point: CGPoint, changes: @escaping () -> Void, completion: ((Bool) -> Void)?) {
 		self.materialTransition(withSubview: withSubview, expandCircle: true, atPoint: point, duration: 1, changes: changes, completion: completion)
 		return
 	}
 	
-	public func materialTransition(withSubview: UIView, expandCircle: Bool, atPoint point: CGPoint, duration: CFTimeInterval, changes: () -> Void, completion: ((Bool) -> Void)?) {
+	@objc public func materialTransition(withSubview: UIView, expandCircle: Bool, atPoint point: CGPoint, duration: CFTimeInterval, changes: () -> Void, completion: ((Bool) -> Void)?) {
 		let snapshotImage = withSubview.snapshotImage(afterScreenUpdates: false)
 		let snapshotView = UIImageView(frame: withSubview.frame)
 		snapshotView.image = snapshotImage!

@@ -34,11 +34,11 @@ import UIKit
 
 extension UIScreenEdgePanGestureRecognizer {
 	
-	public var translationXPercentage : CGFloat {
+	@objc public var translationXPercentage : CGFloat {
 		return max(self.translation(in: self.view).x,0) / (self.view?.frame.size.width)!
 	}
 	
-	public var translationYPercentage : CGFloat {
+	@objc public var translationYPercentage : CGFloat {
 		return max(self.translation(in: self.view).y,0) / (self.view?.frame.size.height)!
 	}
 	
