@@ -54,7 +54,7 @@ public class TKPageControl: UIControl {
 	*/
 	
 	private var _currentPage : Int = 0
-	public func setCurrentPage(_ page: Int, animated: Bool) {
+	@objc public func setCurrentPage(_ page: Int, animated: Bool) {
 		if numberOfPages == 0 {
 			return
 		}
@@ -114,12 +114,12 @@ public class TKPageControl: UIControl {
 	@param image The image that should replace the circle.
 	@param page The page that should be changed.
 	*/
-	public func setImage(_ image: UIImage?, forPage page: Int) {
+	@objc public func setImage(_ image: UIImage?, forPage page: Int) {
 		self.images[page] = image
 		_configure()
 	}
 	
-	public func incrementCurrentPage() {
+	@objc public func incrementCurrentPage() {
 		if self.currentPage + 1 >= self.numberOfPages {
 			return
 		}
@@ -127,7 +127,7 @@ public class TKPageControl: UIControl {
 		self.sendActions(for: .valueChanged)
 	}
 	
-	public func decrementCurrentPage() {
+	@objc public func decrementCurrentPage() {
 		if self.currentPage < 1 {
 			return
 		}
@@ -137,7 +137,7 @@ public class TKPageControl: UIControl {
 
 	
 	/** The number of pages in the page control. */
-	public var numberOfPages: Int = 0 {
+	@objc public var numberOfPages: Int = 0 {
 		didSet {
 			for _ in self.dots.count..<numberOfPages {
 				self.images.append(nil)
@@ -146,7 +146,7 @@ public class TKPageControl: UIControl {
 		}
 	}
 	/** The current selected page. */
-	public var currentPage: Int {
+	@objc public var currentPage: Int {
 		get {
 			return _currentPage
 		}
@@ -156,25 +156,25 @@ public class TKPageControl: UIControl {
 		}
 	}
 	/** The color of the page indicators that aren't active. */
-	public var pageIndicatorTintColor: UIColor? {
+	@objc public var pageIndicatorTintColor: UIColor? {
 		didSet {
 			_configure()
 		}
 	}
 	/** The color of the current page indicator. */
-	public var currentPageIndicatorTintColor: UIColor? {
+	@objc public var currentPageIndicatorTintColor: UIColor? {
 		didSet {
 			_configure()
 		}
 	}
 	/** The circle radius of the page indicator. */
-	public var dotRadius: CGFloat = 4 {
+	@objc public var dotRadius: CGFloat = 4 {
 		didSet {
 			_setup()
 		}
 	}
 	/** The space in between page indicators. */
-	public var spaceBetweenDots: CGFloat = 20 {
+	@objc public var spaceBetweenDots: CGFloat = 20 {
 		didSet {
 			_setup()
 		}

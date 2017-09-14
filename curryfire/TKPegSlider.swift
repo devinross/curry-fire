@@ -35,7 +35,7 @@ import UIKit
 public class TKPegSlider: UIControl {
 	
 	/// The index of the selected item.
-	public var selectedPegIndex : Int  {
+	@objc public var selectedPegIndex : Int  {
 		
 		get{
 			return _selectedPegIndex
@@ -47,7 +47,7 @@ public class TKPegSlider: UIControl {
 	}
 	
 	/// The index of the selected item.
-	public var numberOfPegs : Int = 8 {
+	@objc public var numberOfPegs : Int = 8 {
 		
 		didSet {
 			if _selectedPegIndex >= numberOfPegs {
@@ -59,7 +59,7 @@ public class TKPegSlider: UIControl {
 	}
 	
 	/// The left side image.
-	public var leftEndImage : UIImage? {
+	@objc public var leftEndImage : UIImage? {
 		get{
 			return self.leftImageView.image
 		}
@@ -69,7 +69,7 @@ public class TKPegSlider: UIControl {
 	}
 
 	/// The right side image.
-	public var rightEndImage : UIImage? {
+	@objc public var rightEndImage : UIImage? {
 		get{
 			return self.rightImageView.image
 		}
@@ -212,7 +212,7 @@ public class TKPegSlider: UIControl {
 	 @param index The index of the item.
 	 @param animated Animate the selection of the item.
 	 */
-	public func selectPegAtIndex(index: Int, animated: Bool) {
+	@objc public func selectPegAtIndex(index: Int, animated: Bool) {
 		_selectedPegIndex = index
 		if animated {
 			UIView.beginAnimations(nil, context: nil)

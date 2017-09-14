@@ -32,7 +32,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 import UIKit
 
 
-public enum TKShimmerLabelDirection : Int {
+@objc public enum TKShimmerLabelDirection : Int {
 	case leftToRight
 	case rightToLeft
 }
@@ -41,10 +41,10 @@ open class TKShimmerLabel: UILabel {
 
 
 	/// The gradient layer that masks the text label to create the shimmer effect.
-	open var textHighlightLayer : CAGradientLayer
+	@objc open var textHighlightLayer : CAGradientLayer
 	
 	/// The direction the shimmer should move.
-	open var direction : TKShimmerLabelDirection {
+	@objc open var direction : TKShimmerLabelDirection {
 		didSet{
 			_startShimmerAnimation()
 		}
@@ -52,7 +52,7 @@ open class TKShimmerLabel: UILabel {
 
 	
 	/// The duration of the shimmer animation
-	open var shimmerDuration : TimeInterval = 4.0
+	@objc open var shimmerDuration : TimeInterval = 4.0
 
 	
 	override public init(frame: CGRect) {

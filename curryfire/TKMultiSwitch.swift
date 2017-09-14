@@ -118,7 +118,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	
 	/** The index of the selected item. */
 	private var _indexOfSelectedItem : Int = 0
-	public var indexOfSelectedItem: Int  {
+	@objc public var indexOfSelectedItem: Int  {
 		get {
 			return _indexOfSelectedItem
 		}
@@ -127,35 +127,35 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		}
 	}
 	/** The select padding. */
-	public var selectionInset: CGFloat {
+	@objc public var selectionInset: CGFloat {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** The font used. */
-	public var font: UIFont? {
+	@objc public var font: UIFont? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** Choose between a hollow or filled selection indicator. */
-	public var style: TKMultiSwitchStyle {
+	@objc public var style: TKMultiSwitchStyle {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** If the style is a filled selection, then this will be used for the current select label. */
-	public var selectedTextColor: UIColor? {
+	@objc public var selectedTextColor: UIColor? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
 		}
 	}
 	/** If the style is a filled selection, then this will be used for the current unselected labels. */
-	public var textColor: UIColor? {
+	@objc public var textColor: UIColor? {
 		didSet {
 			self.needsReadjustment = true
 			self.setNeedsLayout()
@@ -167,7 +167,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	@param index The index of the item.
 	@param animated Animate the selection of the item.
 	*/
-	public func selectItem(at index: Int, animated: Bool) {
+	@objc public func selectItem(at index: Int, animated: Bool) {
 		let per: CGFloat = self.frame.width / CGFloat(self.labels.count)
 		self.offsetFromCenter = -1
 		if(index == _indexOfSelectedItem){
@@ -203,9 +203,9 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		_indexOfSelectedItem = index
 		
 	}
-	public var panGesture: UIPanGestureRecognizer?
-	public var longPressGesture: UILongPressGestureRecognizer?
-	public var tapGesture: UITapGestureRecognizer?
+	@objc public var panGesture: UIPanGestureRecognizer?
+	@objc public var longPressGesture: UILongPressGestureRecognizer?
+	@objc public var tapGesture: UITapGestureRecognizer?
 	
 	
 	
