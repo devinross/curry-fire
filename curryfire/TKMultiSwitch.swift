@@ -75,10 +75,12 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			label.font = self.font
 			label.text = txt
 			label.textAlignment = .center
+			let selected : Bool = i == indexOfSelectedItem
 			if style == .hollow {
 				label.textColor = self.tintColor!
-				label.alpha = CGFloat((i == indexOfSelectedItem) ? 1.0 : UNSELECTED_ALPHA)
+				label.alpha = CGFloat(selected ? 1.0 : UNSELECTED_ALPHA)
 			}
+			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
 			self.addSubview(label)
 			labels.append(label)
 			i += 1
@@ -180,15 +182,18 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		self.selectionView.center = CGPoint(x: self.selectionInset + per * CGFloat(index) + self.selectionView.frame.width / 2, y: self.selectionView.center.y)
 		var i = 0
 		for label: UILabel in self.labels {
+			let selected = i == index
+			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
+
 			if self.style == .filled {
 				if animated {
 					UIView.transition(with: label, duration: 0.3, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {() -> Void in
-						label.textColor = i == index ? self.selectedTextColor : self.textColor
+						label.textColor = selected ? self.selectedTextColor : self.textColor
 						label.alpha = 1
 						}, completion: { _ in })
 				}
 				else {
-					label.textColor = i == index ? self.selectedTextColor : self.textColor
+					label.textColor = selected ? self.selectedTextColor : self.textColor
 					label.alpha = 1
 				}
 			}
@@ -253,13 +258,16 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		for label: UILabel in self.labels {
 			label.frame = CGRect(x: per * CGFloat(i), y: 0, width: per, height: CGFrameGetHeight(self))
 			label.font = self.font
+			let selected = i == indexOfSelectedItem
+			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
 			if self.style == .filled {
-				label.textColor = i == indexOfSelectedItem ? self.selectedTextColor : self.textColor
+				label.textColor = selected ? self.selectedTextColor : self.textColor
 				label.alpha = 1
 			}
 			else {
-				label.alpha = i == indexOfSelectedItem ? 1 : UNSELECTED_ALPHA
+				label.alpha = selected ? 1 : UNSELECTED_ALPHA
 			}
+
 			i += 1
 		}
 		let label = self.labels[indexOfSelectedItem]
