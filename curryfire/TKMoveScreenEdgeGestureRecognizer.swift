@@ -33,9 +33,9 @@ import UIKit
 
 
 /** `TKMoveScreenEdgeGestureRecognizer` is a screen-edge-pan-gesture-recognizer built to move a view between certain locations. */
-public class TKMoveScreenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer {
+@objc public class TKMoveScreenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer {
 
-	public init(XYAxisWithMovableView: UIView, locations: [CGPoint], moveHandler block: ((_ gesture: TKMoveScreenEdgeGestureRecognizer?,_ position: CGPoint,_ location: CGPoint) -> Void)?) {
+	@objc public init(XYAxisWithMovableView: UIView, locations: [CGPoint], moveHandler block: ((_ gesture: TKMoveScreenEdgeGestureRecognizer?,_ position: CGPoint,_ location: CGPoint) -> Void)?) {
 
 		self.axis = TKMoveGestureAxisXY
 		self.pointLocations = locations
@@ -59,7 +59,7 @@ public class TKMoveScreenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer
 	@param block A callback block for the gesture-recognizer.
 	@return A newly minted move-gesture-recognizer.
 	*/
-	public init(_ axis: TKMoveGestureAxis, movableView: UIView, locations: [CGFloat], moveHandler block: ((_ gesture: TKMoveScreenEdgeGestureRecognizer?,_ position: CGPoint,_ location: CGPoint) -> Void)?) {
+	@objc public init(_ axis: TKMoveGestureAxis, movableView: UIView, locations: [CGFloat], moveHandler block: ((_ gesture: TKMoveScreenEdgeGestureRecognizer?,_ position: CGPoint,_ location: CGPoint) -> Void)?) {
 		
 		self.axis = axis
 		self.axisLocations = locations
@@ -89,7 +89,7 @@ public class TKMoveScreenEdgeGestureRecognizer: UIScreenEdgePanGestureRecognizer
 	var pointLocations = [CGPoint]()
 
 	/** The POPSpringAnimation used to animate the movable view to a resting place. */
-	public lazy var snapBackAnimation : POPSpringAnimation = {
+	@objc public lazy var snapBackAnimation : POPSpringAnimation = {
 		var snapBackAnimation = POPSpringAnimation(propertyNamed: self.popAnimationPropertyName())
 		snapBackAnimation?.springBounciness = 1.5
 		snapBackAnimation?.springSpeed = 2
