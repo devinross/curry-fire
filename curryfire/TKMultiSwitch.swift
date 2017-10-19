@@ -80,7 +80,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 				label.textColor = self.tintColor!
 				label.alpha = CGFloat(selected ? 1.0 : UNSELECTED_ALPHA)
 			}
-			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
+			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
 			self.addSubview(label)
 			labels.append(label)
 			i += 1
@@ -183,7 +183,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		var i = 0
 		for label: UILabel in self.labels {
 			let selected = i == index
-			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
+			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
 
 			if self.style == .filled {
 				if animated {
@@ -259,7 +259,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			label.frame = CGRect(x: per * CGFloat(i), y: 0, width: per, height: CGFrameGetHeight(self))
 			label.font = self.font
 			let selected = i == indexOfSelectedItem
-			label.accessibilityTraits = selected ? UIAccessibilityTraitSelected : UIAccessibilityTraitNone
+			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
 			if self.style == .filled {
 				label.textColor = selected ? self.selectedTextColor : self.textColor
 				label.alpha = 1
@@ -303,14 +303,17 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 				self.offsetFromCenter = 0
 				var i = 0
 				for label: UILabel in self.labels {
+					let selected = i == index
+					label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+
 					if self.style == .filled {
 						UIView.transition(with: label, duration: 0.3, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {() -> Void in
-							label.textColor = i == index ? self.selectedTextColor : self.textColor
+							label.textColor = selected ? self.selectedTextColor : self.textColor
 							label.alpha = 1
 							}, completion: { _ in })
 					}
 					else {
-						label.alpha = i == index ? 1 : UNSELECTED_ALPHA
+						label.alpha = selected ? 1 : UNSELECTED_ALPHA
 					}
 					i += 1
 				}
@@ -388,14 +391,17 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			UIView.beginAnimations(nil, context: nil)
 			var i = 0
 			for label: UILabel in self.labels {
+				let selected = i == index
+				label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+
 				if self.style == .filled {
 					UIView.transition(with: label, duration: 0.3, options: .transitionCrossDissolve, animations: {() -> Void in
-						label.textColor = i == index ? self.selectedTextColor : self.textColor
+						label.textColor = selected ? self.selectedTextColor : self.textColor
 						label.alpha = 1
 						}, completion: { _ in })
 				}
 				else {
-					label.alpha = i == index ? 1 : UNSELECTED_ALPHA
+					label.alpha = selected ? 1 : UNSELECTED_ALPHA
 				}
 				i += 1
 			}
@@ -421,14 +427,17 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		self.selectionView.center = CGPoint(x: self.selectionInset + per * CGFloat(index) + self.selectionView.frame.width / 2, y: self.selectionView.center.y)
 		var i = 0
 		for label: UILabel in self.labels {
+			let selected = i == index
+			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+
 			if self.style == .filled {
 				UIView.transition(with: label, duration: 0.3, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {() -> Void in
-					label.textColor = i == index ? self.selectedTextColor : self.textColor
+					label.textColor = selected ? self.selectedTextColor : self.textColor
 					label.alpha = 1
 					}, completion: { _ in })
 			}
 			else {
-				label.alpha = (i == index) ? 1.0 : UNSELECTED_ALPHA
+				label.alpha = selected ? 1.0 : UNSELECTED_ALPHA
 			}
 			i += 1
 		}

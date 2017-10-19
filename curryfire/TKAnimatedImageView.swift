@@ -39,7 +39,7 @@ open class TKAnimatedImageView: UIImageView {
 	@param duration The duration of the animation.
 	@param finished The completion block called upon the animation completing.
 	*/
-	open func playAnimation(with images: [UIImage], duration: TimeInterval, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
+	@objc open func playAnimation(with images: [UIImage], duration: TimeInterval, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		self.playAnimation(with: images, duration: duration, repeatCount: 1, withCompletionBlock: finished)
 	}
 	
@@ -49,7 +49,7 @@ open class TKAnimatedImageView: UIImageView {
 	@param repeatCount The number of times the animation sequence plays.
 	@param finished The completion block called upon the animation completing.
 	*/
-	open func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
+	@objc open func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		if self.playingAnimation {
 			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
 			self.playingAnimation = false
@@ -74,7 +74,7 @@ open class TKAnimatedImageView: UIImageView {
 	}
 	/** Stop animating. */
 	
-	override open func stopAnimating() {
+	@objc override open func stopAnimating() {
 		super.stopAnimating()
 		if self.playingAnimation {
 			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
@@ -86,16 +86,16 @@ open class TKAnimatedImageView: UIImageView {
 		}
 	}
 	
-	open var isPlayingAnimation: Bool {
+	@objc open var isPlayingAnimation: Bool {
 		return self.playingAnimation
 	}
 	/** Returns the image of the current frame being displayed */
-	open var currentImage: UIImage? {
+	@objc open var currentImage: UIImage? {
 		return self.theImages[self.currentFrame]
 	}
 	
 	/** The current frame index. */
-	fileprivate(set) open var currentFrame : Int = 0
+	@objc fileprivate(set) open var currentFrame : Int = 0
 	
 	fileprivate let FRAME_RATE = 60.0
 	
