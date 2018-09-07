@@ -73,7 +73,7 @@ open class TKShimmerLabel: UILabel {
 		self.textHighlightLayer.startPoint = CGPoint.zero
 		self.textHighlightLayer.endPoint = CGPoint(x: 1.0, y: 0)
 		self.layer.mask = self.textHighlightLayer
-		NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
 	}
 	
 	required public init(coder aDecoder: NSCoder) {

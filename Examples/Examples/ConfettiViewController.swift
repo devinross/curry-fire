@@ -38,7 +38,7 @@ class ConfettiViewController: UIViewController {
 		}, completion: { (finished) in
 			
 				block.addTapGesture { sender in
-					self.view.bringSubview(toFront: block)
+					self.view.bringSubviewToFront(block)
 					block.confettiAnimation(completion: { (finished) in
 						self.setupConfetti(withDelay: 1.0)
 					})

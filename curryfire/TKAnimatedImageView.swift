@@ -51,7 +51,7 @@ open class TKAnimatedImageView: UIImageView {
 	*/
 	@objc open func playAnimation(with images: [UIImage], duration: TimeInterval, repeatCount: Int, withCompletionBlock finished: ((_ finished: Bool) -> Void)?) {
 		if self.playingAnimation {
-			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoop.Mode.default)
 			self.playingAnimation = false
 			self.currentFrame = 0
 			self.theImages = []
@@ -70,14 +70,14 @@ open class TKAnimatedImageView: UIImageView {
 		self.image = images.first
 		self.completionBlock = finished
 		self.startTime = -1
-		self.animationDisplayLink.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+		self.animationDisplayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.default)
 	}
 	/** Stop animating. */
 	
 	@objc override open func stopAnimating() {
 		super.stopAnimating()
 		if self.playingAnimation {
-			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoop.Mode.default)
 			self.playingAnimation = false
 			if let block = self.completionBlock {
 				block(false)
@@ -108,7 +108,7 @@ open class TKAnimatedImageView: UIImageView {
 		let loops = Int(floor(perc))
 		if self.loops > 0 && loops == self.loops {
 			self.image = self.theImages.last
-			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+			self.animationDisplayLink.remove(from: RunLoop.main, forMode: RunLoop.Mode.default)
 			self.playingAnimation = false
 			
 			if let block = self.completionBlock {

@@ -40,13 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        viewController = RootViewController(style: UITableViewStyle.grouped)
+        viewController = RootViewController(style: UITableView.Style.grouped)
         navigationController = UINavigationController(rootViewController: viewController!)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowLevel = UIWindowLevelNormal
+        window?.windowLevel = UIWindow.Level.normal
         window?.backgroundColor = UIColor.white
         
         

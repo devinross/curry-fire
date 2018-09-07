@@ -279,10 +279,10 @@ extension UIView {
 			animation?.fromValue = NSCATransform3D(self.layer.transform)
 			animation?.toValue = NSCATransform3D(first)
 			animation?.duration = withDuration / 2.0
-			animation?.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+			animation?.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
 			animation?.isRemovedOnCompletion = false
 			animation?.beginTime = CACurrentMediaTime() + delay
-			animation?.fillMode = kCAFillModeForwards
+			animation?.fillMode = CAMediaTimingFillMode.forwards
 			self.add(animation)
 			secondBeginTime = CACurrentMediaTime() + withDuration / 2.0 + delay
 		}
@@ -293,10 +293,10 @@ extension UIView {
 		animation!.autoreverses = true
 		animation!.duration = withDuration
 		animation!.repeatCount = Float.infinity
-		animation!.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		animation!.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 		animation!.beginTime = secondBeginTime
 		animation!.isRemovedOnCompletion = false
-		animation!.fillMode = kCAFillModeForwards
+		animation!.fillMode = CAMediaTimingFillMode.forwards
 		self.add(animation)
 	}
 	

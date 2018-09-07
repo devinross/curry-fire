@@ -87,7 +87,7 @@ extension UIView {
 			}
 			shapeMask.path = path.cgPath
 			snapshotView.layer.mask = shapeMask
-			shapeMask.fillRule = kCAFillRuleEvenOdd
+			shapeMask.fillRule = CAShapeLayerFillRule.evenOdd
 			shapeMask.transform = startTransform
 			let anime = CABasicAnimation(keyPath: "transform")
 			anime.fromValue = NSValue(caTransform3D: shapeMask.transform)

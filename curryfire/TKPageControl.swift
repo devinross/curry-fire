@@ -38,7 +38,7 @@ public class TKPageControl: UIControl {
 		super.init(frame: frame)
 		self.images = [UIImage?]()
 		self.isAccessibilityElement = true
-		self.accessibilityTraits = UIAccessibilityTraitAdjustable
+		self.accessibilityTraits = UIAccessibilityTraits.adjustable
 		let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapped))
 		self.addGestureRecognizer(tap)
 	}
@@ -233,13 +233,13 @@ public class TKPageControl: UIControl {
 	override public func accessibilityIncrement() {
 		super.accessibilityIncrement()
 		self.incrementCurrentPage()
-		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
+		UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: self.accessibilityLabel);
 	}
 	
 	override public func accessibilityDecrement() {
 		super.accessibilityDecrement()
 		self.decrementCurrentPage()
-		UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.accessibilityLabel);
+		UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: self.accessibilityLabel);
 	}
 	
 	override public func accessibilityActivate() -> Bool {

@@ -43,7 +43,7 @@ import UIKit
 	 @param color The background color of the button.
 	 @param state The state to which the color will appear.
 	 */
-	@objc public func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
+	@objc public func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
 		if state == .normal {
 			normalBackgroundColor = color
 			self.backgroundColor = color

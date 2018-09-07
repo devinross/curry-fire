@@ -80,7 +80,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 				label.textColor = self.tintColor!
 				label.alpha = CGFloat(selected ? 1.0 : UNSELECTED_ALPHA)
 			}
-			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+			label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 			self.addSubview(label)
 			labels.append(label)
 			i += 1
@@ -183,7 +183,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		var i = 0
 		for label: UILabel in self.labels {
 			let selected = i == index
-			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+			label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 
 			if self.style == .filled {
 				if animated {
@@ -259,7 +259,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			label.frame = CGRect(x: per * CGFloat(i), y: 0, width: per, height: CGFrameGetHeight(self))
 			label.font = self.font
 			let selected = i == indexOfSelectedItem
-			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+			label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 			if self.style == .filled {
 				label.textColor = selected ? self.selectedTextColor : self.textColor
 				label.alpha = 1
@@ -304,7 +304,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 				var i = 0
 				for label: UILabel in self.labels {
 					let selected = i == index
-					label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+					label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 
 					if self.style == .filled {
 						UIView.transition(with: label, duration: 0.3, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {() -> Void in
@@ -392,7 +392,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 			var i = 0
 			for label: UILabel in self.labels {
 				let selected = i == index
-				label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+				label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 
 				if self.style == .filled {
 					UIView.transition(with: label, duration: 0.3, options: .transitionCrossDissolve, animations: {() -> Void in
@@ -422,13 +422,13 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 		self.offsetFromCenter = -1
 		UIView.beginAnimations(nil, context: nil)
 		UIView.setAnimationBeginsFromCurrentState(true)
-		UIView.setAnimationCurve(UIViewAnimationCurve.easeInOut)
+		UIView.setAnimationCurve(UIView.AnimationCurve.easeInOut)
 		self.selectionView.transform = CGAffineTransform.identity
 		self.selectionView.center = CGPoint(x: self.selectionInset + per * CGFloat(index) + self.selectionView.frame.width / 2, y: self.selectionView.center.y)
 		var i = 0
 		for label: UILabel in self.labels {
 			let selected = i == index
-			label.accessibilityTraits = selected ? (UIAccessibilityTraitSelected | UIAccessibilityTraitButton) : UIAccessibilityTraitButton
+			label.accessibilityTraits = selected ? (UIAccessibilityTraits(rawValue: UIAccessibilityTraits.selected.rawValue | UIAccessibilityTraits.button.rawValue)) : UIAccessibilityTraits.button
 
 			if self.style == .filled {
 				UIView.transition(with: label, duration: 0.3, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {() -> Void in
