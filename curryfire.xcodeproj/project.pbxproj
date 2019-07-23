@@ -459,11 +459,11 @@
 			};
 			buildConfigurationList = 2069BB5A1AE095CA00F6D355 /* Build configuration list for PBXProject "curryfire" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 2069BB561AE095CA00F6D355;
 			productRefGroup = 2069BB611AE095CA00F6D355 /* Products */;
