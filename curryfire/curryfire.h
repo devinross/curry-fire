@@ -17,4 +17,4 @@ FOUNDATION_EXPORT const unsigned char curryfireVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <curryfire/PublicHeader.h>
 
 
-#import "Header.h"
+#import <curryfire/Header.h>

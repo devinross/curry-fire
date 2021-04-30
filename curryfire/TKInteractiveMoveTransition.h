@@ -30,7 +30,7 @@
  */
 
 @import UIKit;
-#import "TKMoveGestureRecognizer.h"
+#import <curryfire/TKMoveGestureRecognizer.h>
 
 @class TKInteractiveMoveTransition;
 

@@ -42,19 +42,19 @@
 #endif
 
 #if TARGET_OS_IOS || TARGET_OS_TV
-#import "ShortHand.h"
+#import <curryfire/ShortHand.h>
 #endif
 
 #if TARGET_OS_IOS
-#import "TKMoveGestureRecognizer.h"
-#import "TKInteractiveMoveTransition.h"
-#import "TKNavigationTransistionController.h"
+#import <curryfire/TKMoveGestureRecognizer.h>
+#import <curryfire/TKInteractiveMoveTransition.h>
+#import <curryfire/TKNavigationTransistionController.h>
 #endif
 
 #if TARGET_OS_IOS || TARGET_OS_TV
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "UIView+Confetti.h"
+#import <curryfire/TKAnimatedCounterLabel.h>
+#import <curryfire/TKProgressRingView.h>
+#import <curryfire/UIView+Confetti.h>
 #endif
 
 
