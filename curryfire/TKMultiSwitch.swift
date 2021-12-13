@@ -277,10 +277,13 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	
 	override open func tintColorDidChange() {
 		super.tintColorDidChange()
-		for label: UILabel in self.labels {
-			label.textColor = self.tintColor!
+		
+		if self.style == .hollow {
+			for label: UILabel in self.labels {
+				label.textColor = self.tintColor!
+			}
+			self.selectionView.layer.borderColor = self.tintColor!.cgColor
 		}
-		self.selectionView.layer.borderColor = self.tintColor!.cgColor
 		self.readjustLayout()
 	}
 	
@@ -463,7 +466,7 @@ open class TKMultiSwitch: UIControl, UIGestureRecognizerDelegate {
 	}
 	
 	
-	private var selectionView: UIView!
+	public var selectionView: UIView!
 	private var labels = [UILabel]()
 	private var offsetFromCenter: CGFloat = 0.0
 	private var needsReadjustment = false
