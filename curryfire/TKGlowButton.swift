@@ -37,6 +37,7 @@ import UIKit
 	private var normalBackgroundColor : UIColor?
 	private var selectedBackgroundColor : UIColor?
 	private var highlightedBackgroundColor : UIColor?
+	private var disabledBackgroundColor : UIColor?
 
 	/**
 	 This method allows you to set the background color during a certain state.
@@ -53,6 +54,8 @@ import UIKit
 		}
 		else if state == .selected {
 			selectedBackgroundColor = color
+		}else if state == .disabled {
+			disabledBackgroundColor = color
 		}
 		
 	}
@@ -90,6 +93,25 @@ import UIKit
 				txtColor = self.titleColor(for: .normal)!
 			}
 			
+			UIView.beginAnimations(nil, context: nil)
+			self.backgroundColor = clr
+			self.imageView!.tintColor = txtColor
+			UIView.commitAnimations()
+		}
+	}
+	
+	override open var isEnabled: Bool {
+		didSet {
+			var clr = UIColor.clear
+			var txtColor = UIColor.clear
+			if !isEnabled, let color = disabledBackgroundColor {
+				clr = color
+				txtColor = self.titleColor(for: .disabled)!
+			}else if isEnabled, let color = normalBackgroundColor {
+				clr = color
+				txtColor = self.titleColor(for: .normal)!
+			}
+
 			UIView.beginAnimations(nil, context: nil)
 			self.backgroundColor = clr
 			self.imageView!.tintColor = txtColor
