@@ -418,10 +418,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2069BB761AE095CA00F6D355 /* Build configuration list for PBXNativeTarget "curryfire" */;
 			buildPhases = (
+				2069BB5E1AE095CA00F6D355 /* Resources */,
+				2069BB5D1AE095CA00F6D355 /* Headers */,
 				2069BB5B1AE095CA00F6D355 /* Sources */,
 				2069BB5C1AE095CA00F6D355 /* Frameworks */,
-				2069BB5D1AE095CA00F6D355 /* Headers */,
-				2069BB5E1AE095CA00F6D355 /* Resources */,
 			);
 			buildRules = (
 			);
