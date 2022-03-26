@@ -34,7 +34,6 @@
 
 #if TARGET_OS_IOS
 @import curry;
-@import pop;
 #endif
 
 #if TARGET_OS_TV
@@ -46,8 +45,6 @@
 #endif
 
 #if TARGET_OS_IOS
-#import <curryfire/TKMoveGestureRecognizer.h>
-#import <curryfire/TKInteractiveMoveTransition.h>
 #import <curryfire/TKNavigationTransistionController.h>
 #endif
 

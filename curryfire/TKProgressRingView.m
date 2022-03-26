@@ -45,9 +45,6 @@
 @property (nonatomic,assign) NSTimeInterval animationDuration;
 @property (assign) BOOL timerIsLooping;
 
-#if TARGET_OS_IOS
-@property (nonatomic,strong) POPAnimatableProperty *pop;
-#endif
 @end
 
 @implementation TKProgressRingView
@@ -187,58 +184,22 @@
 	
 	if(progress == _progress) return;
 	
-#if TARGET_OS_IOS
-	if(self.curve == TKProgressRingAnimationCurveSpring){
-		
-		self.startProgress = _progress;
-		_progress = progress;
-		
-		self.pop = [POPAnimatableProperty propertyWithName:@"timeOffset" initializer:^(POPMutableAnimatableProperty *prop) {
-			// read value
-			prop.readBlock = ^(CAShapeLayer *obj, CGFloat values[]) {
-				values[0] = obj.timeOffset;
-			};
-			// write value
-			prop.writeBlock = ^(CAShapeLayer *obj, const CGFloat values[]) {
-				obj.timeOffset = values[0];
-				CGFloat progress = values[0];
-				UIBezierPath *aPath = [UIBezierPath bezierPath];
-				[aPath addArcWithCenter:CGPointMake(x, y) radius:_radius startAngle:START_ANGLE endAngle:(END_ANGLE-START_ANGLE) * progress + START_ANGLE clockwise:YES];
-				
-				dispatch_async(dispatch_get_main_queue(), ^{
-					self.circleLayer.path = aPath.CGPath;
 
-				});
-				
-				
-			};
-			// dynamics threshold
-			prop.threshold = 0.1;
-		}];
-		
-		self.springAnimation.fromValue = @(self.startProgress);
-		self.springAnimation.toValue =  @(self.progress);
-		self.springAnimation.property = self.pop;
-		[self.layer pop_addAnimation:self.springAnimation forKey:nil];
-	}else{
-#endif
-        self.animationDuration = duration;
-        CGFloat startProgress = _progress;
+	self.animationDuration = duration;
+	CGFloat startProgress = _progress;
 
-        _progress = progress;
-        
-        if(!self.timerIsLooping){
-            self.startProgress = startProgress;
-            self.counter = 0;
-            self.timerIsLooping = YES;
-            dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-            dispatch_async(gqueue, ^{
-                [self _updateProgress];
-            });
-        }
-#if TARGET_OS_IOS
-    }
-#endif
+	_progress = progress;
+	
+	if(!self.timerIsLooping){
+		self.startProgress = startProgress;
+		self.counter = 0;
+		self.timerIsLooping = YES;
+		dispatch_queue_t gqueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+		dispatch_async(gqueue, ^{
+			[self _updateProgress];
+		});
+	}
+
 }
 - (void) setStrokeWidth:(CGFloat)strokeWidth{
 	self.circleLayer.lineWidth = self.fullCircleLayer.lineWidth = _strokeWidth;
@@ -250,13 +211,5 @@
     self.baseGradientView.backgroundColor = self.progressGradientView.backgroundColor = progressColor;
 }
 
-#if TARGET_OS_IOS
-- (POPSpringAnimation*) springAnimation{
-	if(_springAnimation) return _springAnimation;
-	_springAnimation = [POPSpringAnimation animation];
-	_springAnimation.springBounciness = 4;
-	_springAnimation.springSpeed = 1;
-	return _springAnimation;
-}
-#endif
+
 @end

@@ -45,9 +45,6 @@
 @property (nonatomic,assign) CGFloat counter;
 @property (assign) BOOL timerIsLooping;
 
-#if TARGET_OS_IOS
-@property (nonatomic,strong) POPAnimatableProperty *pop;
-#endif
 
 @property (nonatomic,strong) NSMutableArray *labels;
 @property (nonatomic,strong) NSMutableArray *dequeuedLabels;
@@ -227,63 +224,25 @@
 	
 	self.startNumber = startNumber;
     
-#if TARGET_OS_IOS
-	if(self.curve == TKAnimatedCounterLabelAnimationCurveSpring){
-		
-		self.endNumber = number;
-		
-		NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
-		self.accessibilityLabel = txt;
-		
-		self.pop = [POPAnimatableProperty propertyWithName:@"timeOffset" initializer:^(POPMutableAnimatableProperty *prop) {
-			// read value
-			prop.readBlock = ^(CAShapeLayer *obj, CGFloat values[]) {
-				values[0] = obj.timeOffset;
-			};
-			// write value
-			prop.writeBlock = ^(CAShapeLayer *obj, const CGFloat values[]) {
-				obj.timeOffset = values[0];
-				CGFloat progress = values[0];
-				
-				
-				NSString *str = [self.numberFormatter stringFromNumber:@(progress)];
-				dispatch_async(dispatch_get_main_queue(), ^{
-					[self _setupLabelsWithText:str];
-				});
 
-			};
-			// dynamics threshold
-			prop.threshold = 0.1;
-		}];
-		
-		self.springAnimation.fromValue = self.startNumber;
-		self.springAnimation.toValue =  self.endNumber;
-		self.springAnimation.property = self.pop;
-		[self.layer pop_addAnimation:self.springAnimation forKey:nil];
-		
-		
-	}else{
-#endif
 
-		self.completeBlock = completion;
-		
-		self.duration = duration;
-		self.startNumber = startNumber;
-		self.endNumber = number;
-		self.counter = 0;
-		self.timerIsLooping = YES;
-		
-		NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
-		[self _setupLabelsWithText:txt];
-		self.accessibilityLabel = txt;
-		
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-			[self _updateProgress];
-		});
-		
-#if TARGET_OS_IOS
-	}
-#endif
+	self.completeBlock = completion;
+	
+	self.duration = duration;
+	self.startNumber = startNumber;
+	self.endNumber = number;
+	self.counter = 0;
+	self.timerIsLooping = YES;
+	
+	NSString *txt = [self.numberFormatter stringFromNumber:self.endNumber];
+	[self _setupLabelsWithText:txt];
+	self.accessibilityLabel = txt;
+	
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		[self _updateProgress];
+	});
+	
+
 	
 }
 - (void) setTextColor:(UIColor *)textColor{
@@ -310,14 +269,6 @@
     [self _setupLabelsWithText:self.text];
 }
 
-#if TARGET_OS_IOS
-- (POPSpringAnimation*) springAnimation{
-	if(_springAnimation) return _springAnimation;
-	_springAnimation = [POPSpringAnimation animation];
-	_springAnimation.springBounciness = 4;
-	_springAnimation.springSpeed = 1;
-	return _springAnimation;
-}
-#endif
+
 
 @end
