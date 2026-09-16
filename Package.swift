@@ -14,7 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/devinross/curry.git", branch: "package-manager"),
+        .package(url: "https://github.com/devinross/curry.git", from: "1.0.0"),
     ],
     targets: [
         // Objective-C sources. Public headers are exposed through the flat
