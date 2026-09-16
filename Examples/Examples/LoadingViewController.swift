@@ -31,7 +31,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 import curry
+import CurrySwift
 import curryfire
+import CurryFireSwift
 
 class LoadingViewController: UIViewController {
 

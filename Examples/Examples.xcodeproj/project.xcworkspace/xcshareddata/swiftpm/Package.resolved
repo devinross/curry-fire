@@ -1,0 +1,15 @@
+{
+  "originHash" : "b5585c5cc8dc8234f1d0bdd63bb125a44fda00035926e07b9a84502d589c8f05",
+  "pins" : [
+    {
+      "identity" : "curry",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devinross/curry.git",
+      "state" : {
+        "branch" : "package-manager",
+        "revision" : "9848d4eadf7b605b7ff61678f8a6492eea46a79b"
+      }
+    }
+  ],
+  "version" : 3
+}

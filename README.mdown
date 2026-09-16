@@ -4,6 +4,33 @@ curryFire🔥
 ============
 [curry](https://github.com/devinross/curry) is an Cocoa Touch framework built to enhance and compliment Foundation and UIKit. curryFire builds on top of curry with hot fire animations. If you're looking to see some of the framework in action see the example project or read the [documentation](http://devinross.com/curryfire/). 
 
+## Installation
+
+curryFire is a Swift package. Add it in Xcode with **File → Add Package Dependencies…** using
+`https://github.com/devinross/curry-fire.git`, or declare it in your own `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/devinross/curry-fire.git", branch: "master"),
+],
+targets: [
+    .target(name: "MyApp", dependencies: [
+        .product(name: "curryfire", package: "curry-fire"),
+    ]),
+]
+```
+
+The package ships two modules. `curryfire` holds the Objective-C types and `CurryFireSwift`
+holds the Swift-only ones, so import whichever you need:
+
+```swift
+import curryfire        // TKAnimatedCounterLabel, TKProgressRingView, UIView+Confetti, …
+import CurryFireSwift   // TKGlowButton, TKMultiSwitch, TKPegSlider, UIView+Zoom, …
+```
+
+From Objective-C, use `@import CurryFireSwift;` to reach the Swift half.
+
+
 ## Documentation
 Browse the documentation at [devinross.com/curryfire/](http://devinross.com/curryfire/). To add the documentation directly to Xcode, [download the docset](http://devinross.com/curryfire/com.devinross.curryfire.docset.zip) and place the docset into the `~/Library/Developer/Shared/Documentation/DocSets/` folder.
 
@@ -11,13 +38,9 @@ Browse the documentation at [devinross.com/curryfire/](http://devinross.com/curr
 
 ##Samples
 
-![TKMoveGestureRecognizer](http://devinross.com/images/gifs/movegesture-400.gif)
-
-[TKMoveGestureRecognizer](https://github.com/devinross/curry-fire/blob/master/curryfire/TKMoveGestureRecognizer.h)
-
 ![Pegs](http://devinross.com/images/gifs/pegs-400.gif)
 
-[TKPegSlider](https://github.com/devinross/curry-fire/blob/master/curryfire/TKPegSlider.h)
+[TKPegSlider](https://github.com/devinross/curry-fire/blob/master/curryfire/CurryFireSwift/TKPegSlider.swift)
 
 ![Counter](http://devinross.com/images/gifs/counter-400.gif)
 

@@ -4,7 +4,4 @@
 
 
 #import "MaterialViewController.h"
-#import "CardViewSlideUpViewController.h"
-#import "MoveGestureViewController.h"
-#import "SlideDownTransitionManager.h"
 #import "NavigationPushPopTransitionViewController.h"

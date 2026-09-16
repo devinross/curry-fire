@@ -1,5 +1,5 @@
 //
-//  Header.h
+//  Animation.swift
 //  Created by Devin Ross on 4/16/15.
 //
 /*
@@ -29,24 +29,11 @@
  
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+import Foundation
 
-@import curry;
+/** The duration the controls in this module animate at.
 
-#if TARGET_OS_IOS || TARGET_OS_TV
-#import "ShortHand.h"
-#endif
-
-#if TARGET_OS_IOS
-#import "TKNavigationTransistionController.h"
-#endif
-
-#if TARGET_OS_IOS || TARGET_OS_TV
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "UIView+Confetti.h"
-#endif
-
-
-#endif
+ This matches the implicit duration of `UIView.beginAnimations(_:context:)`, the
+ pre-iOS 13 API these controls were originally written against.
+ */
+let DEFAULT_ANIMATION_DURATION: TimeInterval = 0.2

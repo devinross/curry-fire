@@ -8,6 +8,7 @@
 
 import UIKit
 import curryfire
+import CurryFireSwift
 
 class SlideToUnlockViewController: UIViewController {
 

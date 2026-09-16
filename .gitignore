@@ -1,6 +1,13 @@
 # Xcode
 #
 build/
+
+# Swift Package Manager
+#
+.build/
+# A library package should not pin its dependencies for consumers.
+/Package.resolved
+.swiftpm/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
