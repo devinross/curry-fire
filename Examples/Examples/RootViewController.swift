@@ -45,7 +45,6 @@ class RootViewController: UITableViewController {
 		
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
 		
-		let edge = ["EdgeMovePanViewController",EdgeMovePanViewController.self] as [Any]
 		let nav = ["Navigation Transition",NavigationPushPopTransitionViewController.self] as [Any]
 		
 		let section0 = [
@@ -65,10 +64,6 @@ class RootViewController: UITableViewController {
 		]
 		
 		let section1 = [
-			["TKMoveGestureRecognizer", MoveGestureViewController.self],
-			["TKMoveGestureRecognizer (Card Slide)", CardViewSlideUpViewController.self],
-			["SlideDownTransitionViewController",SlideDownTransitionViewController.self],
-			edge,
 			nav
 		]
 

@@ -30,6 +30,7 @@
  */
 
 #import "NavigationPushPopTransitionViewController.h"
+@import CurryFireSwift;
 
 @interface ZoomedViewController : UIViewController
 @property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *edgePanGestureRecognizer;

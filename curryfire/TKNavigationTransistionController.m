@@ -29,6 +29,8 @@
  
  */
 
+#import <TargetConditionals.h>
+#if TARGET_OS_IOS
 #import "TKNavigationTransistionController.h"
 
 
@@ -197,3 +199,5 @@
 }
 
 @end
+
+#endif

@@ -60,10 +60,6 @@ class ProgressRingViewController: UIViewController {
 		self.progreessRingThree?.progressColor = UIColor(hex: 0x00c0df)
 		self.progreessRingThree?.curve = TKProgressRingAnimationCurveSpring
 		self.progreessRingThree?.progress = 0.001
-		self.progreessRingThree?.springAnimation.springSpeed = 10
-		self.progreessRingThree?.springAnimation.springBounciness = 15
-		self.progreessRingThree?.springAnimation.dynamicsFriction = 14
-		self.progreessRingThree?.springAnimation.dynamicsMass = 1
 		self.view.addSubview(self.progreessRingThree!)
 		
 	}

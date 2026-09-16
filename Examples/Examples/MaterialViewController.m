@@ -30,6 +30,7 @@
  */
 
 #import "MaterialViewController.h"
+@import CurryFireSwift;
 
 @interface MaterialViewController ()
 

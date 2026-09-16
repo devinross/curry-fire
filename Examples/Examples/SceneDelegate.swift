@@ -1,11 +1,11 @@
 //
-//  Header.h
+//  SceneDelegate.swift
 //  Created by Devin Ross on 4/16/15.
 //
 /*
- 
+
  curryfire || https://github.com/devinross/curry-fire
- 
+
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
  files (the "Software"), to deal in the Software without
@@ -14,10 +14,10 @@
  copies of the Software, and to permit persons to whom the
  Software is furnished to do so, subject to the following
  conditions:
- 
+
  The above copyright notice and this permission notice shall be
  included in all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -26,27 +26,29 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
+
  */
 
-#ifndef curryfire_Header_h
-#define curryfire_Header_h
+import UIKit
 
-@import curry;
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-#if TARGET_OS_IOS || TARGET_OS_TV
-#import "ShortHand.h"
-#endif
+	var window: UIWindow?
+	var navigationController: UINavigationController?
+	var viewController: RootViewController?
 
-#if TARGET_OS_IOS
-#import "TKNavigationTransistionController.h"
-#endif
+	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+		guard let windowScene = scene as? UIWindowScene else { return }
 
-#if TARGET_OS_IOS || TARGET_OS_TV
-#import "TKAnimatedCounterLabel.h"
-#import "TKProgressRingView.h"
-#import "UIView+Confetti.h"
-#endif
+		viewController = RootViewController(style: .grouped)
+		navigationController = UINavigationController(rootViewController: viewController!)
 
+		let window = UIWindow(windowScene: windowScene)
+		window.windowLevel = .normal
+		window.backgroundColor = .white
+		window.rootViewController = navigationController
+		window.makeKeyAndVisible()
+		self.window = window
+	}
 
-#endif
+}

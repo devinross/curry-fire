@@ -32,12 +32,7 @@
 #import "UIView+Confetti.h"
 #import "ShortHand.h"
 
-#if TARGET_OS_IOS
 @import curry;
-#endif
-#if TARGET_OS_TV
-@import curryTV;
-#endif
 
 @implementation UIView (Confetti)
 

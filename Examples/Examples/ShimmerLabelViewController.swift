@@ -31,6 +31,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 import curryfire
+import CurryFireSwift
 class ShimmerLabelViewController: UIViewController {
 	var shimmerLabel: TKShimmerLabel!
 	

@@ -31,12 +31,7 @@
 
 #import "TKProgressRingView.h"
 
-#if TARGET_OS_IOS
 @import curry;
-#endif
-#if TARGET_OS_TV
-@import curryTV;
-#endif
 
 @interface TKProgressRingView ()
 

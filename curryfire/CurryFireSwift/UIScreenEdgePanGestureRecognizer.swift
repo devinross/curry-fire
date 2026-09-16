@@ -1,6 +1,6 @@
 //
-//  ShakeAnimationViewController.swift
-//  Created by Devin Ross on 9/12/16.
+//  UIScreenEdgePanGestureRecognizer.swift
+//  Created by Devin Ross on 9/15/16.
 //
 /*
 
@@ -29,27 +29,20 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
+#if os(iOS)
 import UIKit
-import curryfire
-import CurryFireSwift
-
-class ShakeAnimationViewController: UIViewController {
-
-	override func loadView() {
-		super.loadView()
-		self.view.backgroundColor = UIColor.white
-		
-		let cardView = UIView(frame: CGRectCenteredInRect(self.view.bounds, 100, 100), backgroundColor: UIColor.random(), cornerRadius: 10)
-		cardView.autoresizingMask = [.flexibleTopMargin,.flexibleBottomMargin,.flexibleRightMargin,.flexibleLeftMargin]
-		self.view.addSubview(cardView)
-		
-		
-		cardView.addTapGesture { (sender) in
-			cardView.shake(nil)
-		}
+import curry
 
 
-		
+extension UIScreenEdgePanGestureRecognizer {
+	
+	@objc public var translationXPercentage : CGFloat {
+		return max(self.translation(in: self.view).x,0) / (self.view?.frame.size.width)!
 	}
-
+	
+	@objc public var translationYPercentage : CGFloat {
+		return max(self.translation(in: self.view).y,0) / (self.view?.frame.size.height)!
+	}
+	
 }
+#endif

@@ -1,6 +1,6 @@
 //
-//  ShakeAnimationViewController.swift
-//  Created by Devin Ross on 9/12/16.
+//  UIView+Confetti.swift
+//  Created by Devin Ross on 9/26/16.
 //
 /*
 
@@ -29,27 +29,28 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
+#if os(iOS)
+import Foundation
 import UIKit
+import curry
+#if SWIFT_PACKAGE
 import curryfire
-import CurryFireSwift
-
-class ShakeAnimationViewController: UIViewController {
-
-	override func loadView() {
-		super.loadView()
-		self.view.backgroundColor = UIColor.white
-		
-		let cardView = UIView(frame: CGRectCenteredInRect(self.view.bounds, 100, 100), backgroundColor: UIColor.random(), cornerRadius: 10)
-		cardView.autoresizingMask = [.flexibleTopMargin,.flexibleBottomMargin,.flexibleRightMargin,.flexibleLeftMargin]
-		self.view.addSubview(cardView)
-		
-		
-		cardView.addTapGesture { (sender) in
-			cardView.shake(nil)
-		}
+#endif
 
 
-		
+extension UIView {
+	
+	/** Play a confetti animation */
+	@objc public func rainConfetti() {
+		self.confettiAnimation(completion: nil)
 	}
-
+	
+	/** Confetti animation with a completion block.
+	 @param completion A completion block called upon the animation ending.
+	 */
+	@objc public func confettiAnimation(completion: ((_ complete: Bool) -> Void)?) {
+		self.confettiAnimation(completion: completion, numberOfRowsAndColumns: 5)
+	}
 }
+
+#endif
